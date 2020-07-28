@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>1.4.2</Version>
+    <Authors>Sorgo Team</Authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Mariusz Nowak dev@sorgo.net  All rights reserved</Copyright>
+    <Company>Sorgo</Company>
+    <Product>Sorgo</Product>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Description>Sorgo service core library</Description>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyVersion>4.6.7.3</AssemblyVersion>
+    <FileVersion>4.6.7.0</FileVersion>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="LICENSE" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+
+</Project>

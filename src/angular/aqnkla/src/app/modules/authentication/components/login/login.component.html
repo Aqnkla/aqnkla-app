@@ -1,0 +1,36 @@
+<div class="root light-mode">
+  <div class="panel-root">
+    <div class="panel">
+      <div class="panel-header" i18n="@@applicationName">Sorgo</div>
+      <div class="input-panel">
+        <div class="input-panel-header" i18n="@@loginMessage">Login to application</div>
+        <div class="input">
+          <mat-form-field>
+            <mat-label i18n="@@labelEmail">email</mat-label>
+            <input matInput type="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              <span i18n>Please enter a valid email address</span>
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              <span i18n>Email is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field>
+            <mat-label i18n="@@labelPassword">password</mat-label>
+            <input matInput type="password"  [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              <span i18n>Password is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <button mat-button (click)="restore()" i18n="@@buttonRestorePassword">Restore password</button>
+      </div>
+      <div class="button-panel">
+        <button mat-button (click)="register()" i18n="@@buttonRegistor">Register</button>
+        <button mat-raised-button class="main" (click)="login()" i18n="@@buttonLogin">Login</button>
+      </div>
+    </div>
+  </div>
+</div>

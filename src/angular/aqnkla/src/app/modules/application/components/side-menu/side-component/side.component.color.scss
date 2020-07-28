@@ -1,0 +1,59 @@
+@import "./../../../../../../styles/global-colors";
+
+:host-context(.light-mode) {
+  a {
+    color: $light-foreground-color;
+  }
+
+  button.menu-switch,
+  button.menu-switch:active {
+    color: $light-foreground-color;
+    background-color: $light-background-color;
+  }
+
+  .side-navigation {
+    background-color: $light-background-color;
+    box-shadow: 3px 0 12px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .dark-mode-toggle,
+  .footer,
+  .bottom-menu {
+    background-color: $light-background-color;
+    border-top: $light-border;
+  }
+
+  .menu-icon {
+    fill: $light-foreground-color;
+    background-color: $light-background-color;
+  }
+}
+
+:host-context(.dark-mode) {
+  a {
+    color: $dark-foreground-color;
+  }
+
+  button.menu-switch,
+  button.menu-switch:active {
+    color: $dark-foreground-color;
+    background-color: $dark-background-color;
+  }
+
+  .side-navigation {
+    background-color: $dark-background-color;
+    box-shadow: 3px 0 12px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .dark-mode-toggle,
+  .footer,
+  .bottom-menu {
+    background-color: $dark-background-color;
+    border-top: $dark-border;
+  }
+
+  .menu-icon {
+    fill: $dark-foreground-color;
+    background-color: $dark-background-color;
+  }
+}

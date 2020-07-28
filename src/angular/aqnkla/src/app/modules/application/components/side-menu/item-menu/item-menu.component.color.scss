@@ -1,0 +1,18 @@
+@import "./../../../../../../styles/global-colors";
+
+:host-context(.light-mode) {
+  .menu-label {
+    color: $light-foreground-color;
+  }
+  .menu-icon-svg {
+    fill: $light-foreground-color;
+  }
+}
+:host-context(.dark-mode) {
+  .menu-label {
+    color: $dark-foreground-color;
+  }
+  .menu-icon-svg {
+    fill: $dark-foreground-color;
+  }
+}

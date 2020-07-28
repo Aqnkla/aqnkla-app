@@ -1,0 +1,6 @@
+<div [ngClass]="isDarkMode?'dark-mode':'light-mode'" class="root">
+  <sorgo-side class="side" [ngStyle]="sideStyle"></sorgo-side>
+  <div class="main" [ngStyle]="rootStyle">
+    <router-outlet></router-outlet>
+  </div>
+</div>

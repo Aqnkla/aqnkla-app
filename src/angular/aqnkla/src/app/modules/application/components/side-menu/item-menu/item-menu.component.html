@@ -1,0 +1,11 @@
+<div class="menu-item">
+  <a routerLink="{{itemUrl}}">
+    <div class="menu-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="menu-icon-svg">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path [attr.d]="menuItem.svgPath" />
+      </svg>
+    </div>
+    <div class="menu-label">{{menuItem.label}}</div>
+  </a>
+</div>

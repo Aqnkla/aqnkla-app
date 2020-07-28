@@ -1,0 +1,9 @@
+<div class="group-menu">
+  <sorgo-item-menu class="root-menu" [menuItem]="gruop.rootItem" [isSubItem]="false"></sorgo-item-menu>
+  <div class="sub-menu" [ngStyle]="subMenuStyle">
+    <div class="sub-menu-item" *ngFor="let item of gruop.subItems"  [ngStyle]="subItemStyle">
+      <sorgo-item-menu [rootUrl]="gruop.rootItem.link" [menuItem]="item" [isSubItem]="true">
+      </sorgo-item-menu>
+    </div>
+  </div>
+</div>

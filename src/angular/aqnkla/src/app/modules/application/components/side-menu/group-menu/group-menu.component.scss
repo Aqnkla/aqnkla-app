@@ -1,0 +1,17 @@
+@import "./../../../../../../styles/global-variables";
+
+.group-menu {
+  overflow: hidden;
+  transition: height $menu-switch-deley ease-in-out;
+  padding: 5px 0 0 0;
+}
+
+.sub-menu {
+  margin: 1px 0 10px 15px;
+  overflow: hidden;
+  width: $menu-extend-width;
+}
+
+.sub-menu-item {
+  margin: 4px 0;
+}

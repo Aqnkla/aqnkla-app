@@ -1,0 +1,12 @@
+@import "./../../../../../../styles/global-colors";
+
+:host-context(.light-mode) {
+  .group-menu {
+    border-bottom: $light-border;
+  }
+}
+:host-context(.dark-mode) {
+  .group-menu {
+    border-bottom: $dark-border;
+  }
+}

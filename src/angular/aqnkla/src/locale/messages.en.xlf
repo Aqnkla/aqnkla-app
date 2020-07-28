@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="applicationName" datatype="html">
+        <source>Sorgo</source>
+        <target>Sorgo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="loginMessage" datatype="html">
+        <source>Register to application</source>
+        <target>Register to application</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelEmail" datatype="html">
+        <source>email</source>
+        <target>email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="labelPassword" datatype="html">
+        <source>password</source>
+        <target>password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="db228bcfc2882440b096576e59aa4be6f7f3ede0" datatype="html">
+        <source>re-type password</source>
+        <target>re-type password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">write again password label</note>
+      </trans-unit>
+      <trans-unit id="buttonLogin" datatype="html">
+        <source>Login</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buttonRegister" datatype="html">
+        <source>Register</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1b525df7c41f3684f7631793971a8e1139cc66ef" datatype="html">
+        <source>
+          Registration success, please check your mail.
+        </source>
+        <target>
+          Registration success, please check your mail.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f6807cdadcee404686a9aafee38dbf8f9efd8b2" datatype="html">
+        <source>Unable to process your request. Reload page and try again.</source>
+        <target>Unable to process your request. Reload page and try again.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buttonReload" datatype="html">
+        <source>Reload</source>
+        <target>Reload</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/register/register.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buttonRegistor" datatype="html">
+        <source>Register</source>
+        <target>Register</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buttonRestorePassword" datatype="html">
+        <source>Restore password</source>
+        <target>Restore password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="restorePasswordMessage" datatype="html">
+        <source>Restore password</source>
+        <target>Restore password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="buttonRestore" datatype="html">
+        <source>Restore password</source>
+        <target>Restore password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0dd008e653f0667e266ac9a6ef92f3910f98f21d" datatype="html">
+        <source>
+          Please check your mail, and follow instructions.
+        </source>
+        <target>
+          Please check your mail, and follow instructions.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/authentication/components/restore/restore.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

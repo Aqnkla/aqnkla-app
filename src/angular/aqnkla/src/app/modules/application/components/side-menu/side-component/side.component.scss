@@ -1,0 +1,110 @@
+@import "./../../../../../../styles/global-variables";
+
+.side-navigation {
+  position: fixed;
+  height: 100vh;
+  min-height: $min-height;
+  position: relative;
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+  }
+
+  button.menu-switch,
+  button.menu-switch:active {
+    border: none 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    outline: none;
+    font-weight: 500;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: 30px;
+    font-size: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+
+.menu-icon {
+  height: 30px;
+  width: $menu-narrow-width - 4px;
+  margin: 2px;
+}
+.menu-switch-label {
+  vertical-align: top;
+  line-height: 36px;
+  font-weight: 500;
+  font-size: 22px;
+  width: 130px;
+  text-align: center;
+}
+
+.dark-mode-toggle {
+  padding: 5px 10px;
+  text-align: center;
+}
+.narrow {
+  width: $menu-narrow-width;
+  transition: width $menu-switch-deley ease-in-out;
+  position: relative;
+  overflow: hidden;
+
+  .menu-switch-label {
+    left: -130px;
+    transition: left $menu-switch-deley ease-in-out;
+  }
+
+  .dark-mode-toggle,
+  .footer {
+    height: 0;
+    transition: height $menu-switch-deley ease-in-out;
+    transition: padding $menu-switch-deley ease-in-out;
+    border-top: 0 none;
+    padding: 0;
+  }
+}
+
+.extend {
+  width: $menu-extend-width;
+  transition: width $menu-switch-deley ease-in-out;
+  .menu-switch-label {
+    left: 10px;
+    transition: left $menu-switch-deley ease-in-out;
+  }
+  .dark-mode-toggle,
+  .footer {
+    height: 30px;
+    padding: 4px;
+    transition: height $menu-switch-deley ease-in-out;
+    transition: padding $menu-switch-deley ease-in-out;
+  }
+}
+
+.top-menu {
+  position: absolute;
+  top: 30px;
+  overflow: auto;
+}
+
+.bottom-menu {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+}
+.footer {
+  bottom: 0;
+  width: $menu-extend-width;
+  text-align: center;
+  line-height: 14px;
+  overflow: hidden;
+  .company {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .info {
+    font-size: 10px;
+  }
+}

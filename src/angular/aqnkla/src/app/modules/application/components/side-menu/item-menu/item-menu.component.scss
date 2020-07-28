@@ -1,0 +1,36 @@
+@import "./../../../../../../styles/global-variables";
+.menu-label,
+.menu-icon {
+  display: inline-block;
+}
+.menu-label {
+  font-weight: 500;
+  vertical-align: top;
+  margin: 2px;
+}
+.menu-icon-svg {
+  margin: 2px;
+}
+:host-context(.sub-menu) {
+  .menu-icon-svg {
+    height: 15px;
+    width: ($menu-narrow-width - 4px)/2;
+  }
+  .menu-label {
+    line-height: 15px;
+    font-size: 12px;
+  }
+}
+:host-context(.root-menu) {
+  .menu-icon-svg {
+    height: 30px;
+    width: $menu-narrow-width - 4px;
+  }
+  .menu-label {
+    line-height: 30px;
+    font-size: 20px;
+  }
+  .menu-item {
+    height: 30px;
+  }
+}

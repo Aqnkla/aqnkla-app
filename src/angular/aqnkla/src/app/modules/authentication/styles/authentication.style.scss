@@ -1,0 +1,55 @@
+.root {
+  background-image: url("/assets/img/background.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  .panel-root {
+    margin: 0 auto;
+    width: 300px;
+    position: relative;
+
+    .panel {
+      background-color: rgba(255, 255, 255, 0.863);
+      box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      position: absolute;
+      height: 300px;
+      top: 30vh;
+      border-radius: 4px;
+
+      .panel-header {
+        margin: 7px 12px;
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      .input-panel-header {
+        padding: 10px;
+      }
+      .input-panel {
+        margin: 0 auto;
+        width: 200px;
+        .input {
+          padding: 0 16px;
+        }
+      }
+      .button-panel {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        .main {
+          position: absolute;
+          right: 0;
+        }
+        button {
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+
+  .message-panel{
+    margin: 30px auto;
+    width: 80%;
+  }
+}

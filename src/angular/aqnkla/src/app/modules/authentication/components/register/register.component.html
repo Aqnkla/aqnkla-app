@@ -1,0 +1,56 @@
+<div class="root light-mode">
+  <div class="panel-root">
+    <div class="panel">
+      <div class="panel-header" i18n="@@applicationName">Sorgo</div>
+      <div class="input-panel" *ngIf="!isProcessed">
+        <div class="input-panel-header" i18n="@@loginMessage">Register to application</div>
+        <div class="input">
+          <mat-form-field>
+            <mat-label i18n="@@labelEmail">email</mat-label>
+            <input matInput type="email" [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              <span i18n>Please enter a valid email address</span>
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              <span i18n>Email is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field>
+            <mat-label i18n="@@labelPassword">password</mat-label>
+            <input matInput type="password"  [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+              <span i18n>Password is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <mat-form-field>
+            <mat-label i18n="@@labelRePassword">re-type password</mat-label>
+            <input matInput type="password"  [formControl]="rePasswordFormControl">
+            <mat-error *ngIf="rePasswordFormControl.hasError('required')">
+              <span i18n>Re-Password is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="button-panel" *ngIf="!isProcessed">
+        <button mat-button (click)="login()" i18n="@@buttonLogin">Login</button>
+        <button mat-raised-button class="main" (click)="register()" i18n="@@buttonRegister">Register</button>
+      </div>
+      <div class="message-panel" *ngIf="isProcessed">
+        <div class="message-panel-success" *ngIf="isSuccess" i18n>
+          Registration success, please check your mail.
+        </div>
+        <div class="message-panel-error" *ngIf="!isSuccess">
+          <div class="message-panel-error-info" i18n>Unable to process your request. Reload page and try again.</div>
+
+          <div class="button-panel">
+            <button mat-button (click)="reload()" i18n="@@buttonReload">Reload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
