@@ -2,12 +2,12 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
+using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Helper;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Sorgo.Domain.Base.Entity;
-using Sorgo.Domain.Helper;
 
-namespace Sorgo.Repository.MongoDb.Context
+namespace Aqnkla.Repository.MongoDb.Context
 {
     internal class BaseMongoContext<T> where T : BaseEntity<ObjectId>
     {

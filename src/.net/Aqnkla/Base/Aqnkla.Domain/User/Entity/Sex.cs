@@ -1,9 +1,9 @@
-﻿namespace Sorgo.Domain.User.Entity
+﻿namespace Aqnkla.Domain.User.Entity
 {
     public enum Sex
     {
         Women,
         Men,
-        Unknown
+        Other
     }
 }

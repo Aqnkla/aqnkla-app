@@ -1,16 +1,8 @@
-using System.Security.Claims;
+using Aqnkla.Authentication.JwtBearer.Entity;
+using System.Collections.Generic;
 
-namespace Sorgo.Client.Webapi.Services.User
+namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
 {
-    public interface IAuthenticationService<TKey>
-    {
-        AuthenticateResponse Authenticate(AuthenticateRequest model, string ipAddress);
-        AuthenticateResponse RefreshToken(string token, string ipAddress);
-        bool RevokeToken(string token, string ipAddress);
-        IEnumerable<JwtUserEntity<TKey>> GetAll();
-        JwtUserEntity<TKey> GetById(int id);
-    }
-
     //public class AuthenticationService<TKey> : IAuthenticationService<TKey>
     //{
     //    private readonly AppSettings _appSettings;

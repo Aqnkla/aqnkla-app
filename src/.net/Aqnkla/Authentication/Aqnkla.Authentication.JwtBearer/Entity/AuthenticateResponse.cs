@@ -1,9 +1,10 @@
-using System.Text.Json.Serialization;
-using WebApi.Entities;
 
-namespace WebApi.Models
+
+using Newtonsoft.Json;
+
+namespace Aqnkla.Authentication.JwtBearer.Entity
 {
-    public class AuthenticateResponse
+    public class AuthenticateResponse<TKey>
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -14,7 +15,7 @@ namespace WebApi.Models
         [JsonIgnore] // refresh token is returned in http only cookie
         public string RefreshToken { get; set; }
 
-        public AuthenticateResponse(User user, string jwtToken, string refreshToken)
+        public AuthenticateResponse(JwtUserEntity<TKey> user, string jwtToken, string refreshToken)
         {
             Id = user.Id;
             FirstName = user.FirstName;

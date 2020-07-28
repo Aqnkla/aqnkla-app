@@ -1,11 +1,11 @@
-﻿using MongoDB.Bson;
-using Sorgo.Domain.User.Entity;
-using Sorgo.Domain.User.Repository;
-using Sorgo.Repository.MongoDb.Base;
+﻿using Aqnkla.Domain.User.Entity;
+using Aqnkla.Domain.User.Repository;
+using Aqnkla.Repository.MongoDb.Base;
+using MongoDB.Bson;
 using System;
 using System.Threading.Tasks;
 
-namespace Sorgo.Repository.MongoDb.User
+namespace Aqnkla.Repository.MongoDb.User
 {
     public class MongoDbUserRepository : MongoDbRepository<UserEntity<ObjectId>>, IUserRepository<ObjectId>
     {

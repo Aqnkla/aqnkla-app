@@ -3,7 +3,7 @@
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
 
-namespace Sorgo.Domain.Base.Entity
+namespace Aqnkla.Domain.Base.Entity
 {
     public abstract class BaseEntity<TKey>
     {

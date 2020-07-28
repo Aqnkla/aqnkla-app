@@ -1,8 +1,7 @@
-﻿using System;
-using Sorgo.Domain.Base.Service;
-using Sorgo.Authentication.JwtBearer.Entity;
+﻿using Aqnkla.Authentication.JwtBearer.Entity;
+using Aqnkla.Domain.Base.Service;
 
-namespace Sorgo.Authentication.JwtBearer.Services.JwtUser
+namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
 {
     public interface IJwtUserService<TKey> : IService<JwtUserEntity<TKey>, TKey>
     {

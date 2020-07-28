@@ -1,6 +1,8 @@
-﻿using Sorgo.Domain.Base.Entity;
+﻿using Aqnkla.Domain.Base.Entity;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace Sorgo.Authentication.JwtBearer.Entity
+namespace Aqnkla.Authentication.JwtBearer.Entity
 {
     public class JwtUserEntity<TKey> : BaseEntity<TKey>
     {
@@ -13,6 +15,6 @@ namespace Sorgo.Authentication.JwtBearer.Entity
         public string Password { get; set; }
 
         [JsonIgnore]
-        public List<RefreshToken> RefreshTokens { get; set; }   
+        public List<RefreshToken> RefreshTokens { get; set; }
     }
 }

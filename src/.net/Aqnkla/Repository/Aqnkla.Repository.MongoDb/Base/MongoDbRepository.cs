@@ -2,17 +2,17 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
+using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Base.Repository;
+using Aqnkla.Domain.ExceptionAqnkla;
+using Aqnkla.Repository.MongoDb.Context;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Sorgo.Domain.Base.Entity;
-using Sorgo.Domain.Base.Repository;
-using Sorgo.Domain.SorgoException;
-using Sorgo.Repository.MongoDb.Context;
 using Sorgo.Repository.MongoDb.Properties;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Sorgo.Repository.MongoDb.Base
+namespace Aqnkla.Repository.MongoDb.Base
 {
     public class MongoDbRepository<T> : IRepository<T, ObjectId> where T : BaseEntity<ObjectId>
     {

@@ -2,10 +2,13 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
+using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Base.Repository;
+using Aqnkla.Domain.Base.Service;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Sorgo.Service.Base
+namespace Aqnkla.Service.Base
 {
     public class BaseService<T, TKey> : IService<T, TKey> where T : BaseEntity<TKey>
     {

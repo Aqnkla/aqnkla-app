@@ -2,14 +2,14 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
-using Sorgo.Domain.Attributes;
-using Sorgo.Domain.SorgoException;
+using Aqnkla.Domain.Attributes;
+using Aqnkla.Domain.ExceptionAqnkla;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Sorgo.Domain.Helper
+namespace Aqnkla.Domain.Helper
 {
     public static class AttributeHelper
     {

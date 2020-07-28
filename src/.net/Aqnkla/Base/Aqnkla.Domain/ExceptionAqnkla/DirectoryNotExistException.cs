@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Sorgo.Domain.SorgoException
+namespace Aqnkla.Domain.ExceptionAqnkla
 {
     [Serializable]
     public class DirectoryNotExistException : Exception

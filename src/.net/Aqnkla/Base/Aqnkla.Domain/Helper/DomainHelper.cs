@@ -5,7 +5,7 @@
 using System;
 using System.Linq;
 
-namespace Sorgo.Domain.Helper
+namespace Aqnkla.Domain.Helper
 {
     public static class DomainHelper
     {

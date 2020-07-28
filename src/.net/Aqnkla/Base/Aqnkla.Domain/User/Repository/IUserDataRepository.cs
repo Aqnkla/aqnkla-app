@@ -1,9 +1,9 @@
-﻿using Sorgo.Domain.Base.Repository;
-using Sorgo.Domain.User.Entity;
+﻿using Aqnkla.Domain.Base.Repository;
+using Aqnkla.Domain.User.Entity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Sorgo.Domain.User.Repository
+namespace Aqnkla.Domain.User.Repository
 {
     public interface IUserDataRepository<T, TKey> : IRepository<T, TKey> where T : UserDataEntity<TKey>
     {

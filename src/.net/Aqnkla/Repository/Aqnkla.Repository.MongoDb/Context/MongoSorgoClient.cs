@@ -4,7 +4,7 @@
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
 using MongoDB.Driver;
 
-namespace Sorgo.Repository.MongoDb.Context
+namespace Aqnkla.Repository.MongoDb.Context
 {
     internal static class MongoSorgoClient
     {

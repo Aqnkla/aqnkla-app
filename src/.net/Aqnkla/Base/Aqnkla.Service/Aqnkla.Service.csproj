@@ -21,4 +21,9 @@
     <None Include="LICENSE" Pack="true" Visible="false" PackagePath="" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aqnkla.Domain\Aqnkla.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

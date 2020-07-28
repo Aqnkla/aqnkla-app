@@ -1,7 +1,7 @@
-﻿using Sorgo.Domain.Base.Entity;
+﻿using Aqnkla.Domain.Base.Entity;
 using System;
 
-namespace Sorgo.Domain.User.Entity
+namespace Aqnkla.Domain.User.Entity
 {
     public class UserEntity<TKey> : BaseEntity<TKey>
     {

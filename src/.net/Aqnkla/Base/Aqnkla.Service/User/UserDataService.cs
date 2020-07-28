@@ -1,12 +1,12 @@
 ﻿
-using Sorgo.Domain.User.Entity;
-using Sorgo.Domain.User.Repository;
-using Sorgo.Domain.User.Service;
-using Sorgo.Service.Base;
+using Aqnkla.Domain.User.Entity;
+using Aqnkla.Domain.User.Repository;
+using Aqnkla.Domain.User.Service;
+using Aqnkla.Service.Base;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Sorgo.Service.User
+namespace Aqnkla.Service.User
 {
     public class UserDataService<T, TKey> : BaseService<T, TKey>, IUserDataService<T, TKey> where T : UserDataEntity<TKey>
     {
