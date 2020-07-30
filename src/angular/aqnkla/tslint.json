@@ -19,13 +19,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "sorgo",
+      "aqn",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "sorgo",
+      "aqn",
       "kebab-case"
     ],
     "eofline": true,
