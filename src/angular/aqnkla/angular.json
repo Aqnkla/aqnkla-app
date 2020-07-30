@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sorgo": {
+    "aqn": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "sorgo",
+      "prefix": "aqn",
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
@@ -24,11 +24,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sorgo",
+            "outputPath": "dist/aqn",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.sorgo.json",
+            "tsConfig": "tsconfig.aqn.json",
             "localize": true,
             "aot": true,
             "assets": [
@@ -87,24 +87,24 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "localize": true,
           "options": {
-            "browserTarget": "sorgo:build"
+            "browserTarget": "aqn:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sorgo:build:production"
+              "browserTarget": "aqn:build:production"
             },
             "pl": {
-              "browserTarget": "sorgo:build:pl"
+              "browserTarget": "aqn:build:pl"
             },
             "en": {
-              "browserTarget": "sorgo:build:en"
+              "browserTarget": "aqn:build:en"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sorgo:build"
+            "browserTarget": "aqn:build"
           }
         },
         "test": {
@@ -142,18 +142,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sorgo:serve"
+            "devServerTarget": "aqn:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sorgo:serve:production"
+              "devServerTarget": "aqn:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "sorgo",
+  "defaultProject": "aqn",
   "cli": {
     "analytics": false
   }

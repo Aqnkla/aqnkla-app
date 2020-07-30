@@ -4,7 +4,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'sorgo-login',
+  selector: 'aqn-login',
   templateUrl: './login.component.html',
   styleUrls: ['./../../styles/authentication.style.scss']
 })

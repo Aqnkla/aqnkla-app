@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-settings',
+  selector: 'aqn-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })

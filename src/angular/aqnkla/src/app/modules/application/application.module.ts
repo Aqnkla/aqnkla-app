@@ -1,5 +1,4 @@
 import { DisplayService } from './services/display/display.service';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { SideComponent } from './components/side-menu/side-component/side.component';
 import { ApplicationRoutesModule } from './application.routing';

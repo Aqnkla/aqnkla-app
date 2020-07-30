@@ -1,7 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-diary',
+  selector: 'aqn-diary',
   templateUrl: './diary-root.component.html',
   styleUrls: ['./diary-root.component.scss']
 })

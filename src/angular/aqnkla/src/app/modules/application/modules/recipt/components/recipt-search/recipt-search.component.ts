@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-recipt-search',
+  selector: 'aqn-recipt-search',
   templateUrl: './recipt-search.component.html',
   styleUrls: ['./recipt-search.component.scss']
 })

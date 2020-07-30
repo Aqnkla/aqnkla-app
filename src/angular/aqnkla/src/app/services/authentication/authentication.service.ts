@@ -27,9 +27,7 @@ export class AuthenticationService {
   }
 
   restorePassword(userEmail: string): void {
-
   }
-
 
   logout(): void {
     this.$isAuthenticated = false;

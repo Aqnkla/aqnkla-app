@@ -4,7 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'sorgo-start',
+  selector: 'aqn-start',
   template: '<router-outlet></router-outlet>'
 })
 export class StartComponent {

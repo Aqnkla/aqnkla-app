@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-account-dashboard',
+  selector: 'aqn-account-dashboard',
   templateUrl: './account-dashboard.component.html',
   styleUrls: ['./account-dashboard.component.scss']
 })

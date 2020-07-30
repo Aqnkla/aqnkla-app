@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
-  selector: 'sorgo-logout',
+  selector: 'aqn-logout',
   template: '<div>Logging out</div>'
 })
 export class LogoutComponent implements OnInit {

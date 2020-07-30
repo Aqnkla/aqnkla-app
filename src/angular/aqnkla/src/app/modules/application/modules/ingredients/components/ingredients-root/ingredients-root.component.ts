@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-ingredients-root',
+  selector: 'aqn-ingredients-root',
   templateUrl: './ingredients-root.component.html',
   styleUrls: ['./ingredients-root.component.scss']
 })

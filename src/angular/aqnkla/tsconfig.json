@@ -8,7 +8,7 @@
   "files": [],
   "references": [
     {
-      "path": "./tsconfig.sorgo.json"
+      "path": "./tsconfig.aqn.json"
     },
     {
       "path": "./tsconfig.spec.json"

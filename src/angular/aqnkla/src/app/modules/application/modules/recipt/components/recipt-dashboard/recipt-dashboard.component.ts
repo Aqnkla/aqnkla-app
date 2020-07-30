@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-recipt-dashboard',
+  selector: 'aqn-recipt-dashboard',
   templateUrl: './recipt-dashboard.component.html',
   styleUrls: ['./recipt-dashboard.component.scss']
 })

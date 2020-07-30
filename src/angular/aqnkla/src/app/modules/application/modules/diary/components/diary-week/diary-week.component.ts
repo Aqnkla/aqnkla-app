@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-diary-week',
+  selector: 'aqn-diary-week',
   templateUrl: './diary-week.component.html',
   styleUrls: ['./diary-week.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sorgo-diary-manage',
+  selector: 'aqn-diary-manage',
   templateUrl: './diary-manage.component.html',
   styleUrls: ['./diary-manage.component.scss']
 })

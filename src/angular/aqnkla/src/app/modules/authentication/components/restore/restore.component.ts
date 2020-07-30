@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'sorgo-restore',
+  selector: 'aqn-restore',
   templateUrl: './restore.component.html',
   styleUrls: ['./../../styles/authentication.style.scss']
 })

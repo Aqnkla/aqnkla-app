@@ -1,6 +1,6 @@
 import { AuthenticationService } from './services/authentication/authentication.service';
 import { CommonModule } from '@angular/common';
-import { SorgoRoutesModule } from './sorgo.routing';
+import { SorgoRoutesModule } from './aqn.routing';
 import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
