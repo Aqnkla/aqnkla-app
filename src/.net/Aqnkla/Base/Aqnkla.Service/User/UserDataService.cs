@@ -16,7 +16,6 @@ namespace Aqnkla.Service.User
             this.repository = repository;
         }
 
-
         public async Task<UserDataEntity<TKey>> GetUserByEmailAsync(string emailAddress)
         {
             return await repository.GetUserByEmailAsync(emailAddress).ConfigureAwait(false);
