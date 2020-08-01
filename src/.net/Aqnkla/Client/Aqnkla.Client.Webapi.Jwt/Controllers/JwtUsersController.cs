@@ -25,12 +25,12 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
         [HttpPost("authenticate")]
         public async Task<IActionResult> AuthenticateAync([FromBody] AuthenticateRequest model)
         {
-            var response = await authenticationService.AuthenticateAsync(model, ipAddress());
+            var response = await authenticationService.AuthenticateAsync(model, IpAddress());
 
             if (response == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
 
-            setTokenCookie(response.RefreshToken);
+            SetTokenCookie(response.RefreshToken);
 
             return Ok(response);
         }
@@ -40,12 +40,12 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
         public async Task<IActionResult> RefreshTokenAync()
         {
             var refreshToken = Request.Cookies["refreshToken"];
-            var response = await authenticationService.RefreshTokenAsync(refreshToken, ipAddress());
+            var response = await authenticationService.RefreshTokenAsync(refreshToken, IpAddress());
 
             if (response == null)
                 return Unauthorized(new { message = "Invalid token" });
 
-            setTokenCookie(response.RefreshToken);
+            SetTokenCookie(response.RefreshToken);
 
             return Ok(response);
         }
@@ -59,7 +59,7 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
 
-            var response = await authenticationService.RevokeTokenAsync(token, ipAddress());
+            var response = await authenticationService.RevokeTokenAsync(token, IpAddress());
 
             if (!response)
                 return NotFound(new { message = "Token not found" });
@@ -88,7 +88,7 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
 
         // helper methods
 
-        private void setTokenCookie(string token)
+        private void SetTokenCookie(string token)
         {
             var cookieOptions = new CookieOptions
             {
@@ -98,7 +98,7 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
 
-        private string ipAddress()
+        private string IpAddress()
         {
             if (Request.Headers.ContainsKey("X-Forwarded-For"))
                 return Request.Headers["X-Forwarded-For"];
