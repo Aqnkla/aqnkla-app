@@ -1,14 +1,14 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Entity;
+using Aqnkla.Authentication.JwtBearer.Model;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
 {
     public interface IAuthenticationService<TKey>
     {
-        AuthenticateResponse<TKey> Authenticate(AuthenticateRequest model, string ipAddress);
+        Task<AuthenticateResponse<TKey>> AuthenticateAsync(AuthenticateRequest model, string ipAddress);
         Task<JwtUserEntity<TKey>> GetByIdAsync(TKey id);
-        AuthenticateResponse<TKey> RefreshToken(string token, string ipAddress);
-        bool RevokeToken(string token, string ipAddress);
-
+        Task<AuthenticateResponse<TKey>> RefreshTokenAsync(string token, string ipAddress);
+        Task<bool> RevokeTokenAsync(string token, string ipAddress);
     }
 }

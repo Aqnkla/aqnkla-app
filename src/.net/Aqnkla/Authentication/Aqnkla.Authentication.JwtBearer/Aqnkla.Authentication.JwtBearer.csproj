@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
+    <ProjectReference Include="..\..\Base\Aqnkla.Service\Aqnkla.Service.csproj" />
     <ProjectReference Include="..\Aqnkla.Authentication.Settings\Aqnkla.Authentication.Settings.csproj" />
   </ItemGroup>
 

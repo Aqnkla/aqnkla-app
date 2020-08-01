@@ -3,23 +3,28 @@ using Aqnkla.Domain.User.Entity;
 using Aqnkla.Domain.User.Repository;
 using Aqnkla.Domain.User.Service;
 using Aqnkla.Service.Base;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Service.User
 {
-    public class UserDataService<T, TKey> : BaseService<T, TKey>, IUserDataService<T, TKey> where T : UserDataEntity<TKey>
+    public class UserDataService<TKey> : BaseService<UserDataEntity<TKey>, TKey>, IUserDataService<TKey>
     {
-        private readonly IUserDataRepository<T, TKey> repository;
+        private readonly IUserDataRepository<TKey> repository;
 
-        public UserDataService(IUserDataRepository<T, TKey> repository) : base(repository)
+        public UserDataService(IUserDataRepository<TKey> repository) : base(repository)
         {
             this.repository = repository;
         }
 
-        public async Task<IList<T>> GetUserDataAsync(TKey userId)
+
+        public async Task<UserDataEntity<TKey>> GetUserByEmailAsync(string emailAddress)
         {
-            return await repository.GetUserData(userId).ConfigureAwait(false);
+            return await repository.GetUserByEmailAsync(emailAddress).ConfigureAwait(false);
+        }
+
+        public async Task<bool> UserEmailExistsAsync(string emailAddress)
+        {
+            return await repository.UserEmailExistsAsync(emailAddress).ConfigureAwait(false);
         }
     }
 }

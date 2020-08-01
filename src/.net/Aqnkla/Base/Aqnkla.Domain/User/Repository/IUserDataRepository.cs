@@ -1,12 +1,12 @@
 ﻿using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.User.Entity;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Domain.User.Repository
 {
-    public interface IUserDataRepository<T, TKey> : IRepository<T, TKey> where T : UserDataEntity<TKey>
+    public interface IUserDataRepository<TKey> : IRepository<UserDataEntity<TKey>, TKey>
     {
-        Task<IList<T>> GetUserData(TKey userId);
+        Task<bool> UserEmailExistsAsync(string emailAddress);
+        Task<UserDataEntity<TKey>> GetUserByEmailAsync(string emailAddress);
     }
 }

@@ -1,7 +1,9 @@
 using Aqnkla.Authentication.JwtBearer.Entity;
 using Aqnkla.Authentication.JwtBearer.Helper;
+using Aqnkla.Authentication.JwtBearer.Model;
 using Aqnkla.Authentication.JwtBearer.Services.JwtUser;
 using Aqnkla.Authentication.Settings.Provider;
+using Aqnkla.Domain.User.Service;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,39 +18,44 @@ namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
     public class AuthenticationService<TKey> : IAuthenticationService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
+        private readonly IAqnklaUserService<TKey> aqnklaUserService;
         private readonly IAuthenticationSettingsProvider authenticationSettingsProvider;
 
         public AuthenticationService(
             IJwtUserService<TKey> jwtUserService,
+            IAqnklaUserService<TKey> aqnklaUserService,
             IAuthenticationSettingsProvider authenticationSettingsProvider
             )
         {
             this.jwtUserService = jwtUserService;
+            this.aqnklaUserService = aqnklaUserService;
             this.authenticationSettingsProvider = authenticationSettingsProvider;
         }
 
-        public AuthenticateResponse<TKey> Authenticate(AuthenticateRequest model, string ipAddress)
+        public async Task<AuthenticateResponse<TKey>> AuthenticateAsync(AuthenticateRequest model, string ipAddress)
         {
             var hash = AuthenticationHelper.GenaretePasswordHash(model.Password);
-            var user = jwtUserService.GetByHash(model.Username, hash);
+            var user = await jwtUserService.GetByHashAsync(model.Username, hash);
 
             // return null if user not found
             if (user == null) return null;
 
+
+            var aqnklaUser = await aqnklaUserService.GetAsync(user.AqnklaUserId);
             // authentication successful so generate jwt and refresh tokens
             var jwtToken = GenerateJwtToken(user);
             var refreshToken = GenerateRefreshToken(ipAddress);
 
             // save refresh token
             user.RefreshTokens.Add(refreshToken);
-            jwtUserService.UpdateAsync(user.Id, user);
+            await jwtUserService.UpdateAsync(user.Id, user);
 
-            return new AuthenticateResponse<TKey>(user, jwtToken, refreshToken.Token);
+            return new AuthenticateResponse<TKey>(user, aqnklaUser, jwtToken, refreshToken.Token);
         }
 
-        public AuthenticateResponse<TKey> RefreshToken(string token, string ipAddress)
+        public async Task<AuthenticateResponse<TKey>> RefreshTokenAsync(string token, string ipAddress)
         {
-            var user = jwtUserService.GetByToken(token);
+            var user = await jwtUserService.GetByTokenAsync(token);
 
             // return null if no user found with token
             if (user == null) return null;
@@ -64,17 +71,18 @@ namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
             refreshToken.RevokedByIp = ipAddress;
             refreshToken.ReplacedByToken = newRefreshToken.Token;
             user.RefreshTokens.Add(newRefreshToken);
-            jwtUserService.UpdateAsync(user.Id, user);
+            var aqnklaUser = await aqnklaUserService.GetAsync(user.AqnklaUserId);
+            await jwtUserService.UpdateAsync(user.Id, user);
 
             // generate new jwt
             var jwtToken = GenerateJwtToken(user);
 
-            return new AuthenticateResponse<TKey>(user, jwtToken, newRefreshToken.Token);
+            return new AuthenticateResponse<TKey>(user, aqnklaUser, jwtToken, newRefreshToken.Token);
         }
 
-        public bool RevokeToken(string token, string ipAddress)
+        public async Task<bool> RevokeTokenAsync(string token, string ipAddress)
         {
-            var user = jwtUserService.GetByToken(token);
+            var user = await jwtUserService.GetByTokenAsync(token);
 
             // return false if no user found with token
             if (user == null) return false;
@@ -87,7 +95,7 @@ namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
             // revoke token and save
             refreshToken.Revoked = DateTime.UtcNow;
             refreshToken.RevokedByIp = ipAddress;
-            jwtUserService.UpdateAsync(user.Id, user);
+            await jwtUserService.UpdateAsync(user.Id, user);
 
             return true;
         }

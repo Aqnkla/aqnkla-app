@@ -1,11 +1,12 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Entity;
 using Aqnkla.Domain.Base.Service;
+using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
 {
     public interface IJwtUserService<TKey> : IService<JwtUserEntity<TKey>, TKey>
     {
-        JwtUserEntity<TKey> GetByHash(string username, string hash);
-        JwtUserEntity<TKey> GetByToken(string token);
+        Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash);
+        Task<JwtUserEntity<TKey>> GetByTokenAsync(string token);
     }
 }

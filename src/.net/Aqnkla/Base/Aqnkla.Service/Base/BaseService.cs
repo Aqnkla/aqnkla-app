@@ -19,6 +19,7 @@ namespace Aqnkla.Service.Base
             this.repository = repository;
         }
 
+
         public virtual async Task AddAsync(T value)
         {
             await repository.AddAsync(value).ConfigureAwait(false);

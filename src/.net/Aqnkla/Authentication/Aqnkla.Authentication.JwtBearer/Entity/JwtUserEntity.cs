@@ -1,4 +1,5 @@
-﻿using Aqnkla.Domain.Base.Entity;
+﻿using Aqnkla.Authentication.JwtBearer.Model;
+using Aqnkla.Domain.Base.Entity;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
@@ -6,12 +7,10 @@ namespace Aqnkla.Authentication.JwtBearer.Entity
 {
     public class JwtUserEntity<TKey> : BaseEntity<TKey>
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Username { get; set; }
+        public TKey AqnklaUserId { get; set; }
 
         [JsonIgnore]
-        public string Password { get; set; }
+        public string PasswordHash { get; set; }
 
         [JsonIgnore]
         public List<RefreshToken> RefreshTokens { get; set; }

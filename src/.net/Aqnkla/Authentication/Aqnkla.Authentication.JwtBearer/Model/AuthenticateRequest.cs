@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Aqnkla.Authentication.JwtBearer.Entity
+namespace Aqnkla.Authentication.JwtBearer.Model
 {
     public class AuthenticateRequest
     {

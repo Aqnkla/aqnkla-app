@@ -1,6 +1,9 @@
-﻿namespace Sorgo.Authentication.JwtBearer.Repository
+﻿using Aqnkla.Authentication.JwtBearer.Entity;
+using Aqnkla.Domain.Base.Repository;
+
+namespace Aqnkla.Authentication.JwtBearer.Repository
 {
-    interface IJwtUserRepository
+    public interface IJwtUserRepository<TKey> : IRepository<JwtUserEntity<TKey>, TKey>
     {
     }
 }
