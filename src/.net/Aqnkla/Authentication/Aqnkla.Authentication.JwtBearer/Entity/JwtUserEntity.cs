@@ -6,7 +6,6 @@ namespace Aqnkla.Authentication.JwtBearer.Entity
 {
     public class JwtUserEntity<TKey> : BaseEntity<TKey>
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Username { get; set; }

@@ -1,4 +1,4 @@
-﻿// Copyright (C) Sorgo - All Rights Reserved
+﻿// Copyright (C) Aqnkla - All Rights Reserved
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
@@ -50,7 +50,7 @@ namespace Aqnkla.Repository.MongoDb.Base
         {
             if (value == null)
             {
-                throw new SorgoNullException(Resources.ErrorUpdateNullObject);
+                throw new AqnklaNullException(Resources.ErrorUpdateNullObject);
             }
             value.Id = id;
             await Collection.ReplaceOneAsync(b => b.Id == id, value).ConfigureAwait(false);
