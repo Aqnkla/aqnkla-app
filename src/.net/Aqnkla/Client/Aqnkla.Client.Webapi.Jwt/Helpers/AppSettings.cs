@@ -1,4 +1,4 @@
-namespace WebApi.Helpers
+namespace Aqnkla.Client.Webapi.Jwt.Helpers
 {
     public class AppSettings
     {
