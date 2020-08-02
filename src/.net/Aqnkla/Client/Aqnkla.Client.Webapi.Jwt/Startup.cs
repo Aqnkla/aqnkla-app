@@ -23,8 +23,6 @@ namespace Sorgo.Client.Webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
-
             services.AddCors();
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
 

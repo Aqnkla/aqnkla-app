@@ -11,12 +11,12 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
-    public class JwtUsersController : ControllerBase
+    [Route("user")]
+    public class JwtUserController : ControllerBase
     {
         private readonly IAuthenticationService<ObjectId> authenticationService;
 
-        public JwtUsersController(IAuthenticationService<ObjectId> authenticationService)
+        public JwtUserController(IAuthenticationService<ObjectId> authenticationService)
         {
             this.authenticationService = authenticationService;
         }
