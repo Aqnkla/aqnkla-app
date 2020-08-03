@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using System;
 using Aqnkla.Authentication.JwtBearer.Model;
-using MongoDB.Bson;
 using Aqnkla.Authentication.JwtBearer.Services.Authentication;
 using System.Threading.Tasks;
 
@@ -11,12 +10,12 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("user")]
-    public class JwtUserController : ControllerBase
+    [Route("user-jwt")]
+    internal class JwtUserController<TKey> : ControllerBase
     {
-        private readonly IAuthenticationService<ObjectId> authenticationService;
+        private readonly IAuthenticationService<TKey> authenticationService;
 
-        public JwtUserController(IAuthenticationService<ObjectId> authenticationService)
+        public JwtUserController(IAuthenticationService<TKey> authenticationService)
         {
             this.authenticationService = authenticationService;
         }
@@ -25,10 +24,10 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
         [HttpPost("authenticate")]
         public async Task<IActionResult> AuthenticateAync([FromBody] AuthenticateRequest model)
         {
-            var response = await authenticationService.AuthenticateAsync(model, IpAddress());
+            var response = await authenticationService.AuthenticateAsync(model, IpAddress()).ConfigureAwait(false);
 
             if (response == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                return BadRequest(new { message = "User name or password is incorrect" });
 
             SetTokenCookie(response.RefreshToken);
 
@@ -40,7 +39,7 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
         public async Task<IActionResult> RefreshTokenAync()
         {
             var refreshToken = Request.Cookies["refreshToken"];
-            var response = await authenticationService.RefreshTokenAsync(refreshToken, IpAddress());
+            var response = await authenticationService.RefreshTokenAsync(refreshToken, IpAddress()).ConfigureAwait(false);
 
             if (response == null)
                 return Unauthorized(new { message = "Invalid token" });
@@ -59,7 +58,7 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
 
-            var response = await authenticationService.RevokeTokenAsync(token, IpAddress());
+            var response = await authenticationService.RevokeTokenAsync(token, IpAddress()).ConfigureAwait(false);
 
             if (!response)
                 return NotFound(new { message = "Token not found" });
@@ -69,18 +68,18 @@ namespace Sorgo.Client.Webapi.Jwt.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAync(ObjectId id)
+        public async Task<IActionResult> GetByIdAync(TKey id)
         {
-            var user = await authenticationService.GetByIdAsync(id);
+            var user = await authenticationService.GetByIdAsync(id).ConfigureAwait(false);
             if (user == null) return NotFound();
 
             return Ok(user);
         }
 
         [HttpGet("{id}/refresh-tokens")]
-        public async Task<IActionResult> GetRefreshTokensAync(ObjectId id)
+        public async Task<IActionResult> GetRefreshTokensAync(TKey id)
         {
-            var user = await authenticationService.GetByIdAsync(id);
+            var user = await authenticationService.GetByIdAsync(id).ConfigureAwait(false);
             if (user == null) return NotFound();
 
             return Ok(user.RefreshTokens);

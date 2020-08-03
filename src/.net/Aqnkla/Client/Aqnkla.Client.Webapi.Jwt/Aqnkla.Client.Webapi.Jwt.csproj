@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Authentication\Aqnkla.Authentication.JwtBearer\Aqnkla.Authentication.JwtBearer.csproj" />
+    <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
+    <ProjectReference Include="..\..\Base\Aqnkla.Service\Aqnkla.Service.csproj" />
   </ItemGroup>
 
 

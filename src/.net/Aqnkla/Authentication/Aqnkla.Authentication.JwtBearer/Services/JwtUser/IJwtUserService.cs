@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
 {
-    public interface IJwtUserService<TKey> : IService<JwtUserEntity<TKey>, TKey>
+    internal interface IJwtUserService<TKey> : IService<JwtUserEntity<TKey>, TKey>
     {
         Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash);
         Task<JwtUserEntity<TKey>> GetByTokenAsync(string token);

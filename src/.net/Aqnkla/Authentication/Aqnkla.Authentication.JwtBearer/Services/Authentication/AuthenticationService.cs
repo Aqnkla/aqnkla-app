@@ -1,8 +1,8 @@
 using Aqnkla.Authentication.JwtBearer.Entity;
 using Aqnkla.Authentication.JwtBearer.Helper;
 using Aqnkla.Authentication.JwtBearer.Model;
+using Aqnkla.Authentication.JwtBearer.Provider;
 using Aqnkla.Authentication.JwtBearer.Services.JwtUser;
-using Aqnkla.Authentication.Settings.Provider;
 using Aqnkla.Domain.User.Service;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
 {
-    public class AuthenticationService<TKey> : IAuthenticationService<TKey>
+    internal class AuthenticationService<TKey> : IAuthenticationService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
         private readonly IAqnklaUserService<TKey> aqnklaUserService;
@@ -38,7 +38,10 @@ namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
             var user = await jwtUserService.GetByHashAsync(model.Username, hash);
 
             // return null if user not found
-            if (user == null) return null;
+            if (user == null)
+            {
+                return null;
+            }
 
 
             var aqnklaUser = await aqnklaUserService.GetAsync(user.AqnklaUserId);

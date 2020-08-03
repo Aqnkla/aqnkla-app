@@ -1,7 +1,6 @@
 
-
 using Aqnkla.Domain.User.Entity;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Aqnkla.Authentication.JwtBearer.Entity
 {

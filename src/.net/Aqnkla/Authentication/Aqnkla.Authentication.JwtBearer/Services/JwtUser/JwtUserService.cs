@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
 {
-    public class JwtUserService<TKey> : BaseService<JwtUserEntity<TKey>, TKey>, IJwtUserService<TKey>
+    internal class JwtUserService<TKey> : BaseService<JwtUserEntity<TKey>, TKey>, IJwtUserService<TKey>
     {
         private readonly IJwtUserRepository<TKey> repository;
 
@@ -15,12 +15,12 @@ namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
             this.repository = repository;
         }
 
-        public Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash)
+        public async Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash)
         {
             throw new NotImplementedException();
         }
 
-        public Task<JwtUserEntity<TKey>> GetByTokenAsync(string token)
+        public async Task<JwtUserEntity<TKey>> GetByTokenAsync(string token)
         {
             throw new NotImplementedException();
         }

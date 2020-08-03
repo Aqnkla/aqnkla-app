@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
 {
-    public interface IAuthenticationService<TKey>
+    internal interface IAuthenticationService<TKey>
     {
         Task<AuthenticateResponse<TKey>> AuthenticateAsync(AuthenticateRequest model, string ipAddress);
         Task<JwtUserEntity<TKey>> GetByIdAsync(TKey id);

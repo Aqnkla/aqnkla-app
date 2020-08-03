@@ -2,7 +2,7 @@
 
 namespace Aqnkla.Authentication.JwtBearer.Helper
 {
-    public static class AuthenticationHelper
+    internal static class AuthenticationHelper
     {
         public static string GenaretePasswordHash(string password)
         {
