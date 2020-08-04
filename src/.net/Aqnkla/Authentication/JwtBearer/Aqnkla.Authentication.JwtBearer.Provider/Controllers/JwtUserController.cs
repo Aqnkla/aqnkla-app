@@ -2,11 +2,11 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using System;
-using Aqnkla.Authentication.JwtBearer.Model;
-using Aqnkla.Authentication.JwtBearer.Services.Authentication;
 using System.Threading.Tasks;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication;
+using Aqnkla.Authentication.JwtBearer.Core.Model;
 
-namespace Sorgo.Client.Webapi.Jwt.Controllers
+namespace Aqnkla.Authentication.JwtBearer.Provider.Controllers
 {
     [Authorize]
     [ApiController]

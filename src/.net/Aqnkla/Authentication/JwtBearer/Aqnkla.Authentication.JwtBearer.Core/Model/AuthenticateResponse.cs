@@ -1,8 +1,8 @@
-
+using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Domain.User.Entity;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
-namespace Aqnkla.Authentication.JwtBearer.Entity
+namespace Aqnkla.Authentication.JwtBearer.Core.Model
 {
     public class AuthenticateResponse<TKey>
     {

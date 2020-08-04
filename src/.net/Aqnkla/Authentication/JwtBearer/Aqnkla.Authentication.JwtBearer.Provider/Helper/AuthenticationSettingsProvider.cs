@@ -1,4 +1,4 @@
-﻿namespace Aqnkla.Authentication.JwtBearer.Provider
+﻿namespace Aqnkla.Authentication.JwtBearer.Provider.Helper
 {
     public interface IAuthenticationSettingsProvider
     {

@@ -1,12 +1,12 @@
-﻿using Aqnkla.Authentication.JwtBearer.Entity;
-using Aqnkla.Authentication.JwtBearer.Repository;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
+using Aqnkla.Authentication.JwtBearer.Core.Repository;
 using Aqnkla.Service.Base;
 using System;
 using System.Threading.Tasks;
 
-namespace Aqnkla.Authentication.JwtBearer.Services.JwtUser
+namespace Aqnkla.Authentication.JwtBearer.Core.Services
 {
-    internal class JwtUserService<TKey> : BaseService<JwtUserEntity<TKey>, TKey>, IJwtUserService<TKey>
+    public class JwtUserService<TKey> : BaseService<JwtUserEntity<TKey>, TKey>, IJwtUserService<TKey>
     {
         private readonly IJwtUserRepository<TKey> repository;
 

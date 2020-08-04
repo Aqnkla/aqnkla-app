@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aqnkla.Authentication.JwtBearer.Helper
+namespace Aqnkla.Authentication.JwtBearer.Provider.Helper
 {
     internal static class AuthenticationHelper
     {

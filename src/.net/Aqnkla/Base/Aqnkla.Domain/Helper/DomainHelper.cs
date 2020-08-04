@@ -15,7 +15,7 @@ namespace Aqnkla.Domain.Helper
                 return string.Empty;
             }
             var fullName = type.FullName;
-            return fullName.Substring(0, fullName.IndexOf('.'));
+            return fullName.Substring(0, fullName.IndexOf('.', StringComparison.Ordinal));
         }
 
         public static string GetTypeName(Type type)
@@ -25,9 +25,9 @@ namespace Aqnkla.Domain.Helper
                 return string.Empty;
             }
             var name = type.Name;
-            if (name.Contains('`'))
+            if (name.Contains('`', StringComparison.Ordinal))
             {
-                name = name.Substring(0, name.IndexOf('`'));
+                name = name.Substring(0, name.IndexOf('`', StringComparison.Ordinal));
             }
             return name;
         }

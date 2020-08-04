@@ -1,9 +1,9 @@
-﻿using Aqnkla.Authentication.JwtBearer.Model;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
 using Aqnkla.Domain.Base.Entity;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Aqnkla.Authentication.JwtBearer.Entity
+namespace Aqnkla.Authentication.JwtBearer.Core.Entity
 {
     public class JwtUserEntity<TKey> : BaseEntity<TKey>
     {

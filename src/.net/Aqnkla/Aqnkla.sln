@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Service", "Base\Aqnk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Client.Webapi.Jwt", "Client\Aqnkla.Client.Webapi.Jwt\Aqnkla.Client.Webapi.Jwt.csproj", "{37D7B527-3C34-4A8D-8438-D3556E4EE662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Authentication.JwtBearer", "Authentication\Aqnkla.Authentication.JwtBearer\Aqnkla.Authentication.JwtBearer.csproj", "{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JwtBearer", "JwtBearer", "{AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Authentication.JwtBearer.Core", "Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Core\Aqnkla.Authentication.JwtBearer.Core.csproj", "{0A2A3E11-0AF7-4FD6-AD25-314F354FC852}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Authentication.JwtBearer.Provider", "Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Provider\Aqnkla.Authentication.JwtBearer.Provider.csproj", "{051DB52A-1128-428F-8500-3B31933121D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +47,14 @@ Global
 		{37D7B527-3C34-4A8D-8438-D3556E4EE662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37D7B527-3C34-4A8D-8438-D3556E4EE662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37D7B527-3C34-4A8D-8438-D3556E4EE662}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051DB52A-1128-428F-8500-3B31933121D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051DB52A-1128-428F-8500-3B31933121D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051DB52A-1128-428F-8500-3B31933121D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051DB52A-1128-428F-8500-3B31933121D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,7 +64,9 @@ Global
 		{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E} = {3E6A4E43-FB02-4084-9F84-66D0E8E3E46B}
 		{F5097423-4275-4D99-8A47-69CC4851AAFA} = {3E6A4E43-FB02-4084-9F84-66D0E8E3E46B}
 		{37D7B527-3C34-4A8D-8438-D3556E4EE662} = {F9B2FC70-9D50-4780-8DB6-1519728DC603}
-		{DBAA8F24-680C-4EBF-8A38-E16D1D5B1716} = {B1591D25-84DB-40D3-AAC0-0E14A1EA462C}
+		{AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E} = {B1591D25-84DB-40D3-AAC0-0E14A1EA462C}
+		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852} = {AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}
+		{051DB52A-1128-428F-8500-3B31933121D5} = {AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}

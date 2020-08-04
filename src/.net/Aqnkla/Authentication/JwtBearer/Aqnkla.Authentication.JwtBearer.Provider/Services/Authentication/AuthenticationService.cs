@@ -1,8 +1,7 @@
-using Aqnkla.Authentication.JwtBearer.Entity;
-using Aqnkla.Authentication.JwtBearer.Helper;
-using Aqnkla.Authentication.JwtBearer.Model;
-using Aqnkla.Authentication.JwtBearer.Provider;
-using Aqnkla.Authentication.JwtBearer.Services.JwtUser;
+using Aqnkla.Authentication.JwtBearer.Core.Entity;
+using Aqnkla.Authentication.JwtBearer.Core.Model;
+using Aqnkla.Authentication.JwtBearer.Core.Services;
+using Aqnkla.Authentication.JwtBearer.Provider.Helper;
 using Aqnkla.Domain.User.Service;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -13,9 +12,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
+namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication
 {
-    internal class AuthenticationService<TKey> : IAuthenticationService<TKey>
+    public class AuthenticationService<TKey> : IAuthenticationService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
         private readonly IAqnklaUserService<TKey> aqnklaUserService;
@@ -127,7 +126,7 @@ namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
             return tokenHandler.WriteToken(token);
         }
 
-        private RefreshToken GenerateRefreshToken(string ipAddress)
+        private static RefreshToken GenerateRefreshToken(string ipAddress)
         {
             using var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
             var randomBytes = new byte[64];

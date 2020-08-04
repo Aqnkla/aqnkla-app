@@ -1,9 +1,11 @@
-using Aqnkla.Client.Webapi.Jwt.Extension;
+using Aqnkla.Repository.MongoDb.User;
+using Aqnkla.Authentication.JwtBearer.Provider.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MongoDB.Bson;
 
 namespace Sorgo.Client.Webapi
 {
@@ -21,8 +23,8 @@ namespace Sorgo.Client.Webapi
         {
             services.AddCors();
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
-            services.AddJwtAuthentication(Configuration);
 
+            services.AddJwtAuthentication<ObjectId, MongoDbJwtUserRepository>(Configuration);
             // configure DI for application services
             //services.AddScoped<IUserService, UserService>();
         }

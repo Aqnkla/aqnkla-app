@@ -1,8 +1,8 @@
-﻿using Aqnkla.Authentication.JwtBearer.Entity;
-using Aqnkla.Authentication.JwtBearer.Model;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
+using Aqnkla.Authentication.JwtBearer.Core.Model;
 using System.Threading.Tasks;
 
-namespace Aqnkla.Authentication.JwtBearer.Services.Authentication
+namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication
 {
     internal interface IAuthenticationService<TKey>
     {
