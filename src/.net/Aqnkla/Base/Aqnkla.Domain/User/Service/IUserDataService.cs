@@ -1,12 +1,12 @@
 ﻿using Aqnkla.Domain.Base.Service;
 using Aqnkla.Domain.User.Entity;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Domain.User.Service
 {
-    public interface IUserDataService<T, TKey> : IService<T, TKey> where T : UserDataEntity<TKey>
+    public interface IUserDataService<TKey> : IService<UserDataEntity<TKey>, TKey>
     {
-        Task<IList<T>> GetUserDataAsync(TKey userId);
+        Task<bool> UserEmailExistsAsync(string emailAddress);
+        Task<UserDataEntity<TKey>> GetUserByEmailAsync(string emailAddress);
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Repository.MongoDb.User
 {
-    public class MongoDbUserRepository : MongoDbRepository<UserEntity<ObjectId>>, IUserRepository<ObjectId>
+    public class MongoDbUserRepository : MongoDbRepository<AqnklaUserEntity<ObjectId>>, IAqnklaUserRepository<ObjectId>
     {
-        public Task<UserEntity<ObjectId>> GetUserAsync(string userId)
+        public Task<AqnklaUserEntity<ObjectId>> GetUserAsync(string uniqueName)
         {
             throw new NotImplementedException();
         }
@@ -19,7 +19,7 @@ namespace Aqnkla.Repository.MongoDb.User
             throw new NotImplementedException();
         }
 
-        public Task<bool> UserExistsAsync(string userId)
+        public Task<bool> UserExistsAsync(string uniqueName)
         {
             throw new NotImplementedException();
         }

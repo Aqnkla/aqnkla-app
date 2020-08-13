@@ -19,11 +19,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
-    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.10.4" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.0" />
+    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.11.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Core\Aqnkla.Authentication.JwtBearer.Core.csproj" />
     <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
   </ItemGroup>
 

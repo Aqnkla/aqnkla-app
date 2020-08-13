@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Aqnkla.Authentication.JwtBearer.Entity
+namespace Aqnkla.Authentication.JwtBearer.Core.Model
 {
     public class RefreshToken
     {

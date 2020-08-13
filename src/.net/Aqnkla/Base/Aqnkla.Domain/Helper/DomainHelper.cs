@@ -1,9 +1,8 @@
-﻿// Copyright (C) Sorgo - All Rights Reserved
+﻿// Copyright (C) Aqnkla - All Rights Reserved
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential.
 // Written by Mariusz Nowak <dev@sorgo.net>, 2019
 using System;
-using System.Linq;
 
 namespace Aqnkla.Domain.Helper
 {
@@ -16,7 +15,7 @@ namespace Aqnkla.Domain.Helper
                 return string.Empty;
             }
             var fullName = type.FullName;
-            return fullName.Substring(0, fullName.IndexOf('.'));
+            return fullName.Substring(0, fullName.IndexOf('.', StringComparison.Ordinal));
         }
 
         public static string GetTypeName(Type type)
@@ -26,9 +25,9 @@ namespace Aqnkla.Domain.Helper
                 return string.Empty;
             }
             var name = type.Name;
-            if (name.Contains('`'))
+            if (name.Contains('`', StringComparison.Ordinal))
             {
-                name = name.Substring(0, name.IndexOf('`'));
+                name = name.Substring(0, name.IndexOf('`', StringComparison.Ordinal));
             }
             return name;
         }
