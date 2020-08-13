@@ -26,5 +26,5 @@ steps:
     command: 'custom'
     workingDir: 'src/angular/aqnkla'
     customCommand: 'run build-prod'
-  displayName: 'build all applications'
+  displayName: 'build production applications'
     
