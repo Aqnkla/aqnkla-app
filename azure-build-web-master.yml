@@ -27,4 +27,4 @@ steps:
     workingDir: 'src/angular/aqnkla'
     customCommand: 'run build-prod'
   displayName: 'build production applications'
-    
+- task: PublishBuildArtifacts@1
