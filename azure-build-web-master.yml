@@ -30,5 +30,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     ArtifactName: 'webApp'
+    publishLocation: Container
+    TargetPath: ''
     pathToPublish: '$(Build.ArtifactStagingDirectory)'
 
