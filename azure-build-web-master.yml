@@ -28,3 +28,7 @@ steps:
     customCommand: 'run build-prod'
   displayName: 'build production applications'
 - task: PublishBuildArtifacts@1
+  inputs:
+    ArtifactName: 'webApp'
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+
