@@ -46,6 +46,12 @@
                 "pl"
               ]
             },
+            "en": {
+
+              "localize": [
+                "en"
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
