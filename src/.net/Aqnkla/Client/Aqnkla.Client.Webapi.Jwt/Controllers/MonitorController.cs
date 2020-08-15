@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Sorgo.Client.Webapi.Jwt.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MonitorController : ControllerBase
     {

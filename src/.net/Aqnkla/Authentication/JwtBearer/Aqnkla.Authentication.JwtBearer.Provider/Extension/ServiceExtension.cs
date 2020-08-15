@@ -48,6 +48,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
             services.AddSingleton<IJwtUserRepository<TKey>, TUserRepository>();
 
+
         }
     }
 }
