@@ -32,10 +32,10 @@ steps:
     rootFolderOrFile: 'src/angular/aqnkla/dist/prod'
     includeRootFolder: true
     archiveType: 'zip'
-    archiveFile: 'src/angular/aqnkla/dist/aqnkla-$(Build.BuildId).zip'
+    archiveFile: 'src/packages/aqnkla-$(Build.BuildId).zip'
     replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'src/angular/aqnkla/dist/'
+    PathtoPublish: 'src/packages'
     ArtifactName: 'aqnkla-angular'
     publishLocation: 'Container'
