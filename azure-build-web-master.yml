@@ -27,9 +27,15 @@ steps:
     workingDir: 'src/angular/aqnkla'
     customCommand: 'run build-prod'
   displayName: 'build production applications'
-
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'src/angular/aqnkla/dist/prod'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'src/angular/aqnkla/dist/aqnkla-$(Build.BuildId).zip'
+    replaceExistingArchive: true
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'src/angular/aqnkla/dist/prod'
+    PathtoPublish: 'src/angular/aqnkla/dist/'
     ArtifactName: 'aqnkla-angular'
     publishLocation: 'Container'
