@@ -6,6 +6,8 @@ using Aqnkla.Domain.Base.Entity;
 using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.ExceptionAqnkla;
 using Aqnkla.Repository.MongoDb.Context;
+using Aqnkla.Repository.MongoDb.Settings;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Sorgo.Repository.MongoDb.Properties;
@@ -18,9 +20,9 @@ namespace Aqnkla.Repository.MongoDb.Base
     {
         protected IMongoCollection<T> Collection { get; private set; }
 
-        public MongoDbRepository()
+        public MongoDbRepository(IOptions<MongoDbSettings> options)
         {
-            var context = new BaseMongoContext<T>();
+            var context = new BaseMongoContext<T>(options);
             Collection = context.MongoCollection;
         }
 
