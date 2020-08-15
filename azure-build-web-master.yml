@@ -26,6 +26,7 @@ steps:
     command: 'custom'
     workingDir: 'src/angular/aqnkla'
     customCommand: 'run build-prod'
+    publishEndpoint: '$(Build.ArtifactStagingDirectory)'
   displayName: 'build production applications'
 - task: PublishBuildArtifacts@1
   inputs:
