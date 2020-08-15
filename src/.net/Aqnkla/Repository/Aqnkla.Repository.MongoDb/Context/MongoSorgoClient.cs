@@ -11,7 +11,7 @@ namespace Aqnkla.Repository.MongoDb.Context
     {
         public static MongoClient GetClient(MongoDbSettings settings)
         {
-            return new MongoClient();
+            return new MongoClient(settings.ConnectionsString);
         }
     }
 }

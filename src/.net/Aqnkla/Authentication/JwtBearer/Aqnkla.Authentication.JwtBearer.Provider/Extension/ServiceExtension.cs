@@ -1,5 +1,4 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
-using Aqnkla.Authentication.JwtBearer.Core.Repository;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,8 +12,8 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
 {
     public static class ServiceExtension
     {
-        public static void AddJwtAuthentication<TKey, TUserRepository>(this IServiceCollection services,
-            IConfiguration configuration) where TUserRepository : class, IJwtUserRepository<TKey>
+        public static void AddJwtAuthentication<TKey>(this IServiceCollection services,
+            IConfiguration configuration)
         {
 
             // configure strongly typed settings objects
@@ -39,15 +38,12 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
                     ClockSkew = TimeSpan.Zero
                 };
             });
             services.AddControllers();
             services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
-            services.AddSingleton<IJwtUserRepository<TKey>, TUserRepository>();
-
 
         }
     }

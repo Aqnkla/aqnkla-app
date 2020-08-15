@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{3E6A4E43-FB02-4084-9F84-66D0E8E3E46B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Repository.MongoDb", "Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj", "{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Domain", "Base\Aqnkla.Domain\Aqnkla.Domain.csproj", "{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Service", "Base\Aqnkla.Service\Aqnkla.Service.csproj", "{F5097423-4275-4D99-8A47-69CC4851AAFA}"
@@ -25,16 +23,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Authentication.JwtBe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Client.Webapi", "Client\Aqnkla.Client.Webapi\Aqnkla.Client.Webapi.csproj", "{AB3DF316-638E-4A83-BE11-5E932B03B13A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Repository.MongoDb", "Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj", "{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,18 +51,22 @@ Global
 		{AB3DF316-638E-4A83-BE11-5E932B03B13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB3DF316-638E-4A83-BE11-5E932B03B13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB3DF316-638E-4A83-BE11-5E932B03B13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B8DADAD2-9472-4CF5-B62C-96EEEA06E3E5} = {5B19191C-D1E5-4C45-8CAA-EF911E346145}
 		{95C19F10-C4E5-49A1-92B0-ABF9213E0F8E} = {3E6A4E43-FB02-4084-9F84-66D0E8E3E46B}
 		{F5097423-4275-4D99-8A47-69CC4851AAFA} = {3E6A4E43-FB02-4084-9F84-66D0E8E3E46B}
 		{AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E} = {B1591D25-84DB-40D3-AAC0-0E14A1EA462C}
 		{0A2A3E11-0AF7-4FD6-AD25-314F354FC852} = {AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}
 		{051DB52A-1128-428F-8500-3B31933121D5} = {AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}
 		{AB3DF316-638E-4A83-BE11-5E932B03B13A} = {F9B2FC70-9D50-4780-8DB6-1519728DC603}
+		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE} = {5B19191C-D1E5-4C45-8CAA-EF911E346145}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}

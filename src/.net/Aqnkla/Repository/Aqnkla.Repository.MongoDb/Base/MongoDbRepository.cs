@@ -10,7 +10,6 @@ using Aqnkla.Repository.MongoDb.Settings;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Sorgo.Repository.MongoDb.Properties;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -52,7 +51,7 @@ namespace Aqnkla.Repository.MongoDb.Base
         {
             if (value == null)
             {
-                throw new AqnklaNullException(Resources.ErrorUpdateNullObject);
+                throw new AqnklaNullException("Error Update Null Object");
             }
             value.Id = id;
             await Collection.ReplaceOneAsync(b => b.Id == id, value).ConfigureAwait(false);

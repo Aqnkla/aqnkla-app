@@ -2,6 +2,7 @@ using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Model;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
 using Aqnkla.Authentication.JwtBearer.Provider.Helper;
+using Aqnkla.Authentication.JwtBearer.Provider.Helper.AuthenticationSettings;
 using Aqnkla.Domain.User.Service;
 using Microsoft.IdentityModel.Tokens;
 using System;
