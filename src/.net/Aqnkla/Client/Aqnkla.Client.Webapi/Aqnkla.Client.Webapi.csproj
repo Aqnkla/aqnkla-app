@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Sorgo.Client.Webapi.Jwt</AssemblyName>
+    <AssemblyName>Aqnkla.Client.Webapi</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

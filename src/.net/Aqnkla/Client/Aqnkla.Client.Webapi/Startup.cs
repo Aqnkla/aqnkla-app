@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Bson;
 
-namespace Sorgo.Client.Webapi
+namespace Aqnkla.Client.Webapi
 {
     public class Startup
     {

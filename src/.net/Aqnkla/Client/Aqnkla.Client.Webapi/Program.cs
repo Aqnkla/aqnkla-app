@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Sorgo.Client.Webapi
+namespace Aqnkla.Client.Webapi
 {
     public static class Program
     {

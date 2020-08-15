@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Sorgo.Client.Webapi.Jwt.Controllers
+namespace Aqnkla.Client.Webapi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
