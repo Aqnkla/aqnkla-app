@@ -20,6 +20,7 @@ namespace Aqnkla.Client.Webapi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            logger.LogDebug("get message received");
             var values = new List<string>
             {
                 DateTime.Now.ToLongDateString(),

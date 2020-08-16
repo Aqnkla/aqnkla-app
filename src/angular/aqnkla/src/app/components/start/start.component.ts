@@ -20,8 +20,10 @@ export class StartComponent {
         this.auhticatedChange(b)
       )
     );
-    const message = networkService.get();
-    console.log('http get', message);
+    const message = networkService
+      .get()
+      .subscribe((b) => console.log('http get 1', b));
+    console.log('http get 1', message);
   }
 
   private auhticatedChange(isAuhticated: boolean): void {
