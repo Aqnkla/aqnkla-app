@@ -5,19 +5,27 @@ using System;
 using System.Threading.Tasks;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication;
 using Aqnkla.Authentication.JwtBearer.Core.Model;
+using MongoDB.Bson;
 
-namespace Aqnkla.Authentication.JwtBearer.Provider.Controllers
+namespace Aqnkla.Client.Webapi.Controllers
 {
     [Authorize]
+    [Route("user")]
     [ApiController]
-    [Route("user-jwt")]
-    public class JwtUserController<TKey> : ControllerBase
+    public class JwtUserController : ControllerBase
     {
-        private readonly IAuthenticationService<TKey> authenticationService;
+        private readonly IAuthenticationService<ObjectId> authenticationService;
 
-        public JwtUserController(IAuthenticationService<TKey> authenticationService)
+        public JwtUserController(IAuthenticationService<ObjectId> authenticationService)
         {
             this.authenticationService = authenticationService;
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public string Test()
+        {
+            return "tedddddd";
         }
 
         [AllowAnonymous]
@@ -68,7 +76,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAync(TKey id)
+        public async Task<IActionResult> GetByIdAync(ObjectId id)
         {
             var user = await authenticationService.GetByIdAsync(id).ConfigureAwait(false);
             if (user == null) return NotFound();
@@ -77,7 +85,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Controllers
         }
 
         [HttpGet("{id}/refresh-tokens")]
-        public async Task<IActionResult> GetRefreshTokensAync(TKey id)
+        public async Task<IActionResult> GetRefreshTokensAync(ObjectId id)
         {
             var user = await authenticationService.GetByIdAsync(id).ConfigureAwait(false);
             if (user == null) return NotFound();

@@ -41,7 +41,6 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
                     ClockSkew = TimeSpan.Zero
                 };
             });
-            services.AddControllers();
             services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
 
