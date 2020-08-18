@@ -29,5 +29,10 @@ namespace Aqnkla.Repository.MongoDb.User
 
             return await value.FirstOrDefaultAsync().ConfigureAwait(false);
         }
+
+        public Task<JwtUserEntity<ObjectId>> GetByValidTokenAsync(string token)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

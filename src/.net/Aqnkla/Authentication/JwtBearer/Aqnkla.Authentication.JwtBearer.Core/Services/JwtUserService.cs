@@ -20,6 +20,11 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Services
             this.aqnklaUserService = aqnklaUserService;
         }
 
+        public Task<JwtUserEntity<TKey>> GetByEmailAsync(string email)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash)
         {
             var user = await aqnklaUserService.GetUserAsync(username).ConfigureAwait(false);
@@ -33,6 +38,11 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Services
         public async Task<JwtUserEntity<TKey>> GetByTokenAsync(string token)
         {
             return await repository.GetByTokenAsync(token).ConfigureAwait(false);
+        }
+
+        public async Task<JwtUserEntity<TKey>> GetByVakidTokenAsync(string token)
+        {
+            return await repository.GetByValidTokenAsync(token).ConfigureAwait(false);
         }
     }
 }

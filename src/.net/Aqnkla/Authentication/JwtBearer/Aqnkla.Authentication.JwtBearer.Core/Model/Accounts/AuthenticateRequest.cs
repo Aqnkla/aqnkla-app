@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Aqnkla.Authentication.JwtBearer.Core.Model
+namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
 {
     public class AuthenticateRequest
     {
         [Required]
-        public string Username { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
 
         [Required]
         public string Password { get; set; }

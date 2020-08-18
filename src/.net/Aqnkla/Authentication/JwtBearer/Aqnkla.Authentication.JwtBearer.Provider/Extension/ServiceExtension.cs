@@ -1,6 +1,6 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
-using Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication;
+using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,7 +41,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
                     ClockSkew = TimeSpan.Zero
                 };
             });
-            services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
+            //services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
 
         }

@@ -1,64 +1,63 @@
-using Aqnkla.Authentication.JwtBearer.Provider.Extension;
+﻿using Aqnkla.Authentication.JwtBearer.Provider.Extension;
+using Aqnkla.Authentication.JwtBearer.Provider.Middleware;
+using Aqnkla.Repository.MongoDb.Settings;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using MongoDB.Bson;
-using Aqnkla.Repository.MongoDb.Extension;
-using Aqnkla.Client.Webapi.Extension;
-using Aqnkla.Domain.User.Service;
-using Aqnkla.Service.User;
-using Aqnkla.Domain.User.Repository;
-using Aqnkla.Repository.MongoDb.User;
+using System;
 
 namespace Aqnkla.Client.Webapi
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
-
+        // add services to the DI container
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
-            services.RegisterMongoDbRepository(Configuration);
-            services.RegisterUser<ObjectId>();
             services.AddJwtAuthentication<ObjectId>(Configuration);
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddSwaggerGen();
 
-            //services.AddSingleton<IAqnklaUserRepository<ObjectId>, MongoDbUserRepository>();
-            //MongoDbUserRepository: MongoDbRepository<AqnklaUserEntity<ObjectId>>, IAqnklaUserRepository<ObjectId>
+            // configure strongly typed settings object
+            services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
+
         }
 
-        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        // configure the HTTP request pipeline
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
-            app.UseHttpsRedirection();
+            // generated swagger json and swagger ui middleware
+            app.UseSwagger();
+            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Sign-up and Verification API"));
 
             app.UseRouting();
 
+            // global cors policy
             app.UseCors(x => x
                 .SetIsOriginAllowed(origin => true)
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials());
 
-            app.UseAuthentication();
-            app.UseAuthorization();
+            // global error handler
+            app.UseMiddleware<ErrorHandlerMiddleware>();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            // custom jwt auth middleware
+            app.UseMiddleware<JwtMiddleware>();
+
+            app.UseEndpoints(x => x.MapControllers());
         }
     }
 }

@@ -1,25 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Aqnkla.Client.Webapi</AssemblyName>
   </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.0" />
+    <PackageReference Include="MailKit" Version="2.8.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
-      <PrivateAssets>all</PrivateAssets>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="MongoDB.Bson" Version="2.11.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
   </ItemGroup>
-
   <ItemGroup>
+    <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Core\Aqnkla.Authentication.JwtBearer.Core.csproj" />
     <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Provider\Aqnkla.Authentication.JwtBearer.Provider.csproj" />
-    <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
-    <ProjectReference Include="..\..\Base\Aqnkla.Service\Aqnkla.Service.csproj" />
     <ProjectReference Include="..\..\Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj" />
   </ItemGroup>
-
-
 </Project>

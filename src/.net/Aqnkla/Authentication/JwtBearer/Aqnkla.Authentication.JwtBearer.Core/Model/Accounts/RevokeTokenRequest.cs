@@ -1,4 +1,4 @@
-namespace Aqnkla.Authentication.JwtBearer.Core.Model
+namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
 {
     public class RevokeTokenRequest
     {
