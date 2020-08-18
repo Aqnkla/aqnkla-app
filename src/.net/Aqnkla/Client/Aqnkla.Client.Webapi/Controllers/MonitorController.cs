@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -7,6 +8,7 @@ namespace Aqnkla.Client.Webapi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class MonitorController : ControllerBase
     {
         private readonly ILogger<MonitorController> logger;

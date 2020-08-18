@@ -7,6 +7,10 @@ using Microsoft.Extensions.Hosting;
 using MongoDB.Bson;
 using Aqnkla.Repository.MongoDb.Extension;
 using Aqnkla.Client.Webapi.Extension;
+using Aqnkla.Domain.User.Service;
+using Aqnkla.Service.User;
+using Aqnkla.Domain.User.Repository;
+using Aqnkla.Repository.MongoDb.User;
 
 namespace Aqnkla.Client.Webapi
 {
@@ -26,6 +30,9 @@ namespace Aqnkla.Client.Webapi
             services.RegisterMongoDbRepository(Configuration);
             services.RegisterUser<ObjectId>();
             services.AddJwtAuthentication<ObjectId>(Configuration);
+
+            //services.AddSingleton<IAqnklaUserRepository<ObjectId>, MongoDbUserRepository>();
+            //MongoDbUserRepository: MongoDbRepository<AqnklaUserEntity<ObjectId>>, IAqnklaUserRepository<ObjectId>
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)

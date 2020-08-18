@@ -21,13 +21,6 @@ namespace Aqnkla.Client.Webapi.Controllers
             this.authenticationService = authenticationService;
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public string Test()
-        {
-            return "tedddddd";
-        }
-
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public async Task<IActionResult> AuthenticateAync([FromBody] AuthenticateRequest model)
