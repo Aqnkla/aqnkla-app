@@ -6,9 +6,10 @@ using Aqnkla.Domain.Base.Entity;
 using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.ExceptionAqnkla;
 using Aqnkla.Repository.MongoDb.Context;
+using Aqnkla.Repository.MongoDb.Settings;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using Sorgo.Repository.MongoDb.Properties;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,9 +19,9 @@ namespace Aqnkla.Repository.MongoDb.Base
     {
         protected IMongoCollection<T> Collection { get; private set; }
 
-        public MongoDbRepository()
+        public MongoDbRepository(IOptions<MongoDbSettings> options)
         {
-            var context = new BaseMongoContext<T>();
+            var context = new BaseMongoContext<T>(options);
             Collection = context.MongoCollection;
         }
 
@@ -50,7 +51,7 @@ namespace Aqnkla.Repository.MongoDb.Base
         {
             if (value == null)
             {
-                throw new AqnklaNullException(Resources.ErrorUpdateNullObject);
+                throw new AqnklaNullException("Error Update Null Object");
             }
             value.Id = id;
             await Collection.ReplaceOneAsync(b => b.Id == id, value).ConfigureAwait(false);

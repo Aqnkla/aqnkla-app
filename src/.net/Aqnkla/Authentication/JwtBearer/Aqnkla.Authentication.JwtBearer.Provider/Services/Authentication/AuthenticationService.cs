@@ -1,143 +1,98 @@
-using Aqnkla.Authentication.JwtBearer.Core.Entity;
-using Aqnkla.Authentication.JwtBearer.Core.Model;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
+using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
-using Aqnkla.Authentication.JwtBearer.Provider.Helper;
-using Aqnkla.Domain.User.Service;
-using Microsoft.IdentityModel.Tokens;
+using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Convert;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Token;
+using Aqnkla.Domain.Password.Service;
 using System;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication
 {
-    public class AuthenticationService<TKey> : IAuthenticationService<TKey>
+    public class AuthenticationService<TKey>: IAuthenticationService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
-        private readonly IAqnklaUserService<TKey> aqnklaUserService;
-        private readonly IAuthenticationSettingsProvider authenticationSettingsProvider;
+        private readonly IConvertService<TKey> convertService;
+        private readonly ITokenService<TKey> tokenService;
+        private readonly IPasswordService passwordService;
 
         public AuthenticationService(
             IJwtUserService<TKey> jwtUserService,
-            IAqnklaUserService<TKey> aqnklaUserService,
-            IAuthenticationSettingsProvider authenticationSettingsProvider
-            )
+            IConvertService<TKey> convertService,
+            ITokenService<TKey> tokenService,
+            IPasswordService passwordService)
         {
             this.jwtUserService = jwtUserService;
-            this.aqnklaUserService = aqnklaUserService;
-            this.authenticationSettingsProvider = authenticationSettingsProvider;
+            this.convertService = convertService;
+            this.tokenService = tokenService;
+            this.passwordService = passwordService;
         }
-
-        public async Task<AuthenticateResponse<TKey>> AuthenticateAsync(AuthenticateRequest model, string ipAddress)
+        public async Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model, string ipAddress)
         {
-            var hash = AuthenticationHelper.GenaretePasswordHash(model.Password);
-            var user = await jwtUserService.GetByHashAsync(model.Username, hash);
+            var account = await jwtUserService.GetByEmailAsync(model.Email);
 
-            // return null if user not found
-            if (user == null)
+            if (account == null || !account.IsVerified || !passwordService.Verify(model.Password, account.PasswordHash))
+                throw new JwtAppException("Email or password is incorrect");
+
+            // authentication successful so generate JWT and refresh tokens
+            var jwtToken = tokenService.GenerateJwtToken(account);
+            var refreshToken = tokenService.GenerateRefreshToken(ipAddress);
+
+
+            if (account.RefreshTokens == null)
             {
-                return null;
+                account.RefreshTokens = new List<RefreshToken>();
             }
 
-
-            var aqnklaUser = await aqnklaUserService.GetAsync(user.AqnklaUserId);
-            // authentication successful so generate jwt and refresh tokens
-            var jwtToken = GenerateJwtToken(user);
-            var refreshToken = GenerateRefreshToken(ipAddress);
-
             // save refresh token
-            user.RefreshTokens.Add(refreshToken);
-            await jwtUserService.UpdateAsync(user.Id, user);
+            account.RefreshTokens.Add(refreshToken);
+            await jwtUserService.UpdateAsync(account.Id, account);
 
-            return new AuthenticateResponse<TKey>(user, aqnklaUser, jwtToken, refreshToken.Token);
+            AuthenticateResponse response = convertService.UserToAuthenticateResponse(account);
+            response.JwtToken = jwtToken;
+            response.RefreshToken = refreshToken.Token;
+            return response;
         }
 
-        public async Task<AuthenticateResponse<TKey>> RefreshTokenAsync(string token, string ipAddress)
+        public async Task<AuthenticateResponse> RefreshTokenAsync(string token, string ipAddress)
         {
-            var user = await jwtUserService.GetByTokenAsync(token);
-
-            // return null if no user found with token
-            if (user == null) return null;
-
-            var refreshToken = user.RefreshTokens.Single(x => x.Token == token);
-
-            // return null if token is no longer active
-            if (!refreshToken.IsActive) return null;
+            var (refreshToken, account) = await tokenService.GetRefreshTokenAsync(token);
 
             // replace old refresh token with a new one and save
-            var newRefreshToken = GenerateRefreshToken(ipAddress);
+            var newRefreshToken = tokenService.GenerateRefreshToken(ipAddress);
             refreshToken.Revoked = DateTime.UtcNow;
             refreshToken.RevokedByIp = ipAddress;
             refreshToken.ReplacedByToken = newRefreshToken.Token;
-            user.RefreshTokens.Add(newRefreshToken);
-            var aqnklaUser = await aqnklaUserService.GetAsync(user.AqnklaUserId);
-            await jwtUserService.UpdateAsync(user.Id, user);
+            account.RefreshTokens.Add(newRefreshToken);
+            await jwtUserService.UpdateAsync(account.Id, account);
 
-            // generate new jwt
-            var jwtToken = GenerateJwtToken(user);
+            // generate new JWT
+            var jwtToken = tokenService.GenerateJwtToken(account);
 
-            return new AuthenticateResponse<TKey>(user, aqnklaUser, jwtToken, newRefreshToken.Token);
+            AuthenticateResponse response = convertService.UserToAuthenticateResponse(account);
+            response.JwtToken = jwtToken;
+            response.RefreshToken = newRefreshToken.Token;
+            return response;
         }
 
-        public async Task<bool> RevokeTokenAsync(string token, string ipAddress)
+        public async Task RevokeTokenAsync(string token, string ipAddress)
         {
-            var user = await jwtUserService.GetByTokenAsync(token);
-
-            // return false if no user found with token
-            if (user == null) return false;
-
-            var refreshToken = user.RefreshTokens.Single(x => x.Token == token);
-
-            // return false if token is not active
-            if (!refreshToken.IsActive) return false;
+            var (refreshToken, account) = await tokenService.GetRefreshTokenAsync(token);
 
             // revoke token and save
             refreshToken.Revoked = DateTime.UtcNow;
             refreshToken.RevokedByIp = ipAddress;
-            await jwtUserService.UpdateAsync(user.Id, user);
-
-            return true;
+            await jwtUserService.UpdateAsync(account.Id, account);
         }
-
-        public async Task<JwtUserEntity<TKey>> GetByIdAsync(TKey id)
+        public async Task ValidateResetTokenAsync(ValidateResetTokenRequest model)
         {
-            return await jwtUserService.GetAsync(id);
-        }
+            var account = await jwtUserService.GetByVakidTokenAsync(model.Token);
 
-        // helper methods
-
-        private string GenerateJwtToken(JwtUserEntity<TKey> user)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(authenticationSettingsProvider.GetSecret());
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(15),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-
-        private static RefreshToken GenerateRefreshToken(string ipAddress)
-        {
-            using var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
-            var randomBytes = new byte[64];
-            rngCryptoServiceProvider.GetBytes(randomBytes);
-            return new RefreshToken
-            {
-                Token = Convert.ToBase64String(randomBytes),
-                Expires = DateTime.UtcNow.AddDays(7),
-                Created = DateTime.UtcNow,
-                CreatedByIp = ipAddress
-            };
+            if (account == null)
+                throw new JwtAppException("Invalid token");
         }
     }
 }

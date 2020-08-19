@@ -14,9 +14,8 @@
       "sourceRoot": "src",
       "prefix": "aqn",
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "en",
         "locales": {
-          "en": "src/locale/messages.en.xlf",
           "pl": "src/locale/messages.pl.xlf"
         }
       },
@@ -48,9 +47,11 @@
               ]
             },
             "en": {
+
               "localize": [
                 "en"
-              ]},
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -129,7 +130,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.sorgo.json",
+              "tsconfig.aqn.json",
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],

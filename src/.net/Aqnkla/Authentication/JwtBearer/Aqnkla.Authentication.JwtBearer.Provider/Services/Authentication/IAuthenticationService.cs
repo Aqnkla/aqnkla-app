@@ -1,14 +1,14 @@
-﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
-using Aqnkla.Authentication.JwtBearer.Core.Model;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication
 {
-    internal interface IAuthenticationService<TKey>
+    public interface IAuthenticationService<TKey>
     {
-        Task<AuthenticateResponse<TKey>> AuthenticateAsync(AuthenticateRequest model, string ipAddress);
-        Task<JwtUserEntity<TKey>> GetByIdAsync(TKey id);
-        Task<AuthenticateResponse<TKey>> RefreshTokenAsync(string token, string ipAddress);
-        Task<bool> RevokeTokenAsync(string token, string ipAddress);
+        Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model, string ipAddress);
+        Task<AuthenticateResponse> RefreshTokenAsync(string token, string ipAddress);
+        Task ValidateResetTokenAsync(ValidateResetTokenRequest model);
+        Task RevokeTokenAsync(string token, string ipAddress);
     }
 }

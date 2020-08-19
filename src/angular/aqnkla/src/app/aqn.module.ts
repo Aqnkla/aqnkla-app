@@ -9,12 +9,14 @@ import { AuthenticationModule } from './modules/authentication/authentication.mo
 import { StartComponent } from './components/start/start.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     SorgoRoutesModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AuthenticationModule,
     FormsModule,
