@@ -50,6 +50,12 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
             var jwtToken = GenerateJwtToken(account);
             var refreshToken = GenerateRefreshToken(ipAddress);
 
+
+            if(account.RefreshTokens==null)
+            {
+                account.RefreshTokens = new List<RefreshToken>();
+            }
+
             // save refresh token
             account.RefreshTokens.Add(refreshToken);
             await jwtUserService.UpdateAsync(account.Id, account);

@@ -25,7 +25,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Convert
             var user = new JwtUserEntity<TKey>
             {
                 Email = request.Email,
-                LanguageCode=request.LanguageCode
+                LanguageCode = request.LanguageCode
             };
             return user;
         }
@@ -76,7 +76,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Convert
                 IsVerified = user.IsVerified,
                 Updated = user.Updated,
                 Role = Enum.GetName(typeof(Role), user.Role),
-                RefreshToken = user.RefreshTokens.SingleOrDefault(b => b.IsActive).Token
+                RefreshToken = user.RefreshTokens.OrderByDescending(d => d.Created).FirstOrDefault(b => b.IsActive).Token
             };
             return response;
         }

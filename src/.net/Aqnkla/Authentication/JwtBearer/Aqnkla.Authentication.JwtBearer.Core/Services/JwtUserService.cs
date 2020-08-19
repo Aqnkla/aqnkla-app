@@ -1,5 +1,6 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Repository;
+using Aqnkla.Domain.ExceptionAqnkla;
 using Aqnkla.Domain.User.Service;
 using Aqnkla.Service.Base;
 using System;
@@ -18,6 +19,22 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Services
         {
             this.repository = repository;
             this.aqnklaUserService = aqnklaUserService;
+        }
+
+        public override async Task AddAsync(JwtUserEntity<TKey> value)
+        {
+            if (value == null)
+            {
+                throw new AqnklaNullException();
+            }
+
+            await aqnklaUserService.AddAsync(new Domain.User.Entity.AqnklaUserEntity<TKey>
+            {
+                UserUniqueName = value.Email
+            }).ConfigureAwait(false);
+            var domainUser = await aqnklaUserService.GetUserAsync(value.Email).ConfigureAwait(false);
+            value.AqnklaUserId = domainUser.Id;
+            await base.AddAsync(value).ConfigureAwait(false);
         }
 
         public async Task<JwtUserEntity<TKey>> GetByEmailAsync(string email)
