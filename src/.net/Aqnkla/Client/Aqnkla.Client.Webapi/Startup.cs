@@ -1,5 +1,6 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Provider.Extension;
 using Aqnkla.Authentication.JwtBearer.Provider.Middleware;
+using Aqnkla.Client.Webapi.Extensions;
 using Aqnkla.Client.Webapi.Helpers;
 using Aqnkla.Repository.MongoDb.Extension;
 using Microsoft.AspNetCore.Builder;
@@ -24,9 +25,10 @@ namespace Aqnkla.Client.Webapi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
-            services.RegisterMongoDbRepository(Configuration);
+            services.AddDomainObjects<ObjectId>();
             services.AddJwtAuthentication<ObjectId>(Configuration);
+            services.RegisterMongoDbRepository(Configuration);
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
         }
 
         // configure the HTTP request pipeline
