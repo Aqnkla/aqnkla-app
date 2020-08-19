@@ -1,6 +1,7 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,7 +43,9 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
                 };
             });
             //services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
+            //services.AddSingleton<IJwtUserService<ObjectId>, JwtUserService<ObjectId>>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
         }
     }

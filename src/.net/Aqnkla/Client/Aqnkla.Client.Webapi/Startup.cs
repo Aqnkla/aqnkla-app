@@ -1,7 +1,12 @@
-﻿using Aqnkla.Authentication.JwtBearer.Provider.Extension;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Repository;
+using Aqnkla.Authentication.JwtBearer.Provider.Extension;
 using Aqnkla.Authentication.JwtBearer.Provider.Middleware;
+using Aqnkla.Domain.User.Repository;
+using Aqnkla.Domain.User.Service;
+using Aqnkla.Repository.MongoDb.Extension;
 using Aqnkla.Repository.MongoDb.Settings;
-using AutoMapper;
+using Aqnkla.Repository.MongoDb.User;
+using Aqnkla.Service.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,8 +31,20 @@ namespace Aqnkla.Client.Webapi
             services.AddCors();
             services.AddJwtAuthentication<ObjectId>(Configuration);
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
+
+
+
+
+
+
+
+
+            services.AddSingleton<IAqnklaUserService<ObjectId>, AqnklaUserService<ObjectId>>();
+            //MongoDbUserRepository: MongoDbRepository<AqnklaUserEntity<ObjectId>>, IAqnklaUserRepository<ObjectId>
+
+            services.RegisterMongoDbRepository(Configuration);
+
 
             // configure strongly typed settings object
             services.Configure<MongoDbSettings>(Configuration.GetSection("MongoDbSettings"));
@@ -39,8 +56,8 @@ namespace Aqnkla.Client.Webapi
         {
 
             // generated swagger json and swagger ui middleware
-            app.UseSwagger();
-            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Sign-up and Verification API"));
+            //app.UseSwagger();
+            //app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core Sign-up and Verification API"));
 
             app.UseRouting();
 
