@@ -20,9 +20,9 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Services
             this.aqnklaUserService = aqnklaUserService;
         }
 
-        public Task<JwtUserEntity<TKey>> GetByEmailAsync(string email)
+        public async Task<JwtUserEntity<TKey>> GetByEmailAsync(string email)
         {
-            throw new NotImplementedException();
+            return await repository.GetByEmailAsync(email).ConfigureAwait(false);
         }
 
         public async Task<JwtUserEntity<TKey>> GetByHashAsync(string username, string hash)

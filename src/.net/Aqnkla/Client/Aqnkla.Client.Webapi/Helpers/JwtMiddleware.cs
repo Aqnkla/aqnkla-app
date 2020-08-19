@@ -50,19 +50,19 @@ namespace Aqnkla.Client.Webapi.Helpers
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    // set clockskew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
+                    // set clock skew to zero so tokens expire exactly at token expiration time (instead of 5 minutes later)
                     ClockSkew = TimeSpan.Zero
                 }, out SecurityToken validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
                 var accountId = jwtToken.Claims.First(x => x.Type == "id").Value;
                 var accountObjectId = new ObjectId(accountId);
-                // attach account to context on successful jwt validation
+                // attach account to context on successful JWT validation
                 context.Items["Account"] = await jwtUserService.GetAsync(accountObjectId);
             }
             catch
             {
-                // do nothing if jwt validation fails
+                // do nothing if JWT validation fails
                 // account is not attached to context so request won't have access to secure routes
             }
         }

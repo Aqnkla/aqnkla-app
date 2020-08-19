@@ -9,5 +9,6 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Repository
         Task<JwtUserEntity<TKey>> GetByTokenAsync(string token);
         Task<JwtUserEntity<TKey>> GetByHashAsync(TKey userId, string hash);
         Task<JwtUserEntity<TKey>> GetByValidTokenAsync(string token);
+        Task<JwtUserEntity<TKey>> GetByEmailAsync(string email);
     }
 }

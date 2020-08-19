@@ -2,6 +2,7 @@
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
+using Aqnkla.Client.Webapi.Controllers.Base;
 using Aqnkla.Domain.Key.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

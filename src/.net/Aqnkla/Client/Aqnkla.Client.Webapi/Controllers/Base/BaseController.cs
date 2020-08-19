@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 
-namespace Aqnkla.Client.Webapi.Controllers
+namespace Aqnkla.Client.Webapi.Controllers.Base
 {
     [Controller]
     public abstract class BaseController : ControllerBase

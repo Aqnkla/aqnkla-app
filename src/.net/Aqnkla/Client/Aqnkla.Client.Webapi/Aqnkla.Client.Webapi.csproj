@@ -16,7 +16,4 @@
     <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Provider\Aqnkla.Authentication.JwtBearer.Provider.csproj" />
     <ProjectReference Include="..\..\Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\Base\" />
-  </ItemGroup>
 </Project>
