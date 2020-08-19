@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Authentication.JwtBe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Client.Webapi", "Client\Aqnkla.Client.Webapi\Aqnkla.Client.Webapi.csproj", "{AB3DF316-638E-4A83-BE11-5E932B03B13A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Repository.MongoDb", "Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj", "{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Repository.MongoDb", "Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj", "{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Password", "Password", "{3991E804-FD08-4667-920E-C8C6DD512A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Authentication.Password.BCrypt", "Authentication\Password\Aqnkla.Authentication.Password.BCrypt\Aqnkla.Authentication.Password.BCrypt.csproj", "{3879F345-D466-4042-936E-E93DE0FF34E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +59,10 @@ Global
 		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3879F345-D466-4042-936E-E93DE0FF34E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3879F345-D466-4042-936E-E93DE0FF34E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3879F345-D466-4042-936E-E93DE0FF34E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3879F345-D466-4042-936E-E93DE0FF34E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,8 @@ Global
 		{051DB52A-1128-428F-8500-3B31933121D5} = {AFEF31D4-FF0B-4399-BBAE-AD2624D3A09E}
 		{AB3DF316-638E-4A83-BE11-5E932B03B13A} = {F9B2FC70-9D50-4780-8DB6-1519728DC603}
 		{2C0CA9FA-9D53-4EF5-8C20-1D1FC65FB3FE} = {5B19191C-D1E5-4C45-8CAA-EF911E346145}
+		{3991E804-FD08-4667-920E-C8C6DD512A30} = {B1591D25-84DB-40D3-AAC0-0E14A1EA462C}
+		{3879F345-D466-4042-936E-E93DE0FF34E8} = {3991E804-FD08-4667-920E-C8C6DD512A30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}

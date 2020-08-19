@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:Aqnkla.Authentication.JwtBearer.Provider.Middleware.JwtMiddleware.AttachAccountToContext(Microsoft.AspNetCore.Http.HttpContext,System.String)~System.Threading.Tasks.Task")]
 [assembly: SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "<Pending>", Scope = "member", Target = "~M:Aqnkla.Client.Webapi.Helpers.JwtMiddleware.AttachAccountToContext(Microsoft.AspNetCore.Http.HttpContext,System.String)~System.Threading.Tasks.Task")]
+[assembly: SuppressMessage("CodeQuality", "IDE0076:Invalid global 'SuppressMessageAttribute'", Justification = "<Pending>")]

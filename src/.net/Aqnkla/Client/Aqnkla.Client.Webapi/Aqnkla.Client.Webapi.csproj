@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Core\Aqnkla.Authentication.JwtBearer.Core.csproj" />
     <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Provider\Aqnkla.Authentication.JwtBearer.Provider.csproj" />
+    <ProjectReference Include="..\..\Authentication\Password\Aqnkla.Authentication.Password.BCrypt\Aqnkla.Authentication.Password.BCrypt.csproj" />
     <ProjectReference Include="..\..\Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj" />
   </ItemGroup>
 </Project>
