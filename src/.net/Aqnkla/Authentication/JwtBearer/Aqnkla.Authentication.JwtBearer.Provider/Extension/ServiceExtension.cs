@@ -5,7 +5,6 @@ using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Administration;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Convert;
-using Aqnkla.Authentication.JwtBearer.Provider.Services.Email;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Token;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,7 +52,6 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
             services.AddSingleton<IConvertService<TKey>, ConvertService<TKey>>();
             services.AddSingleton<IJwtEmailSenderService<TKey>, JwtEmailSenderService<TKey>>();
             services.AddSingleton<IJwtAccountService<TKey>, JwtAccountService<TKey>>();
-            services.AddSingleton<IJwtEmailService, JwtEmailService>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
 
             services.AddSingleton<IAdministrationService<TKey>, AdministrationService<TKey>>();

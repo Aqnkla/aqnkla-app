@@ -1,7 +1,9 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Provider.Extension;
 using Aqnkla.Authentication.JwtBearer.Provider.Middleware;
+using Aqnkla.Authentication.Password.BCrypt.Extension;
 using Aqnkla.Client.Webapi.Extensions;
 using Aqnkla.Client.Webapi.Helpers;
+using Aqnkla.Mail.MailKit.Extensions;
 using Aqnkla.Repository.MongoDb.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,8 @@ namespace Aqnkla.Client.Webapi
             services.AddCors();
             services.AddDomainObjects<ObjectId>();
             services.AddJwtAuthentication<ObjectId>(Configuration);
+            services.AddBCryptPassword();
+            services.AddMailMailKit(Configuration);
             services.RegisterMongoDbRepository(Configuration);
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
         }
