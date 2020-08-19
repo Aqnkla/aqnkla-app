@@ -1,9 +1,6 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Convert
 {

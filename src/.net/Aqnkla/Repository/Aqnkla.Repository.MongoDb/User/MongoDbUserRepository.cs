@@ -5,7 +5,6 @@ using Aqnkla.Repository.MongoDb.Settings;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Repository.MongoDb.User
@@ -23,9 +22,11 @@ namespace Aqnkla.Repository.MongoDb.User
             return await value.FirstOrDefaultAsync().ConfigureAwait(false);
         }
 
-        public Task<bool> UserEmailExistsAsync(string emailAddress)
+        public async Task<bool> UserEmailExistsAsync(string emailAddress)
         {
-            throw new NotImplementedException();
+            var value = await Collection.FindAsync(b => b.UserUniqueName == emailAddress).ConfigureAwait(false);
+
+            return await value.AnyAsync().ConfigureAwait(false);
         }
 
         public async Task<bool> UserExistsAsync(string uniqueName)

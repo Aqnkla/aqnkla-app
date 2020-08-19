@@ -8,7 +8,6 @@ using Aqnkla.Authentication.JwtBearer.Provider.Services.Token;
 using Aqnkla.Domain.Password.Service;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication

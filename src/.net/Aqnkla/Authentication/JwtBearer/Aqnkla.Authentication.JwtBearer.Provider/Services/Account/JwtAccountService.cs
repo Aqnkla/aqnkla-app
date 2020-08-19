@@ -4,7 +4,6 @@ using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
-using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Convert;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Token;
 using System;

@@ -1,5 +1,4 @@
-﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
-using Aqnkla.Authentication.JwtBearer.Core.Services;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Services;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Administration;

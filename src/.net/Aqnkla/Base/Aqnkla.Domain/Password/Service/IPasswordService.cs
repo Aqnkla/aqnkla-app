@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aqnkla.Domain.Password.Service
+﻿namespace Aqnkla.Domain.Password.Service
 {
     public interface IPasswordService
     {

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aqnkla.Domain.Key.Service
+﻿namespace Aqnkla.Domain.Key.Service
 {
-   public interface IKeyService<TKey>
+    public interface IKeyService<TKey>
     {
         TKey ParseKey(string keyString);
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aqnkla.Mail.MailKit.Helper
+﻿namespace Aqnkla.Mail.MailKit.Helper
 {
     public class MailKitSettings
     {

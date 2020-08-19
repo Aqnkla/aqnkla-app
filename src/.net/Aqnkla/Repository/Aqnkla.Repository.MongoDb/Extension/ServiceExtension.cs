@@ -1,9 +1,7 @@
 ﻿
 using Aqnkla.Authentication.JwtBearer.Core.Repository;
-using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.Key.Service;
 using Aqnkla.Domain.User.Repository;
-using Aqnkla.Repository.MongoDb.Base;
 using Aqnkla.Repository.MongoDb.Service;
 using Aqnkla.Repository.MongoDb.Settings;
 using Aqnkla.Repository.MongoDb.User;

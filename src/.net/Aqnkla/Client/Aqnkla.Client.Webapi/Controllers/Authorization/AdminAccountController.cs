@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
-using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Administration;
 using Aqnkla.Client.Webapi.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;

@@ -6,11 +6,9 @@ using Aqnkla.Client.Webapi.Helpers;
 using Aqnkla.Mail.MailKit.Extensions;
 using Aqnkla.Repository.MongoDb.Extension;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
-using System;
 
 namespace Aqnkla.Client.Webapi
 {
@@ -36,7 +34,7 @@ namespace Aqnkla.Client.Webapi
         }
 
         // configure the HTTP request pipeline
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app)
         {
             app.UseRouting();
             app.UseCors(x => x

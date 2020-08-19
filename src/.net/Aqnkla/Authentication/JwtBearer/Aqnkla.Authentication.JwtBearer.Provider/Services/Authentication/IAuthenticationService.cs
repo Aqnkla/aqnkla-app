@@ -1,8 +1,5 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication

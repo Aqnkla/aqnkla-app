@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aqnkla.Domain.Email.Model
+﻿namespace Aqnkla.Domain.Email.Model
 {
     public class SendModel
     {

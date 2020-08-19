@@ -3,7 +3,6 @@ using Aqnkla.Authentication.JwtBearer.Core.Repository;
 using Aqnkla.Domain.ExceptionAqnkla;
 using Aqnkla.Domain.User.Service;
 using Aqnkla.Service.Base;
-using System;
 using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Core.Services
