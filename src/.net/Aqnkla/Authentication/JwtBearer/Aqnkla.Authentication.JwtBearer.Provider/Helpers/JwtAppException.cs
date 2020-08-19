@@ -15,5 +15,9 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Helpers
             : base(string.Format(CultureInfo.CurrentCulture, message, args))
         {
         }
+
+        public JwtAppException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

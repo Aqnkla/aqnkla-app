@@ -1,4 +1,3 @@
-using AutoMapper;
 using BC = BCrypt.Net.BCrypt;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -15,6 +14,8 @@ using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Convert;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
 {
@@ -22,19 +23,19 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
     public class JwtAccountService<TKey> : IJwtAccountService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
-        private readonly IMapper _mapper;
         private readonly IJwtEmailSenderService<TKey> emailSenderService;
+        private readonly IConvertService<TKey> convertService;
         private readonly JwtSettings _appSettings;
 
         public JwtAccountService(
             IJwtUserService<TKey> jwtUserService,
-            IMapper mapper,
             IOptions<JwtSettings> appSettings,
-            IJwtEmailSenderService<TKey> emailSenderService)
+            IJwtEmailSenderService<TKey> emailSenderService,
+             IConvertService<TKey> convertService)
         {
             this.jwtUserService = jwtUserService;
-            _mapper = mapper;
             this.emailSenderService = emailSenderService;
+            this.convertService = convertService;
             _appSettings = appSettings.Value;
         }
 
@@ -53,7 +54,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
             account.RefreshTokens.Add(refreshToken);
             await jwtUserService.UpdateAsync(account.Id, account);
 
-            var response = _mapper.Map<AuthenticateResponse>(account);
+            AuthenticateResponse response = convertService.UserToAuthenticateResponse(account);
             response.JwtToken = jwtToken;
             response.RefreshToken = refreshToken.Token;
             return response;
@@ -74,7 +75,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
             // generate new JWT
             var jwtToken = GenerateJwtToken(account);
 
-            var response = _mapper.Map<AuthenticateResponse>(account);
+            AuthenticateResponse response = convertService.UserToAuthenticateResponse(account);
             response.JwtToken = jwtToken;
             response.RefreshToken = newRefreshToken.Token;
             return response;
@@ -102,7 +103,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
             }
 
             // map model to new account object
-            var account = _mapper.Map<JwtUserEntity<TKey>>(model);
+            JwtUserEntity<TKey> account = convertService.RegisterRequestToUser(model);
 
             account.Role = Role.User;
             account.Created = DateTime.UtcNow;
@@ -174,13 +175,15 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
         public async Task<IEnumerable<AccountResponse>> GetAllAsync()
         {
             var accounts = await jwtUserService.GetAllAsync();
-            return _mapper.Map<IList<AccountResponse>>(accounts);
+            IList<AccountResponse> accountResponse = accounts.Select(b => convertService.UserToAccountResponse(b)).ToList();
+            return accountResponse;
         }
 
         public async Task<AccountResponse> GetByIdAsync(TKey id)
         {
             var account = await jwtUserService.GetAsync(id);
-            return _mapper.Map<AccountResponse>(account);
+            AccountResponse accountResponse = convertService.UserToAccountResponse(account);
+            return accountResponse;
         }
 
         public async Task<AccountResponse> CreateAsync(CreateRequest model)
@@ -191,7 +194,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
                 throw new JwtAppException($"Email '{model.Email}' is already registered");
 
             // map model to new account object
-            var account = _mapper.Map<JwtUserEntity<TKey>>(model);
+            JwtUserEntity<TKey> account = convertService.CreateRequestToUser(model);
             account.Created = DateTime.UtcNow;
             account.Verified = DateTime.UtcNow;
 
@@ -200,8 +203,8 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
 
             // save account
             await jwtUserService.AddAsync(account);
-
-            return _mapper.Map<AccountResponse>(account);
+            AccountResponse accountResponse = convertService.UserToAccountResponse(account);
+            return accountResponse;
         }
 
         public async Task<AccountResponse> UpdateAsync(TKey id, UpdateRequest model)
@@ -218,11 +221,11 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
                 account.PasswordHash = BC.HashPassword(model.Password);
 
             // copy model to account and save
-            _mapper.Map(model, account);
+            var updatedUser = convertService.UpdateRequestToUser(model);
             account.Updated = DateTime.UtcNow;
-            await jwtUserService.UpdateAsync(account.Id, account);
-
-            return _mapper.Map<AccountResponse>(account);
+            await jwtUserService.UpdateAsync(account.Id, updatedUser);
+            AccountResponse accountResponse= convertService.UserToAccountResponse(account);
+            return accountResponse;
         }
 
         public async Task DeleteAsync(TKey id)

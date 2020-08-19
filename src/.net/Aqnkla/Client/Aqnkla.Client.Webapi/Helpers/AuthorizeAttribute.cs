@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-public class AuthorizeAttribute : Attribute, IAuthorizationFilter
+public sealed class AuthorizeAttribute : Attribute, IAuthorizationFilter
 {
     private readonly IList<Role> _roles;
 

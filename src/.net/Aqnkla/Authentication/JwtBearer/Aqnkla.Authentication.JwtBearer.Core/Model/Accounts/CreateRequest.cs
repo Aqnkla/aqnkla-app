@@ -5,14 +5,6 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
 {
     public class CreateRequest
     {
-        [Required]
-        public string Title { get; set; }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
 
         [Required]
         [EnumDataType(typeof(Role))]
@@ -21,6 +13,12 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(2)]
+        public string LanguageCode { get; set; }
 
         [Required]
         [MinLength(6)]

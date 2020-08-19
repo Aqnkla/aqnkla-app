@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aqnkla.Authentication.JwtBearer.Provider.Middleware
+namespace Aqnkla.Client.Webapi.Helpers
 {
     public class JwtMiddleware
     {
@@ -33,12 +33,12 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Middleware
             var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 
             if (token != null)
-                await AttachAccountToContext(context,  token);
+                await AttachAccountToContext(context, token);
 
             await _next(context);
         }
 
-        private async Task AttachAccountToContext(HttpContext context,  string token)
+        private async Task AttachAccountToContext(HttpContext context, string token)
         {
             try
             {

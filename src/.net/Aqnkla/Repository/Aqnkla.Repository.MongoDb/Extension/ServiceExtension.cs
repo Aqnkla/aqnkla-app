@@ -1,8 +1,10 @@
 ﻿
 using Aqnkla.Authentication.JwtBearer.Core.Repository;
 using Aqnkla.Domain.Base.Repository;
+using Aqnkla.Domain.Key.Service;
 using Aqnkla.Domain.User.Repository;
 using Aqnkla.Repository.MongoDb.Base;
+using Aqnkla.Repository.MongoDb.Service;
 using Aqnkla.Repository.MongoDb.Settings;
 using Aqnkla.Repository.MongoDb.User;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +20,7 @@ namespace Aqnkla.Repository.MongoDb.Extension
             serviceCollection.Configure<MongoDbSettings>(configuration.GetSection("MongoDbSettings"));
             serviceCollection.AddSingleton<IJwtUserRepository<ObjectId>, MongoDbJwtUserRepository>();
             serviceCollection.AddSingleton<IAqnklaUserRepository<ObjectId>, MongoDbUserRepository>();
+            serviceCollection.AddSingleton<IKeyService<ObjectId>, MongoDbKeyService>();
         }
     }
 }

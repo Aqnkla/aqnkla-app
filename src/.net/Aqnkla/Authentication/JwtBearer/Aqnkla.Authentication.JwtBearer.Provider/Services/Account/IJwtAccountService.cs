@@ -1,4 +1,5 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Core.Model.Authentication;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

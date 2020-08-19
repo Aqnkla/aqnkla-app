@@ -4,14 +4,6 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
 {
     public class RegisterRequest
     {
-        [Required]
-        public string Title { get; set; }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -20,6 +12,11 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
         [Required]
         [MinLength(6)]
         public string Password { get; set; }
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(2)]
+        public string LanguageCode { get; set; }
 
         [Required]
         [Compare("Password")]

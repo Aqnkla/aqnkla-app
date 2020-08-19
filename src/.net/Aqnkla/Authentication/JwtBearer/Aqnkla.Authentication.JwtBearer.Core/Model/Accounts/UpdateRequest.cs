@@ -9,10 +9,8 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
         private string _confirmPassword;
         private string _role;
         private string _email;
+        private string _languageCode;
 
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
 
         [EnumDataType(typeof(Role))]
         public string Role
@@ -28,6 +26,15 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Model.Accounts
             set => _email = ReplaceEmptyWithNull(value);
         }
 
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(2)]
+        public string LanguageCode
+        {
+            get => _languageCode;
+            set => _languageCode = ReplaceEmptyWithNull(value);
+        }
         [MinLength(6)]
         public string Password
         {

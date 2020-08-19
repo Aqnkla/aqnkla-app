@@ -4,7 +4,6 @@ using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Email;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
-using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,7 +23,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
             var appSettingsSection = configuration.GetSection("JwtSettings");
             services.Configure<JwtSettings>(appSettingsSection);
 
-            // configure jwt authentication
+            // configure JWT authentication
             var appSettings = appSettingsSection.Get<JwtSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
@@ -49,14 +48,8 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
 
             services.AddSingleton<IJwtEmailSenderService<TKey>, JwtEmailSenderService<TKey>>();
             services.AddSingleton<IJwtAccountService<TKey>, JwtAccountService<TKey>>();
-            services.AddSingleton<IJwtEmailService, JwtEmailService>(); 
-
-
-            //services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
-            //services.AddSingleton<IJwtUserService<ObjectId>, JwtUserService<ObjectId>>();
+            services.AddSingleton<IJwtEmailService, JwtEmailService>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
         }
     }
 }

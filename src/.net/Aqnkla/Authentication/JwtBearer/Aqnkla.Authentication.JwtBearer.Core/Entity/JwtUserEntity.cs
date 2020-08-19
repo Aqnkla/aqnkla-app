@@ -8,6 +8,7 @@ namespace Aqnkla.Authentication.JwtBearer.Core.Entity
     {
         public TKey AqnklaUserId { get; set; }
         public string Email { get; set; }
+        public string LanguageCode { get; set; }
         public string PasswordHash { get; set; }
         public bool AcceptTerms { get; set; }
         public Role Role { get; set; }
