@@ -1,5 +1,6 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,6 @@ using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using WebApi.Services;
 
 namespace Aqnkla.Client.Webapi.Controllers
 {
@@ -15,11 +15,11 @@ namespace Aqnkla.Client.Webapi.Controllers
     [Route("[controller]")]
     public class AccountsController : BaseController
     {
-        private readonly IAccountService<ObjectId> accountService;
+        private readonly IJwtAccountService<ObjectId> accountService;
         private readonly IMapper mapper;
 
         public AccountsController(
-           IAccountService<ObjectId> accountService,
+           IJwtAccountService<ObjectId> accountService,
             IMapper mapper)
         {
             this.accountService = accountService;

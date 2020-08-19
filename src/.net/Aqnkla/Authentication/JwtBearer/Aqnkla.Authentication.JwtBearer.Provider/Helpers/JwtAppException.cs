@@ -5,13 +5,13 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Helpers
 {
     // custom exception class for throwing application specific exceptions 
     // that can be caught and handled within the application
-    public class AppException : Exception
+    public class JwtAppException : Exception
     {
-        public AppException() : base() { }
+        public JwtAppException() : base() { }
 
-        public AppException(string message) : base(message) { }
+        public JwtAppException(string message) : base(message) { }
 
-        public AppException(string message, params object[] args)
+        public JwtAppException(string message, params object[] args)
             : base(string.Format(CultureInfo.CurrentCulture, message, args))
         {
         }

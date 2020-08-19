@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WebApi.Services
+namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
 {
-    public interface IAccountService<TKey>
+    public interface IJwtAccountService<TKey>
     {
         Task<AuthenticateResponse> AuthenticateAsync(AuthenticateRequest model, string ipAddress);
         Task<AuthenticateResponse> RefreshTokenAsync(string token, string ipAddress);

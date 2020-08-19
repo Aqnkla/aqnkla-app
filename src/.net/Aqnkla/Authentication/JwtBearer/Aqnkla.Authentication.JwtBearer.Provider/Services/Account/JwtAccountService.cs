@@ -16,21 +16,21 @@ using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
 
-namespace WebApi.Services
+namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
 {
 
-    public class AccountService<TKey> : IAccountService<TKey>
+    public class JwtAccountService<TKey> : IJwtAccountService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
         private readonly IMapper _mapper;
-        private readonly IEmailSenderService<TKey> emailSenderService;
+        private readonly IJwtEmailSenderService<TKey> emailSenderService;
         private readonly JwtSettings _appSettings;
 
-        public AccountService(
+        public JwtAccountService(
             IJwtUserService<TKey> jwtUserService,
             IMapper mapper,
             IOptions<JwtSettings> appSettings,
-            IEmailSenderService<TKey> emailSenderService)
+            IJwtEmailSenderService<TKey> emailSenderService)
         {
             this.jwtUserService = jwtUserService;
             _mapper = mapper;
@@ -43,7 +43,7 @@ namespace WebApi.Services
             var account = await jwtUserService.GetByEmailAsync(model.Email);
 
             if (account == null || !account.IsVerified || !BC.Verify(model.Password, account.PasswordHash))
-                throw new AppException("Email or password is incorrect");
+                throw new JwtAppException("Email or password is incorrect");
 
             // authentication successful so generate JWT and refresh tokens
             var jwtToken = GenerateJwtToken(account);
@@ -122,7 +122,7 @@ namespace WebApi.Services
         {
             var account = await jwtUserService.GetByTokenAsync(token);
 
-            if (account == null) throw new AppException("Verification failed");
+            if (account == null) throw new JwtAppException("Verification failed");
 
             account.Verified = DateTime.UtcNow;
             account.VerificationToken = null;
@@ -152,7 +152,7 @@ namespace WebApi.Services
             var account = await jwtUserService.GetByVakidTokenAsync(model.Token);
 
             if (account == null)
-                throw new AppException("Invalid token");
+                throw new JwtAppException("Invalid token");
         }
 
         public async Task ResetPasswordAsync(ResetPasswordRequest model)
@@ -160,7 +160,7 @@ namespace WebApi.Services
             var account = await jwtUserService.GetByVakidTokenAsync(model.Token);
 
             if (account == null)
-                throw new AppException("Invalid token");
+                throw new JwtAppException("Invalid token");
 
             // update password and remove reset token
             account.PasswordHash = BC.HashPassword(model.Password);
@@ -188,7 +188,7 @@ namespace WebApi.Services
             // validate
             var jwtUserEntity = await jwtUserService.GetByEmailAsync(model.Email);
             if (jwtUserEntity != null)
-                throw new AppException($"Email '{model.Email}' is already registered");
+                throw new JwtAppException($"Email '{model.Email}' is already registered");
 
             // map model to new account object
             var account = _mapper.Map<JwtUserEntity<TKey>>(model);
@@ -211,7 +211,7 @@ namespace WebApi.Services
 
             // validate
             if (account.Email != model.Email && accountMail != null)
-                throw new AppException($"Email '{model.Email}' is already taken");
+                throw new JwtAppException($"Email '{model.Email}' is already taken");
 
             // hash password if it was entered
             if (!string.IsNullOrEmpty(model.Password))
@@ -235,9 +235,9 @@ namespace WebApi.Services
         private async Task<(RefreshToken, JwtUserEntity<TKey>)> GetRefreshTokenAsync(string token)
         {
             var account = await jwtUserService.GetByTokenAsync(token);
-            if (account == null) throw new AppException("Invalid token");
+            if (account == null) throw new JwtAppException("Invalid token");
             var refreshToken = account.RefreshTokens.Single(x => x.Token == token);
-            if (!refreshToken.IsActive) throw new AppException("Invalid token");
+            if (!refreshToken.IsActive) throw new JwtAppException("Invalid token");
             return (refreshToken, account);
         }
 
@@ -259,7 +259,7 @@ namespace WebApi.Services
         {
             return new RefreshToken
             {
-                Token =RandomTokenString(),
+                Token = RandomTokenString(),
                 Expires = DateTime.UtcNow.AddDays(7),
                 Created = DateTime.UtcNow,
                 CreatedByIp = ipAddress

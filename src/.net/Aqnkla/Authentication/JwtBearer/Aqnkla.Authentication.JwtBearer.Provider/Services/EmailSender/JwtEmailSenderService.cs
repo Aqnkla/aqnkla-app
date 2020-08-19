@@ -1,17 +1,17 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Email;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WebApi.Services;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender
 {
-    public class EmailSenderService<TKey> : IEmailSenderService<TKey>
+    public class JwtEmailSenderService<TKey> : IJwtEmailSenderService<TKey>
     {
-        private readonly IEmailService emailService;
+        private readonly IJwtEmailService emailService;
 
-        public EmailSenderService(
-            IEmailService emailService)
+        public JwtEmailSenderService(
+            IJwtEmailService emailService)
         {
             this.emailService = emailService;
         }

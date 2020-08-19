@@ -5,14 +5,14 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using MimeKit.Text;
 
-namespace WebApi.Services
+namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Email
 {
 
-    public class EmailService : IEmailService
+    public class JwtEmailService : IJwtEmailService
     {
         private readonly JwtSettings _appSettings;
 
-        public EmailService(IOptions<JwtSettings> appSettings)
+        public JwtEmailService(IOptions<JwtSettings> appSettings)
         {
             _appSettings = appSettings.Value;
         }

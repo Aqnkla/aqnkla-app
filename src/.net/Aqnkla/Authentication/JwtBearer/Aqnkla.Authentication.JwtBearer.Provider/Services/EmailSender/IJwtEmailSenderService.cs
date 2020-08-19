@@ -2,7 +2,7 @@
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender
 {
-    public interface IEmailSenderService<TKey>
+    public interface IJwtEmailSenderService<TKey>
     {
         void SendAlreadyRegisteredEmail(string email, string origin);
         void SendPasswordResetEmail(JwtUserEntity<TKey> account, string origin);

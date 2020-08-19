@@ -1,6 +1,9 @@
 ﻿using Aqnkla.Authentication.JwtBearer.Core.Model;
 using Aqnkla.Authentication.JwtBearer.Core.Services;
 using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Account;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.Email;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -42,6 +45,13 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Extension
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+
+            services.AddSingleton<IJwtEmailSenderService<TKey>, JwtEmailSenderService<TKey>>();
+            services.AddSingleton<IJwtAccountService<TKey>, JwtAccountService<TKey>>();
+            services.AddSingleton<IJwtEmailService, JwtEmailService>(); 
+
+
             //services.AddSingleton<IAuthenticationService<TKey>, AuthenticationService<TKey>>();
             //services.AddSingleton<IJwtUserService<ObjectId>, JwtUserService<ObjectId>>();
             services.AddSingleton<IJwtUserService<TKey>, JwtUserService<TKey>>();

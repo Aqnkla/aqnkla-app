@@ -29,7 +29,7 @@ namespace Aqnkla.Authentication.JwtBearer.Provider.Middleware
                 response.ContentType = "application/json";
                 response.StatusCode = error switch
                 {
-                    AppException _ => (int)HttpStatusCode.BadRequest,// custom application error
+                    JwtAppException _ => (int)HttpStatusCode.BadRequest,// custom application error
                     KeyNotFoundException _ => (int)HttpStatusCode.NotFound,// not found error
                     _ => (int)HttpStatusCode.InternalServerError,// unhandled error
                 };

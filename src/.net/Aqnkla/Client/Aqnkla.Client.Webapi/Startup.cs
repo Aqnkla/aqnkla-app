@@ -39,7 +39,6 @@ namespace Aqnkla.Client.Webapi
 
 
 
-
             services.AddSingleton<IAqnklaUserService<ObjectId>, AqnklaUserService<ObjectId>>();
             //MongoDbUserRepository: MongoDbRepository<AqnklaUserEntity<ObjectId>>, IAqnklaUserRepository<ObjectId>
 
