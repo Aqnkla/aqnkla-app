@@ -9,7 +9,7 @@ export class NetworkService {
   constructor(private httpClient: HttpClient) {}
 
   get(): Observable<object> {
-    const resp = this.httpClient.get('https://localhost:5001/monitor');
+    const resp = this.httpClient.get('http://localhost:3000/teams');
     return resp;
   }
 }
