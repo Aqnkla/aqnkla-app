@@ -17,6 +17,8 @@ const routes: Routes = [
       { path: 'item-add', component: ItemDetailComponent },
       { path: 'category-list', component: CategoryListComponent },
       { path: 'category-add', component: CategoryDetailComponent },
+      { path: 'category-edit', component: CategoryDetailComponent },
+      { path: 'category-detail', component: CategoryDetailComponent },
       { path: 'search', component: IngredientsSearchComponent },
     ],
   },

@@ -1,4 +1,7 @@
 <p>category-list works!</p>
 <div>
-  <div *ngFor="let item of list">{{ item.name }}</div>
+  <div *ngFor="let item of list">
+    {{ item.name }} <a routerLink="../category-edit">Edit</a
+    ><a [routerLink]="['../category-detail', item.id]">View</a>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IngredientCategoryModel } from './../../models/ingredient.model';
 import { RandomHelper } from './../../../../helpers/common/random.helper';
 import { IngridientClientService } from './../../services/ingridient-client/ingridient-client.service';
@@ -9,6 +9,7 @@ import { IngridientClientService } from './../../services/ingridient-client/ingr
   styleUrls: ['./category-detail.component.scss'],
 })
 export class CategoryDetailComponent implements OnInit {
+  @Input() id: string;
   category: IngredientCategoryModel;
   constructor(private ingridientClientService: IngridientClientService) {}
 
@@ -27,5 +28,7 @@ export class CategoryDetailComponent implements OnInit {
       .subscribe((b) => console.log('add', b));
   }
 
-  cancel() {}
+  cancel(): void {
+    console.log('cancel');
+  }
 }
