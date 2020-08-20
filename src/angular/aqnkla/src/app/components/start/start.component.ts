@@ -2,7 +2,6 @@ import { Subscription, from } from 'rxjs';
 import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { Router } from '@angular/router';
-import { NetworkService } from './../../services/network/network.service';
 
 @Component({
   selector: 'aqn-start',

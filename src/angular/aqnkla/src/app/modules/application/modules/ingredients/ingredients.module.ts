@@ -1,15 +1,14 @@
-import { IngredientsRoutesModule } from './ingredients.routing';
-import { IngredientsRootComponent } from './components/ingredients-root/ingredients-root.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IngridientsDashboardComponent } from './components/ingridients-dashboard/ingridients-dashboard.component';
-import { IngredientsSearchComponent } from './components/ingredients-search/ingredients-search.component';
-import { CategoryListComponent } from './components/category-list/category-list.component';
-import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
-import { ItemDetailComponent } from './components/item-detail/item-detail.component';
-import { ItemListComponent } from './components/item-list/item-list.component';
 import { FormsModule } from '@angular/forms';
-
+import { IngredientsRootComponent } from './components/root/ingredients-root.component';
+import { IngridientsDashboardComponent } from './components/dashboard/ingridients-dashboard.component';
+import { IngredientsSearchComponent } from './components/search/ingredients-search.component';
+import { CategoryListComponent } from './components/category/category-list/category-list.component';
+import { CategoryDetailComponent } from './components/category/category-detail/category-detail.component';
+import { ItemDetailComponent } from './components/item/item-detail/item-detail.component';
+import { ItemListComponent } from './components/item/item-list/item-list.component';
+import { IngredientsRoutesModule } from './ingredients.routing';
 
 @NgModule({
   declarations: [
@@ -19,15 +18,9 @@ import { FormsModule } from '@angular/forms';
     CategoryListComponent,
     CategoryDetailComponent,
     ItemDetailComponent,
-    ItemListComponent
+    ItemListComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    IngredientsRoutesModule
-  ],
-  exports: [
-    IngredientsRootComponent
-  ]
+  imports: [CommonModule, FormsModule, IngredientsRoutesModule],
+  exports: [IngredientsRootComponent],
 })
-export class IngredientsModule { }
+export class IngredientsModule {}

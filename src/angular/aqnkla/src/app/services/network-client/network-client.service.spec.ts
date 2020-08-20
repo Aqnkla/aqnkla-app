@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NetworkService } from './network.service';
+import { NetworkClientService } from './network-client.service';
 
-describe('NetworkService', () => {
-  let service: NetworkService;
+describe('NetworkClientService', () => {
+  let service: NetworkClientService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NetworkService);
+    service = TestBed.inject(NetworkClientService);
   });
 
   it('should be created', () => {

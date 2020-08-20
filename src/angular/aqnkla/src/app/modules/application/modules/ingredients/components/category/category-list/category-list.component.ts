@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IngredientCategoryModel } from './../../models/ingredient.model';
-import { ViewType } from 'src/app/models/common.model';
-import { CategoryClientService } from './../../services/category-client/category-client.service';
+import { IngredientCategoryModel } from './../../../models/ingredient.model';
+import { CategoryClientService } from './../../../services/category-client/category-client.service';
 
 @Component({
   selector: 'aqn-category-list',

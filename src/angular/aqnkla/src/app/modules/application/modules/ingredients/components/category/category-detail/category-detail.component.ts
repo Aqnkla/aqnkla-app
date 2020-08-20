@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { IngredientCategoryModel } from './../../models/ingredient.model';
-import { RandomHelper } from './../../../../helpers/common/random.helper';
+import { Component, OnInit } from '@angular/core';
+import { IngredientCategoryModel } from './../../../models/ingredient.model';
+import { RandomHelper } from './../../../../../helpers/common/random.helper';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
-import { CategoryClientService } from './../../services/category-client/category-client.service';
+import { CategoryClientService } from './../../../services/category-client/category-client.service';
 
 @Component({
   selector: 'aqn-category-detail',
@@ -68,7 +68,7 @@ export class CategoryDetailComponent implements OnInit {
         break;
       case ViewType.edit:
         this.categoryClientService
-          .update(this.category)
+          .update(this.category.id, this.category)
           .subscribe((b) =>
             this.router.navigate(['category-list'], {
               relativeTo: this.route.parent,
@@ -79,7 +79,6 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   cancel(): void {
-    console.log('cancel', this.category);
     this.router.navigate(['category-list'], { relativeTo: this.route.parent });
   }
 }
