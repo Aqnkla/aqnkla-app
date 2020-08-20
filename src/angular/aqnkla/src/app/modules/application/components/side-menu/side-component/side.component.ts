@@ -25,10 +25,10 @@ export class SideComponent implements OnInit {
   constructor(private displayService: DisplayService) {
     this.menu = MenuHelper.getMenu();
     this.darkModeLabel = 'Night Mode';
-    this.switchMenuSize(false);
   }
 
   ngOnInit(): void {
+    this.switchMenuSize(true);
   }
 
   switchSize(): void {
