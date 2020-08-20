@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { IngridientClientService } from './../../services/ingridient-client/ingridient-client.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { IngredientCategoryModel } from './../../models/ingredient.model';
+import { ViewType } from 'src/app/models/common.model';
+import { CategoryClientService } from './../../services/category-client/category-client.service';
 
 @Component({
   selector: 'aqn-category-list',
@@ -9,11 +10,20 @@ import { IngredientCategoryModel } from './../../models/ingredient.model';
 })
 export class CategoryListComponent implements OnInit {
   list: IngredientCategoryModel[] = [];
-  constructor(private ingridientClientService: IngridientClientService) {}
+  constructor(private categoryClientService: CategoryClientService) {}
 
   ngOnInit(): void {
-    this.ingridientClientService
-      .getCategories()
-      .subscribe((b) => (this.list = b));
+    this.loadList();
+  }
+
+  deleteCategory(id: string): void {
+    this.categoryClientService.delete(id).subscribe((b) => {
+      console.log(b);
+      this.loadList();
+    });
+  }
+
+  private loadList(): void {
+    this.categoryClientService.getAll().subscribe((b) => (this.list = b));
   }
 }

@@ -2,23 +2,18 @@
   "categories": [
     {
       "id": "test2",
-      "name": "Milk",
+      "name": "Milk Some",
       "description": "Milk description"
     },
     {
       "id": "test1",
-      "name": "Some",
+      "name": "Test some data",
       "description": "Some data"
     },
     {
       "id": "58e246d0-0727-4b39-844e-5386c8dec933",
       "name": "test",
       "description": "test"
-    },
-    {
-      "id": "cb4ad1fd-2fe0-4e41-a10b-460ddd5fb54a",
-      "name": "Meat",
-      "description": "Meat"
     }
   ]
 }

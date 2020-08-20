@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IngredientCategoryModel } from './../../models/ingredient.model';
 import { RandomHelper } from './../../../../helpers/common/random.helper';
-import { IngridientClientService } from './../../services/ingridient-client/ingridient-client.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ViewType } from 'src/app/models/common.model';
+import { CategoryClientService } from './../../services/category-client/category-client.service';
 
 @Component({
   selector: 'aqn-category-detail',
@@ -9,26 +11,75 @@ import { IngridientClientService } from './../../services/ingridient-client/ingr
   styleUrls: ['./category-detail.component.scss'],
 })
 export class CategoryDetailComponent implements OnInit {
-  @Input() id: string;
+  ViewType = ViewType;
+  viewType: ViewType;
   category: IngredientCategoryModel;
-  constructor(private ingridientClientService: IngridientClientService) {}
+  categoryId: string;
+  constructor(
+    private categoryClientService: CategoryClientService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.route.data.subscribe((b) => {
+      this.viewType = b.viewType;
+      this.uploadDetails();
+    });
+    this.route.params.subscribe((b) => {
+      this.categoryId = b.id;
+      this.uploadDetails();
+    });
+  }
 
   ngOnInit(): void {
-    this.category = {
-      id: RandomHelper.uuidv4(),
-      name: '',
-      description: '',
-    };
+    console.log(this.viewType);
+  }
+
+  private uploadDetails(): void {
+    if (this.viewType) {
+      switch (this.viewType) {
+        case ViewType.add:
+          this.category = {
+            id: RandomHelper.uuidv4(),
+            name: '',
+            description: '',
+            parentCategoryId: '',
+          };
+          break;
+        case ViewType.edit:
+        case ViewType.detail:
+          if (this.categoryId) {
+            this.categoryClientService
+              .get(this.categoryId)
+              .subscribe((b) => (this.category = b));
+          }
+          break;
+      }
+    }
   }
 
   save(): void {
-    console.log('save', this.category);
-    this.ingridientClientService
-      .addCategory(this.category)
-      .subscribe((b) => console.log('add', b));
+    switch (this.viewType) {
+      case ViewType.add:
+        this.categoryClientService.add(this.category).subscribe((b) =>
+          this.router.navigate(['category-list'], {
+            relativeTo: this.route.parent,
+          })
+        );
+        break;
+      case ViewType.edit:
+        this.categoryClientService
+          .update(this.category)
+          .subscribe((b) =>
+            this.router.navigate(['category-list'], {
+              relativeTo: this.route.parent,
+            })
+          );
+        break;
+    }
   }
 
   cancel(): void {
-    console.log('cancel');
+    console.log('cancel', this.category);
+    this.router.navigate(['category-list'], { relativeTo: this.route.parent });
   }
 }

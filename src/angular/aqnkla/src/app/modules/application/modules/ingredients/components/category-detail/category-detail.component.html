@@ -1,16 +1,20 @@
-<div>
-  <p>category-add works!: {{id}}</p>
-  <div>
-    {{ category.id }}
-  </div>
-  <div>
-    <input [(ngModel)]="category.name" placeholder="name" />
-  </div>
-  <div>
-    <input [(ngModel)]="category.description" placeholder="description" />
-  </div>
-  <div>
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="save()">Save</button>
+<div *ngIf="viewType">
+  <p>category-add works!:</p>
+  <div *ngIf="category">
+    <div>
+      {{ category.id }}
+    </div>
+    <div>
+      <input [(ngModel)]="category.name" placeholder="name" />
+    </div>
+    <div>
+      <input [(ngModel)]="category.description" placeholder="description" />
+    </div>
+    <div>
+      <button (click)="cancel()">Cancel</button>
+      <button *ngIf="viewType !== ViewType.detail" (click)="save()">
+        Save
+      </button>
+    </div>
   </div>
 </div>

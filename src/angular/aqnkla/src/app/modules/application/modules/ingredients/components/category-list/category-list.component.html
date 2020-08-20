@@ -1,7 +1,11 @@
 <p>category-list works!</p>
 <div>
+  <div>
+    <a class="button" [routerLink]="['../category-add']">category add</a>
+  </div>
   <div *ngFor="let item of list">
-    {{ item.name }} <a routerLink="../category-edit">Edit</a
+    {{ item.name }} <a [routerLink]="['../category-edit', item.id]">Edit</a
     ><a [routerLink]="['../category-detail', item.id]">View</a>
+    <button (click)="deleteCategory(item.id)">Delete</button>
   </div>
 </div>
