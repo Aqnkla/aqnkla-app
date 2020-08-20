@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MenuGroup } from '../../../models/menu.model';
 
 @Component({
-  selector: 'sorgo-group-menu',
+  selector: 'aqn-group-menu',
   templateUrl: './group-menu.component.html',
   styleUrls: [
     './group-menu.component.scss',
@@ -39,7 +39,7 @@ export class GroupMenuComponent implements OnInit {
 
   private updateSumMenu(): void {
     this.subMenuStyle = {
-      height: this.$isExtended ? `${this.itemHeight * this.$gruop.subItems.length + 10}px` : `0px`,
+      height: this.$isExtended ? `${this.itemHeight * this.$gruop.subItems.length + 15}px` : `0px`,
       transition: 'height 200ms ease-in-out'
     };
   }

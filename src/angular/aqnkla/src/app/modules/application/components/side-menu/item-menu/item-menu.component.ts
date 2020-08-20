@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuItem } from '../../../models/menu.model';
 @Component({
-  selector: 'sorgo-item-menu',
+  selector: 'aqn-item-menu',
   templateUrl: './item-menu.component.html',
   styleUrls: [
     './item-menu.component.scss',

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'sorgo-root',
+  selector: 'aqn-root',
   templateUrl: './root.component.html',
   styleUrls: [
     './root.component.scss',

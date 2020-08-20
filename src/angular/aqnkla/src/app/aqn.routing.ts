@@ -13,4 +13,4 @@ const routes: Routes = [
   { path: 'restore', component: RestoreComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
-export const SorgoRoutesModule = RouterModule.forRoot(routes);
+export const AqnklaRoutesModule = RouterModule.forRoot(routes);

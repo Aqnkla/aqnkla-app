@@ -8,8 +8,23 @@ import { Observable } from 'rxjs';
 export class NetworkService {
   constructor(private httpClient: HttpClient) {}
 
-  get(): Observable<object> {
-    const resp = this.httpClient.get('http://localhost:3000/teams');
+  get(contoller: string): Observable<object> {
+    const resp = this.httpClient.get(`http://localhost:3000/${contoller}`);
+    return resp;
+  }
+
+  post(contoller: string, body: any): Observable<object> {
+    const resp = this.httpClient.post(`http://localhost:3000/${contoller}`, body);
+    return resp;
+  }
+
+  put(contoller: string, body: any): Observable<object> {
+    const resp = this.httpClient.put(`http://localhost:3000/${contoller}`, body);
+    return resp;
+  }
+
+  delete(contoller: string): Observable<object> {
+    const resp = this.httpClient.delete(`http://localhost:3000/${contoller}`);
     return resp;
   }
 }

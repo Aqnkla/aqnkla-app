@@ -5,7 +5,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { DisplayService } from '../../../services/display/display.service';
 
 @Component({
-  selector: 'sorgo-side',
+  selector: 'aqn-side',
   templateUrl: './side.component.html',
   styleUrls: [
     './side.component.scss',

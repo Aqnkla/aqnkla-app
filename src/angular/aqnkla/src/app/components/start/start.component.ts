@@ -12,18 +12,13 @@ export class StartComponent {
   private $messageHandler: Subscription[] = [];
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService,
-    private networkService: NetworkService
+    private authenticationService: AuthenticationService
   ) {
     this.$messageHandler.push(
       this.authenticationService.authenticationChange.subscribe((b) =>
         this.auhticatedChange(b)
       )
     );
-    const message = networkService
-      .get()
-      .subscribe((b) => console.log('http get 1', b));
-    console.log('http get 1', message);
   }
 
   private auhticatedChange(isAuhticated: boolean): void {

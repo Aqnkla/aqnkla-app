@@ -1,12 +1,12 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { SorgoModule } from './app/aqn.module';
+import { AqnklaModule } from './app/aqn.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(SorgoModule)
+platformBrowserDynamic().bootstrapModule(AqnklaModule)
   .catch(err => console.error(err));

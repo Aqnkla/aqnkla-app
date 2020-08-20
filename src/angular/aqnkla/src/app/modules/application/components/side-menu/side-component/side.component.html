@@ -7,21 +7,21 @@
       <path d="M0 0h24v24H0V0z" fill="none" />
       <path d="M3 18h13v-2H3v2zm0-5h10v-2H3v2zm0-7v2h13V6H3zm18 9.59L17.42 12 21 8.41 19.59 7l-5 5 5 5L21 15.59z" />
     </svg>
-    <span class="menu-switch-label">Aqncla</span>
+    <span class="menu-switch-label">Aqnkla</span>
   </button>
   <div class="top-menu">
-    <sorgo-group-menu [isExtended]="isExtended" [gruop]="group" *ngFor="let group of menu.topMenu"></sorgo-group-menu>
+    <aqn-group-menu [isExtended]="isExtended" [gruop]="group" *ngFor="let group of menu.topMenu"></aqn-group-menu>
   </div>
   <div class="bottom-menu">
-    <sorgo-group-menu [isExtended]="isExtended" [gruop]="group" *ngFor="let group of menu.bottomMenu">
-    </sorgo-group-menu>
+    <aqn-group-menu [isExtended]="isExtended" [gruop]="group" *ngFor="let group of menu.bottomMenu">
+    </aqn-group-menu>
     <div class="dark-mode-toggle">
       <mat-slide-toggle (change)="switchDarkMode($event)" [checked]="isDarkModelEnabled">{{darkModeLabel}}</mat-slide-toggle>
     </div>
     <div class="footer">
       <a routerLink="about">
         <div class="info">All rights reserved</div>
-        <div class="company">Aqncla &copy; {{year}}</div>
+        <div class="company">Aqnkla &copy; {{year}}</div>
       </a>
     </div>
   </div>

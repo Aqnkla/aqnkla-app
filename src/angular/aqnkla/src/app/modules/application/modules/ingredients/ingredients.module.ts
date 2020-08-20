@@ -3,18 +3,22 @@ import { IngredientsRootComponent } from './components/ingredients-root/ingredie
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IngridientsDashboardComponent } from './components/ingridients-dashboard/ingridients-dashboard.component';
-import { IngredientsAddComponent } from './components/ingredients-add/ingredients-add.component';
 import { IngredientsSearchComponent } from './components/ingredients-search/ingredients-search.component';
-import { IngredientsListComponent } from './components/ingredients-list/ingredients-list.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { ItemAddComponent } from './components/item-add/item-add.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
 
 
 @NgModule({
   declarations: [
     IngredientsRootComponent,
     IngridientsDashboardComponent,
-    IngredientsAddComponent,
     IngredientsSearchComponent,
-    IngredientsListComponent
+    CategoryListComponent,
+    CategoryAddComponent,
+    ItemAddComponent,
+    ItemListComponent
   ],
   imports: [
     CommonModule,
