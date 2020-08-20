@@ -4,7 +4,7 @@ export interface IngredientCategoryModel {
   description: string;
 }
 
-export interface IngredientModel {
+export interface IngredientItemModel {
   id: string;
   categoryId: string;
   name: string;

@@ -1,0 +1,27 @@
+@import "./global-colors.scss";
+
+a.button {
+  text-decoration: none;
+  border-width: 1px;
+  border-style: solid;
+  line-height: 20px;
+  padding: 5px 3px;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.light-mode {
+  a.button {
+    border-color: rgb(94, 94, 94);
+    color: $light-foreground-color;
+    background-color: $light-background-color;
+  }
+}
+
+.dark-mode {
+  a.button {
+    border-color: rgb(94, 94, 94);
+    color: $dark-foreground-color;
+    background-color: $dark-background-color;
+  }
+}

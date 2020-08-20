@@ -8,6 +8,7 @@ import { CategoryListComponent } from './components/category-list/category-list.
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { ItemAddComponent } from './components/item-add/item-add.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ItemListComponent } from './components/item-list/item-list.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     IngredientsRoutesModule
   ],
   exports: [
