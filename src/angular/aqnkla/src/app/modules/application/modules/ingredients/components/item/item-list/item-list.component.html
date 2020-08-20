@@ -1,13 +1,45 @@
-<p>item-list works!</p>
-
 <div>
+  <mat-table [dataSource]="list" class="mat-elevation-z8">
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ getCategoryName(element.categoryId) }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.description }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="button-edit">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="['../item-edit', element.id]">Edit</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button-detail">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="['../item-detail', element.id]">View</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button-delete">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-button (click)="deleteItem(element.id)">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
   <div>
-    <a class="button" [routerLink]="['../item-add']">item add</a>
-  </div>
-  <div *ngFor="let item of list">
-    {{ getCategoryName(item.categoryId) }} {{ item.name }}
-    <a [routerLink]="['../item-edit', item.id]">Edit</a
-    ><a [routerLink]="['../item-detail', item.id]">View</a>
-    <button (click)="deleteItem(item.id)">Delete</button>
+    <a mat-raised-button [routerLink]="['../item-add']">item add</a>
   </div>
 </div>

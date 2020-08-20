@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { NetworkClientService } from './network-client.service';
 
 describe('NetworkClientService', () => {
-  let service: NetworkClientService;
+  let service: NetworkClientService<any>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

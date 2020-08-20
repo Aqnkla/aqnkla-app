@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemClientService } from './../../../services/item-client/item-client.service';
 import { ViewType } from 'src/app/models/common.model';
-import { IngredientItemModel, IngredientCategoryModel } from '../../../models/ingredient.model';
+import {
+  IngredientItemModel,
+  IngredientCategoryModel,
+} from '../../../models/ingredient.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { CategoryClientService } from '../../../services/category-client/category-client.service';
@@ -35,7 +38,8 @@ export class ItemDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryClientService.getAll().subscribe((b) => (this.categories = b));}
+    this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
+  }
 
   private uploadDetails(): void {
     if (this.viewType) {

@@ -9,6 +9,7 @@ import { CategoryClientService } from './../../../services/category-client/categ
 })
 export class CategoryListComponent implements OnInit {
   list: IngredientCategoryModel[] = [];
+  displayedColumns: string[] = ['name', 'description', 'button-edit', 'button-detail', 'button-delete'];
   constructor(private categoryClientService: CategoryClientService) {}
 
   ngOnInit(): void {

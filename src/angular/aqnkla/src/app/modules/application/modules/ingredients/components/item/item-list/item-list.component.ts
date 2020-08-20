@@ -13,6 +13,14 @@ import { CategoryClientService } from '../../../services/category-client/categor
 })
 export class ItemListComponent implements OnInit {
   list: IngredientItemModel[] = [];
+  displayedColumns: string[] = [
+    'category',
+    'name',
+    'description',
+    'button-edit',
+    'button-detail',
+    'button-delete',
+  ];
   categories: IngredientCategoryModel[] = [];
   constructor(
     private itemClientService: ItemClientService,

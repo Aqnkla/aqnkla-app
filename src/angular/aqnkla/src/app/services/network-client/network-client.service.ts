@@ -1,11 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root',
-})
 export abstract class NetworkClientService<T> {
   protected readonly controller: string;
   constructor(protected networkService: HttpService, controller: string) {
@@ -33,7 +29,6 @@ export abstract class NetworkClientService<T> {
   }
 
   getAll(): Observable<T[]> {
-    const url = 'categories';
     const response = this.networkService.get(this.controller);
     return response.pipe(map((b) => b as T[]));
   }

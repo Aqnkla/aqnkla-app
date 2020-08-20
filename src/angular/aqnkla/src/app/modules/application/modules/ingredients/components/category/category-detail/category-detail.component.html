@@ -1,20 +1,32 @@
 <div *ngIf="viewType">
-  <p>category-add works!:</p>
-  <div *ngIf="category">
-    <div>
-      {{ category.id }}
-    </div>
-    <div>
-      <input [(ngModel)]="category.name" placeholder="name" />
-    </div>
-    <div>
-      <input [(ngModel)]="category.description" placeholder="description" />
-    </div>
-    <div>
-      <button (click)="cancel()">Cancel</button>
-      <button *ngIf="viewType !== ViewType.detail" (click)="save()">
-        Save
-      </button>
-    </div>
+  <div *ngIf="category" class="item">
+    <mat-card>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="category.name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            type="text"
+            [(ngModel)]="category.description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button
+          mat-raised-button
+          *ngIf="viewType !== ViewType.detail"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </mat-card>
   </div>
 </div>

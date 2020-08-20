@@ -1,11 +1,39 @@
-<p>category-list works!</p>
 <div>
+  <mat-table [dataSource]="list" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.description }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="button-edit">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="['../category-edit', element.id]">Edit</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button-detail">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="['../category-detail', element.id]">View</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="button-delete">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-button (click)="deleteCategory(element.id)">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
   <div>
-    <a class="button" [routerLink]="['../category-add']">category add</a>
-  </div>
-  <div *ngFor="let item of list">
-    {{ item.name }} <a [routerLink]="['../category-edit', item.id]">Edit</a
-    ><a [routerLink]="['../category-detail', item.id]">View</a>
-    <button (click)="deleteCategory(item.id)">Delete</button>
+    <a mat-raised-button [routerLink]="['../category-add']">category add</a>
   </div>
 </div>

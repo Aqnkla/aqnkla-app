@@ -10,6 +10,11 @@ import { ItemDetailComponent } from './components/item/item-detail/item-detail.c
 import { ItemListComponent } from './components/item/item-list/item-list.component';
 import { IngredientsRoutesModule } from './ingredients.routing';
 import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -25,6 +30,11 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     IngredientsRoutesModule,
     MatSelectModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatTableModule,
+    MatCardModule,
   ],
   exports: [IngredientsRootComponent],
 })

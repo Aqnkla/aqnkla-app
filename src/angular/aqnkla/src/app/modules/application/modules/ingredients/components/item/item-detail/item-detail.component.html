@@ -1,30 +1,44 @@
 <div *ngIf="viewType">
-  <p>item-add works!:</p>
-  <div *ngIf="item">
-    <div>
-      {{ item.id }}
-    </div>
-    <div>
-      <mat-select [(ngModel)]="item.categoryId">
-        <mat-option *ngFor="let category of categories" [value]="category.id">
-          {{category.name}}
-        </mat-option>
-      </mat-select>
-      <select>
-        <option *ngFor="let category of categories">{{category.name}}</option>
-      </select>
-    </div>
-    <div>
-      <input [(ngModel)]="item.name" placeholder="name" />
-    </div>
-    <div>
-      <input [(ngModel)]="item.description" placeholder="description" />
-    </div>
-    <div>
-      <button (click)="cancel()">Cancel</button>
-      <button *ngIf="viewType !== ViewType.detail" (click)="save()">
-        Save
-      </button>
-    </div>
+  <div *ngIf="item" class="item">
+    <mat-card>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-select [(ngModel)]="item.categoryId">
+            <mat-option
+              *ngFor="let category of categories"
+              [value]="category.id"
+            >
+              {{ category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="item.name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            type="text"
+            [(ngModel)]="item.description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button
+          mat-raised-button
+          *ngIf="viewType !== ViewType.detail"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </mat-card>
   </div>
 </div>

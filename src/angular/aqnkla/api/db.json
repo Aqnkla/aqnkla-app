@@ -1,27 +1,53 @@
 {
   "categories": [
     {
-      "id": "test2",
-      "name": "Milk Some",
-      "description": "Milk description"
-    },
-    {
       "id": "test1",
-      "name": "Test some data",
-      "description": "Some data"
+      "name": "Seafood",
+      "description": "Seafood is any form of sea life regarded as food by humans."
     },
     {
-      "id": "58e246d0-0727-4b39-844e-5386c8dec933",
-      "name": "test S",
-      "description": "test"
+      "id": "bc42677a-2e2a-4379-881b-69860257c8cc",
+      "name": "Meat",
+      "description": "Meat is animal flesh that is eaten as food.",
+      "parentCategoryId": ""
+    },
+    {
+      "id": "62d30271-ad7a-4eda-a7a8-937d8a021b98",
+      "name": "Fruit",
+      "description": "In common language usage, \"fruit\" normally means the fleshy seed-associated structures of a plant that are sweet or sour, and edible in the raw state.",
+      "parentCategoryId": ""
     }
   ],
   "items": [
     {
-      "id": "839414ee-d1c5-4640-a76e-d7d7eacb6a82",
-      "name": "test item w",
+      "id": "8d5d33a6-4c8a-41ea-8f66-722918b0eae9",
+      "name": "Salmon",
+      "description": "Salmon is a common food classified as an oily fish.",
+      "categoryId": "test1"
+    },
+    {
+      "id": "be8af2ce-1ed5-43c3-a177-c41c861287dd",
+      "name": "Apple",
       "description": "",
-      "categoryId": ""
+      "categoryId": "62d30271-ad7a-4eda-a7a8-937d8a021b98"
+    },
+    {
+      "id": "94287433-17a1-428d-ba4d-bb7a4b28b9fb",
+      "name": "Banana",
+      "description": "",
+      "categoryId": "62d30271-ad7a-4eda-a7a8-937d8a021b98"
+    },
+    {
+      "id": "c7513bf0-6d11-4837-8923-764990dd95ac",
+      "name": "Pork",
+      "description": "",
+      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc"
+    },
+    {
+      "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
+      "name": "Beef",
+      "description": "",
+      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc"
     }
   ]
 }

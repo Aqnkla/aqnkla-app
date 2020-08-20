@@ -25,14 +25,14 @@ const routes: Routes = [
         },
       },
       {
-        path: 'item--edit/:id',
+        path: 'item-edit/:id',
         component: ItemDetailComponent,
         data: {
           viewType: ViewType.edit,
         },
       },
       {
-        path: 'item--detail/:id',
+        path: 'item-detail/:id',
         component: ItemDetailComponent,
         data: {
           viewType: ViewType.detail,
