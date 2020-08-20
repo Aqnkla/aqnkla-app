@@ -1,16 +1,24 @@
 {
-  "teams": [
+  "categories": [
     {
-      "id": 1,
-      "name": "FC Barcelona",
-      "coach": "Ernesto Valverde",
-      "description": "The best football team in the world!"
+      "id": "test2",
+      "name": "Milk",
+      "description": "Milk description"
     },
     {
-      "id": 2,
-      "name": "Real Madrid",
-      "coach": "Zinedine Zidane",
-      "description": "The worst football team in the world!"
+      "id": "test1",
+      "name": "Some",
+      "description": "Some data"
+    },
+    {
+      "id": "58e246d0-0727-4b39-844e-5386c8dec933",
+      "name": "test",
+      "description": "test"
+    },
+    {
+      "id": "cb4ad1fd-2fe0-4e41-a10b-460ddd5fb54a",
+      "name": "Meat",
+      "description": "Meat"
     }
   ]
 }

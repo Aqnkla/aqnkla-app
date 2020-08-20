@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { IngridientsDashboardComponent } from './components/ingridients-dashboard/ingridients-dashboard.component';
 import { IngredientsSearchComponent } from './components/ingredients-search/ingredients-search.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
-import { CategoryAddComponent } from './components/category-add/category-add.component';
-import { ItemAddComponent } from './components/item-add/item-add.component';
+import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { FormsModule } from '@angular/forms';
 
@@ -17,8 +17,8 @@ import { FormsModule } from '@angular/forms';
     IngridientsDashboardComponent,
     IngredientsSearchComponent,
     CategoryListComponent,
-    CategoryAddComponent,
-    ItemAddComponent,
+    CategoryDetailComponent,
+    ItemDetailComponent,
     ItemListComponent
   ],
   imports: [
