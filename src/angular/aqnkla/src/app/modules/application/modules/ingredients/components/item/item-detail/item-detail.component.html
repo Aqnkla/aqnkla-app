@@ -1,1 +1,30 @@
-<p>item-add works!</p>
+<div *ngIf="viewType">
+  <p>item-add works!:</p>
+  <div *ngIf="item">
+    <div>
+      {{ item.id }}
+    </div>
+    <div>
+      <mat-select [(ngModel)]="item.categoryId">
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+      <select>
+        <option *ngFor="let category of categories">{{category.name}}</option>
+      </select>
+    </div>
+    <div>
+      <input [(ngModel)]="item.name" placeholder="name" />
+    </div>
+    <div>
+      <input [(ngModel)]="item.description" placeholder="description" />
+    </div>
+    <div>
+      <button (click)="cancel()">Cancel</button>
+      <button *ngIf="viewType !== ViewType.detail" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

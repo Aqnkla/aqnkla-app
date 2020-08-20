@@ -15,26 +15,51 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: IngridientsDashboardComponent,
-        data: { test: 'trg' },
       },
       { path: 'item-list', component: ItemListComponent },
-      { path: 'item-add', component: ItemDetailComponent },
+      {
+        path: 'item-add',
+        component: ItemDetailComponent,
+        data: {
+          viewType: ViewType.add,
+        },
+      },
+      {
+        path: 'item--edit/:id',
+        component: ItemDetailComponent,
+        data: {
+          viewType: ViewType.edit,
+        },
+      },
+      {
+        path: 'item--detail/:id',
+        component: ItemDetailComponent,
+        data: {
+          viewType: ViewType.detail,
+        },
+      },
       { path: 'category-list', component: CategoryListComponent },
       {
         path: 'category-add',
         component: CategoryDetailComponent,
         data: {
           viewType: ViewType.add,
-        }
+        },
       },
-      { path: 'category-edit/:id', component: CategoryDetailComponent ,
-      data: {
-        viewType: ViewType.edit,
-      }},
-      { path: 'category-detail/:id', component: CategoryDetailComponent ,
-      data: {
-        viewType: ViewType.detail,
-      }},
+      {
+        path: 'category-edit/:id',
+        component: CategoryDetailComponent,
+        data: {
+          viewType: ViewType.edit,
+        },
+      },
+      {
+        path: 'category-detail/:id',
+        component: CategoryDetailComponent,
+        data: {
+          viewType: ViewType.detail,
+        },
+      },
       { path: 'search', component: IngredientsSearchComponent },
     ],
   },

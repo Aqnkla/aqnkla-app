@@ -9,7 +9,7 @@ import { CategoryDetailComponent } from './components/category/category-detail/c
 import { ItemDetailComponent } from './components/item/item-detail/item-detail.component';
 import { ItemListComponent } from './components/item/item-list/item-list.component';
 import { IngredientsRoutesModule } from './ingredients.routing';
-
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -20,7 +20,12 @@ import { IngredientsRoutesModule } from './ingredients.routing';
     ItemDetailComponent,
     ItemListComponent,
   ],
-  imports: [CommonModule, FormsModule, IngredientsRoutesModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IngredientsRoutesModule,
+    MatSelectModule,
+  ],
   exports: [IngredientsRootComponent],
 })
 export class IngredientsModule {}
