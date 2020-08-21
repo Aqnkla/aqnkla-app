@@ -23,7 +23,19 @@
       "id": "8d5d33a6-4c8a-41ea-8f66-722918b0eae9",
       "name": "Salmon",
       "description": "Salmon is a common food classified as an oily fish.",
-      "categoryId": "test1"
+      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc",
+      "minerals": [
+        {
+          "item": "phtotasium",
+          "quantity": 6,
+          "quantityRatio": 1
+        },
+        {
+          "item": "zink",
+          "quantity": 1978,
+          "quantityRatio": 0.000001
+        }
+      ]
     },
     {
       "id": "be8af2ce-1ed5-43c3-a177-c41c861287dd",

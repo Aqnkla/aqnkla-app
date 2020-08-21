@@ -33,29 +33,41 @@
       <div>
         <mat-form-field class="full-width">
           <mat-label>Fat</mat-label>
-          <input matInput type="text" [(ngModel)]="item.fat" />
+          <input matInput type="number" [(ngModel)]="item.fat" />
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field class="full-width">
           <mat-label>Protein</mat-label>
-          <input matInput type="text" [(ngModel)]="item.protein" />
+          <input matInput type="number" [(ngModel)]="item.protein" />
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field class="full-width">
           <mat-label>Carbs</mat-label>
-          <input matInput type="text" [(ngModel)]="item.carbs" />
+          <input matInput type="number" [(ngModel)]="item.carbs" />
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field class="full-width">
           <mat-label>Calores</mat-label>
-          <input matInput type="text" [(ngModel)]="item.calories" />
+          <input matInput type="number" [(ngModel)]="item.calories" />
         </mat-form-field>
+      </div>
+      <div>
+        <aqn-item-mineral
+          [minerals]="item.minerals"
+          (valueChanged)="item.minerals = $event"
+        ></aqn-item-mineral>
+      </div>
+      <div>
+        <aqn-item-vitamin
+          [vitmains]="item.vitamins"
+          (valueChanged)="item.vitamins = $event"
+        ></aqn-item-vitamin>
       </div>
       <div>
         <button mat-button (click)="cancel()">Cancel</button>

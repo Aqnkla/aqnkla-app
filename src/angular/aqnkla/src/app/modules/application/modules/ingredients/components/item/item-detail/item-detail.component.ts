@@ -27,8 +27,6 @@ export class ItemDetailComponent implements OnInit {
   vitamins: DataValue<Vitamin>[];
   minerals: DataValue<Mineral>[];
 
-  avalibleVitamins: Vitamin[];
-  avalibleMinerals: Mineral[];
 
   constructor(
     private itemClientService: ItemClientService,
@@ -48,8 +46,6 @@ export class ItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
-    this.avalibleVitamins = ObjectHelper.getEnumValues<Vitamin>(Vitamin);
-    this.avalibleMinerals = ObjectHelper.getEnumValues<Mineral>(Mineral);
   }
 
   private uploadDetails(): void {

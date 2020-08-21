@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataValueComponent } from './data-value.component';
+import { ItemVitaminComponent } from './item-vitamin.component';
 
-describe('DataValueComponent', () => {
-  let component: DataValueComponent;
-  let fixture: ComponentFixture<DataValueComponent>;
+describe('ItemVitaminComponent', () => {
+  let component: ItemVitaminComponent;
+  let fixture: ComponentFixture<ItemVitaminComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataValueComponent ]
+      declarations: [ ItemVitaminComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataValueComponent);
+    fixture = TestBed.createComponent(ItemVitaminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

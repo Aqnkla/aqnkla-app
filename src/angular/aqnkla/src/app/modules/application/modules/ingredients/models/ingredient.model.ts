@@ -6,10 +6,14 @@ export enum Vitamin {
 export enum Mineral {
   zink,
   iron,
+  molibden,
+  clorium,
+  phtotasium
 }
 
 export interface DataValue<T> {
   item: T;
+  quantityRatio: number;
   quantity: number;
 }
 

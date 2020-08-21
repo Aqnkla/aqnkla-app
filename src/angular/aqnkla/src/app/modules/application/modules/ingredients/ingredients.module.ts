@@ -15,7 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
-import { DataValueComponent } from './components/data-value/data-value.component';
+import { ItemVitaminComponent } from './components/item/values/item-vitamin/item-vitamin.component';
+import { ItemMineralComponent } from './components/item/values/item-mineral/item-mineral.component';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -25,7 +26,8 @@ import { DataValueComponent } from './components/data-value/data-value.component
     CategoryDetailComponent,
     ItemDetailComponent,
     ItemListComponent,
-    DataValueComponent,
+    ItemVitaminComponent,
+    ItemMineralComponent,
   ],
   imports: [
     CommonModule,
