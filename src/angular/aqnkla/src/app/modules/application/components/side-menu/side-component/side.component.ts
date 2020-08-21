@@ -28,7 +28,7 @@ export class SideComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.switchMenuSize(true);
+    this.switchMenuSize(false);
   }
 
   switchSize(): void {

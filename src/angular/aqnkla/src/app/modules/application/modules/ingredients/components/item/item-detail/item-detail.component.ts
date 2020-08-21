@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemClientService } from './../../../services/item-client/item-client.service';
 import { ViewType } from 'src/app/models/common.model';
+import { ObjectHelper } from './../../../../../helpers/common/object.helper';
 import {
   IngredientItemModel,
   IngredientCategoryModel,
+  Vitamin,
+  DataValue,
+  Mineral,
 } from '../../../models/ingredient.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
@@ -20,6 +24,11 @@ export class ItemDetailComponent implements OnInit {
   item: IngredientItemModel;
   itemId: string;
   categories: IngredientCategoryModel[] = [];
+  vitamins: DataValue<Vitamin>[];
+  minerals: DataValue<Mineral>[];
+
+  avalibleVitamins: Vitamin[];
+  avalibleMinerals: Mineral[];
 
   constructor(
     private itemClientService: ItemClientService,
@@ -39,6 +48,8 @@ export class ItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
+    this.avalibleVitamins = ObjectHelper.getEnumValues<Vitamin>(Vitamin);
+    this.avalibleMinerals = ObjectHelper.getEnumValues<Mineral>(Mineral);
   }
 
   private uploadDetails(): void {
@@ -50,6 +61,12 @@ export class ItemDetailComponent implements OnInit {
             name: '',
             description: '',
             categoryId: '',
+            calories: 0,
+            carbs: 0,
+            fat: 0,
+            protein: 0,
+            minerals: [],
+            vitamins: [],
           };
           break;
         case ViewType.edit:
