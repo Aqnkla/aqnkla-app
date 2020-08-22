@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { ItemVitaminComponent } from './components/item/values/item-vitamin/item-vitamin.component';
 import { ItemMineralComponent } from './components/item/values/item-mineral/item-mineral.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteDialogComponent } from './components/item/values/item-mineral/delete-dialog/delete-dialog.component';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -28,6 +30,7 @@ import { ItemMineralComponent } from './components/item/values/item-mineral/item
     ItemListComponent,
     ItemVitaminComponent,
     ItemMineralComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +42,7 @@ import { ItemMineralComponent } from './components/item/values/item-mineral/item
     MatButtonModule,
     MatTableModule,
     MatCardModule,
+    MatDialogModule,
   ],
   exports: [IngredientsRootComponent],
 })

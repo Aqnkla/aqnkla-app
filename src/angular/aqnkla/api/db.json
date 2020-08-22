@@ -27,33 +27,30 @@
       "minerals": [
         {
           "item": "phtotasium",
-          "quantity": 6,
-          "quantityRatio": 1
+          "quantity": 62,
+          "quantityRatio": 0.001
         },
         {
           "item": "zink",
           "quantity": 1978,
           "quantityRatio": 0.000001
+        },
+        {
+          "item": "iron",
+          "quantity": 22,
+          "quantityRatio": 1
+        },
+        {
+          "item": "molibden",
+          "quantity": 0,
+          "quantityRatio": 1
+        },
+        {
+          "item": "clorium",
+          "quantity": 0,
+          "quantityRatio": 1
         }
       ]
-    },
-    {
-      "id": "be8af2ce-1ed5-43c3-a177-c41c861287dd",
-      "name": "Apple",
-      "description": "",
-      "categoryId": "62d30271-ad7a-4eda-a7a8-937d8a021b98"
-    },
-    {
-      "id": "94287433-17a1-428d-ba4d-bb7a4b28b9fb",
-      "name": "Banana",
-      "description": "",
-      "categoryId": "62d30271-ad7a-4eda-a7a8-937d8a021b98"
-    },
-    {
-      "id": "c7513bf0-6d11-4837-8923-764990dd95ac",
-      "name": "Pork",
-      "description": "",
-      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc"
     },
     {
       "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",

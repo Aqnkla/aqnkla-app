@@ -7,28 +7,43 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-button (click)="addItem()">Add</button>
+    <button mat-stroked-button (click)="addItem()">Add</button>
   </div>
   <div>
     <table>
-      <tr *ngFor="let itwmValue of minerals">
-        <td>{{ itwmValue.item }}</td>
+      <tr *ngFor="let itemValue of minerals">
         <td>
-          <mat-form-field class="full-width">
+          <div>{{ itemValue.item }}</div>
+          <div class="item-quntity-mg">
+            {{
+              getQuantitySummary(itemValue.quantity, itemValue.quantityRatio)
+            }}
+            mg
+          </div>
+        </td>
+        <td>
+          <mat-form-field class="item-quantity">
             <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="itwmValue.quantity" />
+            <input matInput type="number" [(ngModel)]="itemValue.quantity" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field>
-            <mat-select [(ngModel)]="itwmValue.quantityRatio">
+            <mat-select [(ngModel)]="itemValue.quantityRatio">
               <mat-option *ngFor="let unit of units" [value]="unit.value">
                 {{ unit.name }}
               </mat-option>
             </mat-select>
-          </mat-form-field></td>
+          </mat-form-field>
+        </td>
         <td>
-          <button mat-button (click)="deleteItem(itwmValue)">Delete</button>
+          <button
+            mat-stroked-button
+            color="warn"
+            (click)="deleteItem(itemValue)"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </table>

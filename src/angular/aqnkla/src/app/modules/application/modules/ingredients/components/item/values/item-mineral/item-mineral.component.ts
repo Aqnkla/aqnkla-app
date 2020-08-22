@@ -1,32 +1,29 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Mineral, DataValue } from '../../../../models/ingredient.model';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
-
-export interface Unit {
-  name: string;
-  label: string;
-  value: number;
-}
+import { MatDialog } from '@angular/material/dialog';
+import {
+  DeleteDialogComponent,
+  DialogDeleteData,
+} from './delete-dialog/delete-dialog.component';
+import { DataHelper } from './../../../../../../helpers/data.helper';
 
 @Component({
   selector: 'aqn-item-mineral',
   templateUrl: './item-mineral.component.html',
-  styleUrls: ['./item-mineral.component.scss'],
+  styleUrls: [
+    './item-mineral.component.scss',
+    './../../../../styles/ingredient.style.scss',
+  ],
 })
 export class ItemMineralComponent implements OnInit {
   @Input() minerals: DataValue<Mineral>[];
   @Output() valueChanged = new EventEmitter<DataValue<Mineral>[]>();
-  units: Unit[] = [
-    { name: 'g', label: 'gram', value: 1 },
-    { name: 'mg', label: 'milligram', value: 0.001 },
-    { name: 'μg', label: 'microgram', value: 0.000001 },
-    { name: 'ng', label: 'nanogram', value: 1e-9 },
-  ];
+  units = DataHelper.getUnits();
   avalibleMinerals: Mineral[];
-  displayedColumns: string[] = ['item', 'quantity'];
 
   activeSelectItem: Mineral;
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.updateAvalibleMinerals();
@@ -56,6 +53,7 @@ export class ItemMineralComponent implements OnInit {
       item: this.activeSelectItem,
       quantity: 0,
       quantityRatio: 1,
+      quantityLabel: 'g',
     });
     this.activeSelectItem = undefined;
     this.updateAvalibleMinerals();
@@ -63,8 +61,25 @@ export class ItemMineralComponent implements OnInit {
   }
 
   deleteItem(value: DataValue<Mineral>): void {
-    this.minerals = this.minerals.filter((obj) => obj.item !== value.item);
-    this.updateAvalibleMinerals();
-    this.valueChanged.emit(this.minerals);
+    const self = this;
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '250px',
+      data: {
+        header: `Remove ${value.item}`,
+        message: `Do you want remove ${value.item}: ${value.quantity} ${value.quantityLabel}`,
+        delete: false,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
+      if (result.delete) {
+        self.minerals = self.minerals.filter((obj) => obj.item !== value.item);
+        self.updateAvalibleMinerals();
+        self.valueChanged.emit(self.minerals);
+      }
+    });
+  }
+
+  getQuantitySummary(value: number, ratio: number): number {
+    return 0;
   }
 }

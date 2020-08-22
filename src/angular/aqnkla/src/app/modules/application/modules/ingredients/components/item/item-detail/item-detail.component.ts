@@ -16,7 +16,10 @@ import { CategoryClientService } from '../../../services/category-client/categor
 @Component({
   selector: 'aqn-item-detail',
   templateUrl: './item-detail.component.html',
-  styleUrls: ['./item-detail.component.scss'],
+  styleUrls: [
+    './item-detail.component.scss',
+    './../../../styles/ingredient.style.scss'
+  ],
 })
 export class ItemDetailComponent implements OnInit {
   ViewType = ViewType;
@@ -26,7 +29,6 @@ export class ItemDetailComponent implements OnInit {
   categories: IngredientCategoryModel[] = [];
   vitamins: DataValue<Vitamin>[];
   minerals: DataValue<Mineral>[];
-
 
   constructor(
     private itemClientService: ItemClientService,

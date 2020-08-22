@@ -14,6 +14,7 @@ export enum Mineral {
 export interface DataValue<T> {
   item: T;
   quantityRatio: number;
+  quantityLabel: string;
   quantity: number;
 }
 

@@ -9,7 +9,10 @@ import { CategoryClientService } from '../../../services/category-client/categor
 @Component({
   selector: 'aqn-item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.scss'],
+  styleUrls: [
+    './item-list.component.scss',
+    './../../../styles/ingredient.style.scss',
+  ],
 })
 export class ItemListComponent implements OnInit {
   list: IngredientItemModel[] = [];
