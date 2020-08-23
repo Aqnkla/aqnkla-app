@@ -1,0 +1,22 @@
+<div *ngIf="viewType">
+  <div *ngIf="item" class="item">
+    <mat-card>
+      <div>
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="item.name" />
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button
+          mat-raised-button
+          *ngIf="viewType !== ViewType.detail"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

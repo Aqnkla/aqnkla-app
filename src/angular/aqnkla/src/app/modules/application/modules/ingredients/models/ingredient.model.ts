@@ -8,7 +8,7 @@ export enum Mineral {
   iron,
   molibden,
   clorium,
-  phtotasium
+  phtotasium,
 }
 
 export interface DataValue<T> {
@@ -36,4 +36,10 @@ export interface IngredientItemModel {
   carbs: number;
   minerals: DataValue<Mineral>[];
   vitamins: DataValue<Vitamin>[];
+}
+
+export interface ReciptModel {
+  id: string;
+  name: string;
+  ingredients: IngredientItemModel[];
 }
