@@ -22,6 +22,12 @@
       "name": "Diary",
       "description": "milk, eggs",
       "parentCategoryId": ""
+    },
+    {
+      "id": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
+      "name": "Bakery",
+      "description": "",
+      "parentCategoryId": ""
     }
   ],
   "items": [
@@ -93,6 +99,56 @@
           "quantityLabel": "g"
         }
       ]
+    },
+    {
+      "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
+      "name": "Eggs",
+      "description": "",
+      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+      "calories": 123,
+      "carbs": 33,
+      "fat": 2,
+      "protein": 3,
+      "minerals": [
+        {
+          "item": "clorium",
+          "quantity": 21,
+          "quantityRatio": 1e-9,
+          "quantityLabel": "g"
+        }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_D",
+          "quantity": 1,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        }
+      ]
+    },
+    {
+      "id": "fefaaa91-be92-4a5a-8b7b-11f969d52421",
+      "name": "Cheese",
+      "description": "",
+      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+      "calories": 213,
+      "carbs": 2,
+      "fat": 21,
+      "protein": 12,
+      "minerals": [],
+      "vitamins": []
+    },
+    {
+      "id": "a4f3e08c-f2f2-46c2-9a32-2e1cce822850",
+      "name": "Bread",
+      "description": "",
+      "categoryId": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
+      "calories": 212,
+      "carbs": 0,
+      "fat": 0,
+      "protein": 0,
+      "minerals": [],
+      "vitamins": []
     }
   ]
 }
