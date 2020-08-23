@@ -16,6 +16,18 @@
       "name": "Fruit",
       "description": "In common language usage, \"fruit\" normally means the fleshy seed-associated structures of a plant that are sweet or sour, and edible in the raw state.",
       "parentCategoryId": ""
+    },
+    {
+      "id": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+      "name": "Diary",
+      "description": "milk, eggs",
+      "parentCategoryId": ""
+    },
+    {
+      "id": "29a72124-6654-4354-b33a-dc2103ce6369",
+      "name": "Bakary",
+      "description": "",
+      "parentCategoryId": ""
     }
   ],
   "items": [
@@ -42,21 +54,55 @@
         },
         {
           "item": "molibden",
-          "quantity": 0,
-          "quantityRatio": 1
+          "quantity": 1,
+          "quantityRatio": 1e-9
         },
         {
           "item": "clorium",
           "quantity": 0,
           "quantityRatio": 1
         }
-      ]
+      ],
+      "fat": 21,
+      "protein": 22,
+      "carbs": 12,
+      "calories": 231
     },
     {
       "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
-      "name": "Beef",
+      "name": "Milk",
       "description": "",
-      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc"
+      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+      "fat": 3,
+      "protein": 2,
+      "carbs": 2,
+      "calories": 80,
+      "minerals": [
+        {
+          "item": "iron",
+          "quantity": 2,
+          "quantityRatio": 0.000001,
+          "quantityLabel": "g"
+        },
+        {
+          "item": "clorium",
+          "quantity": 1,
+          "quantityRatio": 1e-9,
+          "quantityLabel": "g"
+        }
+      ]
+    },
+    {
+      "id": "6ffb4d2b-510e-49d8-aba2-8c1c076b0435",
+      "name": "Egg",
+      "description": "",
+      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+      "calories": 90,
+      "carbs": 20,
+      "fat": 1,
+      "protein": 20,
+      "minerals": [],
+      "vitamins": []
     }
   ]
 }

@@ -5,6 +5,7 @@ import {
   IngredientCategoryModel,
 } from '../../../models/ingredient.model';
 import { CategoryClientService } from '../../../services/category-client/category-client.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'aqn-item-list',
@@ -27,7 +28,8 @@ export class ItemListComponent implements OnInit {
   categories: IngredientCategoryModel[] = [];
   constructor(
     private itemClientService: ItemClientService,
-    private categoryClientService: CategoryClientService
+    private categoryClientService: CategoryClientService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {

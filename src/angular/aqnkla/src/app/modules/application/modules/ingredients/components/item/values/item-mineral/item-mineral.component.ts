@@ -79,7 +79,21 @@ export class ItemMineralComponent implements OnInit {
     });
   }
 
-  getQuantitySummary(value: number, ratio: number): number {
-    return 0;
+  getQuantitySummary(value: number, ratio: number): string {
+    const data = value * ratio * 1000;
+    if (data > 10) {
+      return `${data.toFixed(0)} mg`;
+    } else if (data >= 1) {
+      return `${data.toFixed(1)} mg`;
+    } else if (data >= 0.1) {
+      return `${data.toFixed(2)} mg`;
+    } else if (data >= 0.01) {
+      return `${data.toFixed(3)} mg`;
+    } else if (data >= 0.001) {
+      return `${data.toFixed(4)} mg`;
+    } else if (data >= 0.0001) {
+      return `${data.toFixed(5)} mg`;
+    }
+    return `${data.toFixed(6)} mg`;
   }
 }
