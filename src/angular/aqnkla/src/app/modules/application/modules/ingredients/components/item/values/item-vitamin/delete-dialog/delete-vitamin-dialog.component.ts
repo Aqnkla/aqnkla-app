@@ -1,15 +1,15 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ItemListComponent } from '../item-list.component';
+import { DialogDeleteData } from '../../../../../models/dialog.model';
+import { ItemVitaminComponent } from '../item-vitamin.component';
 
 @Component({
-  selector: 'aqn-delete-dialog',
-  templateUrl: './delete-dialog.component.html',
-  styleUrls: ['./../../../../styles/ingredient.style.scss'],
+  selector: 'aqn-delete-vitamin-dialog',
+  templateUrl: './delete-vitamin-dialog.component.html',
 })
-export class DeleteDialogComponent implements OnInit {
+export class DeleteMineralDialogComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<ItemListComponent>,
+    public dialogRef: MatDialogRef<ItemVitaminComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogDeleteData
   ) {}
 

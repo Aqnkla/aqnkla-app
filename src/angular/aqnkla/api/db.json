@@ -22,12 +22,6 @@
       "name": "Diary",
       "description": "milk, eggs",
       "parentCategoryId": ""
-    },
-    {
-      "id": "29a72124-6654-4354-b33a-dc2103ce6369",
-      "name": "Bakary",
-      "description": "",
-      "parentCategoryId": ""
     }
   ],
   "items": [
@@ -90,19 +84,15 @@
           "quantityRatio": 1e-9,
           "quantityLabel": "g"
         }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_C",
+          "quantity": 1,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        }
       ]
-    },
-    {
-      "id": "6ffb4d2b-510e-49d8-aba2-8c1c076b0435",
-      "name": "Egg",
-      "description": "",
-      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-      "calories": 90,
-      "carbs": 20,
-      "fat": 1,
-      "protein": 20,
-      "minerals": [],
-      "vitamins": []
     }
   ]
 }

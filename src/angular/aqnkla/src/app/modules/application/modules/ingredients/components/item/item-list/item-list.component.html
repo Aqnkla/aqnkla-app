@@ -32,7 +32,9 @@
     <ng-container matColumnDef="button-delete">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <button mat-button (click)="deleteItem(element.id)">Delete</button>
+        <button mat-stroked-button color="warn" (click)="deleteItem(element)">
+          Delete
+        </button>
       </mat-cell>
     </ng-container>
 

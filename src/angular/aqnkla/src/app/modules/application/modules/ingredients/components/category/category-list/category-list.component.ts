@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IngredientCategoryModel } from './../../../models/ingredient.model';
 import { CategoryClientService } from './../../../services/category-client/category-client.service';
 import { MatDialog } from '@angular/material/dialog';
-
+import { DialogDeleteData } from '../../../models/dialog.model';
+import { DeleteCategoryDialogComponent } from './delete-dialog/delete-category-dialog.component';
 @Component({
   selector: 'aqn-category-list',
   templateUrl: './category-list.component.html',
@@ -29,13 +30,24 @@ export class CategoryListComponent implements OnInit {
     this.loadList();
   }
 
-  deleteCategory(id: string): void {
-    this.categoryClientService.delete(id).subscribe((b) => {
-      console.log(b);
-      this.loadList();
+  deleteCategory(value: IngredientCategoryModel): void {
+    const self = this;
+    const dialogRef = this.dialog.open(DeleteCategoryDialogComponent, {
+      width: '250px',
+      data: {
+        header: `Remove category ${value.name}`,
+        message: `Do you want remove ${value.name}?`,
+        delete: false,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
+      if (result.delete) {
+        self.categoryClientService.delete(value.id).subscribe((b) => {
+          self.loadList();
+        });
+      }
     });
   }
-
   private loadList(): void {
     this.categoryClientService.getAll().subscribe((b) => (this.list = b));
   }

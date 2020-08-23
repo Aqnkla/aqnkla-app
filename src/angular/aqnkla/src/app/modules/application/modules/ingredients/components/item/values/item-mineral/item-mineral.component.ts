@@ -2,11 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Mineral, DataValue } from '../../../../models/ingredient.model';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
-import {
-  DeleteDialogComponent,
-  DialogDeleteData,
-} from './delete-dialog/delete-dialog.component';
+import { DeleteMineralDialogComponent } from './delete-dialog/delete-mineral-dialog.component';
 import { DataHelper } from './../../../../../../helpers/data.helper';
+import { DialogDeleteData } from '../../../../models/dialog.model';
 
 @Component({
   selector: 'aqn-item-mineral',
@@ -62,7 +60,7 @@ export class ItemMineralComponent implements OnInit {
 
   deleteItem(value: DataValue<Mineral>): void {
     const self = this;
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,

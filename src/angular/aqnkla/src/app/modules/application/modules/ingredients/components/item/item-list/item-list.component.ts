@@ -6,6 +6,8 @@ import {
 } from '../../../models/ingredient.model';
 import { CategoryClientService } from '../../../services/category-client/category-client.service';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogDeleteData } from '../../../models/dialog.model';
+import { DeleteItemDialogComponent } from './delete-dialog/delete-item-dialog.component';
 
 @Component({
   selector: 'aqn-item-list',
@@ -36,10 +38,23 @@ export class ItemListComponent implements OnInit {
     this.loadList();
     this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
   }
-  deleteItem(id: string): void {
-    this.itemClientService.delete(id).subscribe((b) => {
-      console.log(b);
-      this.loadList();
+
+  deleteItem(value: IngredientItemModel): void {
+    const self = this;
+    const dialogRef = this.dialog.open(DeleteItemDialogComponent, {
+      width: '250px',
+      data: {
+        header: `Remove ${value.name}`,
+        message: `Do you want remove ${value.name}?`,
+        delete: false,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
+      if (result.delete) {
+        self.itemClientService.delete(value.id).subscribe((b) => {
+          self.loadList();
+        });
+      }
     });
   }
 

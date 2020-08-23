@@ -5,9 +5,11 @@ import { IngredientsRootComponent } from './components/root/ingredients-root.com
 import { IngridientsDashboardComponent } from './components/dashboard/ingridients-dashboard.component';
 import { IngredientsSearchComponent } from './components/search/ingredients-search.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
+import { DeleteCategoryDialogComponent } from './components/category/category-list/delete-dialog/delete-category-dialog.component';
 import { CategoryDetailComponent } from './components/category/category-detail/category-detail.component';
 import { ItemDetailComponent } from './components/item/item-detail/item-detail.component';
 import { ItemListComponent } from './components/item/item-list/item-list.component';
+import { DeleteItemDialogComponent } from './components/item/item-list/delete-dialog/delete-item-dialog.component';
 import { IngredientsRoutesModule } from './ingredients.routing';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,7 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ItemVitaminComponent } from './components/item/values/item-vitamin/item-vitamin.component';
 import { ItemMineralComponent } from './components/item/values/item-mineral/item-mineral.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DeleteDialogComponent } from './components/item/values/item-mineral/delete-dialog/delete-dialog.component';
+import { DeleteMineralDialogComponent } from './components/item/values/item-mineral/delete-dialog/delete-mineral-dialog.component';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -30,7 +32,9 @@ import { DeleteDialogComponent } from './components/item/values/item-mineral/del
     ItemListComponent,
     ItemVitaminComponent,
     ItemMineralComponent,
-    DeleteDialogComponent,
+    DeleteMineralDialogComponent,
+    DeleteItemDialogComponent,
+    DeleteCategoryDialogComponent,
   ],
   imports: [
     CommonModule,
