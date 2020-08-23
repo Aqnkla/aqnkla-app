@@ -18,7 +18,7 @@ import { CategoryClientService } from '../../../../../services/ingredient/catego
   templateUrl: './item-detail.component.html',
   styleUrls: [
     './item-detail.component.scss',
-    './../../../styles/ingredient.style.scss'
+    './../../../styles/ingredient.style.scss',
   ],
 })
 export class ItemDetailComponent implements OnInit {
@@ -65,6 +65,11 @@ export class ItemDetailComponent implements OnInit {
             protein: 0,
             minerals: [],
             vitamins: [],
+            avrageDensity: null,
+            isPieceAllowed: false,
+            isVolumeAllowed: false,
+            pieceAvgWeight: null,
+            isVolumeDefault: false,
           };
           break;
         case ViewType.edit:

@@ -20,7 +20,7 @@ import { DialogDeleteData } from '../../../../../../models/dialog.model';
 export class ItemMineralComponent implements OnInit {
   @Input() minerals: DataValue<Mineral>[];
   @Output() valueChanged = new EventEmitter<DataValue<Mineral>[]>();
-  units = DataHelper.getUnits();
+  units = DataHelper.getWeightUnitsGram(0);
   avalibleMinerals: Mineral[];
 
   activeSelectItem: Mineral;

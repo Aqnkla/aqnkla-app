@@ -36,6 +36,11 @@ export interface IngredientItemModel {
   carbs: number;
   minerals: DataValue<Mineral>[];
   vitamins: DataValue<Vitamin>[];
+  isPieceAllowed: boolean;
+  pieceAvgWeight: number;
+  isVolumeAllowed: boolean;
+  avrageDensity: number;
+  isVolumeDefault: boolean;
 }
 
 export interface RecipeModel {

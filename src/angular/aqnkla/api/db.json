@@ -40,7 +40,7 @@
         {
           "item": "phtotasium",
           "quantity": 62,
-          "quantityRatio": 0.001
+          "quantityRatio": 1000
         },
         {
           "item": "zink",
@@ -238,6 +238,43 @@
             "vitamins": []
           },
           "quantity": 1,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        }
+      ]
+    },
+    {
+      "id": "dae705c4-fc02-4009-adb6-20bcefef8058",
+      "name": "",
+      "ingredients": [
+        {
+          "item": {
+            "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
+            "name": "Eggs",
+            "description": "",
+            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+            "calories": 123,
+            "carbs": 33,
+            "fat": 2,
+            "protein": 3,
+            "minerals": [
+              {
+                "item": "clorium",
+                "quantity": 21,
+                "quantityRatio": 1e-9,
+                "quantityLabel": "g"
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_D",
+                "quantity": 1,
+                "quantityRatio": 1,
+                "quantityLabel": "g"
+              }
+            ]
+          },
+          "quantity": 2,
           "quantityRatio": 1,
           "quantityLabel": "g"
         }

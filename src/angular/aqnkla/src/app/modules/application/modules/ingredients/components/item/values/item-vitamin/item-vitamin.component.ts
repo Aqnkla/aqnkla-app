@@ -17,7 +17,7 @@ import {
 export class ItemVitaminComponent implements OnInit {
   @Input() vitmains: DataValue<Vitamin>[];
   @Output() valueChanged = new EventEmitter<DataValue<Vitamin>[]>();
-  units = DataHelper.getUnits();
+  units = DataHelper.getWeightUnitsGram(0);
   avalibleVitamins: Vitamin[];
 
   activeSelectItem: Vitamin;

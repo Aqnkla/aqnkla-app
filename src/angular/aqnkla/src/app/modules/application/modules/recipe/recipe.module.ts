@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
 
@@ -36,6 +37,7 @@ import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-in
     MatTableModule,
     MatCardModule,
     MatDialogModule,
+    MatSlideToggleModule,
   ],
 })
 export class RecipeModule {}

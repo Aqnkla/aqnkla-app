@@ -17,7 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class RecipeIngredientsComponent implements OnInit {
   @Input() ingredients: DataValue<IngredientItemModel>[];
   @Output() valueChanged = new EventEmitter<DataValue<IngredientItemModel>[]>();
-  units = DataHelper.getUnits();
+  units = DataHelper.getWeightUnitsGram(0);
   activeSelectItem: IngredientItemModel;
   avalibleItems: IngredientItemModel[];
   constructor(
