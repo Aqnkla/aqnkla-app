@@ -14,8 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
-
-
+import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     RecipeDetailComponent,
     RecipeListComponent,
     RecipeSearchComponent,
-    RecipeRootComponent
+    RecipeRootComponent,
+    RecipeIngredientsComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +36,6 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatCardModule,
     MatDialogModule,
-  ]
+  ],
 })
-export class RecipeModule { }
+export class RecipeModule {}

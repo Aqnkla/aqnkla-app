@@ -41,5 +41,5 @@ export interface IngredientItemModel {
 export interface RecipeModel {
   id: string;
   name: string;
-  ingredients: IngredientItemModel[];
+  ingredients: DataValue<IngredientItemModel>[];
 }

@@ -153,9 +153,95 @@
   ],
   "recipes": [
     {
-      "id": "e928a1d3-9bca-43d7-ab7b-b59a28629f6a",
-      "name": "test",
-      "ingredients": []
+      "id": "15e7756f-427c-4a4f-8aa8-3e32fd308cc4",
+      "name": "Some taste",
+      "ingredients": [
+        {
+          "item": {
+            "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
+            "name": "Milk",
+            "description": "",
+            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+            "fat": 3,
+            "protein": 2,
+            "carbs": 2,
+            "calories": 80,
+            "minerals": [
+              {
+                "item": "iron",
+                "quantity": 2,
+                "quantityRatio": 0.000001,
+                "quantityLabel": "g"
+              },
+              {
+                "item": "clorium",
+                "quantity": 1,
+                "quantityRatio": 1e-9,
+                "quantityLabel": "g"
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_C",
+                "quantity": 1,
+                "quantityRatio": 1,
+                "quantityLabel": "g"
+              }
+            ]
+          },
+          "quantity": 10,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        },
+        {
+          "item": {
+            "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
+            "name": "Eggs",
+            "description": "",
+            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
+            "calories": 123,
+            "carbs": 33,
+            "fat": 2,
+            "protein": 3,
+            "minerals": [
+              {
+                "item": "clorium",
+                "quantity": 21,
+                "quantityRatio": 1e-9,
+                "quantityLabel": "g"
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_D",
+                "quantity": 1,
+                "quantityRatio": 1,
+                "quantityLabel": "g"
+              }
+            ]
+          },
+          "quantity": 23,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        },
+        {
+          "item": {
+            "id": "a4f3e08c-f2f2-46c2-9a32-2e1cce822850",
+            "name": "Bread",
+            "description": "",
+            "categoryId": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
+            "calories": 212,
+            "carbs": 0,
+            "fat": 0,
+            "protein": 0,
+            "minerals": [],
+            "vitamins": []
+          },
+          "quantity": 1,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        }
+      ]
     }
   ]
 }
