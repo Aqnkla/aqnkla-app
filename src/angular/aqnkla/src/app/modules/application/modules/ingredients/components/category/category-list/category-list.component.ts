@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IngredientCategoryModel } from './../../../models/ingredient.model';
-import { CategoryClientService } from './../../../services/category-client/category-client.service';
+import { IngredientCategoryModel } from './../../../../../models/ingredient.model';
+import { CategoryClientService } from './../../../../../services/ingredient/category-client/category-client.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeleteData } from '../../../models/dialog.model';
+import { DialogDeleteData } from '../../../../../models/dialog.model';
 import { DeleteCategoryDialogComponent } from './delete-dialog/delete-category-dialog.component';
 @Component({
   selector: 'aqn-category-list',

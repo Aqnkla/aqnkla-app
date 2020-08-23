@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ItemListComponent } from '../item-list.component';
-import { DialogDeleteData } from '../../../../models/dialog.model';
+import { DialogDeleteData } from '../../../../../../models/dialog.model';
 
 @Component({
   selector: 'aqn-delete-item-dialog',

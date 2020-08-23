@@ -1,10 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Mineral, DataValue } from '../../../../models/ingredient.model';
+import {
+  DataValue,
+  Mineral,
+} from './../../../../../../models/ingredient.model';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from './delete-dialog/delete-mineral-dialog.component';
 import { DataHelper } from './../../../../../../helpers/data.helper';
-import { DialogDeleteData } from '../../../../models/dialog.model';
+import { DialogDeleteData } from '../../../../../../models/dialog.model';
 
 @Component({
   selector: 'aqn-item-mineral',

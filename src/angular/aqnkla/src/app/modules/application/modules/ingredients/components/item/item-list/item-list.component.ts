@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemClientService } from './../../../services/item-client/item-client.service';
+import { ItemClientService } from '../../../../../services/ingredient/item-client/item-client.service';
 import {
   IngredientItemModel,
   IngredientCategoryModel,
-} from '../../../models/ingredient.model';
-import { CategoryClientService } from '../../../services/category-client/category-client.service';
+} from '../../../../../models/ingredient.model';
+import { CategoryClientService } from '../../../../../services/ingredient/category-client/category-client.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeleteData } from '../../../models/dialog.model';
+import { DialogDeleteData } from '../../../../../models/dialog.model';
 import { DeleteItemDialogComponent } from './delete-dialog/delete-item-dialog.component';
 
 @Component({

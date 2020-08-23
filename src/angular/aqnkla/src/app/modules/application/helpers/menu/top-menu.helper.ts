@@ -6,7 +6,7 @@ export class TopMenuHelper {
   static getTopMenu(): MenuGroup[] {
     const groups = [];
     groups.push(this.getDiaryMenu());
-    groups.push(this.getReciptMenu());
+    groups.push(this.getRecipeMenu());
     groups.push(this.getIngredientsMenu());
     return groups;
   }
@@ -39,12 +39,12 @@ export class TopMenuHelper {
     return group;
   }
 
-  private static getReciptMenu(): MenuGroup {
+  private static getRecipeMenu(): MenuGroup {
     const group = {
       rootItem: {
-        label: 'Recipt',
-        link: 'recipt',
-        svgPath: SvgGalleryHelper.getIcon(SvgIcon.recipt),
+        label: 'Recipe',
+        link: 'recipe',
+        svgPath: SvgGalleryHelper.getIcon(SvgIcon.recipe),
       },
       subItems: [
         {

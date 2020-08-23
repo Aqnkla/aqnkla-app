@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemClientService } from './../../../services/item-client/item-client.service';
+import { ItemClientService } from '../../../../../services/ingredient/item-client/item-client.service';
 import { ViewType } from 'src/app/models/common.model';
 import { ObjectHelper } from './../../../../../helpers/common/object.helper';
 import {
@@ -8,10 +8,10 @@ import {
   Vitamin,
   DataValue,
   Mineral,
-} from '../../../models/ingredient.model';
+} from '../../../../../models/ingredient.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
-import { CategoryClientService } from '../../../services/category-client/category-client.service';
+import { CategoryClientService } from '../../../../../services/ingredient/category-client/category-client.service';
 
 @Component({
   selector: 'aqn-item-detail',

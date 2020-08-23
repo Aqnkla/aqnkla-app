@@ -1,10 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DataValue, Vitamin } from '../../../../models/ingredient.model';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from '../item-mineral/delete-dialog/delete-mineral-dialog.component';
-import { DialogDeleteData } from '../../../../models/dialog.model';
+import { DialogDeleteData } from '../../../../../../models/dialog.model';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
+import {
+  DataValue,
+  Vitamin,
+} from './../../../../../../models/ingredient.model';
 
 @Component({
   selector: 'aqn-item-vitamin',
