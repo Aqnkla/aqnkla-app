@@ -12,7 +12,10 @@ import {
 @Component({
   selector: 'aqn-item-vitamin',
   templateUrl: './item-vitamin.component.html',
-  styleUrls: ['./item-vitamin.component.scss'],
+  styleUrls: [
+    './item-vitamin.component.scss',
+    './../../../../styles/ingredient.style.scss',
+  ],
 })
 export class ItemVitaminComponent implements OnInit {
   @Input() vitmains: DataValue<Vitamin>[];

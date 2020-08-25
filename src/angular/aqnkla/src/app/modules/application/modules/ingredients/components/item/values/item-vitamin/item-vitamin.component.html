@@ -1,12 +1,15 @@
 <div>
   <div *ngIf="avalibleVitamins.length > 0">
-    <mat-form-field>
-      <mat-select [(ngModel)]="activeSelectItem">
-        <mat-option *ngFor="let mineral of avalibleVitamins" [value]="mineral">
-          {{ mineral }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-select [(ngModel)]="activeSelectItem">
+          <mat-option
+            *ngFor="let mineral of avalibleVitamins"
+            [value]="mineral"
+          >
+            {{ mineral }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     <button mat-stroked-button (click)="addItem()">Add</button>
   </div>
   <div>
@@ -26,7 +29,7 @@
             <input matInput type="number" [(ngModel)]="itemValue.quantity" />
           </mat-form-field>
         </td>
-        <td>
+        <td class="item-select">
           <mat-form-field>
             <mat-select [(ngModel)]="itemValue.quantityRatio">
               <mat-option *ngFor="let unit of units" [value]="unit.value">

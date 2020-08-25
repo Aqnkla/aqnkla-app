@@ -66,7 +66,21 @@
       "fat": 21,
       "protein": 22,
       "carbs": 12,
-      "calories": 231
+      "calories": 231,
+      "vitamins": [
+        {
+          "item": "vitamin_C",
+          "quantity": 2,
+          "quantityRatio": 1,
+          "quantityLabel": "g"
+        },
+        {
+          "item": "vitamin_D",
+          "quantity": 3,
+          "quantityRatio": 0.001,
+          "quantityLabel": "g"
+        }
+      ]
     },
     {
       "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",

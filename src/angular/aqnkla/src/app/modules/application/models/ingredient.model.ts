@@ -11,6 +11,22 @@ export enum Mineral {
   phtotasium,
 }
 
+export enum Allergan {
+  gluten,
+  laktose,
+}
+
+export enum AllerganImportance {
+  none,
+  production_dependent,
+  full,
+}
+
+export class AllerganValue {
+  allergan: Allergan;
+  allerganImportance: AllerganImportance;
+}
+
 export interface DataValue<T> {
   item: T;
   quantityRatio: number;
@@ -36,6 +52,7 @@ export interface IngredientItemModel {
   carbs: number;
   minerals: DataValue<Mineral>[];
   vitamins: DataValue<Vitamin>[];
+  allergans: AllerganValue[];
   isPieceAllowed: boolean;
   pieceAvgWeight: number;
   isVolumeAllowed: boolean;

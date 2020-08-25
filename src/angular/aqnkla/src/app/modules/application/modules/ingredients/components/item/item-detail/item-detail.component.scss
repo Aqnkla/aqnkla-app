@@ -1,10 +1,31 @@
-textarea{
+textarea {
   min-height: 100px;
 }
-.item{
-  width: 500px;
+.item {
+  width: 1000px;
 }
 
-.full-width{
+.full-width {
   width: 100%;
+}
+.card{
+  margin: 10px;
+  padding: 10px;
+}
+.information {
+  // display: inline-flex;
+  div{
+    margin: 5px;
+  }
+}
+.basic-values {
+  display: inline-flex;
+  div{
+    margin: 10px;
+  }
+}
+
+.nutrition{
+  display: inline-flex;
+
 }
