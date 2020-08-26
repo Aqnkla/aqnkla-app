@@ -50,6 +50,7 @@ export interface IngredientItemModel {
   protein: number;
   fat: number;
   carbs: number;
+  fiber: number;
   minerals: DataValue<Mineral>[];
   vitamins: DataValue<Vitamin>[];
   allergans: AllerganValue[];

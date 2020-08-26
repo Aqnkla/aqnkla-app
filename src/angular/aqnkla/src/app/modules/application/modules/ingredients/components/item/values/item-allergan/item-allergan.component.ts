@@ -5,6 +5,7 @@ import { DialogDeleteData } from '../../../../../../models/dialog.model';
 import {
   AllerganValue,
   Allergan,
+  AllerganImportance,
 } from './../../../../../../models/ingredient.model';
 import { DeleteAllerganDialogComponent } from './delete-dialog/delete-allergan-dialog.component';
 
@@ -20,12 +21,15 @@ export class ItemAllerganComponent implements OnInit {
   @Input() allergans: AllerganValue[];
   @Output() valueChanged = new EventEmitter<AllerganValue[]>();
   avalibleAllergans: Allergan[];
-
+  allerganImportances: AllerganImportance[];
   activeSelectItem: Allergan;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.updateAvalibleMinerals();
+    this.allerganImportances = ObjectHelper.getEnumValues<AllerganImportance>(
+      AllerganImportance
+    );
   }
 
   private updateAvalibleMinerals(): void {

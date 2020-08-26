@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DeleteAllerganDialogComponent } from './delete-allergan-dialog.component';
 
-import { DeleteMineralDialogComponent } from './delete-vitamin-dialog.component';
 
-describe('DeleteMineralDialogComponent', () => {
-  let component: DeleteMineralDialogComponent;
-  let fixture: ComponentFixture<DeleteMineralDialogComponent>;
+describe('DeleteAllerganDialogComponent', () => {
+  let component: DeleteAllerganDialogComponent;
+  let fixture: ComponentFixture<DeleteAllerganDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeleteMineralDialogComponent ]
+      declarations: [ DeleteAllerganDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteMineralDialogComponent);
+    fixture = TestBed.createComponent(DeleteAllerganDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

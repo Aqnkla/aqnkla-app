@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from './components/item/values/item-mineral/delete-dialog/delete-mineral-dialog.component';
 import { ItemAllerganComponent } from './components/item/values/item-allergan/item-allergan.component';
 import { from } from 'rxjs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { from } from 'rxjs';
     MatTableModule,
     MatCardModule,
     MatDialogModule,
+    MatSlideToggleModule
   ],
   exports: [IngredientsRootComponent],
 })

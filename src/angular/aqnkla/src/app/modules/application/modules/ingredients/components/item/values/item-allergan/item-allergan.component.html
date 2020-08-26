@@ -1,22 +1,34 @@
 <div>
   <div *ngIf="avalibleAllergans.length > 0">
-      <mat-form-field>
-        <mat-select [(ngModel)]="activeSelectItem">
-          <mat-option
-            *ngFor="let allergan of avalibleAllergans"
-            [value]="allergan"
-          >
-            {{ allergan }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <mat-form-field>
+      <mat-select [(ngModel)]="activeSelectItem">
+        <mat-option
+          *ngFor="let allergan of avalibleAllergans"
+          [value]="allergan"
+        >
+          {{ allergan }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <button mat-stroked-button (click)="addItem()">Add</button>
   </div>
   <div>
     <table>
       <tr *ngFor="let itemValue of allergans">
         <td>
-          <div> {{itemValue.allergan}}</div>
+          <div>{{ itemValue.allergan }}</div>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-select [(ngModel)]="itemValue.allerganImportance">
+              <mat-option
+                *ngFor="let importanceValue of allerganImportances"
+                [value]="importanceValue"
+              >
+                {{ importanceValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </td>
         <td>
           <button

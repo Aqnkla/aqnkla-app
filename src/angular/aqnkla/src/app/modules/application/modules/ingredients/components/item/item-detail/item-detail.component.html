@@ -40,17 +40,6 @@
               <div class="basic-values">
                 <div>
                   <mat-form-field class="item-quantity">
-                    <mat-label>Fat</mat-label>
-                    <input
-                      matInput
-                      type="number"
-                      [(ngModel)]="item.fat"
-                    /> </mat-form-field
-                  ><span> g</span>
-                </div>
-
-                <div>
-                  <mat-form-field class="item-quantity">
                     <mat-label>Protein</mat-label>
                     <input
                       matInput
@@ -59,7 +48,16 @@
                     /> </mat-form-field
                   ><span> g</span>
                 </div>
-
+                <div>
+                  <mat-form-field class="item-quantity">
+                    <mat-label>Fat</mat-label>
+                    <input
+                      matInput
+                      type="number"
+                      [(ngModel)]="item.fat"
+                    /> </mat-form-field
+                  ><span> g</span>
+                </div>
                 <div>
                   <mat-form-field class="item-quantity">
                     <mat-label>Carbs</mat-label>
@@ -67,6 +65,16 @@
                       matInput
                       type="number"
                       [(ngModel)]="item.carbs"
+                    /> </mat-form-field
+                  ><span> g</span>
+                </div>
+                <div>
+                  <mat-form-field class="item-quantity">
+                    <mat-label>Fiber</mat-label>
+                    <input
+                      matInput
+                      type="number"
+                      [(ngModel)]="item.fiber"
                     /> </mat-form-field
                   ><span> g</span>
                 </div>
@@ -108,8 +116,48 @@
       </div>
       <div class="card">
         <mat-card>
+          <mat-card-title>Detail</mat-card-title>
+          <div class="card">
+            <mat-card
+              >
+              <mat-slide-toggle [(ngModel)]="item.isPieceAllowed">is Piece Allowed</mat-slide-toggle>
+              <div *ngIf="item.isPieceAllowed">
+                <mat-form-field class="item-quantity">
+                  <mat-label>piece</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    [(ngModel)]="item.pieceAvgWeight"
+                  /> </mat-form-field
+                ><span> grams/piece</span>
+              </div>
+            </mat-card>
+          </div>
+          <div class="card">
+            <mat-card
+              >
+              <mat-slide-toggle [(ngModel)]="item.isVolumeAllowed">is Volume Allowed</mat-slide-toggle>
+                <div *ngIf="item.isVolumeAllowed">
+                  <mat-form-field class="item-quantity">
+                    <mat-label>avrage density</mat-label>
+                    <input
+                      matInput
+                      type="number"
+                      [(ngModel)]="item.avrageDensity"
+                    /> </mat-form-field
+                  ><span> g/1000 cm^3</span>
+                </div>
+           </mat-card>
+          </div>
+        </mat-card>
+      </div>
+      <div class="card">
+        <mat-card>
           <mat-card-title>Allergens</mat-card-title>
-          <aqn-item-allergan></aqn-item-allergan>
+          <aqn-item-allergan
+            [allergans]="item.allergans"
+            (valueChanged)="item.allergans = $event"
+          ></aqn-item-allergan>
         </mat-card>
       </div>
       <div>

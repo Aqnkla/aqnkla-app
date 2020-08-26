@@ -63,6 +63,7 @@ export class ItemDetailComponent implements OnInit {
             carbs: 0,
             fat: 0,
             protein: 0,
+            fiber: 0,
             minerals: [],
             vitamins: [],
             allergans: [],

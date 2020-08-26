@@ -80,7 +80,22 @@
           "quantityRatio": 0.001,
           "quantityLabel": "g"
         }
-      ]
+      ],
+      "allergans": [
+        {
+          "allergan": "gluten",
+          "allerganImportance": "none"
+        },
+        {
+          "allergan": "laktose",
+          "allerganImportance": "production_dependent"
+        }
+      ],
+      "fiber": 1,
+      "isVolumeAllowed": true,
+      "isPieceAllowed": true,
+      "avrageDensity": 21,
+      "pieceAvgWeight": 122
     },
     {
       "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
@@ -112,7 +127,9 @@
           "quantityRatio": 1,
           "quantityLabel": "g"
         }
-      ]
+      ],
+      "isVolumeAllowed": true,
+      "avrageDensity": 1000
     },
     {
       "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
