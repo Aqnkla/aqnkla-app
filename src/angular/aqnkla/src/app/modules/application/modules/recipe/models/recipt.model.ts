@@ -1,5 +1,6 @@
-export enum AmountIntupType {
+export enum AmountInputType {
   weight,
   volume,
-  quantity
+  quantity,
+  dish
 }

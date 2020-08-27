@@ -1,0 +1,33 @@
+$type-count: 4;
+$type-item-padding: 10px;
+$type-width: 50px;
+
+.container {
+  width: $type-width * $type-count + $type-item-padding * 2 * $type-count;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 2px 20px;
+
+  .type-select {
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #000;
+    color: #fff;
+    .type-select-button {
+      display: inline-flex;
+      width: $type-width;
+      text-align: justify;
+      cursor: pointer;
+      padding: 2px $type-item-padding;
+    }
+  }
+}
+.active-label {
+  background-color: rgb(223, 223, 223);
+  color: #000;
+}
+
+.type-value {
+  background-color: rgb(223, 223, 223);
+  padding: 3px 7px;
+}

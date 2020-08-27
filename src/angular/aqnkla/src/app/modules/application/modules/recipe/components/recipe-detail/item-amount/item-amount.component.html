@@ -1,13 +1,46 @@
-<p>item-amount works!</p>
-
-<!-- <mat-form-field>
-  <mat-select [(ngModel)]="itemValue.quantityRatio">
-    <mat-option *ngFor="let unit of units" [value]="unit.value">
-      {{ unit.name }}
-    </mat-option>
-  </mat-select>
-</mat-form-field> -->
-
-<div>
-
+<div class="container">
+  <div class="type-select">
+    <div
+      class="type-select-button"
+      (click)="changeType(AmountInputType.weight)"
+      [ngClass]="{
+        'active-label': currentInputType === AmountInputType.weight
+      }"
+    >
+      weight
+    </div>
+    <div
+      class="type-select-button"
+      (click)="changeType(AmountInputType.quantity)"
+      [ngClass]="{
+        'active-label': currentInputType === AmountInputType.quantity
+      }"
+    >
+      quantity
+    </div>
+    <div
+      class="type-select-button"
+      (click)="changeType(AmountInputType.volume)"
+      [ngClass]="{
+        'active-label': currentInputType === AmountInputType.volume
+      }"
+    >
+      volume
+    </div>
+    <div
+      class="type-select-button"
+      (click)="changeType(AmountInputType.dish)"
+      [ngClass]="{
+        'active-label': currentInputType === AmountInputType.dish
+      }"
+    >
+      dish
+    </div>
+  </div>
+  <div class="type-value" [ngSwitch]="currentInputType">
+    <div *ngSwitchCase="AmountInputType.quantity">qnt</div>
+    <div *ngSwitchCase="AmountInputType.volume">volume</div>
+    <div *ngSwitchCase="AmountInputType.weight">weight</div>
+    <div *ngSwitchCase="AmountInputType.dish">dish</div>
+  </div>
 </div>

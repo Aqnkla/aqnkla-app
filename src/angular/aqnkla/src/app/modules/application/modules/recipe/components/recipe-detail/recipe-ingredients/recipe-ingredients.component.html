@@ -16,6 +16,7 @@
       </td>
       <td>
         <aqn-item-amount
+          [ingredient]="itemValue.item"
           (weightChanged)="itemValue.quantity = $event"
         ></aqn-item-amount>
       </td>
