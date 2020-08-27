@@ -17,7 +17,6 @@ import { MatDialog } from '@angular/material/dialog';
 export class RecipeIngredientsComponent implements OnInit {
   @Input() ingredients: DataValue<IngredientItemModel>[];
   @Output() valueChanged = new EventEmitter<DataValue<IngredientItemModel>[]>();
-  units = DataHelper.getWeightUnitsGram(0);
   activeSelectItem: IngredientItemModel;
   avalibleItems: IngredientItemModel[];
   constructor(
@@ -38,9 +37,11 @@ export class RecipeIngredientsComponent implements OnInit {
     }
     this.ingredients.push({
       item: this.activeSelectItem,
-      quantity: 0,
-      quantityRatio: 1,
-      quantityLabel: 'g',
+      quantity: {
+        label: 'g',
+        quantityRatio: 1,
+        valueRatioRelative: 0
+      }
     });
     this.activeSelectItem = undefined;
     this.valueChanged.emit(this.ingredients);
@@ -56,7 +57,7 @@ export class RecipeIngredientsComponent implements OnInit {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,
-        message: `Do you want remove ${value.item.name}: ${value.quantity} ${value.quantityLabel}`,
+        message: `Do you want remove ${value.item.name}: ${value.quantity} ${value.quantity.label}`,
         delete: false,
       },
     });

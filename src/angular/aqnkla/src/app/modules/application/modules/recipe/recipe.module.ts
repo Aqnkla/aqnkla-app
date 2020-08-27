@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
+import { ItemAmountComponent } from './components/recipe-detail/item-amount/item-amount.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-in
     RecipeSearchComponent,
     RecipeRootComponent,
     RecipeIngredientsComponent,
+    ItemAmountComponent,
   ],
   imports: [
+    RecipeRoutesModule,
     CommonModule,
     FormsModule,
-    RecipeRoutesModule,
     MatSelectModule,
     MatInputModule,
     MatNativeDateModule,
@@ -37,7 +39,7 @@ import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-in
     MatTableModule,
     MatCardModule,
     MatDialogModule,
-    MatSlideToggleModule,
+    MatSlideToggleModule
   ],
 })
 export class RecipeModule {}

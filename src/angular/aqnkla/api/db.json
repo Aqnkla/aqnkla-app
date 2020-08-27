@@ -84,7 +84,7 @@
       "allergans": [
         {
           "allergan": "gluten",
-          "allerganImportance": "none"
+          "allerganImportance": "production_dependent"
         },
         {
           "allergan": "laktose",

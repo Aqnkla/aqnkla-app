@@ -52,9 +52,11 @@ export class ItemVitaminComponent implements OnInit {
     }
     this.vitmains.push({
       item: this.activeSelectItem,
-      quantity: 0,
-      quantityRatio: 1,
-      quantityLabel: 'g',
+      quantity: {
+        label: 'g',
+        quantityRatio: 1,
+        valueRatioRelative: 0
+      }
     });
     this.activeSelectItem = undefined;
     this.updateAvalibleMinerals();
@@ -67,7 +69,7 @@ export class ItemVitaminComponent implements OnInit {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,
-        message: `Do you want remove ${value.item}: ${value.quantity} ${value.quantityLabel}`,
+        message: `Do you want remove ${value.item}: ${value.quantity} ${value.quantity.label}`,
         delete: false,
       },
     });

@@ -31,7 +31,6 @@ export class CategoryDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.viewType);
   }
 
   private uploadDetails(): void {

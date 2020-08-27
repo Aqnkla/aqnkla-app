@@ -27,11 +27,16 @@ export class AllerganValue {
   allerganImportance: AllerganImportance;
 }
 
+export class QuantityValue {
+  /// gram relative ratio 1mg=0.001,1gr=1, 1kg=1000
+  quantityRatio: number;
+  valueRatioRelative: number;
+  label: string;
+}
+
 export interface DataValue<T> {
   item: T;
-  quantityRatio: number;
-  quantityLabel: string;
-  quantity: number;
+  quantity: QuantityValue;
 }
 
 export interface IngredientCategoryModel {

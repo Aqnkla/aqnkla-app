@@ -42,9 +42,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     DeleteCategoryDialogComponent,
   ],
   imports: [
+    IngredientsRoutesModule,
     CommonModule,
     FormsModule,
-    IngredientsRoutesModule,
     MatSelectModule,
     MatInputModule,
     MatNativeDateModule,
