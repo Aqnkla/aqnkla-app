@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {
   IngredientItemModel,
-  DataValue,
+  ItemData,
 } from 'src/app/modules/application/models/ingredient.model';
 import { ItemClientService } from 'src/app/modules/application/services/ingredient/item-client/item-client.service';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
@@ -15,8 +15,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./recipe-ingredients.component.scss'],
 })
 export class RecipeIngredientsComponent implements OnInit {
-  @Input() ingredients: DataValue<IngredientItemModel>[];
-  @Output() valueChanged = new EventEmitter<DataValue<IngredientItemModel>[]>();
+  @Input() ingredients: ItemData<IngredientItemModel>[];
+  @Output() valueChanged = new EventEmitter<ItemData<IngredientItemModel>[]>();
   activeSelectItem: IngredientItemModel;
   avalibleItems: IngredientItemModel[];
   constructor(
@@ -39,8 +39,8 @@ export class RecipeIngredientsComponent implements OnInit {
       item: this.activeSelectItem,
       weight: {
         label: 'g',
-        weightFactor: 1,
-        weightValueRelative: 1
+        dataFactor: 1,
+        dataValueRelative: 1
       }
     });
     this.activeSelectItem = undefined;
@@ -51,7 +51,7 @@ export class RecipeIngredientsComponent implements OnInit {
     this.itemClientService.getAll().subscribe((b) => (this.avalibleItems = b));
   }
 
-  deleteItem(value: DataValue<IngredientItemModel>): void {
+  deleteItem(value: ItemData<IngredientItemModel>): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
       width: '250px',

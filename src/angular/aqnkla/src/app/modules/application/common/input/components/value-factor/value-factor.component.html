@@ -1,0 +1,23 @@
+<p>value-factor works!</p>
+<div>
+  <div>{{ label }}</div>
+  <div class="item-quntity-mg">
+    {{
+      getQuantitySummary(
+        value.dataValueRelative,
+        value.dataFactor
+      )
+    }}
+  </div>
+  <mat-form-field class="item-quantity">
+    <mat-label>Quantity</mat-label>
+    <input matInput type="number" [(ngModel)]="value.dataFactor" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(ngModel)]="value.dataFactor">
+      <mat-option *ngFor="let unit of units" [value]="unit.value">
+        {{ unit.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

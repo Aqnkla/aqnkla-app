@@ -27,16 +27,16 @@ export class AllerganValue {
   allerganImportance: AllerganImportance;
 }
 
-export class WeightValue {
+export class DataValue {
   /// gram relative ratio 1mg=0.001,1gr=1, 1kg=1000
-  weightFactor: number;
-  weightValueRelative: number;
+  dataFactor: number;
+  dataValueRelative: number;
   label: string;
 }
 
-export interface DataValue<T> {
+export interface ItemData<T> {
   item: T;
-  weight: WeightValue;
+  weight: DataValue;
 }
 
 export interface IngredientCategoryModel {
@@ -56,8 +56,8 @@ export interface IngredientItemModel {
   fat: number;
   carbs: number;
   fiber: number;
-  minerals: DataValue<Mineral>[];
-  vitamins: DataValue<Vitamin>[];
+  minerals: ItemData<Mineral>[];
+  vitamins: ItemData<Vitamin>[];
   allergans: AllerganValue[];
   isPieceAllowed: boolean;
   pieceAvgWeight: number;
@@ -69,5 +69,5 @@ export interface IngredientItemModel {
 export interface RecipeModel {
   id: string;
   name: string;
-  ingredients: DataValue<IngredientItemModel>[];
+  ingredients: ItemData<IngredientItemModel>[];
 }

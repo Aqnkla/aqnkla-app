@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {
-  DataValue,
+  ItemData,
   Mineral,
 } from './../../../../../../models/ingredient.model';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
@@ -18,8 +18,8 @@ import { DialogDeleteData } from '../../../../../../models/dialog.model';
   ],
 })
 export class ItemMineralComponent implements OnInit {
-  @Input() minerals: DataValue<Mineral>[];
-  @Output() valueChanged = new EventEmitter<DataValue<Mineral>[]>();
+  @Input() minerals: ItemData<Mineral>[];
+  @Output() valueChanged = new EventEmitter<ItemData<Mineral>[]>();
   units = DataHelper.getWeightUnitsGram(0);
   avalibleMinerals: Mineral[];
 
@@ -54,8 +54,8 @@ export class ItemMineralComponent implements OnInit {
       item: this.activeSelectItem,
       weight: {
         label: 'g',
-        weightFactor: 1,
-        weightValueRelative: 1
+        dataFactor: 1,
+        dataValueRelative: 1
       }
     });
     this.activeSelectItem = undefined;
@@ -63,7 +63,7 @@ export class ItemMineralComponent implements OnInit {
     this.valueChanged.emit(this.minerals);
   }
 
-  deleteItem(value: DataValue<Mineral>): void {
+  deleteItem(value: ItemData<Mineral>): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
       width: '250px',

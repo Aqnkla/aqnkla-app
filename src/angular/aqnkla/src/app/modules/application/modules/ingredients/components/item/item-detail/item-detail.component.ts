@@ -6,7 +6,7 @@ import {
   IngredientItemModel,
   IngredientCategoryModel,
   Vitamin,
-  DataValue,
+  ItemData,
   Mineral,
 } from '../../../../../models/ingredient.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -27,8 +27,8 @@ export class ItemDetailComponent implements OnInit {
   item: IngredientItemModel;
   itemId: string;
   categories: IngredientCategoryModel[] = [];
-  vitamins: DataValue<Vitamin>[];
-  minerals: DataValue<Mineral>[];
+  vitamins: ItemData<Vitamin>[];
+  minerals: ItemData<Mineral>[];
 
   constructor(
     private itemClientService: ItemClientService,

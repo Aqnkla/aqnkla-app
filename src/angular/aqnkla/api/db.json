@@ -1,313 +1,99 @@
 {
   "categories": [
     {
-      "id": "test1",
-      "name": "Seafood",
-      "description": "Seafood is any form of sea life regarded as food by humans."
-    },
-    {
-      "id": "bc42677a-2e2a-4379-881b-69860257c8cc",
-      "name": "Meat",
-      "description": "Meat is animal flesh that is eaten as food.",
-      "parentCategoryId": ""
-    },
-    {
-      "id": "62d30271-ad7a-4eda-a7a8-937d8a021b98",
-      "name": "Fruit",
-      "description": "In common language usage, \"fruit\" normally means the fleshy seed-associated structures of a plant that are sweet or sour, and edible in the raw state.",
-      "parentCategoryId": ""
-    },
-    {
-      "id": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-      "name": "Diary",
-      "description": "milk, eggs",
-      "parentCategoryId": ""
-    },
-    {
-      "id": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
-      "name": "Bakery",
+      "id": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
+      "name": "Test",
       "description": "",
       "parentCategoryId": ""
     }
   ],
   "items": [
     {
-      "id": "8d5d33a6-4c8a-41ea-8f66-722918b0eae9",
-      "name": "Salmon",
-      "description": "Salmon is a common food classified as an oily fish.",
-      "categoryId": "bc42677a-2e2a-4379-881b-69860257c8cc",
-      "minerals": [
-        {
-          "item": "phtotasium",
-          "quantity": 62,
-          "quantityRatio": 1000
-        },
-        {
-          "item": "zink",
-          "quantity": 1978,
-          "quantityRatio": 0.000001
-        },
-        {
-          "item": "iron",
-          "quantity": 22,
-          "quantityRatio": 1
-        },
-        {
-          "item": "molibden",
-          "quantity": 1,
-          "quantityRatio": 1e-9
-        },
-        {
-          "item": "clorium",
-          "quantity": 0,
-          "quantityRatio": 1
-        }
-      ],
-      "fat": 21,
-      "protein": 22,
-      "carbs": 12,
-      "calories": 231,
-      "vitamins": [
-        {
-          "item": "vitamin_C",
-          "quantity": 2,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        },
-        {
-          "item": "vitamin_D",
-          "quantity": 3,
-          "quantityRatio": 0.001,
-          "quantityLabel": "g"
-        }
-      ],
-      "allergans": [
-        {
-          "allergan": "gluten",
-          "allerganImportance": "production_dependent"
-        },
-        {
-          "allergan": "laktose",
-          "allerganImportance": "production_dependent"
-        }
-      ],
-      "fiber": 1,
-      "isVolumeAllowed": true,
-      "isPieceAllowed": true,
-      "avrageDensity": 21,
-      "pieceAvgWeight": 122
-    },
-    {
-      "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
-      "name": "Milk",
+      "id": "0df2ec5d-ee16-481e-b06f-b3f79a3c9c0b",
+      "name": "Ttest",
       "description": "",
-      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-      "fat": 3,
-      "protein": 2,
-      "carbs": 2,
-      "calories": 80,
-      "minerals": [
-        {
-          "item": "iron",
-          "quantity": 2,
-          "quantityRatio": 0.000001,
-          "quantityLabel": "g"
-        },
-        {
-          "item": "clorium",
-          "quantity": 1,
-          "quantityRatio": 1e-9,
-          "quantityLabel": "g"
-        }
-      ],
-      "vitamins": [
-        {
-          "item": "vitamin_C",
-          "quantity": 1,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        }
-      ],
-      "isVolumeAllowed": true,
-      "avrageDensity": 1000
-    },
-    {
-      "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
-      "name": "Eggs",
-      "description": "",
-      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-      "calories": 123,
-      "carbs": 33,
-      "fat": 2,
-      "protein": 3,
-      "minerals": [
-        {
-          "item": "clorium",
-          "quantity": 21,
-          "quantityRatio": 1e-9,
-          "quantityLabel": "g"
-        }
-      ],
-      "vitamins": [
-        {
-          "item": "vitamin_D",
-          "quantity": 1,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        }
-      ]
-    },
-    {
-      "id": "fefaaa91-be92-4a5a-8b7b-11f969d52421",
-      "name": "Cheese",
-      "description": "",
-      "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-      "calories": 213,
-      "carbs": 2,
-      "fat": 21,
-      "protein": 12,
-      "minerals": [],
-      "vitamins": []
-    },
-    {
-      "id": "a4f3e08c-f2f2-46c2-9a32-2e1cce822850",
-      "name": "Bread",
-      "description": "",
-      "categoryId": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
-      "calories": 212,
+      "categoryId": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
+      "calories": 0,
       "carbs": 0,
       "fat": 0,
       "protein": 0,
-      "minerals": [],
-      "vitamins": []
+      "fiber": 0,
+      "minerals": [
+        {
+          "item": "iron",
+          "weight": {
+            "label": "g",
+            "weightFactor": 1,
+            "weightValueRelative": 1
+          }
+        }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_D",
+          "weight": {
+            "label": "g",
+            "weightFactor": 1,
+            "weightValueRelative": 1
+          }
+        }
+      ],
+      "allergans": [],
+      "avrageDensity": null,
+      "isPieceAllowed": false,
+      "isVolumeAllowed": false,
+      "pieceAvgWeight": null,
+      "isVolumeDefault": false
     }
   ],
   "recipes": [
     {
-      "id": "15e7756f-427c-4a4f-8aa8-3e32fd308cc4",
-      "name": "Some taste",
+      "id": "140ae47b-0edd-4689-9f49-677cae1de37e",
+      "name": "est",
       "ingredients": [
         {
           "item": {
-            "id": "024e4ed4-8740-44fb-bf00-3de2298eb09e",
-            "name": "Milk",
+            "id": "0df2ec5d-ee16-481e-b06f-b3f79a3c9c0b",
+            "name": "Ttest",
             "description": "",
-            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-            "fat": 3,
-            "protein": 2,
-            "carbs": 2,
-            "calories": 80,
-            "minerals": [
-              {
-                "item": "iron",
-                "quantity": 2,
-                "quantityRatio": 0.000001,
-                "quantityLabel": "g"
-              },
-              {
-                "item": "clorium",
-                "quantity": 1,
-                "quantityRatio": 1e-9,
-                "quantityLabel": "g"
-              }
-            ],
-            "vitamins": [
-              {
-                "item": "vitamin_C",
-                "quantity": 1,
-                "quantityRatio": 1,
-                "quantityLabel": "g"
-              }
-            ]
-          },
-          "quantity": 10,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        },
-        {
-          "item": {
-            "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
-            "name": "Eggs",
-            "description": "",
-            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-            "calories": 123,
-            "carbs": 33,
-            "fat": 2,
-            "protein": 3,
-            "minerals": [
-              {
-                "item": "clorium",
-                "quantity": 21,
-                "quantityRatio": 1e-9,
-                "quantityLabel": "g"
-              }
-            ],
-            "vitamins": [
-              {
-                "item": "vitamin_D",
-                "quantity": 1,
-                "quantityRatio": 1,
-                "quantityLabel": "g"
-              }
-            ]
-          },
-          "quantity": 23,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        },
-        {
-          "item": {
-            "id": "a4f3e08c-f2f2-46c2-9a32-2e1cce822850",
-            "name": "Bread",
-            "description": "",
-            "categoryId": "b98ed5d0-3d94-4f04-9a38-2863c2074bf8",
-            "calories": 212,
+            "categoryId": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
+            "calories": 0,
             "carbs": 0,
             "fat": 0,
             "protein": 0,
-            "minerals": [],
-            "vitamins": []
-          },
-          "quantity": 1,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
-        }
-      ]
-    },
-    {
-      "id": "dae705c4-fc02-4009-adb6-20bcefef8058",
-      "name": "",
-      "ingredients": [
-        {
-          "item": {
-            "id": "8c3089f5-ea8e-4c30-8284-42f5734d93d1",
-            "name": "Eggs",
-            "description": "",
-            "categoryId": "8872ef2e-5f03-4c5e-92fd-30ac561a556d",
-            "calories": 123,
-            "carbs": 33,
-            "fat": 2,
-            "protein": 3,
+            "fiber": 0,
             "minerals": [
               {
-                "item": "clorium",
-                "quantity": 21,
-                "quantityRatio": 1e-9,
-                "quantityLabel": "g"
+                "item": "iron",
+                "weight": {
+                  "label": "g",
+                  "weightFactor": 1,
+                  "weightValueRelative": 1
+                }
               }
             ],
             "vitamins": [
               {
                 "item": "vitamin_D",
-                "quantity": 1,
-                "quantityRatio": 1,
-                "quantityLabel": "g"
+                "weight": {
+                  "label": "g",
+                  "weightFactor": 1,
+                  "weightValueRelative": 1
+                }
               }
-            ]
+            ],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
           },
-          "quantity": 2,
-          "quantityRatio": 1,
-          "quantityLabel": "g"
+          "weight": {
+            "label": "g",
+            "weightFactor": 1,
+            "weightValueRelative": 1
+          }
         }
       ]
     }

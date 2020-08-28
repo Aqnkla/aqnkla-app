@@ -16,19 +16,19 @@
           <div>{{ itemValue.item }}</div>
           <div class="item-quntity-mg">
             {{
-              getQuantitySummary(itemValue.weight.weightValueRelative, itemValue.weight.weightFactor)
+              getQuantitySummary(itemValue.weight.dataValueRelative, itemValue.weight.dataFactor)
             }}
           </div>
         </td>
         <td>
           <mat-form-field class="item-quantity">
             <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="itemValue.weight.weightFactor" />
+            <input matInput type="number" [(ngModel)]="itemValue.weight.dataFactor" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field>
-            <mat-select [(ngModel)]="itemValue.weight.weightFactor">
+            <mat-select [(ngModel)]="itemValue.weight.dataFactor">
               <mat-option *ngFor="let unit of units" [value]="unit.value">
                 {{ unit.name }}
               </mat-option>

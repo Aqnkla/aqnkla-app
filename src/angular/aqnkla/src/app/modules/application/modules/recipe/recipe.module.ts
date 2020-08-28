@@ -17,6 +17,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
 import { ItemAmountComponent } from './components/recipe-detail/item-amount/item-amount.component';
+import { AqnInputModule } from './../../common/input/input.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ItemAmountComponent } from './components/recipe-detail/item-amount/item
     MatTableModule,
     MatCardModule,
     MatDialogModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    AqnInputModule,
   ],
 })
 export class RecipeModule {}

@@ -5,7 +5,7 @@ import { DeleteMineralDialogComponent } from '../item-mineral/delete-dialog/dele
 import { DialogDeleteData } from '../../../../../../models/dialog.model';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import {
-  DataValue,
+  ItemData,
   Vitamin,
 } from './../../../../../../models/ingredient.model';
 
@@ -18,8 +18,8 @@ import {
   ],
 })
 export class ItemVitaminComponent implements OnInit {
-  @Input() vitmains: DataValue<Vitamin>[];
-  @Output() valueChanged = new EventEmitter<DataValue<Vitamin>[]>();
+  @Input() vitmains: ItemData<Vitamin>[];
+  @Output() valueChanged = new EventEmitter<ItemData<Vitamin>[]>();
   units = DataHelper.getWeightUnitsGram(0);
   avalibleVitamins: Vitamin[];
 
@@ -54,8 +54,8 @@ export class ItemVitaminComponent implements OnInit {
       item: this.activeSelectItem,
       weight: {
         label: 'g',
-        weightFactor: 1,
-        weightValueRelative: 1
+        dataFactor: 1,
+        dataValueRelative: 1
       }
     });
     this.activeSelectItem = undefined;
@@ -63,7 +63,7 @@ export class ItemVitaminComponent implements OnInit {
     this.valueChanged.emit(this.vitmains);
   }
 
-  deleteItem(value: DataValue<Vitamin>): void {
+  deleteItem(value: ItemData<Vitamin>): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
       width: '250px',

@@ -20,7 +20,7 @@
           [weight]="itemValue.weight"
           (weightChanged)="itemValue.weights = $event"
         ></aqn-item-amount>
-        {{itemValue.weight?.weightValueRelative }}
+        {{itemValue.weight?.dataValueRelative }}
       </td>
       <td>
         <button mat-stroked-button color="warn" (click)="deleteItem(itemValue)">
