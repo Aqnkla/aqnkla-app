@@ -12,6 +12,10 @@ export class ValueFactorComponent implements OnInit {
   value: DataValue = new DataValue();
   label: string;
 
+  selectClass: {
+    width: '20px';
+  };
+
   constructor() {}
 
   ngOnInit(): void {}

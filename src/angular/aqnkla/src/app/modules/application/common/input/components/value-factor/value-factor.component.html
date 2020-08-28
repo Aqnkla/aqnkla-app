@@ -14,7 +14,7 @@
     <input matInput type="number" [(ngModel)]="value.dataFactor" />
   </mat-form-field>
   <mat-form-field>
-    <mat-select [(ngModel)]="value.dataFactor">
+    <mat-select class="select" panelClass="selectClass" [(ngModel)]="value.dataFactor">
       <mat-option *ngFor="let unit of units" [value]="unit.value">
         {{ unit.name }}
       </mat-option>

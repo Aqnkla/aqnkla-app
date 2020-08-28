@@ -1,0 +1,11 @@
+.cdk-overlay-container .cdk-overlay-pane .selectClass, .select {
+  width: 50px;
+}
+// ::ng-deep .mat-select-content{
+//   width:2000px;
+//   background-color: red;
+//   font-size: 10px;
+// }
+mat-form-field {
+  width: 50px;
+  }
