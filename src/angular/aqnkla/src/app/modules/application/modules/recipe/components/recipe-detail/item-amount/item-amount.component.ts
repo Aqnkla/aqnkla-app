@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IngredientItemModel } from 'src/app/modules/application/models/ingredient.model';
+import { IngredientItemModel, WeightValue } from 'src/app/modules/application/models/ingredient.model';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { AmountInputType } from './../../../models/recipt.model';
 
@@ -10,9 +10,9 @@ import { AmountInputType } from './../../../models/recipt.model';
 })
 export class ItemAmountComponent implements OnInit {
   AmountInputType = AmountInputType;
-  @Input() weight: number;
+  @Input() weight: WeightValue;
   @Input() ingredient: IngredientItemModel;
-  @Output() weightChanged = new EventEmitter<number>();
+  @Output() weightChanged = new EventEmitter<WeightValue>();
   units = DataHelper.getWeightUnitsGram(0);
 
   currentInputType: AmountInputType = AmountInputType.weight;

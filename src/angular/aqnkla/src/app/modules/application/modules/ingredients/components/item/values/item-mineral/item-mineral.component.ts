@@ -52,10 +52,10 @@ export class ItemMineralComponent implements OnInit {
     }
     this.minerals.push({
       item: this.activeSelectItem,
-      quantity: {
+      weight: {
         label: 'g',
-        quantityRatio: 1,
-        valueRatioRelative: 0
+        weightFactor: 1,
+        weightValueRelative: 1
       }
     });
     this.activeSelectItem = undefined;
@@ -69,7 +69,7 @@ export class ItemMineralComponent implements OnInit {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,
-        message: `Do you want remove ${value.item}: ${value.quantity} ${value.quantity.label}`,
+        message: `Do you want remove ${value.item}: ${value.weight} ${value.weight.label}`,
         delete: false,
       },
     });

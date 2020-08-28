@@ -38,9 +38,9 @@
     </div>
   </div>
   <div class="type-value" [ngSwitch]="currentInputType">
+    <div *ngSwitchCase="AmountInputType.weight">weight</div>
     <div *ngSwitchCase="AmountInputType.quantity">qnt</div>
     <div *ngSwitchCase="AmountInputType.volume">volume</div>
-    <div *ngSwitchCase="AmountInputType.weight">weight</div>
     <div *ngSwitchCase="AmountInputType.dish">dish</div>
   </div>
 </div>
