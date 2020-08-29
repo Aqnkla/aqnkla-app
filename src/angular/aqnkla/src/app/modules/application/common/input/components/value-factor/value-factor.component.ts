@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DataValue } from 'src/app/modules/application/models/ingredient.model';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'aqn-value-factor',
@@ -9,7 +10,8 @@ import { DataValue } from 'src/app/modules/application/models/ingredient.model';
 })
 export class ValueFactorComponent implements OnInit {
   units = DataHelper.getWeightUnitsGram(0);
-  value: DataValue = new DataValue();
+  @Input() value: DataValue = new DataValue();
+  @Output() valueChanged = new EventEmitter<DataValue>();
   label: string;
 
   selectClass: {
@@ -36,5 +38,15 @@ export class ValueFactorComponent implements OnInit {
       return `${data.toFixed(5)} mg`;
     }
     return `${data.toFixed(6)} mg`;
+  }
+
+  valueChange(event: any): void {
+    console.log('valueChange', this.value, event);
+    this.valueChanged.emit(this.value);
+  }
+
+  unitChange(event: MatSelectChange): void {
+    console.log('unitChange', this.value, event);
+    this.valueChanged.emit(this.value);
   }
 }

@@ -1,1 +1,10 @@
 <p>diary-day works!</p>
+
+<a mat-button [routerLink]="['./../day']" [queryParams]="{ date: previousDayString }"
+  >previous</a
+>
+<a mat-button [routerLink]="['./../day']" [queryParams]="{ date: nextDayString }"
+  >next</a
+>
+
+<div>{{ currentDay }} - {{ currentDayString }}</div>

@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
 import { ItemAmountComponent } from './components/recipe-detail/item-amount/item-amount.component';
 import { AqnInputModule } from './../../common/input/input.module';
+import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summary/recipe-summary.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AqnInputModule } from './../../common/input/input.module';
     RecipeRootComponent,
     RecipeIngredientsComponent,
     ItemAmountComponent,
+    RecipeSummaryComponent,
   ],
   imports: [
     RecipeRoutesModule,

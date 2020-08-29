@@ -1,3 +1,9 @@
-<p>diary works!</p>
-
-<router-outlet></router-outlet>
+<div class="diary-root">
+  <div class="menu">
+    <a mat-button routerLink="dashboard">dashboard</a>
+    <a mat-button routerLink="week">week</a>
+    <a mat-button routerLink="day">day</a>
+    <a mat-button routerLink="manage">manage</a>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -39,7 +39,11 @@
   </div>
   <div class="type-value" [ngSwitch]="currentInputType">
     <div *ngSwitchCase="AmountInputType.weight">
-      <aqn-value-factor></aqn-value-factor>
+      <aqn-value-factor
+        [value]="weight"
+        (valueChanged)="weight = $event"
+      ></aqn-value-factor>
+      {{ weight.dataValueRelative }} - {{ weight.dataFactor }}
     </div>
     <div *ngSwitchCase="AmountInputType.quantity">qnt</div>
     <div *ngSwitchCase="AmountInputType.volume">volume</div>

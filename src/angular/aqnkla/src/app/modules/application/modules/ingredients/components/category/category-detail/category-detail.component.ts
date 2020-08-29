@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IngredientCategoryModel } from './../../../../../models/ingredient.model';
 import { RandomHelper } from './../../../../../helpers/common/random.helper';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
 import { CategoryClientService } from './../../../../../services/ingredient/category-client/category-client.service';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'aqn-category-detail',

@@ -1,30 +1,178 @@
 {
   "categories": [
     {
-      "id": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
-      "name": "Test",
+      "id": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+      "name": "Diary",
+      "description": "",
+      "parentCategoryId": ""
+    },
+    {
+      "id": "10c94d96-c468-43f3-b837-bab07273db61",
+      "name": "Meat",
+      "description": "",
+      "parentCategoryId": ""
+    },
+    {
+      "id": "4e3da38f-b053-408c-b347-41f039332f67",
+      "name": "Bread",
+      "description": "",
+      "parentCategoryId": ""
+    },
+    {
+      "id": "f55ce47f-c966-4163-82c6-02ef09e8a824",
+      "name": "Fruit",
       "description": "",
       "parentCategoryId": ""
     }
   ],
   "items": [
     {
-      "id": "0df2ec5d-ee16-481e-b06f-b3f79a3c9c0b",
-      "name": "Ttest",
+      "id": "c80e6025-14a7-4fd7-b93f-5025752da0d5",
+      "name": "Milk 3%",
       "description": "",
-      "categoryId": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
-      "calories": 0,
+      "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+      "calories": 66,
+      "carbs": 4,
+      "fat": 3,
+      "protein": 3,
+      "fiber": 0,
+      "minerals": [
+        {
+          "item": "molibden",
+          "weight": {
+            "label": "g",
+            "dataFactor": 0.001,
+            "dataValueRelative": 1
+          }
+        },
+        {
+          "item": "zink",
+          "weight": {
+            "label": "g",
+            "dataFactor": 0.001,
+            "dataValueRelative": 1
+          }
+        },
+        {
+          "item": "clorium",
+          "weight": {
+            "label": "g",
+            "dataFactor": 0.001,
+            "dataValueRelative": 1
+          }
+        },
+        {
+          "item": "iron",
+          "weight": {
+            "label": "g",
+            "dataFactor": 0.001,
+            "dataValueRelative": 1
+          }
+        },
+        {
+          "item": "phtotasium",
+          "weight": {
+            "label": "g",
+            "dataFactor": 0.001,
+            "dataValueRelative": 1
+          }
+        }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_C",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1,
+            "weightFactor": 1
+          }
+        },
+        {
+          "item": "vitamin_D",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1,
+            "weightFactor": 0.0000012
+          }
+        }
+      ],
+      "allergans": [
+        {
+          "allergan": "laktose",
+          "allerganImportance": "full"
+        }
+      ],
+      "avrageDensity": 1030,
+      "isPieceAllowed": false,
+      "isVolumeAllowed": true,
+      "pieceAvgWeight": null,
+      "isVolumeDefault": false
+    },
+    {
+      "id": "3d9952c0-a8d7-4fc6-a8ab-19692fa59fdb",
+      "name": "Egg",
+      "description": "",
+      "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+      "calories": 155,
+      "carbs": 10,
+      "fat": 10,
+      "protein": 12,
+      "fiber": 0,
+      "minerals": [
+        {
+          "item": "zink",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1
+          }
+        },
+        {
+          "item": "iron",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1
+          }
+        }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_C",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1,
+            "weightFactor": 1e-9
+          }
+        }
+      ],
+      "allergans": [],
+      "avrageDensity": null,
+      "isPieceAllowed": true,
+      "isVolumeAllowed": false,
+      "pieceAvgWeight": 60,
+      "isVolumeDefault": false
+    },
+    {
+      "id": "2c814427-5352-42aa-be1b-789b8db07772",
+      "name": "Pork",
+      "description": "",
+      "categoryId": "10c94d96-c468-43f3-b837-bab07273db61",
+      "calories": 242,
       "carbs": 0,
-      "fat": 0,
-      "protein": 0,
+      "fat": 27,
+      "protein": 13,
       "fiber": 0,
       "minerals": [
         {
           "item": "iron",
           "weight": {
             "label": "g",
-            "weightFactor": 1,
-            "weightValueRelative": 1
+            "dataFactor": 87,
+            "dataValueRelative": 1
           }
         }
       ],
@@ -33,8 +181,9 @@
           "item": "vitamin_D",
           "weight": {
             "label": "g",
-            "weightFactor": 1,
-            "weightValueRelative": 1
+            "dataFactor": 1,
+            "dataValueRelative": 1,
+            "weightFactor": 53
           }
         }
       ],
@@ -44,31 +193,107 @@
       "isVolumeAllowed": false,
       "pieceAvgWeight": null,
       "isVolumeDefault": false
+    },
+    {
+      "id": "39432f13-b9d5-4cff-a6d2-fc82a2b1d7d9",
+      "name": "Bread",
+      "description": "",
+      "categoryId": "4e3da38f-b053-408c-b347-41f039332f67",
+      "calories": 82,
+      "carbs": 13,
+      "fat": 1,
+      "protein": 4,
+      "fiber": 2,
+      "minerals": [],
+      "vitamins": [],
+      "allergans": [],
+      "avrageDensity": null,
+      "isPieceAllowed": false,
+      "isVolumeAllowed": false,
+      "pieceAvgWeight": null,
+      "isVolumeDefault": false
+    },
+    {
+      "id": "6836379e-6f90-4bfe-bfda-f5a7545198eb",
+      "name": "Bannana",
+      "description": "",
+      "categoryId": "f55ce47f-c966-4163-82c6-02ef09e8a824",
+      "calories": 89,
+      "carbs": 23,
+      "fat": 0.3,
+      "protein": 1,
+      "fiber": 2,
+      "minerals": [
+        {
+          "item": "phtotasium",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1
+          }
+        }
+      ],
+      "vitamins": [
+        {
+          "item": "vitamin_C",
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1,
+            "weightFactor": 1000
+          }
+        }
+      ],
+      "allergans": [],
+      "avrageDensity": null,
+      "isPieceAllowed": false,
+      "isVolumeAllowed": false,
+      "pieceAvgWeight": null,
+      "isVolumeDefault": false
+    },
+    {
+      "id": "85e14ab6-9afa-4139-9171-d79f69c409ca",
+      "name": "Butter",
+      "description": "",
+      "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+      "calories": 722,
+      "carbs": 0,
+      "fat": 80,
+      "protein": 1,
+      "fiber": 0,
+      "minerals": [],
+      "vitamins": [],
+      "allergans": [],
+      "avrageDensity": 911,
+      "isPieceAllowed": false,
+      "isVolumeAllowed": true,
+      "pieceAvgWeight": null,
+      "isVolumeDefault": false
     }
   ],
   "recipes": [
     {
-      "id": "140ae47b-0edd-4689-9f49-677cae1de37e",
-      "name": "est",
+      "id": "3dac52de-a2d2-451d-a883-e74904480c13",
+      "name": "Bread with pork & egg",
       "ingredients": [
         {
           "item": {
-            "id": "0df2ec5d-ee16-481e-b06f-b3f79a3c9c0b",
-            "name": "Ttest",
+            "id": "2c814427-5352-42aa-be1b-789b8db07772",
+            "name": "Pork",
             "description": "",
-            "categoryId": "01e31647-8ea6-46f7-a1b1-80bb48247d5a",
-            "calories": 0,
+            "categoryId": "10c94d96-c468-43f3-b837-bab07273db61",
+            "calories": 242,
             "carbs": 0,
-            "fat": 0,
-            "protein": 0,
+            "fat": 27,
+            "protein": 13,
             "fiber": 0,
             "minerals": [
               {
                 "item": "iron",
                 "weight": {
                   "label": "g",
-                  "weightFactor": 1,
-                  "weightValueRelative": 1
+                  "dataFactor": 87,
+                  "dataValueRelative": 1
                 }
               }
             ],
@@ -77,8 +302,9 @@
                 "item": "vitamin_D",
                 "weight": {
                   "label": "g",
-                  "weightFactor": 1,
-                  "weightValueRelative": 1
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 53
                 }
               }
             ],
@@ -91,8 +317,293 @@
           },
           "weight": {
             "label": "g",
-            "weightFactor": 1,
-            "weightValueRelative": 1
+            "dataFactor": 1,
+            "dataValueRelative": 5000
+          }
+        },
+        {
+          "item": {
+            "id": "85e14ab6-9afa-4139-9171-d79f69c409ca",
+            "name": "Butter",
+            "description": "",
+            "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+            "calories": 722,
+            "carbs": 0,
+            "fat": 80,
+            "protein": 1,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [],
+            "avrageDensity": 911,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": true,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 500
+          }
+        },
+        {
+          "item": {
+            "id": "39432f13-b9d5-4cff-a6d2-fc82a2b1d7d9",
+            "name": "Bread",
+            "description": "",
+            "categoryId": "4e3da38f-b053-408c-b347-41f039332f67",
+            "calories": 82,
+            "carbs": 13,
+            "fat": 1,
+            "protein": 4,
+            "fiber": 2,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 300
+          }
+        },
+        {
+          "item": {
+            "id": "c80e6025-14a7-4fd7-b93f-5025752da0d5",
+            "name": "Milk 3%",
+            "description": "",
+            "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+            "calories": 66,
+            "carbs": 4,
+            "fat": 3,
+            "protein": 3,
+            "fiber": 0,
+            "minerals": [
+              {
+                "item": "molibden",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "zink",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "clorium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "iron",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "phtotasium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 1
+                }
+              },
+              {
+                "item": "vitamin_D",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.0000012
+                }
+              }
+            ],
+            "allergans": [
+              {
+                "allergan": "laktose",
+                "allerganImportance": "full"
+              }
+            ],
+            "avrageDensity": 1030,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": true,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "dd5b655a-0ab2-4118-aa24-ba2ca5e77288",
+      "name": "Bannana Milk",
+      "ingredients": [
+        {
+          "item": {
+            "id": "c80e6025-14a7-4fd7-b93f-5025752da0d5",
+            "name": "Milk 3%",
+            "description": "",
+            "categoryId": "1a252739-b65c-4621-b2c4-4bc1bc5b4dfc",
+            "calories": 66,
+            "carbs": 4,
+            "fat": 3,
+            "protein": 3,
+            "fiber": 0,
+            "minerals": [
+              {
+                "item": "molibden",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "zink",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "clorium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "iron",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "phtotasium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 1
+                }
+              },
+              {
+                "item": "vitamin_D",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.0000012
+                }
+              }
+            ],
+            "allergans": [
+              {
+                "allergan": "laktose",
+                "allerganImportance": "full"
+              }
+            ],
+            "avrageDensity": 1030,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": true,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 200
+          }
+        },
+        {
+          "item": {
+            "id": "6836379e-6f90-4bfe-bfda-f5a7545198eb",
+            "name": "Bannana",
+            "description": "",
+            "categoryId": "f55ce47f-c966-4163-82c6-02ef09e8a824",
+            "calories": 89,
+            "carbs": 23,
+            "fat": 0.3,
+            "protein": 1,
+            "fiber": 2,
+            "minerals": [
+              {
+                "item": "phtotasium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 1000
+                }
+              }
+            ],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 100
           }
         }
       ]
