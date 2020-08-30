@@ -8,3 +8,17 @@
 >
 
 <div>{{ currentDay }} - {{ currentDayString }}</div>
+<div>
+  {{diaryDayModel.date}}
+</div>
+<div>
+  <button mat-button (click)="addMeal()">Add Meal</button>
+  <div *ngIf="isAddMealActive">
+
+    <button mat-button (click)="addMealConfirm()">Confirm</button>
+    <button mat-button (click)="addMealCancel()">Cancel</button>
+  </div>
+</div>
+<div>
+  <div *ngFor="let meal of diaryDayModel.meals">{{meal.recipe.name}}</div>
+</div>
