@@ -18,7 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MealDeleteComponent } from './components/diary-day/meal-delete/meal-delete.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { RecipeViewModule } from './../recipe/recipe-view/recipe-view.module';
+import { RecipeModule } from './../recipe//recipe.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { RecipeViewModule } from './../recipe/recipe-view/recipe-view.module';
   imports: [
     CommonModule,
     DiaryRoutesModule,
-    RecipeViewModule,
+    RecipeModule,
     FormsModule,
     MatSelectModule,
     MatInputModule,
