@@ -20,34 +20,35 @@
 <div>Caloires: {{ calories }} kcal</div>
 <div>
   <button mat-button (click)="addMeal()">Add Meal</button>
-  <div *ngIf="isAddMealActive">
-    <button mat-button (click)="addMealConfirm()">Confirm</button>
-    <button mat-button (click)="addMealCancel()">Cancel</button>
+  <div class="item-add" *ngIf="isAddMealActive">
+    <mat-card>
+      <aqn-recipe-search></aqn-recipe-search>
+      <button mat-button (click)="addMealConfirm()">Confirm</button>
+      <button mat-button (click)="addMealCancel()">Cancel</button>
+    </mat-card>
   </div>
 </div>
 <div>
-  <div *ngFor="let meal of diaryDayModel?.meals">
-    <div>
-      <div>{{ meal.dateNumber }} {{ meal.recipe.name }}</div>
-      <div *ngFor="let ingredient of meal.ingredients">
-        <div>
-          {{ ingredient.item.name }}
-          {{
-            ingredient.weight.dataValueRelative * ingredient.weight.dataFactor
-          }}
-          g
+  <div *ngFor="let meal of diaryDayModel?.meals" class="meal">
+      <mat-card>
+        <div>{{ meal.dateNumber }} {{ meal.recipe.name }}</div>
+        <div *ngFor="let ingredient of meal.ingredients">
+          <div>
+            {{ ingredient.item.name }}
+            {{
+              ingredient.weight.dataValueRelative * ingredient.weight.dataFactor
+            }}
+            g
+          </div>
+          <mat-slider
+            [(ngModel)]="ingredient.weight.dataValueRelative"
+          ></mat-slider>
         </div>
-        <mat-slider
-          [(ngModel)]="ingredient.weight.dataValueRelative"
-        ></mat-slider>
-      </div>
 
-      <button mat-stroked-button  (click)="saveMeal(meal)">
-        Save
-      </button>
-      <button mat-stroked-button color="warn" (click)="deleteMeal(meal)">
-        Delete
-      </button>
+        <button mat-stroked-button (click)="saveMeal(meal)">Save</button>
+        <button mat-stroked-button color="warn" (click)="deleteMeal(meal)">
+          Delete
+        </button>
+      </mat-card>
     </div>
-  </div>
 </div>
