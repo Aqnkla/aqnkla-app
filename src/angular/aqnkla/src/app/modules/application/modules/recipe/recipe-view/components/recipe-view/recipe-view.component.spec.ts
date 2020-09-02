@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DiaryRootComponent } from './diary-root.component';
+import { RecipeViewComponent } from './recipe-view.component';
 
-describe('DiaryRootComponent', () => {
-  let component: DiaryRootComponent;
-  let fixture: ComponentFixture<DiaryRootComponent>;
+describe('RecipeViewComponent', () => {
+  let component: RecipeViewComponent;
+  let fixture: ComponentFixture<RecipeViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiaryRootComponent ]
+      declarations: [ RecipeViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DiaryRootComponent);
+    fixture = TestBed.createComponent(RecipeViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
