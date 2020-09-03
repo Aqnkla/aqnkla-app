@@ -1,9 +1,9 @@
+import { NetworkClientService } from '../../../../../../services/network-client-manage/network-client-manage.service';
 import { Injectable } from '@angular/core';
-import { NetworkClientService } from 'src/app/services/network-client/network-client.service';
-import { MealModel } from '../../../models/diary.model';
 import { HttpService } from 'src/app/services/http/http.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { MealModel } from '../../models/diary.model';
 
 @Injectable({
   providedIn: 'root',

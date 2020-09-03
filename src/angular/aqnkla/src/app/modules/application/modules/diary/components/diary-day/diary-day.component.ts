@@ -1,14 +1,14 @@
+import { DiaryService } from './../../services/diary/diary.service';
+import { DiaryDayModel, MealModel } from './../../models/diary.model';
 import { Component, OnInit } from '@angular/core';
 import { DateHelper } from '../../../../helpers/common/date.helper';
 import { ActivatedRoute } from '@angular/router';
-import { DiaryDayModel, MealModel } from './../../../../models/diary.model';
-import { DiaryService } from './../../../../services/diary/diary/diary.service';
-import { MealClientService } from 'src/app/modules/application/services/diary/meal-client/meal-client.service';
-import { RecipeClientService } from 'src/app/modules/application/services/recipe/recipe-client/recipe-client.service';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
 import { MealDeleteComponent } from './meal-delete/meal-delete.component';
+import { MealClientService } from '../../services/meal-client/meal-client.service';
+import { RecipeClientService } from '../../../recipe-manage/services/recipe-manage-client/recipe-manage-client.service';
 
 @Component({
   selector: 'aqn-diary-day',

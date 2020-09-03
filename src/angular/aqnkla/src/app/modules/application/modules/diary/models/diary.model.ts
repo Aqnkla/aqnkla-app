@@ -1,4 +1,6 @@
-import { RecipeModel, ItemData, IngredientItemModel } from './ingredient.model';
+import { RecipeModel } from '../../../common-modules/food/models/recipe.model';
+import { ItemData } from '../../../common-modules/food/models/item-data.model';
+import { IngredientItemModel } from '../../../common-modules/food/models/ingredient-item.model';
 
 export class MealModel {
   id: string;

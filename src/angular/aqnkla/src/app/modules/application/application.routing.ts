@@ -14,15 +14,15 @@ const routes: Routes = [
       {
         path: 'recipe',
         loadChildren: () =>
-          import('./modules/recipe/modules/recipe-manage/recipe-manage.module').then(
+          import('./modules/recipe-manage/recipe-manage.module').then(
             (m) => m.RecipeManageModule
           ),
       },
       {
-        path: 'ingredient',
+        path: 'ingredients',
         loadChildren: () =>
           import(
-            './modules/ingredient/modules/ingredient-manage/ingredient-manage.module'
+            './modules/ingredient-manage/ingredient-manage.module'
           ).then((m) => m.IngredientsManageModule),
       },
       {

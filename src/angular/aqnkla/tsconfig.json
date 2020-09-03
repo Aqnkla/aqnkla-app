@@ -6,6 +6,7 @@
 */
 {
   "files": [],
+  "experimentalDecorators": true,
   "references": [
     {
       "path": "./tsconfig.aqn.json"
@@ -16,5 +17,5 @@
     {
       "path": "./e2e/tsconfig.json"
     }
-]
+  ]
 }

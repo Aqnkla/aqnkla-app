@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MealClientService } from '../meal-client/meal-client.service';
-import { DiaryDayModel } from '../../../models/diary.model';
-import { DateHelper } from '../../../helpers/common/date.helper';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DiaryDayModel } from '../../models/diary.model';
+import { DateHelper } from 'src/app/modules/application/helpers/common/date.helper';
 
 @Injectable({
   providedIn: 'root',

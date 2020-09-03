@@ -6,25 +6,32 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HttpService {
+  private $apiHost = 'http://localhost:3000';
   constructor(private httpClient: HttpClient) {}
 
   get(contoller: string): Observable<object> {
-    const resp = this.httpClient.get(`http://localhost:3000/${contoller}`);
+    const resp = this.httpClient.get(`${this.$apiHost}/${contoller}`);
     return resp;
   }
 
   post(contoller: string, body: any): Observable<object> {
-    const resp = this.httpClient.post(`http://localhost:3000/${contoller}`, body);
+    const resp = this.httpClient.post(
+      `${this.$apiHost}/${contoller}`,
+      body
+    );
     return resp;
   }
 
   put(contoller: string, body: any): Observable<object> {
-    const resp = this.httpClient.put(`http://localhost:3000/${contoller}`, body);
+    const resp = this.httpClient.put(
+      `${this.$apiHost}/${contoller}`,
+      body
+    );
     return resp;
   }
 
   delete(contoller: string): Observable<object> {
-    const resp = this.httpClient.delete(`http://localhost:3000/${contoller}`);
+    const resp = this.httpClient.delete(`${this.$apiHost}/${contoller}`);
     return resp;
   }
 }
