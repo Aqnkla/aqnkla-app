@@ -15,13 +15,13 @@ export class StartComponent {
   ) {
     this.$messageHandler.push(
       this.authenticationService.authenticationChange.subscribe((b) =>
-        this.auhticatedChange(b)
+        this.authenticatedChange(b)
       )
     );
   }
 
-  private auhticatedChange(isAuhticated: boolean): void {
-    if (isAuhticated) {
+  private authenticatedChange(isAuthenticated: boolean): void {
+    if (isAuthenticated) {
       this.router.navigate(['/app']);
     } else {
       this.router.navigate(['/login']);

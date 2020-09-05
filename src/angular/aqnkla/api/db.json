@@ -81,7 +81,13 @@
       "isPieceAllowed": false,
       "isVolumeAllowed": false,
       "pieceAvgWeight": null,
-      "isVolumeDefault": false
+      "isVolumeDefault": false,
+      "allergens": [
+        {
+          "allergen": "gluten",
+          "allergenImportance": "full"
+        }
+      ]
     },
     {
       "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",

@@ -1,4 +1,4 @@
-import { Allergan, AllerganValue, AllerganImportance } from '../../../../../../common-modules/food/models/ingredient/parameters/allergan.model';
+import { Allergen, AllergenValue, AllergenImportance } from '../../../../../../common-modules/food/models/ingredient/parameters/allergen.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,29 +14,29 @@ import { DialogDeleteData } from 'src/app/modules/application/models/dialog.mode
   ],
 })
 export class ItemAllerganComponent implements OnInit {
-  @Input() allergans: AllerganValue[];
-  @Output() valueChanged = new EventEmitter<AllerganValue[]>();
-  avalibleAllergans: Allergan[];
-  allerganImportances: AllerganImportance[];
-  activeSelectItem: Allergan;
+  @Input() allergens: AllergenValue[];
+  @Output() valueChanged = new EventEmitter<AllergenValue[]>();
+  avalibleAllergens: Allergen[];
+  allergenImportances: AllergenImportance[];
+  activeSelectItem: Allergen;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.updateAvalibleMinerals();
-    this.allerganImportances = ObjectHelper.getEnumValues<AllerganImportance>(
-      AllerganImportance
+    this.allergenImportances = ObjectHelper.getEnumValues<AllergenImportance>(
+      AllergenImportance
     );
   }
 
   private updateAvalibleMinerals(): void {
-    this.avalibleAllergans = [];
-    const allergans = ObjectHelper.getEnumValues<Allergan>(Allergan);
-    for (const allergan of allergans) {
+    this.avalibleAllergens = [];
+    const allergens = ObjectHelper.getEnumValues<Allergen>(Allergen);
+    for (const allergan of allergens) {
       if (
-        this.allergans === undefined ||
-        this.allergans.filter((b) => b.allergan === allergan).length === 0
+        this.allergens === undefined ||
+        this.allergens.filter((b) => b.allergen === allergan).length === 0
       ) {
-        this.avalibleAllergans.push(allergan);
+        this.avalibleAllergens.push(allergan);
       }
     }
   }
@@ -45,35 +45,35 @@ export class ItemAllerganComponent implements OnInit {
     if (this.activeSelectItem === undefined) {
       return;
     }
-    if (this.allergans === undefined) {
-      this.allergans = [];
+    if (this.allergens === undefined) {
+      this.allergens = [];
     }
-    this.allergans.push({
-      allergan: this.activeSelectItem,
-      allerganImportance: 0,
+    this.allergens.push({
+      allergen: this.activeSelectItem,
+      allergenImportance: 0,
     });
     this.activeSelectItem = undefined;
     this.updateAvalibleMinerals();
-    this.valueChanged.emit(this.allergans);
+    this.valueChanged.emit(this.allergens);
   }
 
-  deleteItem(value: AllerganValue): void {
+  deleteItem(value: AllergenValue): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteAllerganDialogComponent, {
       width: '250px',
       data: {
-        header: `Remove ${value.allergan}`,
-        message: `Do you want remove ${value.allergan}`,
+        header: `Remove ${value.allergen}`,
+        message: `Do you want remove ${value.allergen}`,
         delete: false,
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result.delete) {
-        self.allergans = self.allergans.filter(
-          (obj) => obj.allergan !== value.allergan
+        self.allergens = self.allergens.filter(
+          (obj) => obj.allergen !== value.allergen
         );
         self.updateAvalibleMinerals();
-        self.valueChanged.emit(self.allergans);
+        self.valueChanged.emit(self.allergens);
       }
     });
   }

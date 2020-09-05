@@ -1,4 +1,4 @@
-import { AllerganValue } from './parameters/allergan.model';
+import { AllergenValue } from './parameters/allergen.model';
 import { ControllerInfo } from 'src/app/models/controller-into';
 import { ItemData } from '../common/item-data.model';
 import { Mineral } from './parameters/mineral.model';
@@ -20,10 +20,10 @@ export interface IngredientItemModel {
   fiber: number;
   minerals: ItemData<Mineral>[];
   vitamins: ItemData<Vitamin>[];
-  allergans: AllerganValue[];
+  allergens: AllergenValue[];
   isPieceAllowed: boolean;
   pieceAvgWeight: number;
   isVolumeAllowed: boolean;
-  avrageDensity: number;
+  averageDensity: number;
   isVolumeDefault: boolean;
 }

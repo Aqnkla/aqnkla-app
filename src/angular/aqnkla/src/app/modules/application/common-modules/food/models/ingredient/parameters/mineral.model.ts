@@ -1,8 +1,8 @@
 
 export enum Mineral {
-  zink,
+  zinc,
   iron,
-  molibden,
-  clorium,
-  phtotasium
+  molybdenum,
+  chloride,
+  potassium
 }

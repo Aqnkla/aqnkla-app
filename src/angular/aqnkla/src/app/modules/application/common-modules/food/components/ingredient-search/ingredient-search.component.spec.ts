@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { IngredientSearchComponent } from './ingredient-search.component';
 
-import { IngredientsSearchComponent } from './ingredients-search.component';
 
 describe('IngredientsSearchComponent', () => {
-  let component: IngredientsSearchComponent;
-  let fixture: ComponentFixture<IngredientsSearchComponent>;
+  let component: IngredientSearchComponent;
+  let fixture: ComponentFixture<IngredientSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IngredientsSearchComponent ]
+      declarations: [ IngredientSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IngredientsSearchComponent);
+    fixture = TestBed.createComponent(IngredientSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
