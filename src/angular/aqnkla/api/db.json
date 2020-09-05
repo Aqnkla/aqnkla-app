@@ -684,5 +684,527 @@
       ]
     }
   ],
-  "meal": []
+  "meal": [
+    {
+      "id": "2cd24197-ef8a-4d81-a4fa-e23caa404a54",
+      "dateTime": "2020-09-05T17:25:06.095Z",
+      "dateNumber": 20200905,
+      "recipe": {
+        "id": "2e03dd11-7a2b-444b-9038-8b4930a6dcf8",
+        "name": "Solmon in milk",
+        "ingredients": [
+          {
+            "item": {
+              "id": "72c57c51-9422-442f-8830-28fd688258a8",
+              "name": "Solmon",
+              "description": "",
+              "categoryId": "4b9c6bd0-f460-4fc3-9f99-126d4b71438b",
+              "calories": 300,
+              "carbs": 10,
+              "fat": 5,
+              "protein": 10,
+              "fiber": 2,
+              "minerals": [
+                {
+                  "item": "zink",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1e-9,
+                    "dataValueRelative": 1
+                  }
+                },
+                {
+                  "item": "molibden",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 0.001,
+                    "dataValueRelative": 1
+                  }
+                },
+                {
+                  "item": "phtotasium",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 0.001,
+                    "dataValueRelative": 1
+                  }
+                }
+              ],
+              "vitamins": [
+                {
+                  "item": "vitamin_D",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1,
+                    "dataValueRelative": 1,
+                    "weightFactor": 1e-9
+                  }
+                },
+                {
+                  "item": "vitamin_C",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1,
+                    "dataValueRelative": 1,
+                    "weightFactor": 0.000001
+                  }
+                }
+              ],
+              "allergans": [],
+              "avrageDensity": null,
+              "isPieceAllowed": false,
+              "isVolumeAllowed": false,
+              "pieceAvgWeight": null,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 200
+            }
+          },
+          {
+            "item": {
+              "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
+              "name": "Milk",
+              "description": "",
+              "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+              "calories": 3,
+              "carbs": 2,
+              "fat": 3,
+              "protein": 2,
+              "fiber": 0,
+              "minerals": [],
+              "vitamins": [],
+              "allergans": [
+                {
+                  "allergan": "laktose",
+                  "allerganImportance": "full"
+                }
+              ],
+              "avrageDensity": 1000,
+              "isPieceAllowed": false,
+              "isVolumeAllowed": true,
+              "pieceAvgWeight": null,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 300
+            }
+          }
+        ]
+      },
+      "ingredients": [
+        {
+          "item": {
+            "id": "72c57c51-9422-442f-8830-28fd688258a8",
+            "name": "Solmon",
+            "description": "",
+            "categoryId": "4b9c6bd0-f460-4fc3-9f99-126d4b71438b",
+            "calories": 300,
+            "carbs": 10,
+            "fat": 5,
+            "protein": 10,
+            "fiber": 2,
+            "minerals": [
+              {
+                "item": "zink",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1e-9,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "molibden",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "phtotasium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_D",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 1e-9
+                }
+              },
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.000001
+                }
+              }
+            ],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 200
+          }
+        },
+        {
+          "item": {
+            "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
+            "name": "Milk",
+            "description": "",
+            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+            "calories": 3,
+            "carbs": 2,
+            "fat": 3,
+            "protein": 2,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [
+              {
+                "allergan": "laktose",
+                "allerganImportance": "full"
+              }
+            ],
+            "avrageDensity": 1000,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": true,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 300
+          }
+        }
+      ]
+    },
+    {
+      "id": "87950d0a-b11e-4f0c-8139-c6762143d958",
+      "dateTime": "2020-09-05T17:25:06.095Z",
+      "dateNumber": 20200905,
+      "recipe": {
+        "id": "ee7e8c71-9ec0-4b02-9518-96794a735cb1",
+        "name": "Eggs with cheese",
+        "ingredients": [
+          {
+            "item": {
+              "id": "e7a6c258-012d-4679-bbb0-599e8fd0aa0d",
+              "name": "Egg",
+              "description": "",
+              "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+              "calories": 100,
+              "carbs": 20,
+              "fat": 2,
+              "protein": 25,
+              "fiber": 0,
+              "minerals": [],
+              "vitamins": [],
+              "allergans": [],
+              "avrageDensity": null,
+              "isPieceAllowed": true,
+              "isVolumeAllowed": false,
+              "pieceAvgWeight": 20,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 30
+            }
+          },
+          {
+            "item": {
+              "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
+              "name": "Cheese",
+              "description": "",
+              "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+              "calories": 20,
+              "carbs": 0,
+              "fat": 2,
+              "protein": 3,
+              "fiber": 0,
+              "minerals": [],
+              "vitamins": [],
+              "allergans": [],
+              "avrageDensity": null,
+              "isPieceAllowed": false,
+              "isVolumeAllowed": false,
+              "pieceAvgWeight": null,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 20
+            }
+          }
+        ]
+      },
+      "ingredients": [
+        {
+          "item": {
+            "id": "e7a6c258-012d-4679-bbb0-599e8fd0aa0d",
+            "name": "Egg",
+            "description": "",
+            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+            "calories": 100,
+            "carbs": 20,
+            "fat": 2,
+            "protein": 25,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": true,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": 20,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 30
+          }
+        },
+        {
+          "item": {
+            "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
+            "name": "Cheese",
+            "description": "",
+            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+            "calories": 20,
+            "carbs": 0,
+            "fat": 2,
+            "protein": 3,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "a01eec28-ba2e-4aed-b6ca-e5a6209334a3",
+      "dateTime": "2020-09-05T17:25:06.095Z",
+      "dateNumber": 20200905,
+      "recipe": {
+        "id": "1cfa24cc-8e30-429c-b5ec-2d71a02138b5",
+        "name": "POrk with cheese",
+        "ingredients": [
+          {
+            "item": {
+              "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
+              "name": "Pork",
+              "description": "",
+              "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
+              "calories": 250,
+              "carbs": 2,
+              "fat": 20,
+              "protein": 20,
+              "fiber": 1,
+              "minerals": [
+                {
+                  "item": "iron",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 0.001,
+                    "dataValueRelative": 1
+                  }
+                },
+                {
+                  "item": "molibden",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1,
+                    "dataValueRelative": 1
+                  }
+                }
+              ],
+              "vitamins": [
+                {
+                  "item": "vitamin_D",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1,
+                    "dataValueRelative": 1,
+                    "weightFactor": 0.001
+                  }
+                },
+                {
+                  "item": "vitamin_C",
+                  "weight": {
+                    "label": "g",
+                    "dataFactor": 1,
+                    "dataValueRelative": 1,
+                    "weightFactor": 0.001
+                  }
+                }
+              ],
+              "allergans": [],
+              "avrageDensity": null,
+              "isPieceAllowed": false,
+              "isVolumeAllowed": false,
+              "pieceAvgWeight": null,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 300
+            }
+          },
+          {
+            "item": {
+              "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
+              "name": "Cheese",
+              "description": "",
+              "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+              "calories": 20,
+              "carbs": 0,
+              "fat": 2,
+              "protein": 3,
+              "fiber": 0,
+              "minerals": [],
+              "vitamins": [],
+              "allergans": [],
+              "avrageDensity": null,
+              "isPieceAllowed": false,
+              "isVolumeAllowed": false,
+              "pieceAvgWeight": null,
+              "isVolumeDefault": false
+            },
+            "weight": {
+              "label": "g",
+              "dataFactor": 1,
+              "dataValueRelative": 100
+            }
+          }
+        ]
+      },
+      "ingredients": [
+        {
+          "item": {
+            "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
+            "name": "Pork",
+            "description": "",
+            "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
+            "calories": 250,
+            "carbs": 2,
+            "fat": 20,
+            "protein": 20,
+            "fiber": 1,
+            "minerals": [
+              {
+                "item": "iron",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "molibden",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_D",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.001
+                }
+              },
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.001
+                }
+              }
+            ],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 300
+          }
+        },
+        {
+          "item": {
+            "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
+            "name": "Cheese",
+            "description": "",
+            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+            "calories": 20,
+            "carbs": 0,
+            "fat": 2,
+            "protein": 3,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 100
+          }
+        }
+      ]
+    }
+  ]
 }

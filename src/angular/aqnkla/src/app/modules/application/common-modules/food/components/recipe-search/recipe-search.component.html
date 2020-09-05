@@ -2,14 +2,14 @@
 
   <mat-form-field class="example-full-width">
     <input type="text"
-           placeholder="Pick one"
-           aria-label="Number"
+           placeholder="Recipe"
+           aria-label="Recipe"
            matInput
-           [formControl]="myControl"
+           [formControl]="searchForm"
            [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="getOptionText">
+      <mat-option *ngFor="let recipe of filteredRecipes | async" [value]="recipe" (onSelectionChange)="valueChange($event)">
+        {{recipe.name}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>

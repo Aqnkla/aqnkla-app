@@ -3,7 +3,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RecipeModel } from '../../models/recipe.model';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { startWith, map } from 'rxjs/operators';
+import {
+  startWith,
+  map,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from 'rxjs/operators';
+import { MatOptionSelectionChange } from '@angular/material/core';
 
 @Component({
   selector: 'aqn-recipe-search',
@@ -12,26 +19,33 @@ import { startWith, map } from 'rxjs/operators';
 })
 export class RecipeSearchComponent implements OnInit {
   @Output() recipeChange = new EventEmitter<RecipeModel>();
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three', 'test'];
-  filteredOptions: Observable<string[]>;
+  searchForm = new FormControl();
+  filteredRecipes: Observable<RecipeModel[]>;
   constructor(private recipeSearchService: RecipeSearchService) {}
 
   ngOnInit(): void {
-    console.log('RecipeSearchComponent');
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredRecipes = this.searchForm.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value))
+      debounceTime(400),
+      distinctUntilChanged(),
+      switchMap((val) => {
+        return this.filter(val || '');
+      })
     );
   }
 
-  valueChange(event: any): void {
-    console.log(event.srcElement.value);
+  valueChange(event: MatOptionSelectionChange): void {
+    this.recipeChange.emit(event.source.value);
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  getOptionText(option: RecipeModel): string {
+    if (option) {
+      return option.name;
+    }
+    return '';
+  }
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  private filter(value: string): Observable<RecipeModel[]> {
+    return this.recipeSearchService.getByName(value);
   }
 }
