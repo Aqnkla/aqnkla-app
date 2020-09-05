@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { RecipeSearchComponent } from './recipe-search.component';
+import { IngredientsDashboardComponent } from './ingredients-dashboard.component';
 
-describe('RecipeSearchComponent', () => {
-  let component: RecipeSearchComponent;
-  let fixture: ComponentFixture<RecipeSearchComponent>;
+describe('IngredientsDashboardComponent', () => {
+  let component: IngredientsDashboardComponent;
+  let fixture: ComponentFixture<IngredientsDashboardComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [RecipeSearchComponent],
+        declarations: [IngredientsDashboardComponent],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecipeSearchComponent);
+    fixture = TestBed.createComponent(IngredientsDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

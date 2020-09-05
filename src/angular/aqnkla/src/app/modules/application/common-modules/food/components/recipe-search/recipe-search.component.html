@@ -1,15 +1,25 @@
 <p>recipe-search works!</p>
 
-  <mat-form-field class="example-full-width">
-    <input type="text"
-           placeholder="Recipe"
-           aria-label="Recipe"
-           matInput
-           [formControl]="searchForm"
-           [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="getOptionText">
-      <mat-option *ngFor="let recipe of filteredRecipes | async" [value]="recipe" (onSelectionChange)="valueChange($event)">
-        {{recipe.name}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+<mat-form-field class="example-full-width">
+  <input
+    type="text"
+    placeholder="Recipe"
+    aria-label="Recipe"
+    matInput
+    [formControl]="searchForm"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    [displayWith]="getOptionText"
+  >
+    <mat-option
+      *ngFor="let recipe of filteredRecipes | async"
+      [value]="recipe"
+      (onSelectionChange)="valueChange($event)"
+    >
+      {{ recipe.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

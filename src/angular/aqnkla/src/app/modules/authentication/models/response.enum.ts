@@ -1,5 +1,5 @@
 export enum ResponseType {
-  registerSucess,
+  registerSuccess,
   restoreSuccess,
   error
 }

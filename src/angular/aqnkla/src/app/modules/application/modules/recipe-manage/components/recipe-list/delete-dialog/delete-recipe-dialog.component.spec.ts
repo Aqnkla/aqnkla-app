@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DeleteRecipeDialogComponent } from './delete-recipe-dialog.component';
 
@@ -6,12 +6,13 @@ describe('DeleteRecipeDialogComponent', () => {
   let component: DeleteRecipeDialogComponent;
   let fixture: ComponentFixture<DeleteRecipeDialogComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DeleteRecipeDialogComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DeleteRecipeDialogComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DeleteRecipeDialogComponent);

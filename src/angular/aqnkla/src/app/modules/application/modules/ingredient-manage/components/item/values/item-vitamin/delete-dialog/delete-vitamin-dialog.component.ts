@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogDeleteData } from '../../../../../../../../models/dialog.model';
 import { ItemVitaminComponent } from '../item-vitamin.component';
+import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
 
 @Component({
   selector: 'aqn-delete-vitamin-dialog',

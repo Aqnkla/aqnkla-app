@@ -16,27 +16,27 @@ import { Vitamin } from 'src/app/modules/application/common-modules/food/models/
   ],
 })
 export class ItemVitaminComponent implements OnInit {
-  @Input() vitmains: ItemData<Vitamin>[];
+  @Input() vitamins: ItemData<Vitamin>[];
   @Output() valueChanged = new EventEmitter<ItemData<Vitamin>[]>();
   units = DataHelper.getWeightUnitsGram(0);
-  avalibleVitamins: Vitamin[];
+  availableVitamins: Vitamin[];
 
   activeSelectItem: Vitamin;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.updateAvalibleMinerals();
+    this.updateAvailableMinerals();
   }
 
-  private updateAvalibleMinerals(): void {
-    this.avalibleVitamins = [];
+  private updateAvailableMinerals(): void {
+    this.availableVitamins = [];
     const minerals = ObjectHelper.getEnumValues<Vitamin>(Vitamin);
     for (const mineral of minerals) {
       if (
-        this.vitmains === undefined ||
-        this.vitmains.filter((b) => b.item === mineral).length === 0
+        this.vitamins === undefined ||
+        this.vitamins.filter((b) => b.item === mineral).length === 0
       ) {
-        this.avalibleVitamins.push(mineral);
+        this.availableVitamins.push(mineral);
       }
     }
   }
@@ -45,10 +45,10 @@ export class ItemVitaminComponent implements OnInit {
     if (this.activeSelectItem === undefined) {
       return;
     }
-    if (this.vitmains === undefined) {
-      this.vitmains = [];
+    if (this.vitamins === undefined) {
+      this.vitamins = [];
     }
-    this.vitmains.push({
+    this.vitamins.push({
       item: this.activeSelectItem,
       weight: {
         label: 'g',
@@ -57,8 +57,8 @@ export class ItemVitaminComponent implements OnInit {
       }
     });
     this.activeSelectItem = undefined;
-    this.updateAvalibleMinerals();
-    this.valueChanged.emit(this.vitmains);
+    this.updateAvailableMinerals();
+    this.valueChanged.emit(this.vitamins);
   }
 
   deleteItem(value: ItemData<Vitamin>): void {
@@ -73,9 +73,9 @@ export class ItemVitaminComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result.delete) {
-        self.vitmains = self.vitmains.filter((obj) => obj.item !== value.item);
-        self.updateAvalibleMinerals();
-        self.valueChanged.emit(self.vitmains);
+        self.vitamins = self.vitamins.filter((obj) => obj.item !== value.item);
+        self.updateAvailableMinerals();
+        self.valueChanged.emit(self.vitamins);
       }
     });
   }

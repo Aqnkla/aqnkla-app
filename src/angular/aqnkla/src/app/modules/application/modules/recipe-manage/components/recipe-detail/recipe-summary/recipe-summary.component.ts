@@ -3,13 +3,13 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class Summary {
   weight: number;
-  callories: number;
+  calories: number;
   fat: number;
   protein: number;
   carbs: number;
   constructor() {
     this.weight = 0;
-    this.callories = 0;
+    this.calories = 0;
     this.fat = 0;
     this.protein = 0;
     this.carbs = 0;
@@ -31,7 +31,7 @@ export class RecipeSummaryComponent implements OnInit {
       const value = b.weight.dataFactor * b.weight.dataValueRelative;
       const ratio = value / 100;
       summary.weight += value;
-      summary.callories += b.item.calories * ratio;
+      summary.calories += b.item.calories * ratio;
       summary.fat += b.item.fat * ratio;
       summary.carbs += b.item.carbs * ratio;
       summary.protein += b.item.protein * ratio;

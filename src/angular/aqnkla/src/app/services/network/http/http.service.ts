@@ -9,29 +9,29 @@ export class HttpService {
   private $apiHost = 'http://localhost:3000';
   constructor(private httpClient: HttpClient) {}
 
-  get(contoller: string): Observable<object> {
-    const resp = this.httpClient.get(`${this.$apiHost}/${contoller}`);
+  get(controller: string): Observable<object> {
+    const resp = this.httpClient.get(`${this.$apiHost}/${controller}`);
     return resp;
   }
 
-  post(contoller: string, body: any): Observable<object> {
+  post(controller: string, body: any): Observable<object> {
     const resp = this.httpClient.post(
-      `${this.$apiHost}/${contoller}`,
+      `${this.$apiHost}/${controller}`,
       body
     );
     return resp;
   }
 
-  put(contoller: string, body: any): Observable<object> {
+  put(controller: string, body: any): Observable<object> {
     const resp = this.httpClient.put(
-      `${this.$apiHost}/${contoller}`,
+      `${this.$apiHost}/${controller}`,
       body
     );
     return resp;
   }
 
-  delete(contoller: string): Observable<object> {
-    const resp = this.httpClient.delete(`${this.$apiHost}/${contoller}`);
+  delete(controller: string): Observable<object> {
+    const resp = this.httpClient.delete(`${this.$apiHost}/${controller}`);
     return resp;
   }
 }

@@ -5,7 +5,6 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {
   startWith,
-  map,
   debounceTime,
   distinctUntilChanged,
   switchMap,

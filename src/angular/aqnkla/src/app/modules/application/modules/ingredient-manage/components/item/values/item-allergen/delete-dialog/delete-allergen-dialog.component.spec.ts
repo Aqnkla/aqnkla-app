@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DeleteAllerganDialogComponent } from './delete-allergan-dialog.component';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { DeleteAllerganDialogComponent } from './delete-allergen-dialog.component';
 
 describe('DeleteAllerganDialogComponent', () => {
   let component: DeleteAllerganDialogComponent;
   let fixture: ComponentFixture<DeleteAllerganDialogComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DeleteAllerganDialogComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DeleteAllerganDialogComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DeleteAllerganDialogComponent);

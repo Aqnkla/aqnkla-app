@@ -17,14 +17,14 @@ export class GroupMenuComponent implements OnInit {
   get isExtended(): boolean {
     return this.$isExtended;
   }
-  @Input() set gruop(value: MenuGroup) {
-    this.$gruop = value;
+  @Input() set group(value: MenuGroup) {
+    this.$group = value;
     this.updateSumMenu();
   }
-  get gruop(): MenuGroup {
-    return this.$gruop;
+  get group(): MenuGroup {
+    return this.$group;
   }
-  private $gruop: MenuGroup;
+  private $group: MenuGroup;
   private $isExtended: boolean;
 
   subItemStyle = {
@@ -39,7 +39,7 @@ export class GroupMenuComponent implements OnInit {
 
   private updateSumMenu(): void {
     this.subMenuStyle = {
-      height: this.$isExtended ? `${this.itemHeight * this.$gruop.subItems.length + 15}px` : `0px`,
+      height: this.$isExtended ? `${this.itemHeight * this.$group.subItems.length + 15}px` : `0px`,
       transition: 'height 200ms ease-in-out'
     };
   }

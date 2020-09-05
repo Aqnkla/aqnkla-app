@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IngredientsRootComponent } from './ingredients-root.component';
 
@@ -6,12 +6,13 @@ describe('IngredientsRootComponent', () => {
   let component: IngredientsRootComponent;
   let fixture: ComponentFixture<IngredientsRootComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ IngredientsRootComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [IngredientsRootComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IngredientsRootComponent);

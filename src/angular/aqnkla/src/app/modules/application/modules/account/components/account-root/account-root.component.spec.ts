@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { AccountRootComponent } from './account-root.component';
 
 describe('AuthenticationRootComponent', () => {
   let component: AccountRootComponent;
   let fixture: ComponentFixture<AccountRootComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AccountRootComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [AccountRootComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AccountRootComponent);

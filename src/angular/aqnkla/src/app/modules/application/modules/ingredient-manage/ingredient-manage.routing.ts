@@ -1,4 +1,4 @@
-import { IngridientsDashboardComponent } from './components/dashboard/ingridients-dashboard.component';
+import { IngredientsDashboardComponent } from './components/dashboard/ingredients-dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { IngredientsRootComponent } from './components/root/ingredients-root.component';
 import { ItemListComponent } from './components/item/item-list/item-list.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: IngridientsDashboardComponent,
+        component: IngredientsDashboardComponent,
       },
       { path: 'item-list', component: ItemListComponent },
       {
@@ -58,7 +58,7 @@ const routes: Routes = [
         data: {
           viewType: ViewType.detail,
         },
-      }
+      },
     ],
   },
 ];

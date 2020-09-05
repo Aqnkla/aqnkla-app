@@ -1,17 +1,17 @@
 import { SideComponent } from './side.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 describe('SideComponent', () => {
   let component: SideComponent;
   let fixture: ComponentFixture<SideComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SideComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [SideComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SideComponent);

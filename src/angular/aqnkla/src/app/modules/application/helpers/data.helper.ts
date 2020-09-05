@@ -19,7 +19,7 @@ export class DataHelper {
   static getVolumeUnitsLitre(): Unit[] {
     const units: Unit[] = [
       { name: 'l', label: 'litre', value: 1 },
-      { name: 'ml', label: 'militre', value: 0.001 },
+      { name: 'ml', label: 'milliliter', value: 0.001 },
     ];
     return units;
   }

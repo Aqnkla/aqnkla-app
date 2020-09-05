@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ItemAllergenComponent } from './item-allergen.component';
 
-import { RecipeSearchComponent } from './recipe-search.component';
-
-describe('RecipeSearchComponent', () => {
-  let component: RecipeSearchComponent;
-  let fixture: ComponentFixture<RecipeSearchComponent>;
+describe('ItemAllerganComponent', () => {
+  let component: ItemAllergenComponent;
+  let fixture: ComponentFixture<ItemAllergenComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [RecipeSearchComponent],
+        declarations: [ItemAllergenComponent],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecipeSearchComponent);
+    fixture = TestBed.createComponent(ItemAllergenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

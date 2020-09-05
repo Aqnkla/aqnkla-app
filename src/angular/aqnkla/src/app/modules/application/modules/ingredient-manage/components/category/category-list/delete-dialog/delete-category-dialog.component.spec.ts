@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DeleteCategoryDialogComponent } from './delete-category-dialog.component';
 
@@ -6,12 +6,13 @@ describe('DeleteCategoryDialogComponent', () => {
   let component: DeleteCategoryDialogComponent;
   let fixture: ComponentFixture<DeleteCategoryDialogComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DeleteCategoryDialogComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DeleteCategoryDialogComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DeleteCategoryDialogComponent);

@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
-import { CategoryClientService } from './category-client.service';
+import { CategoryClientService } from './category-manage-client.service';
 
 describe('CategoryClientService', () => {
   let service: CategoryClientService;

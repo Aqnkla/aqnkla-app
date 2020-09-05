@@ -1,9 +1,9 @@
 <div>
-  <div *ngIf="avalibleVitamins.length > 0">
+  <div *ngIf="availableVitamins.length > 0">
       <mat-form-field>
         <mat-select [(ngModel)]="activeSelectItem">
           <mat-option
-            *ngFor="let mineral of avalibleVitamins"
+            *ngFor="let mineral of availableVitamins"
             [value]="mineral"
           >
             {{ mineral }}
@@ -14,24 +14,24 @@
   </div>
   <div>
     <table>
-      <tr *ngFor="let itemValue of vitmains">
+      <tr *ngFor="let itemValue of vitamins">
         <td>
           <div>{{ itemValue.item }}</div>
-          <div class="item-quntity-mg">
+          <div class="item-quantity-mg">
             {{
-              getQuantitySummary(itemValue.weight.weightValueRelative, itemValue.weight.weightFactor)
+              getQuantitySummary(itemValue.weight.dataValueRelative, itemValue.weight.dataFactor)
             }}
           </div>
         </td>
         <td>
           <mat-form-field class="item-quantity">
             <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="itemValue.weight.weightFactor" />
+            <input matInput type="number" [(ngModel)]="itemValue.weight.dataFactor" />
           </mat-form-field>
         </td>
         <td class="item-select">
           <mat-form-field>
-            <mat-select [(ngModel)]="itemValue.weight.weightFactor">
+            <mat-select [(ngModel)]="itemValue.weight.dataFactor">
               <mat-option *ngFor="let unit of units" [value]="unit.value">
                 {{ unit.name }}
               </mat-option>

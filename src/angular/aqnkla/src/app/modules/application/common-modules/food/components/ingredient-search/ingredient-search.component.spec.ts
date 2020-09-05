@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IngredientSearchComponent } from './ingredient-search.component';
-
 
 describe('IngredientsSearchComponent', () => {
   let component: IngredientSearchComponent;
   let fixture: ComponentFixture<IngredientSearchComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ IngredientSearchComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [IngredientSearchComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IngredientSearchComponent);

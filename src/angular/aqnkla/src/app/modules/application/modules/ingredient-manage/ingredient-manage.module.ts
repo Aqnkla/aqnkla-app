@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IngredientsRootComponent } from './components/root/ingredients-root.component';
-import { IngridientsDashboardComponent } from './components/dashboard/ingridients-dashboard.component';
+import { IngredientsDashboardComponent } from './components/dashboard/ingredients-dashboard.component';
 import { CategoryListComponent } from './components/category/category-list/category-list.component';
 import { DeleteCategoryDialogComponent } from './components/category/category-list/delete-dialog/delete-category-dialog.component';
 import { CategoryDetailComponent } from './components/category/category-detail/category-detail.component';
@@ -19,24 +19,26 @@ import { ItemVitaminComponent } from './components/item/values/item-vitamin/item
 import { ItemMineralComponent } from './components/item/values/item-mineral/item-mineral.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from './components/item/values/item-mineral/delete-dialog/delete-mineral-dialog.component';
-import { ItemAllerganComponent } from './components/item/values/item-allergan/item-allergan.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { IngredientManageRoutesModule } from './ingredient-manage.routing';
+import { ItemAllergenComponent } from './components/item/values/item-allergen/item-allergen.component';
+import { DeleteAllerganDialogComponent } from './components/item/values/item-allergen/delete-dialog/delete-allergen-dialog.component';
 
 @NgModule({
   declarations: [
     IngredientsRootComponent,
-    IngridientsDashboardComponent,
+    IngredientsDashboardComponent,
     CategoryListComponent,
     CategoryDetailComponent,
     ItemDetailComponent,
     ItemListComponent,
     ItemVitaminComponent,
     ItemMineralComponent,
-    ItemAllerganComponent,
+    ItemAllergenComponent,
     DeleteMineralDialogComponent,
     DeleteItemDialogComponent,
     DeleteCategoryDialogComponent,
+    DeleteAllerganDialogComponent
   ],
   imports: [
     IngredientManageRoutesModule,

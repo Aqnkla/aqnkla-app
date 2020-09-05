@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MealDeleteComponent } from './meal-delete.component';
 
@@ -6,12 +6,13 @@ describe('MealDeleteComponent', () => {
   let component: MealDeleteComponent;
   let fixture: ComponentFixture<MealDeleteComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MealDeleteComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [MealDeleteComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MealDeleteComponent);

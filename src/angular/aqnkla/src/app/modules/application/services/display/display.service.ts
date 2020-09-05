@@ -11,7 +11,7 @@ export class DisplayService {
   private $menuSize: number;
 
   /**
-   * emmit change of current mode
+   * emit change of current mode
    * @returns true = (is dark)
    */
   get darkModeChange(): Observable<boolean> {
@@ -19,7 +19,7 @@ export class DisplayService {
   }
 
   /**
-   *  emmit change of side menu size
+   *  emit change of side menu size
    *  @returns size of menu
    */
   get menuSizeChange(): Observable<number> {
@@ -38,7 +38,7 @@ export class DisplayService {
    * current menu size
    * @returns size of menu
    */
-  get menuSzie(): number {
+  get menuSize(): number {
     return this.$menuSize;
   }
 
@@ -55,7 +55,7 @@ export class DisplayService {
   }
 
   /**
-   * menu size chcnge
+   * menu size change
    * @param size of changed menu
    */
   changeMenuSize(size: number): void {

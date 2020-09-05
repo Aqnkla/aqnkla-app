@@ -19,24 +19,24 @@ export class ItemMineralComponent implements OnInit {
   @Input() minerals: ItemData<Mineral>[];
   @Output() valueChanged = new EventEmitter<ItemData<Mineral>[]>();
   units = DataHelper.getWeightUnitsGram(0);
-  avalibleMinerals: Mineral[];
+  availableMinerals: Mineral[];
 
   activeSelectItem: Mineral;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.updateAvalibleMinerals();
+    this.updateAvailableMinerals();
   }
 
-  private updateAvalibleMinerals(): void {
-    this.avalibleMinerals = [];
+  private updateAvailableMinerals(): void {
+    this.availableMinerals = [];
     const minerals = ObjectHelper.getEnumValues<Mineral>(Mineral);
     for (const mineral of minerals) {
       if (
         this.minerals === undefined ||
         this.minerals.filter((b) => b.item === mineral).length === 0
       ) {
-        this.avalibleMinerals.push(mineral);
+        this.availableMinerals.push(mineral);
       }
     }
   }
@@ -57,7 +57,7 @@ export class ItemMineralComponent implements OnInit {
       }
     });
     this.activeSelectItem = undefined;
-    this.updateAvalibleMinerals();
+    this.updateAvailableMinerals();
     this.valueChanged.emit(this.minerals);
   }
 
@@ -74,7 +74,7 @@ export class ItemMineralComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result.delete) {
         self.minerals = self.minerals.filter((obj) => obj.item !== value.item);
-        self.updateAvalibleMinerals();
+        self.updateAvailableMinerals();
         self.valueChanged.emit(self.minerals);
       }
     });

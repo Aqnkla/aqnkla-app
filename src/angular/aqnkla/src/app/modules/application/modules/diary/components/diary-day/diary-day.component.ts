@@ -85,7 +85,7 @@ export class DiaryDayComponent implements OnInit {
       meal.recipe = this.addedRecipe;
       meal.ingredients = this.addedRecipe.ingredients;
       this.isAddMealActive = false;
-      this.mealClientService.add(meal).subscribe(() => this.refreashMeals());
+      this.mealClientService.add(meal).subscribe(() => this.refreshMeals());
     }
   }
 
@@ -93,17 +93,18 @@ export class DiaryDayComponent implements OnInit {
     this.isAddMealActive = false;
   }
 
-  refreashMeals(): void {
+  refreshMeals(): void {
     const self = this;
     this.mealClientService
       .getByDate(DateHelper.getDateNumber(self.currentDay))
       .subscribe((b) => (self.diaryDayModel.meals = b));
   }
+
   saveMeal(meal: MealModel): void {
     const self = this;
     self.mealClientService
       .update(meal.id, meal)
-      .subscribe((b) => self.refreashMeals());
+      .subscribe((b) => self.refreshMeals());
   }
 
   deleteMeal(meal: MealModel): void {
@@ -111,7 +112,7 @@ export class DiaryDayComponent implements OnInit {
     const dialogRef = this.dialog.open(MealDeleteComponent, {
       width: '250px',
       data: {
-        header: `Remove meak ${meal.recipe.name}`,
+        header: `Remove meal ${meal.recipe.name}`,
         message: `Do you want remove ${meal.recipe.name}?`,
         delete: false,
       },
@@ -120,7 +121,7 @@ export class DiaryDayComponent implements OnInit {
       if (result.delete) {
         self.mealClientService
           .delete(meal.id)
-          .subscribe((b) => self.refreashMeals());
+          .subscribe((b) => self.refreshMeals());
       }
     });
   }

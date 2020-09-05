@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ItemMineralComponent } from './item-mineral.component';
 
@@ -6,12 +6,13 @@ describe('ItemMineralComponent', () => {
   let component: ItemMineralComponent;
   let fixture: ComponentFixture<ItemMineralComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ItemMineralComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ItemMineralComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ItemMineralComponent);

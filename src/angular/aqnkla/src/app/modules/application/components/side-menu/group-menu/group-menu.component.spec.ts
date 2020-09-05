@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GroupMenuComponent } from './group-menu.component';
 
@@ -6,12 +6,13 @@ describe('GroupMenuComponent', () => {
   let component: GroupMenuComponent;
   let fixture: ComponentFixture<GroupMenuComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ GroupMenuComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [GroupMenuComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(GroupMenuComponent);

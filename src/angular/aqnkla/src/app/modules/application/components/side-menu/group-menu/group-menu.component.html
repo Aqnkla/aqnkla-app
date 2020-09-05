@@ -1,8 +1,8 @@
 <div class="group-menu">
-  <aqn-item-menu class="root-menu" [menuItem]="gruop.rootItem" [isSubItem]="false"></aqn-item-menu>
+  <aqn-item-menu class="root-menu" [menuItem]="group.rootItem" [isSubItem]="false"></aqn-item-menu>
   <div class="sub-menu" [ngStyle]="subMenuStyle">
-    <div class="sub-menu-item" *ngFor="let item of gruop.subItems"  [ngStyle]="subItemStyle">
-      <aqn-item-menu [rootUrl]="gruop.rootItem.link" [menuItem]="item" [isSubItem]="true">
+    <div class="sub-menu-item" *ngFor="let item of group.subItems"  [ngStyle]="subItemStyle">
+      <aqn-item-menu [rootUrl]="group.rootItem.link" [menuItem]="item" [isSubItem]="true">
       </aqn-item-menu>
     </div>
   </div>

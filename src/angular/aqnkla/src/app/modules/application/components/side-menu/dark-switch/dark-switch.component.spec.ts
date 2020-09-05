@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DarkSwitchComponent } from './dark-switch.component';
 
@@ -6,12 +6,13 @@ describe('DarkSwitchComponent', () => {
   let component: DarkSwitchComponent;
   let fixture: ComponentFixture<DarkSwitchComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DarkSwitchComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DarkSwitchComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(DarkSwitchComponent);
