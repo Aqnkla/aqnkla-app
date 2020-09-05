@@ -1,4 +1,4 @@
-import { RecipeModel } from './../../../../../common-modules/food/models/recipe.model';
+import { RecipeModel } from '../../../../../common-modules/food/models/recipe/recipe.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 export class Summary {

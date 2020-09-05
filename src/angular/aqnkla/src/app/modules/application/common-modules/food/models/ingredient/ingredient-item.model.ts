@@ -1,8 +1,8 @@
-import { AllerganValue } from './allergan.model';
-import { ItemData } from './item-data.model';
-import { Mineral } from './mineral.model';
-import { Vitamin } from './vitamin.model';
+import { AllerganValue } from './parameters/allergan.model';
 import { ControllerInfo } from 'src/app/models/controller-into';
+import { ItemData } from '../common/item-data.model';
+import { Mineral } from './parameters/mineral.model';
+import { Vitamin } from './parameters/vitamin.model';
 
 export class IngredientItemControllerInfo implements ControllerInfo {
   readonly controllerName = 'ingredient-item';

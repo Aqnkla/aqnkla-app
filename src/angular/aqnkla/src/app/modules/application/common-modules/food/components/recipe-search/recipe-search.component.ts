@@ -1,6 +1,6 @@
 import { RecipeSearchService } from './../../services/recipe-search/recipe-search.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { RecipeModel } from '../../models/recipe.model';
+import { RecipeModel } from '../../models/recipe/recipe.model';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {

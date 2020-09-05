@@ -1,4 +1,4 @@
-import { Allergan, AllerganValue, AllerganImportance } from '../../../../../../common-modules/food/models/allergan.model';
+import { Allergan, AllerganValue, AllerganImportance } from '../../../../../../common-modules/food/models/ingredient/parameters/allergan.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';

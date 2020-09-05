@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { RecipeClientService } from '../../services/recipe-manage-client/recipe-manage-client.service';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe.model';
+import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 
 @Component({
   selector: 'aqn-recipe-detail',

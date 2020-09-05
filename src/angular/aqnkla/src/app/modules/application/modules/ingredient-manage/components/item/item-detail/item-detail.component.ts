@@ -3,12 +3,12 @@ import { ViewType } from 'src/app/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient-item.model';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient-category.model';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/item-data.model';
-import { Vitamin } from 'src/app/modules/application/common-modules/food/models/vitamin.model';
-import { Mineral } from 'src/app/modules/application/common-modules/food/models/mineral.model';
 import { ItemClientService } from '../../../services/item-manage-client/item-manage-client.service';
+import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
+import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
+import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
+import { Vitamin } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/vitamin.model';
+import { Mineral } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/mineral.model';
 @Component({
   selector: 'aqn-item-detail',
   templateUrl: './item-detail.component.html',

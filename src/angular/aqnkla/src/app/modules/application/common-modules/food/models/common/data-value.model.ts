@@ -4,3 +4,4 @@ export class DataValue {
   dataValueRelative: number;
   label: string;
 }
+

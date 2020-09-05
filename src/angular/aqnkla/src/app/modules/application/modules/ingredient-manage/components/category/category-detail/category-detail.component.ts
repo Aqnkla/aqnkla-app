@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient-category.model';
+import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 @Component({
   selector: 'aqn-category-detail',
   templateUrl: './category-detail.component.html',

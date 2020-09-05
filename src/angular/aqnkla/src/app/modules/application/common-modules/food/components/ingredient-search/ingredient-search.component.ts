@@ -1,10 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IngredientSearchService } from '../../services/ingredient-search/ingredient-search.service';
-import { IngredientItemModel } from '../../models/ingredient-item.model';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { MatOptionSelectionChange } from '@angular/material/core';
+import { IngredientItemModel } from '../../models/ingredient/ingredient-item.model';
 
 @Component({
   selector: 'aqn-ingredient-search',

@@ -1,11 +1,11 @@
-import { IngredientCategoryModel } from './../../../../../common-modules/food/models/ingredient-category.model';
 import { ItemClientService } from './../../../services/item-manage-client/item-manage-client.service';
 import { CategoryClientService } from './../../../services/category-manage-client/category-manage-client.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteItemDialogComponent } from './delete-dialog/delete-item-dialog.component';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient-item.model';
+import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
+import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 @Component({
   selector: 'aqn-item-list',
   templateUrl: './item-list.component.html',

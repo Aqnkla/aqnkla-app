@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { MatSelectChange } from '@angular/material/select';
-import { DataValue } from '../../../food/models/data-value.model';
+import { DataValue } from '../../../food/models/common/data-value.model';
 
 @Component({
   selector: 'aqn-value-factor',

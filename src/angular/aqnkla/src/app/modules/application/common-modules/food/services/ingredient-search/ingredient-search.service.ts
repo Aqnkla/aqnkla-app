@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { NetworkSearchClientService } from 'src/app/services/network/clients/network-search-client/network-search-client.service';
-import {
-  IngredientItemModel,
-  IngredientItemControllerInfo,
-} from '../../models/ingredient-item.model';
 import { HttpService } from 'src/app/services/network/http/http.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IngredientItemModel, IngredientItemControllerInfo } from '../../models/ingredient/ingredient-item.model';
 
 @Injectable({
   providedIn: 'root',

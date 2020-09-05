@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from './delete-dialog/delete-mineral-dialog.component';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/item-data.model';
-import { Mineral } from 'src/app/modules/application/common-modules/food/models/mineral.model';
+import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
+import { Mineral } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/mineral.model';
 
 @Component({
   selector: 'aqn-item-mineral',

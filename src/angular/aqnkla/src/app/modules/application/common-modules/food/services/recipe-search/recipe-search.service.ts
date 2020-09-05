@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
-import { RecipeControllerInfo } from './../../models/recipe.model';
+import { RecipeControllerInfo } from '../../models/recipe/recipe.model';
 import { Injectable } from '@angular/core';
 import { NetworkSearchClientService } from 'src/app/services/network/clients/network-search-client/network-search-client.service';
-import { RecipeModel } from '../../models/recipe.model';
+import { RecipeModel } from '../../models/recipe/recipe.model';
 import { HttpService } from 'src/app/services/network/http/http.service';
 import { map } from 'rxjs/operators';
 

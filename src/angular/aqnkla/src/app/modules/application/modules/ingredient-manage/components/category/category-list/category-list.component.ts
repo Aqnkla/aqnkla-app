@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteCategoryDialogComponent } from './delete-dialog/delete-category-dialog.component';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient-category.model';
+import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 @Component({
   selector: 'aqn-category-list',
   templateUrl: './category-list.component.html',

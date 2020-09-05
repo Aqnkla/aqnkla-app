@@ -1,7 +1,7 @@
-import { RecipeModel } from '../../../common-modules/food/models/recipe.model';
-import { ItemData } from '../../../common-modules/food/models/item-data.model';
-import { IngredientItemModel } from '../../../common-modules/food/models/ingredient-item.model';
+import { RecipeModel } from '../../../common-modules/food/models/recipe/recipe.model';
 import { ControllerInfo } from 'src/app/models/controller-into';
+import { ItemData } from '../../../common-modules/food/models/common/item-data.model';
+import { IngredientItemModel } from '../../../common-modules/food/models/ingredient/ingredient-item.model';
 
 export class MealControllerInfo implements ControllerInfo {
   readonly controllerName = 'meal';

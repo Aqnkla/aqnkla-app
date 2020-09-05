@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
 import { DeleteRecipeDialogComponent } from './delete-dialog/delete-recipe-dialog.component';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe.model';
+import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 
 @Component({
   selector: 'aqn-recipe-list',

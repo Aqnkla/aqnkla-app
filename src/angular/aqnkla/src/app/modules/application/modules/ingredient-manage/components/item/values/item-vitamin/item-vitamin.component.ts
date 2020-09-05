@@ -1,11 +1,11 @@
-import { Vitamin } from './../../../../../../common-modules/food/models/vitamin.model';
-import { ItemData } from './../../../../../../common-modules/food/models/item-data.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from '../item-mineral/delete-dialog/delete-mineral-dialog.component';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
+import { Vitamin } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/vitamin.model';
 
 @Component({
   selector: 'aqn-item-vitamin',

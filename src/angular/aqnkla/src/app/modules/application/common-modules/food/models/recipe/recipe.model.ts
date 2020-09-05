@@ -1,6 +1,6 @@
-import { ItemData } from './item-data.model';
-import { IngredientItemModel } from './ingredient-item.model';
 import { ControllerInfo } from 'src/app/models/controller-into';
+import { IngredientItemModel } from '../ingredient/ingredient-item.model';
+import { ItemData } from '../common/item-data.model';
 
 export class RecipeControllerInfo implements ControllerInfo {
   readonly controllerName = 'recipe';

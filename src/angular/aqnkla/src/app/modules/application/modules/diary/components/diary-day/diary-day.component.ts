@@ -9,7 +9,7 @@ import { DialogDeleteData } from 'src/app/modules/application/models/dialog.mode
 import { MealDeleteComponent } from './meal-delete/meal-delete.component';
 import { MealClientService } from '../../services/meal-client/meal-client.service';
 import { RecipeClientService } from '../../../recipe-manage/services/recipe-manage-client/recipe-manage-client.service';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe.model';
+import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 
 @Component({
   selector: 'aqn-diary-day',

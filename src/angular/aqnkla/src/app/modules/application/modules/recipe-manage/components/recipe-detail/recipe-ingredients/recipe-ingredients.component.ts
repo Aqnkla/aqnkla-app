@@ -2,9 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteMineralDialogComponent } from '../../../../ingredient-manage/components/item/values/item-mineral/delete-dialog/delete-mineral-dialog.component';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/item-data.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient-item.model';
 import { ItemClientService } from '../../../../ingredient-manage/services/item-manage-client/item-manage-client.service';
+import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
+import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
 @Component({
   selector: 'aqn-recipe-ingredients',
   templateUrl: './recipe-ingredients.component.html',

@@ -1,8 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { AmountInputType } from 'src/app/modules/application/common-modules/food/models/common/amount-input-type.model';
+import { DataValue } from 'src/app/modules/application/common-modules/food/models/common/data-value.model';
+import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
+import { EventEmitter } from 'events';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
-import { DataValue } from 'src/app/modules/application/common-modules/food/models/data-value.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient-item.model';
-import { AmountInputType } from '../../../../../common-modules/food/models/amount-input-type.model';
+
 @Component({
   selector: 'aqn-item-amount',
   templateUrl: './item-amount.component.html',
