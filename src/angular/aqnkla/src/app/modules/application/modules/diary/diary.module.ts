@@ -1,3 +1,4 @@
+import { FoodModule } from './../../common-modules/food/food.module';
 import { DiaryRoutesModule } from './diary.routing';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -29,8 +30,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MealDeleteComponent,
   ],
   imports: [
-    CommonModule,
     DiaryRoutesModule,
+    CommonModule,
     FormsModule,
     MatSelectModule,
     MatInputModule,
@@ -41,6 +42,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatDialogModule,
     MatSlideToggleModule,
     MatSliderModule,
+    FoodModule,
   ],
 })
 export class DiaryModule {}

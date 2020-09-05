@@ -4,3 +4,19 @@
   <mat-label>Recipt</mat-label>
   <input matInput (change)="valueChange($event)" (input)="valueChange($event)" placeholder="Ex. Pizza" value="">
 </mat-form-field>
+
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

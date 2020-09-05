@@ -12,6 +12,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   ],
   imports: [
     CommonModule,
-    FormsModule,
     MatSelectModule,
     MatInputModule,
     MatNativeDateModule,
@@ -30,6 +32,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatCardModule,
     MatDialogModule,
     MatSlideToggleModule,
+    MatSliderModule,
+    MatAutocompleteModule,
+    MatFormFieldModule
   ],
   exports: [
     IngredientSearchComponent,

@@ -9,6 +9,7 @@ import { DialogDeleteData } from 'src/app/modules/application/models/dialog.mode
 import { MealDeleteComponent } from './meal-delete/meal-delete.component';
 import { MealClientService } from '../../services/meal-client/meal-client.service';
 import { RecipeClientService } from '../../../recipe-manage/services/recipe-manage-client/recipe-manage-client.service';
+import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe.model';
 
 @Component({
   selector: 'aqn-diary-day',
@@ -19,6 +20,7 @@ export class DiaryDayComponent implements OnInit {
   currentDay: Date;
   diaryDayModel: DiaryDayModel;
   isAddMealActive: boolean;
+  addedRecipe: RecipeModel;
 
   get calories(): number {
     let cal = 0;
@@ -75,16 +77,16 @@ export class DiaryDayComponent implements OnInit {
   }
 
   addMealConfirm(): void {
-    this.isAddMealActive = false;
-    this.recipeClientService.getAll().subscribe((b) => {
+    if (this.addedRecipe && this.isAddMealActive === true) {
       const meal = new MealModel();
       meal.id = RandomHelper.uuidv4();
       meal.dateTime = this.currentDay;
       meal.dateNumber = DateHelper.getDateNumber(this.currentDay);
-      meal.recipe = b[0];
-      meal.ingredients = b[0].ingredients;
-      this.mealClientService.add(meal).subscribe((b) => this.refreashMeals());
-    });
+      meal.recipe = this.addedRecipe;
+      meal.ingredients = this.addedRecipe.ingredients;
+      this.isAddMealActive = false;
+      this.mealClientService.add(meal).subscribe(() => this.refreashMeals());
+    }
   }
 
   addMealCancel(): void {
