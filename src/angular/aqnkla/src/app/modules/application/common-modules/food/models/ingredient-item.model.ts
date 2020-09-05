@@ -2,6 +2,11 @@ import { AllerganValue } from './allergan.model';
 import { ItemData } from './item-data.model';
 import { Mineral } from './mineral.model';
 import { Vitamin } from './vitamin.model';
+import { ControllerInfo } from 'src/app/models/controller-into';
+
+export class IngredientItemControllerInfo implements ControllerInfo {
+  readonly controllerName = 'ingredient-item';
+}
 
 export interface IngredientItemModel {
   id: string;

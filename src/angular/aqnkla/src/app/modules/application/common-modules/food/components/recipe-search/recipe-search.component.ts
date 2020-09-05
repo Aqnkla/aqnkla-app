@@ -13,7 +13,7 @@ import { startWith, map } from 'rxjs/operators';
 export class RecipeSearchComponent implements OnInit {
   @Output() recipeChange = new EventEmitter<RecipeModel>();
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = ['One', 'Two', 'Three', 'test'];
   filteredOptions: Observable<string[]>;
   constructor(private recipeSearchService: RecipeSearchService) {}
 
@@ -21,7 +21,7 @@ export class RecipeSearchComponent implements OnInit {
     console.log('RecipeSearchComponent');
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value))
+      map((value) => this._filter(value))
     );
   }
 
@@ -29,11 +29,9 @@ export class RecipeSearchComponent implements OnInit {
     console.log(event.srcElement.value);
   }
 
-
-
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 }

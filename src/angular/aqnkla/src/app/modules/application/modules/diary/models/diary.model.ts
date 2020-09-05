@@ -1,6 +1,11 @@
 import { RecipeModel } from '../../../common-modules/food/models/recipe.model';
 import { ItemData } from '../../../common-modules/food/models/item-data.model';
 import { IngredientItemModel } from '../../../common-modules/food/models/ingredient-item.model';
+import { ControllerInfo } from 'src/app/models/controller-into';
+
+export class MealControllerInfo implements ControllerInfo {
+  readonly controllerName = 'meal';
+}
 
 export class MealModel {
   id: string;
