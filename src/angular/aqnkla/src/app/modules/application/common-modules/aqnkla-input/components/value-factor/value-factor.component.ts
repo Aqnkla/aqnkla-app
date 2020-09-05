@@ -41,12 +41,10 @@ export class ValueFactorComponent implements OnInit {
   }
 
   valueChange(event: any): void {
-    console.log('valueChange', this.value, event);
     this.valueChanged.emit(this.value);
   }
 
   unitChange(event: MatSelectChange): void {
-    console.log('unitChange', this.value, event);
     this.valueChanged.emit(this.value);
   }
 }

@@ -457,6 +457,76 @@
             "dataFactor": 1,
             "dataValueRelative": 300
           }
+        },
+        {
+          "item": {
+            "id": "72c57c51-9422-442f-8830-28fd688258a8",
+            "name": "Solmon",
+            "description": "",
+            "categoryId": "4b9c6bd0-f460-4fc3-9f99-126d4b71438b",
+            "calories": 300,
+            "carbs": 10,
+            "fat": 5,
+            "protein": 10,
+            "fiber": 2,
+            "minerals": [
+              {
+                "item": "zink",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1e-9,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "molibden",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              },
+              {
+                "item": "phtotasium",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 0.001,
+                  "dataValueRelative": 1
+                }
+              }
+            ],
+            "vitamins": [
+              {
+                "item": "vitamin_D",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 1e-9
+                }
+              },
+              {
+                "item": "vitamin_C",
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1,
+                  "weightFactor": 0.000001
+                }
+              }
+            ],
+            "allergans": [],
+            "avrageDensity": null,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": false,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 36
+          }
         }
       ]
     },
