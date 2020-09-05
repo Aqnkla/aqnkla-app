@@ -14,17 +14,14 @@ export class RecipeIngredientsComponent implements OnInit {
   @Input() ingredients: ItemData<IngredientItemModel>[];
   @Output() valueChanged = new EventEmitter<ItemData<IngredientItemModel>[]>();
   activeSelectItem: IngredientItemModel;
-  avalibleItems: IngredientItemModel[];
   constructor(
     private itemClientService: ItemClientService,
     public dialog: MatDialog
   ) {}
 
-  ngOnInit(): void {
-    this.loadList();
-  }
+  ngOnInit(): void {}
 
-  addItem(): void {
+  addItemConfirm(): void {
     if (this.activeSelectItem === undefined) {
       return;
     }
@@ -36,15 +33,15 @@ export class RecipeIngredientsComponent implements OnInit {
       weight: {
         label: 'g',
         dataFactor: 1,
-        dataValueRelative: 1
-      }
+        dataValueRelative: 1,
+      },
     });
     this.activeSelectItem = undefined;
     this.valueChanged.emit(this.ingredients);
   }
 
-  private loadList(): void {
-    this.itemClientService.getAll().subscribe((b) => (this.avalibleItems = b));
+  addItemCancel(): void {
+    this.activeSelectItem = undefined;
   }
 
   deleteItem(value: ItemData<IngredientItemModel>): void {

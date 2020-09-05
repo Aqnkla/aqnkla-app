@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-ingredients/recipe-ingredients.component';
 import { ItemAmountComponent } from './components/recipe-detail/item-amount/item-amount.component';
 import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summary/recipe-summary.component';
+import { FoodModule } from '../../common-modules/food/food.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summar
     MatDialogModule,
     MatSlideToggleModule,
     AqnklaInputModule,
+    FoodModule
   ],
 })
 export class RecipeManageModule {}

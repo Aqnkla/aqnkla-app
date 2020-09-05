@@ -1,1 +1,25 @@
 <p>ingredients-search works!</p>
+
+<mat-form-field class="example-full-width">
+  <input
+    type="text"
+    placeholder="Ingredients"
+    aria-label="Ingredients"
+    matInput
+    [formControl]="searchForm"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    [displayWith]="getOptionText"
+  >
+    <mat-option
+      *ngFor="let ingredients of filteredIngredients | async"
+      [value]="ingredients"
+      (onSelectionChange)="valueChange($event)"
+    >
+      {{ ingredients.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

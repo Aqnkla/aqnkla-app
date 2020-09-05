@@ -319,6 +319,37 @@
             "dataFactor": 1,
             "dataValueRelative": 20
           }
+        },
+        {
+          "item": {
+            "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
+            "name": "Milk",
+            "description": "",
+            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+            "calories": 3,
+            "carbs": 2,
+            "fat": 3,
+            "protein": 2,
+            "fiber": 0,
+            "minerals": [],
+            "vitamins": [],
+            "allergans": [
+              {
+                "allergan": "laktose",
+                "allerganImportance": "full"
+              }
+            ],
+            "avrageDensity": 1000,
+            "isPieceAllowed": false,
+            "isVolumeAllowed": true,
+            "pieceAvgWeight": null,
+            "isVolumeDefault": false
+          },
+          "weight": {
+            "label": "g",
+            "dataFactor": 1,
+            "dataValueRelative": 1
+          }
         }
       ]
     },

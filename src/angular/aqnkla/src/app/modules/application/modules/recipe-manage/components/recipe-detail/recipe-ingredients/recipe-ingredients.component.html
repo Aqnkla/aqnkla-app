@@ -1,12 +1,16 @@
-<div *ngIf="avalibleItems && avalibleItems.length > 0">
-  <mat-form-field>
-    <mat-select [(ngModel)]="activeSelectItem">
-      <mat-option *ngFor="let item of avalibleItems" [value]="item">
-        {{ item.name }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button mat-stroked-button (click)="addItem()">Add</button>
+<div>
+
+
+  <mat-card>
+    <div>
+      <aqn-ingredient-search
+        (ingredientChange)="activeSelectItem = $event"
+      ></aqn-ingredient-search>
+    </div>
+    <button mat-button (click)="addItemConfirm()">Confirm</button>
+    <button mat-button (click)="addItemCancel()">Cancel</button>
+  </mat-card>
+
 </div>
 <div>
   <table>

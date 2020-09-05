@@ -3,7 +3,7 @@ import { IngredientSearchComponent } from './components/ingredient-search/ingred
 import { RecipeSearchComponent } from './components/recipe-search/recipe-search.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -35,7 +35,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSliderModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     IngredientSearchComponent,
