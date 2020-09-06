@@ -2,6 +2,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {
   StepItem,
   StepGroup,
+  StepType,
 } from './../../../../../common-modules/food/models/recipe/recipe.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { StepSummary } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
@@ -19,7 +20,7 @@ import { DialogDeleteData } from 'src/app/modules/application/models/dialog.mode
 export class StepSummaryComponent implements OnInit {
   private $stepSummary: StepSummary = {
     steps: [],
-    groups: [{ groupNumber: 1, name: '', description: '' }],
+    groups: [{ id: RandomHelper.uuidv4(), name: '', description: '' }],
   };
   @Input() recipeIngredients: ItemData<IngredientItemModel>[];
   @Input() set stepSummary(value: StepSummary) {
@@ -46,17 +47,19 @@ export class StepSummaryComponent implements OnInit {
       id: RandomHelper.uuidv4(),
       previousStepId: undefined,
       sortOrder: this.$stepSummary.steps.length + 1,
-      groupNumber: this.$stepSummary.groups[0].groupNumber,
+      groupId: this.$stepSummary.groups[0].id,
       name: '',
       description: '',
       addedIngredients: [],
+      mergedGroups: undefined,
+      type: StepType.single,
     });
     this.stepSummaryChanged.emit(this.stepSummary);
   }
 
   addGroup(): void {
     this.$stepSummary.groups.push({
-      groupNumber: this.$stepSummary.groups.length + 1,
+      id: RandomHelper.uuidv4(),
       name: '',
       description: '',
     });
@@ -124,7 +127,7 @@ export class StepSummaryComponent implements OnInit {
 
     let isDeletePossible = true;
     this.$stepSummary.steps.forEach((s) => {
-      if (s.groupNumber === group.groupNumber) {
+      if (s.groupId === group.id) {
         isDeletePossible = false;
       }
     });
@@ -143,7 +146,7 @@ export class StepSummaryComponent implements OnInit {
       dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
         if (result.delete) {
           self.$stepSummary.groups = self.$stepSummary.groups.filter(
-            (b) => b.groupNumber !== group.groupNumber
+            (b) => b.id !== group.id
           );
         }
       });

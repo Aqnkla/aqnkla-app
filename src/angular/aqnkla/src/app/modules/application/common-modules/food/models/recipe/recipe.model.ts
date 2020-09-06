@@ -6,15 +6,22 @@ export class RecipeControllerInfo implements ControllerInfo {
   readonly controllerName = 'recipe';
 }
 
+export enum StepType {
+  single,
+  merge,
+}
+
 export interface StepGroup {
-  groupNumber: number;
+  id: string;
   name: string;
   description: string;
 }
 
 export interface StepItem {
   id: string;
-  groupNumber: number;
+  groupId: string;
+  type: StepType;
+  mergedGroups: string[];
   sortOrder: number;
   previousStepId: string;
   addedIngredients: ItemData<IngredientItemModel>[];

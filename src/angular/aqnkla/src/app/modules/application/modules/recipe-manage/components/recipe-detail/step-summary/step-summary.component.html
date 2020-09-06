@@ -8,7 +8,7 @@
       </div>
       <div *ngFor="let group of stepSummary.groups">
         <mat-form-field class="full-width">
-          <mat-label>Name {{ group.groupNumber }}</mat-label>
+          <mat-label>Name {{ group.id }}</mat-label>
           <input matInput type="text" [(ngModel)]="group.name" />
         </mat-form-field>
         <mat-form-field class="full-width">
@@ -28,16 +28,15 @@
   <div
     *ngFor="let step of stepSummary.steps"
     class="step"
-    [ngStyle]="{ 'margin-left.px': (step.groupNumber - 1) * 100 }"
   >
     <div>
       <span>Step group</span>
       <mat-form-field appearance="fill">
         <mat-label>Favorite animal</mat-label>
-        <mat-select [(value)]="step.groupNumber" required>
+        <mat-select [(value)]="step.groupId" required>
           <mat-option
             *ngFor="let group of stepSummary.groups"
-            [value]="group.groupNumber"
+            [value]="group.id"
           >
             {{ group.name }}
           </mat-option>
