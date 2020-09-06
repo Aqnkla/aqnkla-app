@@ -43,6 +43,7 @@ export class RecipeDetailComponent implements OnInit {
             ingredients: [],
             prepareSteps: {
               steps: [],
+              groups: [],
             },
           };
           break;

@@ -21,6 +21,7 @@ import { ItemAmountComponent } from './components/recipe-detail/item-amount/item
 import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summary/recipe-summary.component';
 import { FoodModule } from '../../common-modules/food/food.module';
 import { StepSummaryComponent } from './components/recipe-detail/step-summary/step-summary.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,9 @@ import { StepSummaryComponent } from './components/recipe-detail/step-summary/st
     MatDialogModule,
     MatSlideToggleModule,
     MatSliderModule,
+    MatCheckboxModule,
     AqnklaInputModule,
-    FoodModule
+    FoodModule,
   ],
 })
 export class RecipeManageModule {}

@@ -361,14 +361,146 @@
       "prepareSteps": {
         "steps": [
           {
-            "id": "2a8d9489-42ad-4205-bc9e-cdc5188f18f3",
-            "name": "test",
+            "id": "db46277f-8d34-4812-8be1-560bb71e4931",
+            "sortOrder": 1,
+            "name": "Posiekaj",
+            "description": "",
+            "addedIngredients": [
+              {
+                "item": {
+                  "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
+                  "name": "Cheese",
+                  "description": "",
+                  "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+                  "calories": 20,
+                  "carbs": 0,
+                  "fat": 2,
+                  "protein": 3,
+                  "fiber": 0,
+                  "minerals": [],
+                  "vitamins": [],
+                  "allergans": [],
+                  "avrageDensity": null,
+                  "isPieceAllowed": false,
+                  "isVolumeAllowed": false,
+                  "pieceAvgWeight": null,
+                  "isVolumeDefault": false
+                },
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 9
+                }
+              },
+              {
+                "item": {
+                  "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
+                  "name": "Pork",
+                  "description": "",
+                  "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
+                  "calories": 250,
+                  "carbs": 2,
+                  "fat": 20,
+                  "protein": 20,
+                  "fiber": 1,
+                  "minerals": [
+                    {
+                      "item": "iron",
+                      "weight": {
+                        "label": "g",
+                        "dataFactor": 0.001,
+                        "dataValueRelative": 1
+                      }
+                    },
+                    {
+                      "item": "molibden",
+                      "weight": {
+                        "label": "g",
+                        "dataFactor": 1,
+                        "dataValueRelative": 1
+                      }
+                    }
+                  ],
+                  "vitamins": [
+                    {
+                      "item": "vitamin_D",
+                      "weight": {
+                        "label": "g",
+                        "dataFactor": 1,
+                        "dataValueRelative": 1,
+                        "weightFactor": 0.001
+                      }
+                    },
+                    {
+                      "item": "vitamin_C",
+                      "weight": {
+                        "label": "g",
+                        "dataFactor": 1,
+                        "dataValueRelative": 1,
+                        "weightFactor": 0.001
+                      }
+                    }
+                  ],
+                  "allergans": [],
+                  "avrageDensity": null,
+                  "isPieceAllowed": false,
+                  "isVolumeAllowed": false,
+                  "pieceAvgWeight": null,
+                  "isVolumeDefault": false
+                },
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 22
+                }
+              }
+            ]
+          },
+          {
+            "id": "f626639b-4918-4242-9cc3-8aa3653bb2f9",
+            "sortOrder": 2,
+            "name": "Usmaż",
+            "description": "",
             "addedIngredients": []
           },
           {
-            "id": "d51d3d9d-c65a-4d9c-b582-2eccb0a096a0",
-            "name": "e",
-            "addedIngredients": []
+            "id": "7716eb21-0fa1-477e-98b2-4ff8074be70f",
+            "sortOrder": 3,
+            "name": "dolej",
+            "description": "",
+            "addedIngredients": [
+              {
+                "item": {
+                  "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
+                  "name": "Milk",
+                  "description": "",
+                  "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+                  "calories": 3,
+                  "carbs": 2,
+                  "fat": 3,
+                  "protein": 2,
+                  "fiber": 0,
+                  "minerals": [],
+                  "vitamins": [],
+                  "allergans": [
+                    {
+                      "allergan": "laktose",
+                      "allerganImportance": "full"
+                    }
+                  ],
+                  "avrageDensity": 1000,
+                  "isPieceAllowed": false,
+                  "isVolumeAllowed": true,
+                  "pieceAvgWeight": null,
+                  "isVolumeDefault": false
+                },
+                "weight": {
+                  "label": "g",
+                  "dataFactor": 1,
+                  "dataValueRelative": 1
+                }
+              }
+            ]
           }
         ]
       }
@@ -548,7 +680,80 @@
             "dataValueRelative": 36
           }
         }
-      ]
+      ],
+      "prepareSteps": {
+        "steps": [
+          {
+            "id": "bdfb9ff1-cfc0-41f5-b183-094415024c17",
+            "sortOrder": 1,
+            "groupNumber": 7,
+            "name": "",
+            "description": "",
+            "addedIngredients": []
+          },
+          {
+            "id": "4973b158-088b-4119-8cbc-50143ba51e16",
+            "sortOrder": 2,
+            "groupNumber": 1,
+            "name": "",
+            "description": "",
+            "addedIngredients": []
+          },
+          {
+            "id": "30584868-0aff-487e-b07e-5eb614eb67a9",
+            "sortOrder": 3,
+            "groupNumber": 1,
+            "name": "",
+            "description": "",
+            "addedIngredients": []
+          },
+          {
+            "id": "e4632660-9eb6-49bb-95a6-89714b862027",
+            "sortOrder": 4,
+            "groupNumber": 1,
+            "name": "",
+            "description": "",
+            "addedIngredients": []
+          }
+        ],
+        "groups": [
+          {
+            "groupNumber": 1,
+            "name": "grp1",
+            "description": ""
+          },
+          {
+            "groupNumber": 2,
+            "name": "gr2 ",
+            "description": ""
+          },
+          {
+            "groupNumber": 3,
+            "name": "gr3",
+            "description": ""
+          },
+          {
+            "groupNumber": 4,
+            "name": "gr4",
+            "description": ""
+          },
+          {
+            "groupNumber": 5,
+            "name": "g4",
+            "description": ""
+          },
+          {
+            "groupNumber": 6,
+            "name": "g6",
+            "description": ""
+          },
+          {
+            "groupNumber": 7,
+            "name": "g7",
+            "description": ""
+          }
+        ]
+      }
     },
     {
       "id": "4a416b99-cae5-4eb5-9418-387964e02178",

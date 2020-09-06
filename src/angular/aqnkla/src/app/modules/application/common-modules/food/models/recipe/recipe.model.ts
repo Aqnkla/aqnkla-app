@@ -6,15 +6,25 @@ export class RecipeControllerInfo implements ControllerInfo {
   readonly controllerName = 'recipe';
 }
 
+export interface StepGroup {
+  groupNumber: number;
+  name: string;
+  description: string;
+}
+
 export interface StepItem {
   id: string;
+  groupNumber: number;
+  sortOrder: number;
   previousStepId: string;
   addedIngredients: ItemData<IngredientItemModel>[];
   name: string;
+  description: string;
 }
 
 export interface StepSummary {
   steps: StepItem[];
+  groups: StepGroup[];
 }
 
 export interface RecipeModel {
