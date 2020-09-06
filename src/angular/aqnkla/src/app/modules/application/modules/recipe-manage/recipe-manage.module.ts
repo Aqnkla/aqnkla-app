@@ -1,3 +1,4 @@
+import { MatSliderModule } from '@angular/material/slider';
 import { AqnklaInputModule } from './../../common-modules/aqnkla-input/aqnkla-input.module';
 import { RecipeManageRoutesModule } from './recipe-manage.routing';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { RecipeIngredientsComponent } from './components/recipe-detail/recipe-in
 import { ItemAmountComponent } from './components/recipe-detail/item-amount/item-amount.component';
 import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summary/recipe-summary.component';
 import { FoodModule } from '../../common-modules/food/food.module';
+import { StepSummaryComponent } from './components/recipe-detail/step-summary/step-summary.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { FoodModule } from '../../common-modules/food/food.module';
     RecipeIngredientsComponent,
     ItemAmountComponent,
     RecipeSummaryComponent,
+    StepSummaryComponent,
   ],
   imports: [
     RecipeManageRoutesModule,
@@ -42,6 +45,7 @@ import { FoodModule } from '../../common-modules/food/food.module';
     MatCardModule,
     MatDialogModule,
     MatSlideToggleModule,
+    MatSliderModule,
     AqnklaInputModule,
     FoodModule
   ],

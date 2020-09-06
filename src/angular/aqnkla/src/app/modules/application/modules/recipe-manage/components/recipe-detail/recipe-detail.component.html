@@ -8,6 +8,15 @@
         </mat-form-field>
       </div>
       <div>
+        <mat-card>
+          <aqn-step-summary
+            [recipeIngredients]="item.ingredients"
+            [stepSummary]="item.prepareSteps"
+            (stepSummaryChanged)="item.prepareSteps = $event"
+          ></aqn-step-summary>
+        </mat-card>
+      </div>
+      <div>
         <aqn-recipe-summary [recipe]="item"></aqn-recipe-summary>
       </div>
       <div>

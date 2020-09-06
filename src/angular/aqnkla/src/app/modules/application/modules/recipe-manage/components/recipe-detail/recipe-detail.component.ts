@@ -41,6 +41,9 @@ export class RecipeDetailComponent implements OnInit {
             id: RandomHelper.uuidv4(),
             name: '',
             ingredients: [],
+            prepareSteps: {
+              steps: [],
+            },
           };
           break;
         case ViewType.edit:
@@ -56,6 +59,7 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   save(): void {
+    console.log('item save', this.item);
     switch (this.viewType) {
       case ViewType.add:
         this.recipeClientService.add(this.item).subscribe((b) =>

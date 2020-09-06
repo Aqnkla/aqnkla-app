@@ -357,7 +357,21 @@
             "dataValueRelative": 1
           }
         }
-      ]
+      ],
+      "prepareSteps": {
+        "steps": [
+          {
+            "id": "2a8d9489-42ad-4205-bc9e-cdc5188f18f3",
+            "name": "test",
+            "addedIngredients": []
+          },
+          {
+            "id": "d51d3d9d-c65a-4d9c-b582-2eccb0a096a0",
+            "name": "e",
+            "addedIngredients": []
+          }
+        ]
+      }
     },
     {
       "id": "2e03dd11-7a2b-444b-9038-8b4930a6dcf8",

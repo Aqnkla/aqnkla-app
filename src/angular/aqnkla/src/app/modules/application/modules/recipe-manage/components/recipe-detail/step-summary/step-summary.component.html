@@ -1,0 +1,26 @@
+<p>step-summary works!</p>
+<div class="step-container">
+  <div class="step" *ngFor="let item of stepSummary.steps">
+    <div class="information">
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" [(ngModel)]="item.name" />
+      </mat-form-field>
+    </div>
+    <div class="ingredients">
+      <span>Add ingredients</span>
+      <div>
+        <div *ngFor="let ingredient of recipeIngredients">
+          {{ ingredient.item.name }} {{ ingredient.weight.dataValueRelative }}
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="0"
+            max="ingredient.weight.dataValueRelative"
+          ></mat-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button mat-raised-button (click)="addStep()">Add Step</button>
