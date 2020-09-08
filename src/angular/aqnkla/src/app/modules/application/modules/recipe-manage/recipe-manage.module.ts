@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeDashboardComponent } from './components/recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
-import { RecipeListComponent, DeleteRecipeDialogComponent } from './components/recipe-list/recipe-list.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeRootComponent } from './components/recipe-root/recipe-root.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';

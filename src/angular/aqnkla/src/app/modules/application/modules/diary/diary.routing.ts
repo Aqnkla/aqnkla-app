@@ -9,6 +9,7 @@ const routes: Routes = [
   {
     path: '', component: DiaryRootComponent,
     children: [
+      { path: '', component: DiaryDayComponent },
       { path: 'dashboard', component: DiaryDashboardComponent },
       { path: 'week', component: DiaryWeekComponent },
       { path: 'day', component: DiaryDayComponent },

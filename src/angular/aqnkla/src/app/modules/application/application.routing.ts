@@ -21,9 +21,9 @@ const routes: Routes = [
       {
         path: 'ingredients',
         loadChildren: () =>
-          import(
-            './modules/ingredient-manage/ingredient-manage.module'
-          ).then((m) => m.IngredientsManageModule),
+          import('./modules/ingredient-manage/ingredient-manage.module').then(
+            (m) => m.IngredientsManageModule
+          ),
       },
       {
         path: 'account',
