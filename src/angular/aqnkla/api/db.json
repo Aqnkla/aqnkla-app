@@ -209,303 +209,6 @@
   ],
   "recipe": [
     {
-      "id": "3dfc940e-2ff9-4dc0-91fa-e4d9098fed16",
-      "name": "Egg with meat",
-      "ingredients": [
-        {
-          "item": {
-            "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
-            "name": "Pork",
-            "description": "",
-            "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
-            "calories": 250,
-            "carbs": 2,
-            "fat": 20,
-            "protein": 20,
-            "fiber": 1,
-            "minerals": [
-              {
-                "item": "iron",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 0.001,
-                  "dataValueRelative": 1
-                }
-              },
-              {
-                "item": "molibden",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1
-                }
-              }
-            ],
-            "vitamins": [
-              {
-                "item": "vitamin_D",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 0.001
-                }
-              },
-              {
-                "item": "vitamin_C",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 0.001
-                }
-              }
-            ],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 30
-          }
-        },
-        {
-          "item": {
-            "id": "e7a6c258-012d-4679-bbb0-599e8fd0aa0d",
-            "name": "Egg",
-            "description": "",
-            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-            "calories": 100,
-            "carbs": 20,
-            "fat": 2,
-            "protein": 25,
-            "fiber": 0,
-            "minerals": [],
-            "vitamins": [],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": true,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": 20,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 30
-          }
-        },
-        {
-          "item": {
-            "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
-            "name": "Cheese",
-            "description": "",
-            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-            "calories": 20,
-            "carbs": 0,
-            "fat": 2,
-            "protein": 3,
-            "fiber": 0,
-            "minerals": [],
-            "vitamins": [],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 20
-          }
-        },
-        {
-          "item": {
-            "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
-            "name": "Milk",
-            "description": "",
-            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-            "calories": 3,
-            "carbs": 2,
-            "fat": 3,
-            "protein": 2,
-            "fiber": 0,
-            "minerals": [],
-            "vitamins": [],
-            "allergans": [
-              {
-                "allergan": "laktose",
-                "allerganImportance": "full"
-              }
-            ],
-            "avrageDensity": 1000,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": true,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 1
-          }
-        }
-      ],
-      "prepareSteps": {
-        "steps": [
-          {
-            "id": "db46277f-8d34-4812-8be1-560bb71e4931",
-            "sortOrder": 1,
-            "name": "Posiekaj",
-            "description": "",
-            "addedIngredients": [
-              {
-                "item": {
-                  "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
-                  "name": "Cheese",
-                  "description": "",
-                  "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-                  "calories": 20,
-                  "carbs": 0,
-                  "fat": 2,
-                  "protein": 3,
-                  "fiber": 0,
-                  "minerals": [],
-                  "vitamins": [],
-                  "allergans": [],
-                  "avrageDensity": null,
-                  "isPieceAllowed": false,
-                  "isVolumeAllowed": false,
-                  "pieceAvgWeight": null,
-                  "isVolumeDefault": false
-                },
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 9
-                }
-              },
-              {
-                "item": {
-                  "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
-                  "name": "Pork",
-                  "description": "",
-                  "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
-                  "calories": 250,
-                  "carbs": 2,
-                  "fat": 20,
-                  "protein": 20,
-                  "fiber": 1,
-                  "minerals": [
-                    {
-                      "item": "iron",
-                      "weight": {
-                        "label": "g",
-                        "dataFactor": 0.001,
-                        "dataValueRelative": 1
-                      }
-                    },
-                    {
-                      "item": "molibden",
-                      "weight": {
-                        "label": "g",
-                        "dataFactor": 1,
-                        "dataValueRelative": 1
-                      }
-                    }
-                  ],
-                  "vitamins": [
-                    {
-                      "item": "vitamin_D",
-                      "weight": {
-                        "label": "g",
-                        "dataFactor": 1,
-                        "dataValueRelative": 1,
-                        "weightFactor": 0.001
-                      }
-                    },
-                    {
-                      "item": "vitamin_C",
-                      "weight": {
-                        "label": "g",
-                        "dataFactor": 1,
-                        "dataValueRelative": 1,
-                        "weightFactor": 0.001
-                      }
-                    }
-                  ],
-                  "allergans": [],
-                  "avrageDensity": null,
-                  "isPieceAllowed": false,
-                  "isVolumeAllowed": false,
-                  "pieceAvgWeight": null,
-                  "isVolumeDefault": false
-                },
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 22
-                }
-              }
-            ]
-          },
-          {
-            "id": "f626639b-4918-4242-9cc3-8aa3653bb2f9",
-            "sortOrder": 2,
-            "name": "Usmaż",
-            "description": "",
-            "addedIngredients": []
-          },
-          {
-            "id": "7716eb21-0fa1-477e-98b2-4ff8074be70f",
-            "sortOrder": 3,
-            "name": "dolej",
-            "description": "",
-            "addedIngredients": [
-              {
-                "item": {
-                  "id": "e6015eba-4178-4f52-9e09-526fd85c02e1",
-                  "name": "Milk",
-                  "description": "",
-                  "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-                  "calories": 3,
-                  "carbs": 2,
-                  "fat": 3,
-                  "protein": 2,
-                  "fiber": 0,
-                  "minerals": [],
-                  "vitamins": [],
-                  "allergans": [
-                    {
-                      "allergan": "laktose",
-                      "allerganImportance": "full"
-                    }
-                  ],
-                  "avrageDensity": 1000,
-                  "isPieceAllowed": false,
-                  "isVolumeAllowed": true,
-                  "pieceAvgWeight": null,
-                  "isVolumeDefault": false
-                },
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "id": "2e03dd11-7a2b-444b-9038-8b4930a6dcf8",
       "name": "Solmon in milk",
       "ingredients": [
@@ -756,108 +459,6 @@
       }
     },
     {
-      "id": "4a416b99-cae5-4eb5-9418-387964e02178",
-      "name": "Salmon with chhes",
-      "ingredients": [
-        {
-          "item": {
-            "id": "72c57c51-9422-442f-8830-28fd688258a8",
-            "name": "Solmon",
-            "description": "",
-            "categoryId": "4b9c6bd0-f460-4fc3-9f99-126d4b71438b",
-            "calories": 300,
-            "carbs": 10,
-            "fat": 5,
-            "protein": 10,
-            "fiber": 2,
-            "minerals": [
-              {
-                "item": "zink",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1e-9,
-                  "dataValueRelative": 1
-                }
-              },
-              {
-                "item": "molibden",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 0.001,
-                  "dataValueRelative": 1
-                }
-              },
-              {
-                "item": "phtotasium",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 0.001,
-                  "dataValueRelative": 1
-                }
-              }
-            ],
-            "vitamins": [
-              {
-                "item": "vitamin_D",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 1e-9
-                }
-              },
-              {
-                "item": "vitamin_C",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 0.000001
-                }
-              }
-            ],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 30
-          }
-        },
-        {
-          "item": {
-            "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
-            "name": "Cheese",
-            "description": "",
-            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-            "calories": 20,
-            "carbs": 0,
-            "fat": 2,
-            "protein": 3,
-            "fiber": 0,
-            "minerals": [],
-            "vitamins": [],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 120
-          }
-        }
-      ]
-    },
-    {
       "id": "ee7e8c71-9ec0-4b02-9518-96794a735cb1",
       "name": "Eggs with cheese",
       "ingredients": [
@@ -913,101 +514,68 @@
             "dataValueRelative": 20
           }
         }
-      ]
-    },
-    {
-      "id": "1cfa24cc-8e30-429c-b5ec-2d71a02138b5",
-      "name": "POrk with cheese",
-      "ingredients": [
-        {
-          "item": {
-            "id": "8076d38e-194b-4d1b-bac0-3cedd8e400f0",
-            "name": "Pork",
+      ],
+      "prepareSteps": {
+        "steps": [
+          {
+            "id": "2e944020-185f-4f31-882e-1e2fdb325e90",
+            "sortOrder": 1,
+            "groupId": "d9329fbc-aef6-49b5-bc10-2370ba54d812",
+            "name": "ddd",
             "description": "",
-            "categoryId": "748b4e2e-6452-46b1-8a67-9fab9829db40",
-            "calories": 250,
-            "carbs": 2,
-            "fat": 20,
-            "protein": 20,
-            "fiber": 1,
-            "minerals": [
+            "addedIngredients": [
               {
-                "item": "iron",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 0.001,
-                  "dataValueRelative": 1
-                }
-              },
-              {
-                "item": "molibden",
+                "item": {
+                  "id": "e7a6c258-012d-4679-bbb0-599e8fd0aa0d",
+                  "name": "Egg",
+                  "description": "",
+                  "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
+                  "calories": 100,
+                  "carbs": 20,
+                  "fat": 2,
+                  "protein": 25,
+                  "fiber": 0,
+                  "minerals": [],
+                  "vitamins": [],
+                  "allergans": [],
+                  "avrageDensity": null,
+                  "isPieceAllowed": true,
+                  "isVolumeAllowed": false,
+                  "pieceAvgWeight": 20,
+                  "isVolumeDefault": false
+                },
                 "weight": {
                   "label": "g",
                   "dataFactor": 1,
-                  "dataValueRelative": 1
+                  "dataValueRelative": 13
                 }
               }
             ],
-            "vitamins": [
-              {
-                "item": "vitamin_D",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 0.001
-                }
-              },
-              {
-                "item": "vitamin_C",
-                "weight": {
-                  "label": "g",
-                  "dataFactor": 1,
-                  "dataValueRelative": 1,
-                  "weightFactor": 0.001
-                }
-              }
-            ],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
+            "type": 0
           },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 300
-          }
-        },
-        {
-          "item": {
-            "id": "4072c971-9c70-41c7-aa5c-8943699f58d9",
-            "name": "Cheese",
+          {
+            "id": "940a6443-c378-45a4-baa4-d9d2dd0b3f8d",
+            "sortOrder": 2,
+            "groupId": "d9329fbc-aef6-49b5-bc10-2370ba54d812",
+            "name": "test",
             "description": "",
-            "categoryId": "582e70ae-bb9d-4a0e-8808-bbbd37a5feea",
-            "calories": 20,
-            "carbs": 0,
-            "fat": 2,
-            "protein": 3,
-            "fiber": 0,
-            "minerals": [],
-            "vitamins": [],
-            "allergans": [],
-            "avrageDensity": null,
-            "isPieceAllowed": false,
-            "isVolumeAllowed": false,
-            "pieceAvgWeight": null,
-            "isVolumeDefault": false
-          },
-          "weight": {
-            "label": "g",
-            "dataFactor": 1,
-            "dataValueRelative": 100
+            "addedIngredients": [],
+            "type": 0
           }
-        }
-      ]
+        ],
+        "groups": [
+          {
+            "id": "d9329fbc-aef6-49b5-bc10-2370ba54d812",
+            "name": "grtoup 0",
+            "description": ""
+          },
+          {
+            "id": "0d0140ec-9d21-4550-87fa-4edae6cec44a",
+            "name": "group1",
+            "description": ""
+          }
+        ]
+      }
     }
   ],
   "meal": [

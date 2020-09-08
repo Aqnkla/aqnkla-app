@@ -1,9 +1,13 @@
 import { RecipeClientService } from './../../services/recipe-manage-client/recipe-manage-client.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
-import { DeleteRecipeDialogComponent } from './delete-dialog/delete-recipe-dialog.component';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteRecipeDialogComponent extends DialogDeleteComponent<
+  RecipeListComponent
+> {}
 
 @Component({
   selector: 'aqn-recipe-list',
@@ -39,7 +43,7 @@ export class RecipeListComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.recipeClientService.delete(value.id).subscribe((b) => {
           self.loadList();
         });

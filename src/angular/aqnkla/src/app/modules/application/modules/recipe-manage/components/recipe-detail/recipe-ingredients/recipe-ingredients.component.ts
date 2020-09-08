@@ -1,10 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteMineralDialogComponent } from '../../../../ingredient-manage/components/item/values/item-mineral/delete-dialog/delete-mineral-dialog.component';
 import { ItemClientService } from '../../../../ingredient-manage/services/item-manage-client/item-manage-client.service';
 import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
 import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteRecipeIngredientsComponent extends DialogDeleteComponent<
+  RecipeIngredientsComponent
+> {}
+
 @Component({
   selector: 'aqn-recipe-ingredients',
   templateUrl: './recipe-ingredients.component.html',
@@ -46,7 +51,7 @@ export class RecipeIngredientsComponent implements OnInit {
 
   deleteItem(value: ItemData<IngredientItemModel>): void {
     const self = this;
-    const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteRecipeIngredientsComponent, {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,
@@ -55,7 +60,7 @@ export class RecipeIngredientsComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.ingredients = self.ingredients.filter(
           (obj) => obj.item !== value.item
         );

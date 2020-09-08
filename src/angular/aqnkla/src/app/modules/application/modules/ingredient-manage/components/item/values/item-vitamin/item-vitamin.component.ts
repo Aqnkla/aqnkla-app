@@ -1,11 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteMineralDialogComponent } from '../item-mineral/delete-dialog/delete-mineral-dialog.component';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
 import { Vitamin } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/vitamin.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteVitaminDialogComponent extends DialogDeleteComponent<
+  ItemVitaminComponent
+> {}
 
 @Component({
   selector: 'aqn-item-vitamin',
@@ -53,8 +57,8 @@ export class ItemVitaminComponent implements OnInit {
       weight: {
         label: 'g',
         dataFactor: 1,
-        dataValueRelative: 1
-      }
+        dataValueRelative: 1,
+      },
     });
     this.activeSelectItem = undefined;
     this.updateAvailableMinerals();
@@ -63,7 +67,7 @@ export class ItemVitaminComponent implements OnInit {
 
   deleteItem(value: ItemData<Vitamin>): void {
     const self = this;
-    const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteVitaminDialogComponent, {
       width: '250px',
       data: {
         header: `Remove ${value.item}`,
@@ -72,7 +76,7 @@ export class ItemVitaminComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.vitamins = self.vitamins.filter((obj) => obj.item !== value.item);
         self.updateAvailableMinerals();
         self.valueChanged.emit(self.vitamins);

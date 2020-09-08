@@ -5,11 +5,13 @@ import { DateHelper } from '../../../../helpers/common/date.helper';
 import { ActivatedRoute } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
-import { MealDeleteComponent } from './meal-delete/meal-delete.component';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { MealClientService } from '../../services/meal-client/meal-client.service';
 import { RecipeClientService } from '../../../recipe-manage/services/recipe-manage-client/recipe-manage-client.service';
 import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class MealDeleteComponent extends DialogDeleteComponent<DiaryDayComponent> {}
 
 @Component({
   selector: 'aqn-diary-day',
@@ -118,7 +120,7 @@ export class DiaryDayComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.mealClientService
           .delete(meal.id)
           .subscribe((b) => self.refreshMeals());

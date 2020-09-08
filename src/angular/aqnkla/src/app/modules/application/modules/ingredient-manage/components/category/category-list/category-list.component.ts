@@ -1,9 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteCategoryDialogComponent } from './delete-dialog/delete-category-dialog.component';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteCategoryDialogComponent extends DialogDeleteComponent<CategoryListComponent> {}
+
 @Component({
   selector: 'aqn-category-list',
   templateUrl: './category-list.component.html',
@@ -41,7 +44,7 @@ export class CategoryListComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.categoryClientService.delete(value.id).subscribe((b) => {
           self.loadList();
         });

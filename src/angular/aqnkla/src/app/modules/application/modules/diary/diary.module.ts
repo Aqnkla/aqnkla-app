@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { DiaryDashboardComponent } from './components/diary-dashboard/diary-dashboard.component';
 import { DiaryWeekComponent } from './components/diary-week/diary-week.component';
-import { DiaryDayComponent } from './components/diary-day/diary-day.component';
+import { DiaryDayComponent, MealDeleteComponent } from './components/diary-day/diary-day.component';
 import { DiaryManageComponent } from './components/diary-manage/diary-manage.component';
 import { DiaryRootComponent } from './components/diary-root/diary-root.component';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +17,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MealDeleteComponent } from './components/diary-day/meal-delete/meal-delete.component';
 import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
@@ -26,8 +25,7 @@ import { MatSliderModule } from '@angular/material/slider';
     DiaryWeekComponent,
     DiaryDayComponent,
     DiaryRootComponent,
-    DiaryManageComponent,
-    MealDeleteComponent,
+    DiaryManageComponent
   ],
   imports: [
     DiaryRoutesModule,

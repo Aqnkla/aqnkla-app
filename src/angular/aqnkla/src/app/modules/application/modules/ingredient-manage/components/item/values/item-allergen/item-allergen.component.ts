@@ -1,9 +1,17 @@
-import { Allergen, AllergenValue, AllergenImportance } from '../../../../../../common-modules/food/models/ingredient/parameters/allergen.model';
+import {
+  Allergen,
+  AllergenValue,
+  AllergenImportance,
+} from '../../../../../../common-modules/food/models/ingredient/parameters/allergen.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
-import { DeleteAllerganDialogComponent } from './delete-dialog/delete-allergen-dialog.component';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteAllerganDialogComponent extends DialogDeleteComponent<
+  ItemAllergenComponent
+> {}
 
 @Component({
   selector: 'aqn-item-allergan',
@@ -68,7 +76,7 @@ export class ItemAllergenComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.allergens = self.allergens.filter(
           (obj) => obj.allergen !== value.allergen
         );

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeDashboardComponent } from './components/recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
-import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { RecipeListComponent, DeleteRecipeDialogComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeRootComponent } from './components/recipe-root/recipe-root.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +22,8 @@ import { RecipeSummaryComponent } from './components/recipe-detail/recipe-summar
 import { FoodModule } from '../../common-modules/food/food.module';
 import { StepSummaryComponent } from './components/recipe-detail/step-summary/step-summary.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { StepItemComponent } from './components/recipe-detail/step-summary/step-item/step-item.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ItemAmountComponent,
     RecipeSummaryComponent,
     StepSummaryComponent,
+    StepItemComponent,
   ],
   imports: [
     RecipeManageRoutesModule,
@@ -50,6 +53,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule,
     AqnklaInputModule,
     FoodModule,
+    MatExpansionModule
   ],
 })
 export class RecipeManageModule {}

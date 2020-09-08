@@ -9,8 +9,12 @@ import { StepSummary } from 'src/app/modules/application/common-modules/food/mod
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
 import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
-import { DeleteStepDialogComponent } from './delete-dialog/delete-step-dialog.component';
-import { DialogDeleteData } from 'src/app/modules/application/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
+import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+
+export class DeleteStepDialogComponent extends DialogDeleteComponent<
+  StepSummaryComponent
+> {}
 
 @Component({
   selector: 'aqn-step-summary',
@@ -58,41 +62,15 @@ export class StepSummaryComponent implements OnInit {
   }
 
   addGroup(): void {
+    if (!this.$stepSummary.groups) {
+      this.$stepSummary.groups = [];
+    }
     this.$stepSummary.groups.push({
       id: RandomHelper.uuidv4(),
-      name: '',
+      name: `group${this.$stepSummary.groups.length}`,
       description: '',
     });
     this.stepSummaryChanged.emit(this.stepSummary);
-  }
-
-  changeIngredient(
-    isChecked: boolean,
-    ingredient: ItemData<IngredientItemModel>,
-    step: StepItem
-  ): void {
-    if (isChecked) {
-      const newIngredient = JSON.parse(JSON.stringify(ingredient));
-      step.addedIngredients.push(newIngredient);
-    } else {
-      step.addedIngredients = step.addedIngredients.filter(
-        (b) => b.item.id !== ingredient.item.id
-      );
-    }
-  }
-
-  getIngredient(id: string): ItemData<IngredientItemModel> {
-    const ingredient = this.recipeIngredients.filter((b) => b.item.id === id);
-    if (ingredient && ingredient.length === 1) {
-      return ingredient[0];
-    }
-  }
-
-  getIngredientMax(id: string): number {
-    const ingredient = this.recipeIngredients.filter((b) => b.item.id === id);
-    if (ingredient && ingredient.length === 1) {
-      return ingredient[0].weight.dataValueRelative;
-    }
   }
 
   deleteStep(step: StepItem): void {
@@ -107,7 +85,7 @@ export class StepSummaryComponent implements OnInit {
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-      if (result.delete) {
+      if (result && result.delete) {
         self.$stepSummary.steps = self.$stepSummary.steps.filter(
           (b) => b.id !== step.id
         );
@@ -126,11 +104,13 @@ export class StepSummaryComponent implements OnInit {
     const self = this;
 
     let isDeletePossible = true;
-    this.$stepSummary.steps.forEach((s) => {
-      if (s.groupId === group.id) {
-        isDeletePossible = false;
-      }
-    });
+    if (this.$stepSummary.steps) {
+      this.$stepSummary.steps.forEach((s) => {
+        if (s.groupId === group.id) {
+          isDeletePossible = false;
+        }
+      });
+    }
     const dialogRef = this.dialog.open(DeleteStepDialogComponent, {
       width: '250px',
       data: {
@@ -144,7 +124,7 @@ export class StepSummaryComponent implements OnInit {
     });
     if (isDeletePossible) {
       dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
-        if (result.delete) {
+        if (result && result.delete) {
           self.$stepSummary.groups = self.$stepSummary.groups.filter(
             (b) => b.id !== group.id
           );

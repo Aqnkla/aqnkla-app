@@ -21,7 +21,7 @@ import { AqnklaRoutesModule } from './aqn.routing';
     AuthenticationModule,
     FormsModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
