@@ -39,6 +39,7 @@
     </mat-accordion>
   </div>
   <div *ngFor="let step of stepSummary.steps" class="step">
+    <button mat-raised-button (click)="addStep()">Add before</button>
     <span>Step group</span>
     <mat-form-field appearance="fill">
       <mat-label>Group</mat-label>
@@ -55,6 +56,7 @@
     <button mat-stroked-button (click)="deleteStep(step)" color="warn">
       Delete
     </button>
+    <button mat-raised-button (click)="addStep()">Add after</button>
   </div>
 </div>
 <button mat-raised-button (click)="addStep()">Add Step</button>

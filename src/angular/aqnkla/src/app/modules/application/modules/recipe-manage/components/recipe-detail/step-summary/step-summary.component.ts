@@ -47,6 +47,14 @@ export class StepSummaryComponent implements OnInit {
   }
 
   addStep(): void {
+    if (this.$stepSummary.groups.length === 0) {
+      this.$stepSummary.groups.push({
+        id: RandomHelper.uuidv4(),
+        name: 'main',
+        description: '',
+      });
+    }
+
     this.$stepSummary.steps.push({
       id: RandomHelper.uuidv4(),
       previousStepId: undefined,

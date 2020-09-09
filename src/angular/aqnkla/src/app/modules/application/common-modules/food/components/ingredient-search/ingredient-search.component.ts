@@ -1,8 +1,13 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IngredientSearchService } from '../../services/ingredient-search/ingredient-search.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { startWith, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import {
+  startWith,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from 'rxjs/operators';
 import { MatOptionSelectionChange } from '@angular/material/core';
 import { IngredientItemModel } from '../../models/ingredient/ingredient-item.model';
 
@@ -12,6 +17,10 @@ import { IngredientItemModel } from '../../models/ingredient/ingredient-item.mod
   styleUrls: ['./ingredient-search.component.scss'],
 })
 export class IngredientSearchComponent implements OnInit {
+  @Input() set searchValue(value: string) {
+    console.log('st', value);
+    this.searchForm.setValue(value);
+  }
   @Output() ingredientChange = new EventEmitter<IngredientItemModel>();
   searchForm = new FormControl();
   filteredIngredients: Observable<IngredientItemModel[]>;

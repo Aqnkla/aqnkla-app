@@ -3,6 +3,7 @@
     <div>
       <aqn-ingredient-search
         (ingredientChange)="activeSelectItem = $event"
+        [searchValue]="searchValue"
       ></aqn-ingredient-search>
     </div>
     <button mat-button (click)="addItemConfirm()">Confirm</button>

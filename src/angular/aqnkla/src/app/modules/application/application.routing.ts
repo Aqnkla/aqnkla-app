@@ -7,6 +7,13 @@ const routes: Routes = [
     component: RootComponent,
     children: [
       {
+        path: 'ingredients',
+        loadChildren: () =>
+          import('./modules/ingredient-manage/ingredient-manage.module').then(
+            (m) => m.IngredientsManageModule
+          ),
+      },
+      {
         path: 'diary',
         loadChildren: () =>
           import('./modules/diary/diary.module').then((m) => m.DiaryModule),
@@ -16,13 +23,6 @@ const routes: Routes = [
         loadChildren: () =>
           import('./modules/recipe-manage/recipe-manage.module').then(
             (m) => m.RecipeManageModule
-          ),
-      },
-      {
-        path: 'ingredients',
-        loadChildren: () =>
-          import('./modules/ingredient-manage/ingredient-manage.module').then(
-            (m) => m.IngredientsManageModule
           ),
       },
       {

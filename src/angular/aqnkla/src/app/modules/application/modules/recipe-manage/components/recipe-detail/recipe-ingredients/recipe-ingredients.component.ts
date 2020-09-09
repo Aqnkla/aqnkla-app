@@ -19,10 +19,8 @@ export class RecipeIngredientsComponent implements OnInit {
   @Input() ingredients: ItemData<IngredientItemModel>[];
   @Output() valueChanged = new EventEmitter<ItemData<IngredientItemModel>[]>();
   activeSelectItem: IngredientItemModel;
-  constructor(
-    private itemClientService: ItemClientService,
-    public dialog: MatDialog
-  ) {}
+  searchValue = '';
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -42,10 +40,12 @@ export class RecipeIngredientsComponent implements OnInit {
       },
     });
     this.activeSelectItem = undefined;
+    this.searchValue = '';
     this.valueChanged.emit(this.ingredients);
   }
 
   addItemCancel(): void {
+    this.searchValue = '';
     this.activeSelectItem = undefined;
   }
 
