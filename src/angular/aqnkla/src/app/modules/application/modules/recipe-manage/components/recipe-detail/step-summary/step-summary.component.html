@@ -1,62 +1,76 @@
 <p>step-summary works!</p>
-<div class="step-container">
-  <div>
-    <mat-accordion>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>Group</mat-panel-title>
-          <mat-panel-description>
-            Groups where steps will be assigned
-          </mat-panel-description>
-        </mat-expansion-panel-header>
+<div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Group</mat-panel-title>
+        <mat-panel-description>
+          Groups where steps will be assigned
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
         <div>
-          <div>
-            <button mat-raised-button (click)="addGroup()">Add group</button>
-          </div>
-          <div *ngFor="let group of stepSummary.groups">
-            <mat-form-field class="full-width">
-              <mat-label>Name {{ group.id }}</mat-label>
-              <input matInput type="text" [(ngModel)]="group.name" />
-            </mat-form-field>
-            <mat-form-field class="full-width">
-              <mat-label>Description</mat-label>
-              <textarea
-                matInput
-                type="text"
-                [(ngModel)]="group.description"
-              ></textarea>
-            </mat-form-field>
-            <button
-              mat-stroked-button
-              (click)="deleteGroup(group)"
-              color="warn"
-            >
-              Delete
-            </button>
-          </div>
+          <button mat-raised-button (click)="addGroup()">Add group</button>
         </div>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
-  <div *ngFor="let step of stepSummary.steps" class="step">
-    <button mat-raised-button (click)="addStep()">Add before</button>
-    <span>Step group</span>
-    <mat-form-field appearance="fill">
-      <mat-label>Group</mat-label>
-      <mat-select [(value)]="step.groupId">
-        <mat-option
-          *ngFor="let group of stepSummary.groups"
-          [value]="group.id"
-        >
-          {{ group.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <aqn-step-item [step]="step" [recipeIngredients]="recipeIngredients"></aqn-step-item>
-    <button mat-stroked-button (click)="deleteStep(step)" color="warn">
-      Delete
-    </button>
-    <button mat-raised-button (click)="addStep()">Add after</button>
+        <div *ngFor="let group of stepSummary.groups">
+          <mat-form-field class="full-width">
+            <mat-label>Name {{ group.id }}</mat-label>
+            <input matInput type="text" [(ngModel)]="group.name" />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea
+              matInput
+              type="text"
+              [(ngModel)]="group.description"
+            ></textarea>
+          </mat-form-field>
+          <button mat-stroked-button (click)="deleteGroup(group)" color="warn">
+            Delete
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="step-container">
+  <div class="step-group">
+    <div class="step-start">
+      <button class="button-add" mat-raised-button (click)="addStep()">
+        Add
+      </button>
+    </div>
+    <div *ngFor="let step of stepSummary.steps" class="step">
+      <div class="step-break-above">
+        <div class="step-break-line"></div>
+      </div>
+      <div class="step-panel">
+        <span>Step group</span>
+        <mat-form-field appearance="fill">
+          <mat-label>Group</mat-label>
+          <mat-select [(value)]="step.groupId">
+            <mat-option
+              *ngFor="let group of stepSummary.groups"
+              [value]="group.id"
+            >
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <aqn-step-item
+          [step]="step"
+          [recipeIngredients]="recipeIngredients"
+        ></aqn-step-item>
+        <button mat-stroked-button (click)="deleteStep(step)" color="warn">
+          Delete
+        </button>
+      </div>
+      <div class="step-break-below">
+        <div class="step-break-line"></div>
+        <button class="button-add" mat-raised-button (click)="addStep()">
+          Add
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-<button mat-raised-button (click)="addStep()">Add Step</button>
