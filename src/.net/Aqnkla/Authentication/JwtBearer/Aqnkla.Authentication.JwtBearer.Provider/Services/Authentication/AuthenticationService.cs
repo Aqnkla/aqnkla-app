@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Authentication
 {
-    public class AuthenticationService<TKey>: IAuthenticationService<TKey>
+    public class AuthenticationService<TKey> : IAuthenticationService<TKey>
     {
         private readonly IJwtUserService<TKey> jwtUserService;
         private readonly IConvertService<TKey> convertService;

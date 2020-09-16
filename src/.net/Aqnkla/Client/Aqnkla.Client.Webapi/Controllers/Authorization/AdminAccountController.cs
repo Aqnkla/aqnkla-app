@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Aqnkla.Authentication.JwtBearer.Core.Entity;
+﻿using Aqnkla.Authentication.JwtBearer.Core.Entity;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Administration;
 using Aqnkla.Client.Webapi.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Aqnkla.Client.Webapi.Controllers.Authorization
 {

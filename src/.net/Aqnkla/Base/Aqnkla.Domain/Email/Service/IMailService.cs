@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Aqnkla.Domain.Email.Service
 {
-    public  interface IMailService
+    public interface IMailService
     {
         Task<bool> SendAsync(SendModel model);
     }

@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail", "Mail", "{5200FA36-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Mail.MailKit", "Mail\Aqnkla.Mail.MailKit\Aqnkla.Mail.MailKit.csproj", "{3B087D07-3BE5-43C6-8A95-A11C68224D71}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{0044E36D-5611-4EB8-B872-1766DA718716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Food", "Modules\Aqnkla.Food\Aqnkla.Food.csproj", "{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{3B087D07-3BE5-43C6-8A95-A11C68224D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B087D07-3BE5-43C6-8A95-A11C68224D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B087D07-3BE5-43C6-8A95-A11C68224D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +94,7 @@ Global
 		{3991E804-FD08-4667-920E-C8C6DD512A30} = {B1591D25-84DB-40D3-AAC0-0E14A1EA462C}
 		{3879F345-D466-4042-936E-E93DE0FF34E8} = {3991E804-FD08-4667-920E-C8C6DD512A30}
 		{3B087D07-3BE5-43C6-8A95-A11C68224D71} = {5200FA36-D1FF-41B0-8513-6AC0500D6BD9}
+		{2F6AD4AD-D178-41FC-8BEA-3B2962CDABDE} = {0044E36D-5611-4EB8-B872-1766DA718716}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}

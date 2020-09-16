@@ -1,13 +1,13 @@
-using Aqnkla.Authentication.JwtBearer.Core.Services;
-using System.Threading.Tasks;
 using Aqnkla.Authentication.JwtBearer.Core.Entity;
-using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
-using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Core.Model.Accounts;
+using Aqnkla.Authentication.JwtBearer.Core.Services;
+using Aqnkla.Authentication.JwtBearer.Provider.Helpers;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Convert;
+using Aqnkla.Authentication.JwtBearer.Provider.Services.EmailSender;
 using Aqnkla.Authentication.JwtBearer.Provider.Services.Token;
-using System;
 using Aqnkla.Domain.Password.Service;
+using System;
+using System.Threading.Tasks;
 
 namespace Aqnkla.Authentication.JwtBearer.Provider.Services.Account
 {
