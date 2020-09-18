@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Ingredient\" />
     <Folder Include="Recipe\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
   </ItemGroup>
 
 </Project>
