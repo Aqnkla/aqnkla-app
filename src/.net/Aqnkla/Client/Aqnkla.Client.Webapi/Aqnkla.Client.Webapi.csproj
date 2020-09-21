@@ -18,4 +18,7 @@
     <ProjectReference Include="..\..\Mail\Aqnkla.Mail.MailKit\Aqnkla.Mail.MailKit.csproj" />
     <ProjectReference Include="..\..\Repository\Aqnkla.Repository.MongoDb\Aqnkla.Repository.MongoDb.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Food\" />
+  </ItemGroup>
 </Project>

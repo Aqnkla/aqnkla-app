@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\Aqnkla.Service\Aqnkla.Service.csproj" />
+    <ProjectReference Include="..\Aqnkla.Food\Aqnkla.Food.csproj" />
+  </ItemGroup>
+
+</Project>
