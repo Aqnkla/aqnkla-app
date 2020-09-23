@@ -5,7 +5,7 @@ import { Mineral } from './parameters/mineral.model';
 import { Vitamin } from './parameters/vitamin.model';
 
 export class IngredientItemControllerInfo implements ControllerInfo {
-  readonly controllerName = 'ingredient-item';
+  readonly controllerName = 'food/ingredient/item';
 }
 
 export interface IngredientItemModel {

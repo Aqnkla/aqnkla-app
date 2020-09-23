@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HttpService {
-  private $apiHost = 'http://localhost:3000';
+  private $apiHost = 'http://localhost:5000';
   constructor(private httpClient: HttpClient) {}
 
   get(controller: string): Observable<object> {

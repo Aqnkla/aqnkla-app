@@ -16,13 +16,6 @@ namespace Aqnkla.Client.Webapi.Controllers.Food.Ingredient
             IIngredientCategoryService<ObjectId> ingredientCategoryService,
             IKeyService<ObjectId> keyService) : base(ingredientCategoryService, keyService)
         {
-
-        }
-
-        [HttpGet("test")]
-        public async Task<IActionResult> Test()
-        {
-            return Ok(new { message = "Verification successful, you can now login" });
         }
     }
 }

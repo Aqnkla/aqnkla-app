@@ -23,7 +23,13 @@ namespace Aqnkla.Client.Webapi.Controllers.Base
             this.keyService = keyService;
         }
 
-        // GET
+        // GET all
+        [HttpGet]
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await service.GetAllAsync();
+        }
+
         [HttpGet("{id}")]
         public async Task<T> GetAsync(string id)
         {

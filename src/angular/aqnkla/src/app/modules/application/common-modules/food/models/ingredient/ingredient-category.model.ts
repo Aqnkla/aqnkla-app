@@ -1,7 +1,7 @@
 import { ControllerInfo } from './../../../../../../models/controller-into';
 
 export class IngredientCategoryControllerInfo implements ControllerInfo {
-  readonly controllerName = 'ingredient-category';
+  readonly controllerName = 'food/ingredient/category';
 }
 
 
