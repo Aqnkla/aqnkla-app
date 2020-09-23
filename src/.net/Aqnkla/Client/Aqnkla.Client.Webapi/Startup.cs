@@ -26,10 +26,13 @@ namespace Aqnkla.Client.Webapi
         {
             services.AddCors();
             services.AddDomainObjects<ObjectId>();
+            services.AddFoodObjects<ObjectId>();
             services.AddJwtAuthentication<ObjectId>(Configuration);
             services.AddBCryptPassword();
             services.AddMailMailKit(Configuration);
-            services.RegisterMongoDbRepository(Configuration);
+            services.RegisterMongoDbBase(Configuration);
+            services.RegisterMongoDbUser();
+            services.RegisterMongoDbFood();
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
         }
 
