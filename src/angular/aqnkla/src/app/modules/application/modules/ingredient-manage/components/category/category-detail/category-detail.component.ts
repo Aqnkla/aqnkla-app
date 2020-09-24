@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
-import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 @Component({
   selector: 'aqn-category-detail',
@@ -29,18 +28,17 @@ export class CategoryDetailComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   private uploadDetails(): void {
     if (this.viewType) {
       switch (this.viewType) {
         case ViewType.add:
           this.category = {
-            id: RandomHelper.uuidv4(),
+            id: undefined,
             name: '',
             description: '',
-            parentCategoryId: '',
+            parentCategoryId: undefined,
           };
           break;
         case ViewType.edit:

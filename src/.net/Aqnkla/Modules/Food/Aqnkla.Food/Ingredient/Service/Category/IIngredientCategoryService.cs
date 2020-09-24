@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Aqnkla.Food.Ingredient.Service
 {
-    public interface IIngredientCategoryService<TKey> : IService<IngredientCategoryEntity<TKey>, TKey>
+    public interface IIngredientCategoryService<TKey> : IViewService<IngredientCategoryEntity<TKey>, IngredientCategoryViewModel, TKey>
     {
     }
 }

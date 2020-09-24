@@ -27,7 +27,7 @@ namespace Aqnkla.Client.Webapi
             services.AddCors();
             services.AddDomainObjects<ObjectId>();
             services.AddFoodObjects<ObjectId>();
-            services.AddJwtAuthentication<ObjectId>(Configuration);
+            //services.AddJwtAuthentication<ObjectId>(Configuration);
             services.AddBCryptPassword();
             services.AddMailMailKit(Configuration);
             services.RegisterMongoDbBase(Configuration);
@@ -41,14 +41,16 @@ namespace Aqnkla.Client.Webapi
         {
             app.UseRouting();
             app.UseCors(x => x
-                .SetIsOriginAllowed(origin => true)
+                //.SetIsOriginAllowed(origin => true)
                 .AllowAnyMethod()
                 .AllowAnyHeader()
-                .AllowCredentials());
+                .AllowAnyOrigin()
+                //.AllowCredentials()
+                );
 
-            app.UseMiddleware<ErrorHandlerMiddleware>();
+            //app.UseMiddleware<ErrorHandlerMiddleware>();
 
-            app.UseMiddleware<JwtMiddleware>();
+            //app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(x => x.MapControllers());
         }

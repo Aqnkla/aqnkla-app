@@ -10,7 +10,7 @@ namespace Aqnkla.Client.Webapi.Controllers.Food.Ingredient
 {
     [Route("food/ingredient/category")]
     [ApiController]
-    public class IngredientCategoryController : DataController<IngredientCategoryEntity<ObjectId>, ObjectId>
+    public class IngredientCategoryController : DataController<IngredientCategoryEntity<ObjectId>, IngredientCategoryViewModel, ObjectId>
     {
         public IngredientCategoryController(
             IIngredientCategoryService<ObjectId> ingredientCategoryService,

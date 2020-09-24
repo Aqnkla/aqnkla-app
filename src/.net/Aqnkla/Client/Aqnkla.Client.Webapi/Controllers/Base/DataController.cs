@@ -10,13 +10,15 @@ using Microsoft.AspNetCore.Mvc;
 namespace Aqnkla.Client.Webapi.Controllers.Base
 {
     [Controller]
-    public abstract class DataController<T, TKey> : BaseController where T : BaseEntity<TKey>
+    public abstract class DataController<T, TVievModel, TKey> : BaseController
+        where T : BaseEntity<TKey>
+        where TVievModel : BaseViewModel
     {
-        private readonly IService<T, TKey> service;
+        private readonly IViewService<T, TVievModel, TKey> service;
         private readonly IKeyService<TKey> keyService;
 
         protected DataController(
-            IService<T, TKey> service,
+            IViewService<T, TVievModel, TKey> service,
              IKeyService<TKey> keyService)
         {
             this.service = service;
@@ -25,28 +27,31 @@ namespace Aqnkla.Client.Webapi.Controllers.Base
 
         // GET all
         [HttpGet]
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<TVievModel>> GetAllAsync()
         {
-            return await service.GetAllAsync();
+            return (await service.GetAllAsync()).Select(b => service.MapToViewModel(b));
         }
 
         [HttpGet("{id}")]
-        public async Task<T> GetAsync(string id)
+        public async Task<TVievModel> GetAsync(string id)
         {
-            return await service.GetAsync(keyService.ParseKey(id));
+            var value = await service.GetAsync(keyService.ParseKey(id));
+            return service.MapToViewModel(value);
         }
 
         // add
         [HttpPost]
-        public async Task PostAsync([FromBody] T value)
+        public async Task PostAsync([FromBody] TVievModel vievModel)
         {
+            var value = service.MapToEntity(vievModel);
             await service.AddAsync(value);
         }
 
         // update
         [HttpPut("{id}")]
-        public async Task PutAsync(string id, [FromBody] T value)
+        public async Task PutAsync(string id, [FromBody] TVievModel vievModel)
         {
+            var value = service.MapToEntity(vievModel);
             await service.UpdateAsync(keyService.ParseKey(id), value);
         }
 

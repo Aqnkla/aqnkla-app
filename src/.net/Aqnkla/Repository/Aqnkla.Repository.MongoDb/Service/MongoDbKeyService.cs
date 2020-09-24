@@ -12,6 +12,11 @@ namespace Aqnkla.Repository.MongoDb.Service
 
         public ObjectId ParseKey(string keyString)
         {
+            if (string.IsNullOrEmpty(keyString))
+            {
+                return new ObjectId();
+            }
+
             return new ObjectId(keyString);
         }
     }

@@ -6,12 +6,15 @@ import { ControllerInfo } from 'src/app/models/controller-into';
 export abstract class NetworkClientService<T> {
   constructor(
     protected networkService: HttpService,
-    protected  controllerInfo: ControllerInfo
-  ) {
-  }
+    protected controllerInfo: ControllerInfo
+  ) {}
 
   add(value: T): Observable<T> {
-    const response = this.networkService.post(this.controllerInfo.controllerName, value);
+    console.log('add', value);
+    const response = this.networkService.post(
+      this.controllerInfo.controllerName,
+      value
+    );
     return response.pipe(
       map((b) => {
         return b as any;
@@ -31,7 +34,9 @@ export abstract class NetworkClientService<T> {
   }
 
   getAll(): Observable<T[]> {
-    const response = this.networkService.get(this.controllerInfo.controllerName);
+    const response = this.networkService.get(
+      this.controllerInfo.controllerName
+    );
     return response.pipe(map((b) => b as T[]));
   }
 
