@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Aqnkla.Domain.Base.Entity;
 using Aqnkla.Domain.Base.Service;
 using Aqnkla.Domain.Key.Service;
+using Aqnkla.Domain.Language.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aqnkla.Client.Webapi.Controllers.Base
@@ -29,14 +30,14 @@ namespace Aqnkla.Client.Webapi.Controllers.Base
         [HttpGet]
         public async Task<IEnumerable<TVievModel>> GetAllAsync()
         {
-            return (await service.GetAllAsync()).Select(b => service.MapToViewModel(b));
+            return (await service.GetAllAsync()).Select(b => service.MapToViewModel(b, LanguageValue.English));
         }
 
         [HttpGet("{id}")]
         public async Task<TVievModel> GetAsync(string id)
         {
             var value = await service.GetAsync(keyService.ParseKey(id));
-            return service.MapToViewModel(value);
+            return service.MapToViewModel(value, GetCurrentLanguage());
         }
 
         // add
@@ -60,6 +61,12 @@ namespace Aqnkla.Client.Webapi.Controllers.Base
         public async Task DeleteAsync(string id)
         {
             await service.DelateAsync(keyService.ParseKey(id));
+        }
+
+
+        protected LanguageValue GetCurrentLanguage()
+        {
+            return LanguageValue.English;
         }
     }
 }

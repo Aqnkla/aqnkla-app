@@ -6,6 +6,6 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     {
         public CholesterolType Cholesterol { get; set; }
         public string CholesterolLabel { get; set; }
-        public double Weight { get; set; }
+        public double WeightGrams { get; set; }
     }
 }

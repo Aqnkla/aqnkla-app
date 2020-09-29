@@ -22,18 +22,18 @@ namespace Aqnkla.Food.Ingredient.Entity.Item
         public int FatTotal { get; set; }
         public int CarbsTotal { get; set; }
         public int Fiber { get; set; }
-        public Dictionary<CholesterolType, ItemValue> Cholesterol { get; set; }
-        public Dictionary<CarbohydrateType, ItemValue> Carbohydrates { get; set; }
+        public Dictionary<CholesterolType, double> Cholesterol { get; set; }
+        public Dictionary<CarbohydrateType, double> Carbohydrates { get; set; }
 
-        public Dictionary<AminoAcidType, ItemValue> AminoAcids { get; set; }
-        public Dictionary<FatType, ItemValue> Fats { get; set; }
-        public Dictionary<MineralType, ItemValue> Minerals { get; set; }
-        public Dictionary<VitaminType, ItemValue> Vitamins { get; set; }
+        public Dictionary<AminoAcidType, double> AminoAcids { get; set; }
+        public Dictionary<FatType, double> Fats { get; set; }
+        public Dictionary<MineralType, double> Minerals { get; set; }
+        public Dictionary<VitaminType, double> Vitamins { get; set; }
         public Dictionary<AllergenType, AllergenImportance> Allergens { get; set; }
-        public bool IsPieceAllowed { get; set; }
-        public Dictionary<QuantityItemSize, decimal> PieceAvgWeights { get; set; }
+        public bool IsQuantityAllowed { get; set; }
+        public Dictionary<QuantityItemSize, double> QuantityAvgWeights { get; set; }
         public bool IsVolumeAllowed { get; set; }
-        public int AverageDensity { get; set; }
+        public double VolumeAverageDensity { get; set; }
         public bool IsVolumeDefault { get; set; }
     }
 }

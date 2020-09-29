@@ -1,5 +1,6 @@
 ﻿using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.Key.Service;
+using Aqnkla.Domain.Language.Model;
 using Aqnkla.Food.Ingredient.Entity.Category;
 using Aqnkla.Food.Ingredient.Repository;
 using Aqnkla.Food.Ingredient.Service;
@@ -30,7 +31,7 @@ namespace Aqnkla.Food.Service.Ingredient.Category
             };
         }
 
-        public override IngredientCategoryViewModel MapToViewModel(IngredientCategoryEntity<TKey> entity)
+        public override IngredientCategoryViewModel MapToViewModel(IngredientCategoryEntity<TKey> entity, LanguageValue language)
         {
             return new IngredientCategoryViewModel
             {

@@ -6,6 +6,6 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     {
         public MineralType Mineral { get; set; }
         public string MineralLabel { get; set; }
-        public double Weight { get; set; }
+        public double WeightGrams { get; set; }
     }
 }

@@ -6,6 +6,6 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     {
         public FatType Fat { get; set; }
         public string FatLabel { get; set; }
-        public double Weight { get; set; }
+        public double WeightGrams { get; set; }
     }
 }

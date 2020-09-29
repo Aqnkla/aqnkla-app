@@ -6,6 +6,6 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     {
         public VitaminType Vitamin { get; set; }
         public string VitaminLabel { get; set; }
-        public double Weight { get; set; }
+        public double WeightGrams { get; set; }
     }
 }

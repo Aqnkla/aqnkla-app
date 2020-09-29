@@ -1,4 +1,5 @@
 ﻿using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Language.Model;
 
 namespace Aqnkla.Domain.Base.Service
 {
@@ -7,6 +8,6 @@ namespace Aqnkla.Domain.Base.Service
         where TVievModel : BaseViewModel
     {
         T MapToEntity(TVievModel vievModel);
-        TVievModel MapToViewModel(T entity);
+        TVievModel MapToViewModel(T entity, LanguageValue language);
     }
 }

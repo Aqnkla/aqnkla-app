@@ -6,6 +6,6 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     {
         public AminoAcidType AminoAcid { get; set; }
         public string AminoAcidLabel { get; set; }
-        public double Weight { get; set; }
+        public double WeightGrams { get; set; }
     }
 }

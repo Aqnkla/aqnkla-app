@@ -8,6 +8,15 @@ export class IngredientItemControllerInfo implements ControllerInfo {
   readonly controllerName = 'food/ingredient/item';
 }
 
+export interface CholesterolViewModel {}
+export interface CarbohydrateViewModel {}
+export interface AminoAcidViewModel {}
+export interface FatViewModel {}
+export interface AllergenViewModel {}
+export interface MineralViewModel {}
+export interface VitaminViewModel {}
+export interface QuantityItemSizeViewModel {}
+
 export interface IngredientItemModel {
   id: string;
   categoryId: string;
@@ -15,15 +24,19 @@ export interface IngredientItemModel {
   description: string;
   calories: number;
   protein: number;
-  fat: number;
-  carbs: number;
+  fatTotal: number;
+  carbsTotal: number;
   fiber: number;
-  minerals: ItemData<Mineral>[];
-  vitamins: ItemData<Vitamin>[];
-  allergens: AllergenValue[];
-  isPieceAllowed: boolean;
-  pieceAvgWeight: number;
+  cholesterol: CholesterolViewModel[];
+  carbohydrates: CarbohydrateViewModel[];
+  aminoAcids: AminoAcidViewModel[];
+  fats: FatViewModel[];
+  minerals: MineralViewModel[];
+  vitamins: VitaminViewModel[];
+  allergens: AllergenViewModel[];
+  quantityAvgWeights: QuantityItemSizeViewModel[];
+  isQuantityAllowed: boolean;
   isVolumeAllowed: boolean;
-  averageDensity: number;
+  volumeAverageDensity: number;
   isVolumeDefault: boolean;
 }

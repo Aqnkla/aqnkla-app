@@ -37,12 +37,12 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
 
         public List<AllergenViewModel> Allergens { get; set; }
 
-        public bool IsPieceAllowed { get; set; }
-        public List<QuantityItemSizeViewModel> PieceAvgWeights { get; set; }
+        public bool IsQuantityAllowed { get; set; }
+        public List<QuantityItemSizeViewModel> QuantityAvgWeights { get; set; }
 
         public bool IsVolumeAllowed { get; set; }
 
-        public int AverageDensity { get; set; }
+        public double VolumeAverageDensity { get; set; }
 
         public bool IsVolumeDefault { get; set; }
     }
