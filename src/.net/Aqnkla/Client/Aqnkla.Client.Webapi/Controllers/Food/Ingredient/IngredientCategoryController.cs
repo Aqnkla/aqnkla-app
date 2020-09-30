@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Aqnkla.Client.Webapi.Controllers.Base;
+﻿using Aqnkla.Client.Webapi.Controllers.Base;
 using Aqnkla.Domain.Key.Service;
 using Aqnkla.Food.Ingredient.Entity.Category;
 using Aqnkla.Food.Ingredient.Service;

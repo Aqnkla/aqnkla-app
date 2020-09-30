@@ -1,12 +1,4 @@
-﻿using Aqnkla.Food.Ingredient.Service;
-using Aqnkla.Food.Ingredient.Service.Item;
-using Aqnkla.Food.Service.Ingredient.Category;
-using Aqnkla.Food.Service.Ingredient.Item;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Aqnkla.Client.Webapi.Extensions
 {

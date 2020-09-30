@@ -33,13 +33,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail", "Mail", "{5200FA36-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Mail.MailKit", "Mail\Aqnkla.Mail.MailKit\Aqnkla.Mail.MailKit.csproj", "{3B087D07-3BE5-43C6-8A95-A11C68224D71}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{0044E36D-5611-4EB8-B872-1766DA718716}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module", "Module", "{0044E36D-5611-4EB8-B872-1766DA718716}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Food", "Food", "{333D43A7-78B8-4A9B-9367-EB672FC6BF62}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Food", "Modules\Food\Aqnkla.Food\Aqnkla.Food.csproj", "{62308B64-9FFF-4E92-BAE3-2FBCB2E8A661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Food", "Module\Food\Aqnkla.Food\Aqnkla.Food.csproj", "{62308B64-9FFF-4E92-BAE3-2FBCB2E8A661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Food.Service", "Modules\Food\Aqnkla.Food.Service\Aqnkla.Food.Service.csproj", "{A76D3EFA-E627-4CEC-843E-16B21702A454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Food.Service", "Module\Food\Aqnkla.Food.Service\Aqnkla.Food.Service.csproj", "{A76D3EFA-E627-4CEC-843E-16B21702A454}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{2DA0A1B0-1A0A-4DFE-B991-F40C22F324E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Tool.ViewModelGenerator", "Tool\Aqnkla.Tool.ViewModelGenerator\Aqnkla.Tool.ViewModelGenerator.csproj", "{064A008F-E8C9-4D32-817A-A2953A2E3131}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,10 @@ Global
 		{A76D3EFA-E627-4CEC-843E-16B21702A454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A76D3EFA-E627-4CEC-843E-16B21702A454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A76D3EFA-E627-4CEC-843E-16B21702A454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +113,7 @@ Global
 		{333D43A7-78B8-4A9B-9367-EB672FC6BF62} = {0044E36D-5611-4EB8-B872-1766DA718716}
 		{62308B64-9FFF-4E92-BAE3-2FBCB2E8A661} = {333D43A7-78B8-4A9B-9367-EB672FC6BF62}
 		{A76D3EFA-E627-4CEC-843E-16B21702A454} = {333D43A7-78B8-4A9B-9367-EB672FC6BF62}
+		{064A008F-E8C9-4D32-817A-A2953A2E3131} = {2DA0A1B0-1A0A-4DFE-B991-F40C22F324E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}

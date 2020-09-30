@@ -1,8 +1,5 @@
-﻿using Aqnkla.Authentication.JwtBearer.Provider.Extension;
-using Aqnkla.Authentication.JwtBearer.Provider.Middleware;
-using Aqnkla.Authentication.Password.BCrypt.Extension;
+﻿using Aqnkla.Authentication.Password.BCrypt.Extension;
 using Aqnkla.Client.Webapi.Extensions;
-using Aqnkla.Client.Webapi.Helpers;
 using Aqnkla.Mail.MailKit.Extensions;
 using Aqnkla.Repository.MongoDb.Extension;
 using Microsoft.AspNetCore.Builder;

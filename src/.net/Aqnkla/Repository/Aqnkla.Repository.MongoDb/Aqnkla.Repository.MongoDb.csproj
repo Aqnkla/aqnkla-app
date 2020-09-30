@@ -17,7 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Authentication\JwtBearer\Aqnkla.Authentication.JwtBearer.Core\Aqnkla.Authentication.JwtBearer.Core.csproj" />
     <ProjectReference Include="..\..\Base\Aqnkla.Domain\Aqnkla.Domain.csproj" />
-    <ProjectReference Include="..\..\Modules\Food\Aqnkla.Food\Aqnkla.Food.csproj" />
+    <ProjectReference Include="..\..\Module\Food\Aqnkla.Food\Aqnkla.Food.csproj" />
   </ItemGroup>
 
 </Project>

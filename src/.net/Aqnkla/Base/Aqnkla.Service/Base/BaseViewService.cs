@@ -2,9 +2,6 @@
 using Aqnkla.Domain.Base.Repository;
 using Aqnkla.Domain.Base.Service;
 using Aqnkla.Domain.Language.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aqnkla.Service.Base
 {
