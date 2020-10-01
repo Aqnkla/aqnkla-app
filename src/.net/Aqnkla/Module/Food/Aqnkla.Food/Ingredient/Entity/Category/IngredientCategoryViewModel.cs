@@ -1,8 +1,10 @@
-﻿using Aqnkla.Domain.Base.Entity;
+﻿using Aqnkla.Domain.Attributes;
+using Aqnkla.Domain.Base.Entity;
 
 namespace Aqnkla.Food.Ingredient.Entity.Category
 {
-    public class IngredientCategoryViewModel : BaseViewModel
+    [ExportViewModel]
+    public class IngredientCategoryViewModel
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -7,7 +7,6 @@ namespace Aqnkla.Service.Base
 {
     public abstract class BaseViewService<T, TVievModel, TKey> : BaseService<T, TKey>, IViewService<T, TVievModel, TKey>
            where T : BaseEntity<TKey>
-           where TVievModel : BaseViewModel
     {
         public BaseViewService(IRepository<T, TKey> repository) : base(repository)
         {

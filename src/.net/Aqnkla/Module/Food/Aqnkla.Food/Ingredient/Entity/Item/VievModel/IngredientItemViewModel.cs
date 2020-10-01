@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
 {
     [ExportViewModel]
-    public class IngredientItemViewModel : BaseViewModel
+    public class IngredientItemViewModel
     {
         public string CategoryId { get; set; }
 
