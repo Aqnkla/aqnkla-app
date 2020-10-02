@@ -9,7 +9,7 @@ namespace Aqnkla.Tool.ViewModelGenerator
         private const string outputDirectoryCommand = "-out=";
         static void Main(string[] args)
         {
-            var outputDirectory = "c:\\data\\temp\\ts";
+            var outputDirectory = @"C:\Source\aqnkla\aqnkla-app\src\angular\aqnkla\src\app\modules\application\common-modules\food\models\api";
             if (args != null)
             {
                 var output = args.Where(b => b.StartsWith(outputDirectoryCommand)).FirstOrDefault();
