@@ -1,5 +1,8 @@
 ﻿using Aqnkla.Domain.Attributes;
 using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Email.Model;
+using Aqnkla.Domain.Language.Model;
+using Aqnkla.Domain.User.Extension;
 using System.Collections.Generic;
 
 namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
@@ -7,6 +10,7 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     [ExportViewModel]
     public class IngredientItemViewModel
     {
+        public string Id { get; set; }
         public string CategoryId { get; set; }
 
         public string Name { get; set; }
@@ -45,5 +49,8 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
         public double VolumeAverageDensity { get; set; }
 
         public bool IsVolumeDefault { get; set; }
+
+        public Sex SendModeler { get; set; }
+        public List<LanguageValue> SomeList { get; set; }
     }
 }

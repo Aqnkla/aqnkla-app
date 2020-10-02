@@ -9,7 +9,7 @@ namespace Aqnkla.Tool.ViewModelGenerator
         private const string outputDirectoryCommand = "-out=";
         static void Main(string[] args)
         {
-            var outputDirectory = "c:\\data\\temp";
+            var outputDirectory = "c:\\data\\temp\\ts";
             if (args != null)
             {
                 var output = args.Where(b => b.StartsWith(outputDirectoryCommand)).FirstOrDefault();

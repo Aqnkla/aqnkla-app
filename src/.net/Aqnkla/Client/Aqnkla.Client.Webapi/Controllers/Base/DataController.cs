@@ -12,7 +12,6 @@ namespace Aqnkla.Client.Webapi.Controllers.Base
     [Controller]
     public abstract class DataController<T, TVievModel, TKey> : BaseController
         where T : BaseEntity<TKey>
-        where TVievModel : BaseViewModel
     {
         private readonly IViewService<T, TVievModel, TKey> service;
         private readonly IKeyService<TKey> keyService;

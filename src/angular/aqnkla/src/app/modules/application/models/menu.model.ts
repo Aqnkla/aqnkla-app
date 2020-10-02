@@ -13,3 +13,4 @@ export class MenuItem {
   svgPath: string;
   link: string;
 }
+

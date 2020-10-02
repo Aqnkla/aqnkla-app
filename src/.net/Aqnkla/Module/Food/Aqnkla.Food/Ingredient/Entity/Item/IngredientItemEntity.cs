@@ -1,4 +1,5 @@
 ﻿using Aqnkla.Domain.Base.Entity;
+using Aqnkla.Domain.Email.Model;
 using Aqnkla.Food.Common.Unit.Quantity;
 using Aqnkla.Food.Ingredient.Entity.Item.Allergen;
 using Aqnkla.Food.Ingredient.Entity.Item.ItemData.AminoAcid;
