@@ -3,12 +3,12 @@
     public enum WeightMetric
     {
         [WeightGramEquivalent(1000)]
-        Kilgram,
+        Kilogram,
         [WeightGramEquivalent(1)]
         Gram,
         [WeightGramEquivalent(0.001)]
-        MiliGram,
+        MilliGram,
         [WeightGramEquivalent(0.000001)]
-        MikroGram
+        MicroGram
     }
 }

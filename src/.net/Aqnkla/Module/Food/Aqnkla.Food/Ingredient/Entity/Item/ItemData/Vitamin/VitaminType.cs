@@ -5,7 +5,7 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.ItemData.Vitamin
 {
     public enum VitaminType
     {
-        [PreferedWeightSize(WeightMetric.MikroGram)]
+        [PreferedWeightSize(WeightMetric.MicroGram)]
         VitaminC
     }
 }

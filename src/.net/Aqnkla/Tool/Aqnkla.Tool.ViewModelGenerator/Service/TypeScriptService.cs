@@ -111,7 +111,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
             var builder = new StringBuilder();
             if (exportList.Count > 0)
             {
-                builder.AppendLine(string.Join("\n", exportList.Distinct().OrderBy(b => b)));
+                builder.AppendLine(string.Join(Environment.NewLine, exportList.Distinct().OrderBy(b => b)));
                 builder.AppendLine();
                 builder.AppendLine();
             }
@@ -123,7 +123,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
             var fileName = $"{ObjectHelper.GetAssemblyFileName(assembly)}.ts";
 
             var path = Path.Combine(outputDirectory, fileName);
-            File.WriteAllText(path, conent);
+            File.WriteAllText(path, conent, Encoding.UTF8);
             logger.LogDebug($"Typescript file created: {fileName}.");
         }
 
@@ -159,7 +159,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
                         export.Add($"import {{ { property.PropertyType.Name } }} from './{ObjectHelper.GetAssemblyFileName(property.PropertyType.Assembly)}';");
                     }
                 }
-                builder.AppendLine($"\t{ObjectHelper.GetCamelCaseName(property.Name)}: {propertyTsType};");
+                builder.AppendLine($"  {ObjectHelper.GetCamelCaseName(property.Name)}: {propertyTsType};");
             }
             builder.AppendLine("}");
             var data = new AqnklaObject
@@ -179,7 +179,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
             var names = type.GetEnumNames();
             foreach (var name in names)
             {
-                builder.AppendLine($"\t{name},");
+                builder.AppendLine($"  {name},");
 
             }
             builder = builder.Remove(builder.Length - 1, 1);

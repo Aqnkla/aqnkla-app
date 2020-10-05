@@ -51,6 +51,5 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
         public bool IsVolumeDefault { get; set; }
 
         public Sex SendModeler { get; set; }
-        public List<LanguageValue> SomeList { get; set; }
     }
 }
