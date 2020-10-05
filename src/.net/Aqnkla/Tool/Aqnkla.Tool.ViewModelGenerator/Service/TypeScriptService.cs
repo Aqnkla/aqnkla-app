@@ -1,5 +1,9 @@
 ﻿using Aqnkla.Domain.Attributes;
 using Aqnkla.Domain.ExceptionAqnkla;
+using Aqnkla.Tool.ViewModelGenerator.Helper;
+using Aqnkla.Tool.ViewModelGenerator.Model;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,38 +13,38 @@ using System.Text;
 
 namespace Aqnkla.Tool.ViewModelGenerator.Service
 {
-    internal class AqnklaFile
+
+    internal class TypeScriptService : ITypeScriptService
     {
-        public string FileName { get; set; }
-        public string FullName { get; set; }
+        private readonly ILogger<TypeScriptService> logger;
+        private readonly IOptions<GeneratorSettings> options;
 
-        public bool HasViewModelAttribute { get; set; }
-    }
-
-    internal class AqnklaObject
-    {
-        public int SortOrder { get; set; }
-        public List<string> Exports { get; set; }
-        public string Content { get; set; }
-
-    }
-
-    internal static class TypeScriptHelper
-    {
-
-        public static void GenerateFiles(string outputDirectory)
+        public TypeScriptService(
+            ILogger<TypeScriptService> logger,
+            IOptions<GeneratorSettings> options)
         {
+            this.logger = logger;
+            this.options = options;
+        }
+
+        public void GenerateFiles()
+        {
+            var outputDirectory = options.Value.OutputDirectory;
+            logger.LogDebug($"Model will be saved to: {outputDirectory}");
             var assemblyFiles = GetAssemblyFiles();
             if (Directory.Exists(outputDirectory))
             {
                 Directory.Delete(outputDirectory, true);
+                logger.LogDebug("Directory exists, will be deleted.");
             }
             Directory.CreateDirectory(outputDirectory);
+            logger.LogDebug($"Generator will check {assemblyFiles.Count}.");
             assemblyFiles.ForEach(b => ProcessAssembly(b, outputDirectory));
         }
 
-        private static void ProcessAssembly(AqnklaFile assemblyFile, string outputDirectory)
+        private void ProcessAssembly(AqnklaFile assemblyFile, string outputDirectory)
         {
+            logger.LogDebug($"Loading {assemblyFile.FileName}.");
             var viewModelTypes = new List<Type>();
             var assembly = Assembly.LoadFrom(assemblyFile.FullName);
             try
@@ -56,9 +60,22 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
                     }
                 }
             }
-            catch(Exception ex)
+            catch (FileNotFoundException)
             {
-                Console.WriteLine(ex.Message);
+                logger.LogError("File not found.");
+
+            }
+            catch (ArgumentNullException)
+            {
+                logger.LogError("Type doesn't contain any attributes");
+            }
+            catch (ReflectionTypeLoadException)
+            {
+                logger.LogDebug("Unable to load exception.");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex.Message);
             }
 
             if (viewModelTypes.Count > 0)
@@ -68,7 +85,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
 
         }
 
-        private static void CreateTypeScriptFile(List<Type> types, Assembly assembly, string outputDirectory)
+        private void CreateTypeScriptFile(List<Type> types, Assembly assembly, string outputDirectory)
         {
             var objects = new List<AqnklaObject>();
 
@@ -103,13 +120,14 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
 
             builder.AppendLine();
             var conent = builder.ToString();
-            var fileName = $"{ GetAssemblyFileName(assembly)}.ts";
+            var fileName = $"{ObjectHelper.GetAssemblyFileName(assembly)}.ts";
 
             var path = Path.Combine(outputDirectory, fileName);
             File.WriteAllText(path, conent);
+            logger.LogDebug($"Typescript file created: {fileName}.");
         }
 
-        private static AqnklaObject ReadClass(Type type)
+        private AqnklaObject ReadClass(Type type)
         {
             var properties = type.GetProperties();
             var builder = new StringBuilder();
@@ -121,27 +139,27 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
 
                 var propertyTsType = property.PropertyType.Name;
 
-                if (IsCollection(property.PropertyType))
+                if (ObjectHelper.IsCollection(property.PropertyType))
                 {
-                    propertyTsType = GetCollectionName(property.PropertyType);
+                    propertyTsType = ObjectHelper.GetCollectionName(property.PropertyType);
                     var genericType = property.PropertyType.GenericTypeArguments.First();
                     if (type.Assembly.FullName != genericType.Assembly.FullName)
                     {
-                        export.Add($"import {{ { genericType.Name } }} from './{GetAssemblyFileName(genericType.Assembly)}';");
+                        export.Add($"import {{ { genericType.Name } }} from './{ObjectHelper.GetAssemblyFileName(genericType.Assembly)}';");
                     }
                 }
                 else if (!property.PropertyType.Assembly.GetName().Name.StartsWith("Aqnkla"))
                 {
-                    propertyTsType = MapDonNetTypeToTs(property.PropertyType);
+                    propertyTsType = ObjectHelper.MapDonNetTypeToTs(property.PropertyType);
                 }
                 else
                 {
                     if (type.Assembly.FullName != property.PropertyType.Assembly.FullName)
                     {
-                        export.Add($"import {{ { property.PropertyType.Name } }} from './{GetAssemblyFileName(property.PropertyType.Assembly)}';");
+                        export.Add($"import {{ { property.PropertyType.Name } }} from './{ObjectHelper.GetAssemblyFileName(property.PropertyType.Assembly)}';");
                     }
                 }
-                builder.AppendLine($"\t{GetCamelCaseName(property.Name)}: {propertyTsType};");
+                builder.AppendLine($"\t{ObjectHelper.GetCamelCaseName(property.Name)}: {propertyTsType};");
             }
             builder.AppendLine("}");
             var data = new AqnklaObject
@@ -153,38 +171,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
             return data;
         }
 
-        private static string GetCollectionName(Type propertyType)
-        {
-            return $"{propertyType.GenericTypeArguments.First().Name}[]";
-        }
-
-        private static bool IsCollection(Type propertyType)
-        {
-            if (propertyType.GetInterfaces().Contains(typeof(System.Collections.ICollection)))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        private static string MapDonNetTypeToTs(Type type)
-        {
-            switch (type.FullName)
-            {
-                case "System.String":
-                    return "string";
-                case "System.Int32":
-                case "System.Double":
-                    return "number";
-                case "System.Boolean":
-                    return "boolean";
-                default:
-                    throw new UnknownTypeValueException($"missing mapping for: {type.FullName}");
-            }
-            throw new NotImplementedException();
-        }
-
-        private static AqnklaObject ReadEnum(Type type)
+        private AqnklaObject ReadEnum(Type type)
         {
             var builder = new StringBuilder();
             builder.AppendLine($"export enum {type.Name} {{");
@@ -207,14 +194,7 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
             return data;
         }
 
-        private static string GetCamelCaseName(string name)
-        {
-            var chars = name.ToCharArray();
-            chars[0] = chars[0].ToString().ToLower()[0];
-            return string.Join("", chars);
-        }
-
-        private static List<AqnklaFile> GetAssemblyFiles()
+        private List<AqnklaFile> GetAssemblyFiles()
         {
             var distinctFiles = new List<AqnklaFile>();
             string startupPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName;
@@ -241,12 +221,6 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
                 }
             }
             return distinctFiles;
-        }
-
-        private static string GetAssemblyFileName(Assembly assembly)
-        {
-            var names = assembly.GetName().Name.Split('.').Select(b => GetCamelCaseName(b));
-            return string.Join('-', names);
         }
 
     }
