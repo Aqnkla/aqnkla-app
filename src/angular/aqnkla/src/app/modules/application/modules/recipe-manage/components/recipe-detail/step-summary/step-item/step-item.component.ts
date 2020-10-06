@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
+import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 import { StepItem } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 
 @Component({
@@ -9,7 +8,7 @@ import { StepItem } from 'src/app/modules/application/common-modules/food/models
   styleUrls: ['./step-item.component.scss'],
 })
 export class StepItemComponent implements OnInit {
-  @Input() recipeIngredients: ItemData<IngredientItemModel>[];
+  @Input() recipeIngredients: ItemData<IngredientItemViewModel>[];
   @Input() step: StepItem;
   constructor() {}
 
@@ -17,7 +16,7 @@ export class StepItemComponent implements OnInit {
 
   changeIngredient(
     isChecked: boolean,
-    ingredient: ItemData<IngredientItemModel>,
+    ingredient: ItemData<IngredientItemViewModel>,
     step: StepItem
   ): void {
     if (isChecked) {
@@ -30,7 +29,7 @@ export class StepItemComponent implements OnInit {
     }
   }
 
-  getIngredient(id: string): ItemData<IngredientItemModel> {
+  getIngredient(id: string): ItemData<IngredientItemViewModel> {
     const ingredient = this.recipeIngredients.filter((b) => b.item.id === id);
     if (ingredient && ingredient.length === 1) {
       return ingredient[0];

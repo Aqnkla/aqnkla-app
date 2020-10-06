@@ -32,8 +32,8 @@ export class RecipeSummaryComponent implements OnInit {
       const ratio = value / 100;
       summary.weight += value;
       summary.calories += b.item.calories * ratio;
-      summary.fat += b.item.fat * ratio;
-      summary.carbs += b.item.carbs * ratio;
+      summary.fat += b.item.fatTotal * ratio;
+      summary.carbs += b.item.carbsTotal * ratio;
       summary.protein += b.item.protein * ratio;
     });
     return summary;

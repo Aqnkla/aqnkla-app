@@ -12,6 +12,7 @@ namespace Aqnkla.Client.Webapi.Extensions
         {
             serviceCollection.AddSingleton<IIngredientCategoryService<TKey>, IngredientCategoryService<TKey>>();
             serviceCollection.AddSingleton<IIngredientItemService<TKey>, IngredientItemService<TKey>>();
+            serviceCollection.AddSingleton<IIngredientILanguageService, IngredientILanguageService>();
 
 
 

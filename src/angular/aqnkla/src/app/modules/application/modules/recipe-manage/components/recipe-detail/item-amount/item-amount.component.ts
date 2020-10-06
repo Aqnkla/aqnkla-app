@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AmountInputType } from 'src/app/modules/application/common-modules/food/models/common/amount-input-type.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DataValue } from 'src/app/modules/application/common-modules/food/models/common/data-value.model';
+import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 @Component({
   selector: 'aqn-item-amount',
@@ -12,7 +12,7 @@ import { DataValue } from 'src/app/modules/application/common-modules/food/model
 export class ItemAmountComponent implements OnInit {
   AmountInputType = AmountInputType;
   @Input() weight: DataValue;
-  @Input() ingredient: IngredientItemModel;
+  @Input() ingredient: IngredientItemViewModel;
   @Output() weightChanged = new EventEmitter<DataValue>();
   units = DataHelper.getWeightUnitsGram(0);
 

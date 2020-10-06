@@ -1,7 +1,7 @@
 import { RecipeModel } from '../../../common-modules/food/models/recipe/recipe.model';
 import { ControllerInfo } from 'src/app/models/controller-into';
 import { ItemData } from '../../../common-modules/food/models/common/item-data.model';
-import { IngredientItemModel } from '../../../common-modules/food/models/ingredient/ingredient-item.model';
+import { IngredientItemViewModel } from '../../../common-modules/food/models/api/aqnkla-food';
 
 export class MealControllerInfo implements ControllerInfo {
   readonly controllerName = 'meal';
@@ -12,7 +12,7 @@ export class MealModel {
   dateNumber: number;
   dateTime: Date;
   recipe: RecipeModel;
-  ingredients: ItemData<IngredientItemModel>[];
+  ingredients: ItemData<IngredientItemViewModel>[];
 }
 
 export class DiaryDayModel {

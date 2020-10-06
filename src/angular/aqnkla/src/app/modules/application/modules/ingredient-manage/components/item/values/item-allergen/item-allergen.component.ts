@@ -1,13 +1,13 @@
 import {
-  Allergen,
-  AllergenValue,
-  AllergenImportance,
-} from '../../../../../../common-modules/food/models/ingredient/parameters/allergen.model';
+  AllergenType,
+  AllergenViewModel,
+} from './../../../../../../common-modules/food/models/api/aqnkla-food';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { AllergenImportance } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 export class DeleteAllerganDialogComponent extends DialogDeleteComponent<
   ItemAllergenComponent
@@ -22,11 +22,11 @@ export class DeleteAllerganDialogComponent extends DialogDeleteComponent<
   ],
 })
 export class ItemAllergenComponent implements OnInit {
-  @Input() allergens: AllergenValue[];
-  @Output() valueChanged = new EventEmitter<AllergenValue[]>();
-  availableAllergens: Allergen[];
+  @Input() allergens: AllergenViewModel[];
+  @Output() valueChanged = new EventEmitter<AllergenViewModel[]>();
+  availableAllergens: AllergenType[];
   allergenImportance: AllergenImportance[];
-  activeSelectItem: Allergen;
+  activeSelectItem: AllergenType;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class ItemAllergenComponent implements OnInit {
 
   private updateAvailableMinerals(): void {
     this.availableAllergens = [];
-    const allergens = ObjectHelper.getEnumValues<Allergen>(Allergen);
+    const allergens = ObjectHelper.getEnumValues<AllergenType>(AllergenType);
     for (const allergan of allergens) {
       if (
         this.allergens === undefined ||
@@ -58,14 +58,16 @@ export class ItemAllergenComponent implements OnInit {
     }
     this.allergens.push({
       allergen: this.activeSelectItem,
-      allergenImportance: 0,
+      importance: AllergenImportance.Full,
+      allergenLabel: '',
+      importanceLabel: '',
     });
     this.activeSelectItem = undefined;
     this.updateAvailableMinerals();
     this.valueChanged.emit(this.allergens);
   }
 
-  deleteItem(value: AllergenValue): void {
+  deleteItem(value: AllergenViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteAllerganDialogComponent, {
       width: '250px',

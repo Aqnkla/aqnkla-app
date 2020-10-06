@@ -3,8 +3,8 @@ import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemClientService } from '../../../../ingredient-manage/services/item-manage-client/item-manage-client.service';
 import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 export class DeleteRecipeIngredientsComponent extends DialogDeleteComponent<
   RecipeIngredientsComponent
@@ -16,9 +16,9 @@ export class DeleteRecipeIngredientsComponent extends DialogDeleteComponent<
   styleUrls: ['./recipe-ingredients.component.scss'],
 })
 export class RecipeIngredientsComponent implements OnInit {
-  @Input() ingredients: ItemData<IngredientItemModel>[];
-  @Output() valueChanged = new EventEmitter<ItemData<IngredientItemModel>[]>();
-  activeSelectItem: IngredientItemModel;
+  @Input() ingredients: ItemData<IngredientItemViewModel>[];
+  @Output() valueChanged = new EventEmitter<ItemData<IngredientItemViewModel>[]>();
+  activeSelectItem: IngredientItemViewModel;
   searchValue = '';
   constructor(public dialog: MatDialog) {}
 
@@ -49,7 +49,7 @@ export class RecipeIngredientsComponent implements OnInit {
     this.activeSelectItem = undefined;
   }
 
-  deleteItem(value: ItemData<IngredientItemModel>): void {
+  deleteItem(value: ItemData<IngredientItemViewModel>): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteRecipeIngredientsComponent, {
       width: '250px',

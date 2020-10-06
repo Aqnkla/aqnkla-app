@@ -136,14 +136,20 @@ namespace Aqnkla.Tool.ViewModelGenerator.Service
 
             foreach (var property in properties)
             {
-
                 var propertyTsType = property.PropertyType.Name;
 
                 if (ObjectHelper.IsCollection(property.PropertyType))
                 {
-                    propertyTsType = ObjectHelper.GetCollectionName(property.PropertyType);
+                    propertyTsType = property.PropertyType.GenericTypeArguments.First().Name;
+                    if (!property.PropertyType.GenericTypeArguments.First().Assembly.GetName().Name.StartsWith("Aqnkla"))
+                    {
+                        propertyTsType = ObjectHelper.MapDonNetTypeToTs(property.PropertyType.GenericTypeArguments.First());
+                    }
+                    propertyTsType = $"{propertyTsType}[]";
+
                     var genericType = property.PropertyType.GenericTypeArguments.First();
-                    if (type.Assembly.FullName != genericType.Assembly.FullName)
+                    if (type.Assembly.FullName != genericType.Assembly.FullName
+                        && genericType.Assembly.GetName().Name.StartsWith("Aqnkla"))
                     {
                         export.Add($"import {{ { genericType.Name } }} from './{ObjectHelper.GetAssemblyFileName(genericType.Assembly)}';");
                     }

@@ -9,8 +9,7 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { MatOptionSelectionChange } from '@angular/material/core';
-import { IngredientItemModel } from '../../models/ingredient/ingredient-item.model';
-
+import { IngredientItemViewModel } from '../../models/api/aqnkla-food';
 @Component({
   selector: 'aqn-ingredient-search',
   templateUrl: './ingredient-search.component.html',
@@ -21,9 +20,9 @@ export class IngredientSearchComponent implements OnInit {
     console.log('st', value);
     this.searchForm.setValue(value);
   }
-  @Output() ingredientChange = new EventEmitter<IngredientItemModel>();
+  @Output() ingredientChange = new EventEmitter<IngredientItemViewModel>();
   searchForm = new FormControl();
-  filteredIngredients: Observable<IngredientItemModel[]>;
+  filteredIngredients: Observable<IngredientItemViewModel[]>;
   constructor(private ingredientSearchService: IngredientSearchService) {}
 
   ngOnInit(): void {
@@ -41,14 +40,14 @@ export class IngredientSearchComponent implements OnInit {
     this.ingredientChange.emit(event.source.value);
   }
 
-  getOptionText(option: IngredientItemModel): string {
+  getOptionText(option: IngredientItemViewModel): string {
     if (option) {
       return option.name;
     }
     return '';
   }
 
-  private filter(value: string): Observable<IngredientItemModel[]> {
+  private filter(value: string): Observable<IngredientItemViewModel[]> {
     return this.ingredientSearchService.getByName(value);
   }
 }

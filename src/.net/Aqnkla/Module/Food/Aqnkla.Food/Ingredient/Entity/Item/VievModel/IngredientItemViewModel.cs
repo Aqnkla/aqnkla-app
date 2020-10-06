@@ -49,7 +49,5 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
         public double VolumeAverageDensity { get; set; }
 
         public bool IsVolumeDefault { get; set; }
-
-        public Sex SendModeler { get; set; }
     }
 }

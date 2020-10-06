@@ -7,10 +7,9 @@ import {
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { StepSummary } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
-import { DialogDeleteData } from 'src/app/models/dialog.model';
+import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 export class DeleteStepDialogComponent extends DialogDeleteComponent<
   StepSummaryComponent
@@ -26,7 +25,7 @@ export class StepSummaryComponent implements OnInit {
     steps: [],
     groups: [{ id: RandomHelper.uuidv4(), name: '', description: '' }],
   };
-  @Input() recipeIngredients: ItemData<IngredientItemModel>[];
+  @Input() recipeIngredients: ItemData<IngredientItemViewModel>[];
   @Input() set stepSummary(value: StepSummary) {
     if (value) {
       this.$stepSummary = value;

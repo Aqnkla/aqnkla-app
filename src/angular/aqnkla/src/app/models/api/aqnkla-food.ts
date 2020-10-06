@@ -1,7 +1,4 @@
-﻿import { Sex } from './aqnkla-domain';
-
-
-export enum AllergenImportance {
+﻿export enum AllergenImportance {
   None,
   ProductionDependent,
   Full,}
@@ -33,6 +30,10 @@ export enum QuantityItemSize {
   Small,
   Medium,
   Large,}
+
+export enum StepType {
+  single,
+  merge,}
 
 export enum UnitType {
   Weight,
@@ -116,7 +117,11 @@ export interface IngredientItemViewModel {
   isVolumeAllowed: boolean;
   volumeAverageDensity: number;
   isVolumeDefault: boolean;
-  sendModeler: Sex;
+}
+
+export interface IngredientValueViewModel {
+  id: string;
+  weightGrams: number;
 }
 
 export interface MineralViewModel {
@@ -129,6 +134,36 @@ export interface QuantityItemSizeViewModel {
   quantity: QuantityItemSize;
   quantityLabel: string;
   weightGrams: number;
+}
+
+export interface RecipeViewModel {
+  id: string;
+  name: string;
+  ingredients: IngredientValueViewModel[];
+  prepareSteps: StepSummaryViewModel;
+}
+
+export interface StepGroupViewModel {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface StepItemViewModel {
+  id: string;
+  groupId: string;
+  type: StepType;
+  mergedGroups: string[];
+  sortOrder: number;
+  previousStepId: string;
+  addedIngredients: IngredientValueViewModel[];
+  name: string;
+  description: string;
+}
+
+export interface StepSummaryViewModel {
+  steps: StepItemViewModel[];
+  groups: StepGroupViewModel[];
 }
 
 export interface VitaminViewModel {

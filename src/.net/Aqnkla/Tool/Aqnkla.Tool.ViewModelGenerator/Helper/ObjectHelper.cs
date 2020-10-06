@@ -25,11 +25,6 @@ namespace Aqnkla.Tool.ViewModelGenerator.Helper
             return string.Join("", chars);
         }
 
-        public static string GetCollectionName(Type propertyType)
-        {
-            return $"{propertyType.GenericTypeArguments.First().Name}[]";
-        }
-
         public static bool IsCollection(Type propertyType)
         {
             if (propertyType.GetInterfaces().Contains(typeof(System.Collections.ICollection)))

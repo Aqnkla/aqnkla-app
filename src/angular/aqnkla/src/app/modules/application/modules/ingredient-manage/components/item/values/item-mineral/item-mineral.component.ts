@@ -4,8 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { Mineral } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/mineral.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { MineralViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 export class DeleteMineralDialogComponent extends DialogDeleteComponent<
   ItemMineralComponent
@@ -20,12 +20,12 @@ export class DeleteMineralDialogComponent extends DialogDeleteComponent<
   ],
 })
 export class ItemMineralComponent implements OnInit {
-  @Input() minerals: ItemData<Mineral>[];
-  @Output() valueChanged = new EventEmitter<ItemData<Mineral>[]>();
+  @Input() minerals: ItemData<MineralViewModel>[];
+  @Output() valueChanged = new EventEmitter<ItemData<MineralViewModel>[]>();
   units = DataHelper.getWeightUnitsGram(0);
-  availableMinerals: Mineral[];
+  availableMinerals: MineralViewModel[];
 
-  activeSelectItem: Mineral;
+  activeSelectItem: MineralViewModel;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
