@@ -1,9 +1,9 @@
+import { RecipeViewModel } from 'src/app/models/api/aqnkla-food';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewType } from 'src/app/models/common.model';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { RecipeClientService } from '../../services/recipe-manage-client/recipe-manage-client.service';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 
 @Component({
   selector: 'aqn-recipe-detail',
@@ -13,7 +13,7 @@ import { RecipeModel } from 'src/app/modules/application/common-modules/food/mod
 export class RecipeDetailComponent implements OnInit {
   ViewType = ViewType;
   viewType: ViewType;
-  item: RecipeModel;
+  item: RecipeViewModel;
   itemId: string;
 
   constructor(

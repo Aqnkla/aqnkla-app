@@ -2,10 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { IngredientCategoryViewModel } from 'src/app/models/api/aqnkla-food';
 
-export class DeleteCategoryDialogComponent extends DialogDeleteComponent<CategoryListComponent> {}
+export class DeleteCategoryDialogComponent extends DialogDeleteComponent<
+  CategoryListComponent
+> {}
 
 @Component({
   selector: 'aqn-category-list',
@@ -16,7 +18,7 @@ export class DeleteCategoryDialogComponent extends DialogDeleteComponent<Categor
   ],
 })
 export class CategoryListComponent implements OnInit {
-  list: IngredientCategoryModel[] = [];
+  list: IngredientCategoryViewModel[] = [];
   displayedColumns: string[] = [
     'name',
     'description',
@@ -33,7 +35,7 @@ export class CategoryListComponent implements OnInit {
     this.loadList();
   }
 
-  deleteCategory(value: IngredientCategoryModel): void {
+  deleteCategory(value: IngredientCategoryViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteCategoryDialogComponent, {
       width: '250px',

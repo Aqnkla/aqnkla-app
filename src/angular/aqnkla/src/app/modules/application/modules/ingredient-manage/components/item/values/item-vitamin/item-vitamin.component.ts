@@ -3,9 +3,8 @@ import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.
 import { MatDialog } from '@angular/material/dialog';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { Vitamin } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/vitamin.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { VitaminType, VitaminViewModel } from 'src/app/models/api/aqnkla-food';
 
 export class DeleteVitaminDialogComponent extends DialogDeleteComponent<
   ItemVitaminComponent
@@ -20,12 +19,12 @@ export class DeleteVitaminDialogComponent extends DialogDeleteComponent<
   ],
 })
 export class ItemVitaminComponent implements OnInit {
-  @Input() vitamins: ItemData<Vitamin>[];
-  @Output() valueChanged = new EventEmitter<ItemData<Vitamin>[]>();
+  @Input() vitamins: VitaminViewModel[];
+  @Output() valueChanged = new EventEmitter<VitaminViewModel[]>();
   units = DataHelper.getWeightUnitsGram(0);
-  availableVitamins: Vitamin[];
+  availableVitamins: VitaminType[];
 
-  activeSelectItem: Vitamin;
+  activeSelectItem: VitaminType;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -34,13 +33,13 @@ export class ItemVitaminComponent implements OnInit {
 
   private updateAvailableMinerals(): void {
     this.availableVitamins = [];
-    const minerals = ObjectHelper.getEnumValues<Vitamin>(Vitamin);
-    for (const mineral of minerals) {
+    const vitamins = ObjectHelper.getEnumValues<VitaminType>(VitaminType);
+    for (const vitamin of vitamins) {
       if (
         this.vitamins === undefined ||
-        this.vitamins.filter((b) => b.item === mineral).length === 0
+        this.vitamins.filter((b) => b.vitamin === vitamin).length === 0
       ) {
-        this.availableVitamins.push(mineral);
+        this.availableVitamins.push(vitamin);
       }
     }
   }
@@ -53,39 +52,36 @@ export class ItemVitaminComponent implements OnInit {
       this.vitamins = [];
     }
     this.vitamins.push({
-      item: this.activeSelectItem,
-      weight: {
-        label: 'g',
-        dataFactor: 1,
-        dataValueRelative: 1,
-      },
+      vitamin: this.activeSelectItem,
+      vitaminLabel: '',
+      weightGrams: 1,
     });
     this.activeSelectItem = undefined;
     this.updateAvailableMinerals();
     this.valueChanged.emit(this.vitamins);
   }
 
-  deleteItem(value: ItemData<Vitamin>): void {
+  deleteItem(value: VitaminViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteVitaminDialogComponent, {
       width: '250px',
       data: {
-        header: `Remove ${value.item}`,
-        message: `Do you want remove ${value.item}: ${value.weight} ${value.weight.label}`,
+        header: `Remove ${value.vitamin}`,
+        message: `Do you want remove ${value.vitamin}: ${value.weightGrams}`,
         delete: false,
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result && result.delete) {
-        self.vitamins = self.vitamins.filter((obj) => obj.item !== value.item);
+        self.vitamins = self.vitamins.filter((obj) => obj.vitamin !== value.vitamin);
         self.updateAvailableMinerals();
         self.valueChanged.emit(self.vitamins);
       }
     });
   }
 
-  getQuantitySummary(value: number, ratio: number): string {
-    const data = value * ratio * 1000;
+  getQuantitySummary(weightGrams: number): string {
+    const data = weightGrams *  1000;
     if (data > 10) {
       return `${data.toFixed(0)} mg`;
     } else if (data >= 1) {

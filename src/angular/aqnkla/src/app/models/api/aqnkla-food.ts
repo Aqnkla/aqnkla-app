@@ -120,7 +120,7 @@ export interface IngredientItemViewModel {
 }
 
 export interface IngredientValueViewModel {
-  id: string;
+  ingredient: IngredientItemViewModel;
   weightGrams: number;
 }
 

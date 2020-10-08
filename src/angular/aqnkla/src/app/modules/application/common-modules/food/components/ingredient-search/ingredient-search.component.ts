@@ -9,7 +9,7 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { MatOptionSelectionChange } from '@angular/material/core';
-import { IngredientItemViewModel } from '../../models/api/aqnkla-food';
+import { IngredientItemViewModel } from 'src/app/models/api/aqnkla-food';
 @Component({
   selector: 'aqn-ingredient-search',
   templateUrl: './ingredient-search.component.html',
@@ -17,7 +17,6 @@ import { IngredientItemViewModel } from '../../models/api/aqnkla-food';
 })
 export class IngredientSearchComponent implements OnInit {
   @Input() set searchValue(value: string) {
-    console.log('st', value);
     this.searchForm.setValue(value);
   }
   @Output() ingredientChange = new EventEmitter<IngredientItemViewModel>();

@@ -1,18 +1,17 @@
 import { HttpService } from '../../http/http.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ControllerInfo } from 'src/app/models/controller-into';
 
 export abstract class NetworkClientService<T> {
   constructor(
     protected networkService: HttpService,
-    protected controllerInfo: ControllerInfo
+    protected apiRoute: string
   ) {}
 
   add(value: T): Observable<T> {
     console.log('add', value);
     const response = this.networkService.post(
-      this.controllerInfo.controllerName,
+      this.apiRoute,
       value
     );
     return response.pipe(
@@ -23,25 +22,25 @@ export abstract class NetworkClientService<T> {
   }
 
   update(id: string, value: T): Observable<T> {
-    const url = `${this.controllerInfo.controllerName}/${id}`;
+    const url = `${this.apiRoute}/${id}`;
     const response = this.networkService.put(url, value);
     return response.pipe(map((b) => b as any));
   }
   get(id: string): Observable<T> {
-    const url = `${this.controllerInfo.controllerName}/${id}`;
+    const url = `${this.apiRoute}/${id}`;
     const response = this.networkService.get(url);
     return response.pipe(map((b) => b as any));
   }
 
   getAll(): Observable<T[]> {
     const response = this.networkService.get(
-      this.controllerInfo.controllerName
+      this.apiRoute
     );
     return response.pipe(map((b) => b as T[]));
   }
 
   delete(id: string): Observable<any> {
-    const url = `${this.controllerInfo.controllerName}/${id}`;
+    const url = `${this.apiRoute}/${id}`;
     const response = this.networkService.delete(url);
     return response;
   }

@@ -4,11 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
 import { ItemClientService } from '../../../services/item-manage-client/item-manage-client.service';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
-import { Vitamin } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/vitamin.model';
-import { Mineral } from 'src/app/modules/application/common-modules/food/models/ingredient/parameters/mineral.model';
+import {
+  IngredientCategoryViewModel,
+  IngredientItemViewModel,
+  MineralViewModel,
+  VitaminViewModel,
+} from 'src/app/models/api/aqnkla-food';
 @Component({
   selector: 'aqn-item-detail',
   templateUrl: './item-detail.component.html',
@@ -20,11 +21,11 @@ import { Mineral } from 'src/app/modules/application/common-modules/food/models/
 export class ItemDetailComponent implements OnInit {
   ViewType = ViewType;
   viewType: ViewType;
-  item: IngredientItemModel;
+  item: IngredientItemViewModel;
   itemId: string;
-  categories: IngredientCategoryModel[] = [];
-  vitamins: ItemData<Vitamin>[];
-  minerals: ItemData<Mineral>[];
+  categories: IngredientCategoryViewModel[] = [];
+  vitamins: VitaminViewModel[];
+  minerals: MineralViewModel[];
 
   constructor(
     private itemClientService: ItemClientService,
@@ -56,18 +57,22 @@ export class ItemDetailComponent implements OnInit {
             description: '',
             categoryId: '',
             calories: 0,
-            carbs: 0,
-            fat: 0,
+            carbsTotal: 0,
+            fatTotal: 0,
             protein: 0,
             fiber: 0,
             minerals: [],
             vitamins: [],
             allergens: [],
-            averageDensity: null,
-            isPieceAllowed: false,
+            volumeAverageDensity: null,
+            isQuantityAllowed: false,
             isVolumeAllowed: false,
-            pieceAvgWeight: null,
+            quantityAvgWeights: null,
             isVolumeDefault: false,
+            aminoAcids: [],
+            carbohydrates: [],
+            cholesterol: [],
+            fats: [],
           };
           break;
         case ViewType.edit:

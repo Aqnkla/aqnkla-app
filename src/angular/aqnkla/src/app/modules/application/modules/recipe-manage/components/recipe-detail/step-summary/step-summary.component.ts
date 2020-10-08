@@ -1,15 +1,15 @@
-import { MatDialog } from '@angular/material/dialog';
 import {
-  StepItem,
-  StepGroup,
+  IngredientValueViewModel,
+  StepGroupViewModel,
+  StepItemViewModel,
+  StepSummaryViewModel,
   StepType,
-} from './../../../../../common-modules/food/models/recipe/recipe.model';
+} from 'src/app/models/api/aqnkla-food';
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { StepSummary } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 import { RandomHelper } from 'src/app/modules/application/helpers/common/random.helper';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';import { DialogDeleteData } from 'src/app/models/dialog.model';
+import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
-import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 export class DeleteStepDialogComponent extends DialogDeleteComponent<
   StepSummaryComponent
@@ -21,27 +21,27 @@ export class DeleteStepDialogComponent extends DialogDeleteComponent<
   styleUrls: ['./step-summary.component.scss'],
 })
 export class StepSummaryComponent implements OnInit {
-  private $stepSummary: StepSummary = {
+  private $stepSummary: StepSummaryViewModel = {
     steps: [],
     groups: [{ id: RandomHelper.uuidv4(), name: '', description: '' }],
   };
-  @Input() recipeIngredients: ItemData<IngredientItemViewModel>[];
-  @Input() set stepSummary(value: StepSummary) {
+  @Input() recipeIngredients: IngredientValueViewModel[];
+  @Input() set stepSummary(value: StepSummaryViewModel) {
     if (value) {
       this.$stepSummary = value;
     }
   }
 
-  get stepSummary(): StepSummary {
+  get stepSummary(): StepSummaryViewModel {
     return this.$stepSummary;
   }
 
-  @Output() stepSummaryChanged = new EventEmitter<StepSummary>();
+  @Output() stepSummaryChanged = new EventEmitter<StepSummaryViewModel>();
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
-  emitChange(event: StepItem): void {
+  emitChange(event: StepItemViewModel): void {
     this.stepSummaryChanged.emit(this.stepSummary);
   }
 
@@ -80,7 +80,7 @@ export class StepSummaryComponent implements OnInit {
     this.stepSummaryChanged.emit(this.stepSummary);
   }
 
-  deleteStep(step: StepItem): void {
+  deleteStep(step: StepItemViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteStepDialogComponent, {
       width: '250px',
@@ -107,7 +107,7 @@ export class StepSummaryComponent implements OnInit {
     });
   }
 
-  deleteGroup(group: StepGroup): void {
+  deleteGroup(group: StepGroupViewModel): void {
     const self = this;
 
     let isDeletePossible = true;

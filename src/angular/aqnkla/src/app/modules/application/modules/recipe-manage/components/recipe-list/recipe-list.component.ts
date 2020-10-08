@@ -1,8 +1,8 @@
+import { RecipeViewModel } from 'src/app/models/api/aqnkla-food';
 import { RecipeClientService } from './../../services/recipe-manage-client/recipe-manage-client.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
 
 export class DeleteRecipeDialogComponent extends DialogDeleteComponent<
@@ -15,7 +15,7 @@ export class DeleteRecipeDialogComponent extends DialogDeleteComponent<
   styleUrls: ['./recipe-list.component.scss'],
 })
 export class RecipeListComponent implements OnInit {
-  list: RecipeModel[] = [];
+  list: RecipeViewModel[] = [];
   displayedColumns: string[] = [
     'name',
     'description',
@@ -32,7 +32,7 @@ export class RecipeListComponent implements OnInit {
     this.loadList();
   }
 
-  deleteRecipe(value: RecipeModel): void {
+  deleteRecipe(value: RecipeViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteRecipeDialogComponent, {
       width: '250px',

@@ -1,4 +1,4 @@
-import { RecipeModel } from '../../../../../common-modules/food/models/recipe/recipe.model';
+import { RecipeViewModel } from 'src/app/models/api/aqnkla-food';
 import { Component, OnInit, Input } from '@angular/core';
 
 export class Summary {
@@ -22,19 +22,17 @@ export class Summary {
   styleUrls: ['./recipe-summary.component.scss'],
 })
 export class RecipeSummaryComponent implements OnInit {
-  @Input() recipe: RecipeModel;
+  @Input() recipe: RecipeViewModel;
   constructor() {}
 
   get summary(): Summary {
     const summary = new Summary();
     this.recipe.ingredients.forEach((b) => {
-      const value = b.weight.dataFactor * b.weight.dataValueRelative;
-      const ratio = value / 100;
-      summary.weight += value;
-      summary.calories += b.item.calories * ratio;
-      summary.fat += b.item.fatTotal * ratio;
-      summary.carbs += b.item.carbsTotal * ratio;
-      summary.protein += b.item.protein * ratio;
+      summary.weight += b.weightGrams;
+      summary.calories += b.ingredient.calories * (b.weightGrams / 100);
+      summary.fat += b.ingredient.fatTotal * (b.weightGrams / 100);
+      summary.carbs += b.ingredient.carbsTotal * (b.weightGrams / 100);
+      summary.protein += b.ingredient.protein * (b.weightGrams / 100);
     });
     return summary;
   }

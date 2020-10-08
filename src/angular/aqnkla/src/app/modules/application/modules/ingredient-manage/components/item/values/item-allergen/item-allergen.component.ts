@@ -1,13 +1,10 @@
-import {
-  AllergenType,
-  AllergenViewModel,
-} from './../../../../../../common-modules/food/models/api/aqnkla-food';
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
-import { AllergenImportance } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
+import { AllergenImportance, AllergenType, AllergenViewModel } from 'src/app/models/api/aqnkla-food';
 
 export class DeleteAllerganDialogComponent extends DialogDeleteComponent<
   ItemAllergenComponent

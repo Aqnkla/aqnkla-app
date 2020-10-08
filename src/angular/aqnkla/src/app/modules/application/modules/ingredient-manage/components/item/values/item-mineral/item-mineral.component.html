@@ -13,22 +13,22 @@
     <table>
       <tr *ngFor="let itemValue of minerals">
         <td>
-          <div>{{ itemValue.item }}</div>
+          <div>{{ itemValue.mineral }}</div>
           <div class="item-quantity-mg">
             {{
-              getQuantitySummary(itemValue.weight.dataValueRelative, itemValue.weight.dataFactor)
+              getQuantitySummary(itemValue.weightGrams)
             }}
           </div>
         </td>
         <td>
           <mat-form-field class="item-quantity">
             <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="itemValue.weight.dataFactor" />
+            <input matInput type="number" [(ngModel)]="itemValue.weightGrams" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field>
-            <mat-select [(ngModel)]="itemValue.weight.dataFactor">
+            <mat-select [(ngModel)]="itemValue.weightGrams">
               <mat-option *ngFor="let unit of units" [value]="unit.value">
                 {{ unit.name }}
               </mat-option>

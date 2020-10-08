@@ -5,7 +5,7 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
     [ExportViewModel]
     public class IngredientValueViewModel
     {
-        public string Id { get; set; }
+        public IngredientItemViewModel Ingredient { get; set; }
 
         public double WeightGrams { get; set; }
     }

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IngredientCategoryViewModel } from 'src/app/models/api/aqnkla-food';
 import { ViewType } from 'src/app/models/common.model';
 import { CategoryClientService } from '../../../services/category-manage-client/category-manage-client.service';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 @Component({
   selector: 'aqn-category-detail',
   templateUrl: './category-detail.component.html',
@@ -11,7 +11,7 @@ import { IngredientCategoryModel } from 'src/app/modules/application/common-modu
 export class CategoryDetailComponent implements OnInit {
   ViewType = ViewType;
   viewType: ViewType;
-  category: IngredientCategoryModel;
+  category: IngredientCategoryViewModel;
   categoryId: string;
   constructor(
     private categoryClientService: CategoryClientService,

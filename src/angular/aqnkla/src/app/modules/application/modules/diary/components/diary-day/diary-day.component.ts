@@ -1,3 +1,4 @@
+import { RecipeViewModel } from 'src/app/models/api/aqnkla-food';
 import { DiaryService } from './../../services/diary/diary.service';
 import { DiaryDayModel, MealModel } from './../../models/diary.model';
 import { Component, OnInit } from '@angular/core';
@@ -8,10 +9,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { MealClientService } from '../../services/meal-client/meal-client.service';
 import { RecipeClientService } from '../../../recipe-manage/services/recipe-manage-client/recipe-manage-client.service';
-import { RecipeModel } from 'src/app/modules/application/common-modules/food/models/recipe/recipe.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
 
-export class MealDeleteComponent extends DialogDeleteComponent<DiaryDayComponent> {}
+export class MealDeleteComponent extends DialogDeleteComponent<
+  DiaryDayComponent
+> {}
 
 @Component({
   selector: 'aqn-diary-day',
@@ -22,18 +24,14 @@ export class DiaryDayComponent implements OnInit {
   currentDay: Date;
   diaryDayModel: DiaryDayModel;
   isAddMealActive: boolean;
-  addedRecipe: RecipeModel;
+  addedRecipe: RecipeViewModel;
 
   get calories(): number {
     let cal = 0;
     if (this.diaryDayModel && this.diaryDayModel.meals) {
       this.diaryDayModel.meals.forEach((b) => {
         b.ingredients.forEach(
-          (i) =>
-            (cal +=
-              (i.item.calories *
-                (i.weight.dataValueRelative * i.weight.dataFactor)) /
-              100)
+          (i) => (cal += (i.ingredient.calories * i.weightGrams) / 100)
         );
       });
     }

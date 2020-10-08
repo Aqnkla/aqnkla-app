@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { AmountInputType } from 'src/app/modules/application/common-modules/food/models/common/amount-input-type.model';
+import { IngredientItemViewModel } from 'src/app/models/api/aqnkla-food';
+import { AmountInputType, DataValue } from 'src/app/models/data.model';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
-import { DataValue } from 'src/app/modules/application/common-modules/food/models/common/data-value.model';
-import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
 
 @Component({
   selector: 'aqn-item-amount',

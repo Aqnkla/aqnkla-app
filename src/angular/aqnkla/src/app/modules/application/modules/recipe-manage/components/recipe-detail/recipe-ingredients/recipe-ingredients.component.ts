@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ItemClientService } from '../../../../ingredient-manage/services/item-manage-client/item-manage-client.service';
-import { ItemData } from 'src/app/modules/application/common-modules/food/models/common/item-data.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
-import { IngredientItemViewModel } from 'src/app/modules/application/common-modules/food/models/api/aqnkla-food';
+import {
+  IngredientItemViewModel,
+  IngredientValueViewModel,
+} from 'src/app/models/api/aqnkla-food';
 
 export class DeleteRecipeIngredientsComponent extends DialogDeleteComponent<
   RecipeIngredientsComponent
@@ -16,8 +17,8 @@ export class DeleteRecipeIngredientsComponent extends DialogDeleteComponent<
   styleUrls: ['./recipe-ingredients.component.scss'],
 })
 export class RecipeIngredientsComponent implements OnInit {
-  @Input() ingredients: ItemData<IngredientItemViewModel>[];
-  @Output() valueChanged = new EventEmitter<ItemData<IngredientItemViewModel>[]>();
+  @Input() ingredients: IngredientValueViewModel[];
+  @Output() valueChanged = new EventEmitter<IngredientValueViewModel[]>();
   activeSelectItem: IngredientItemViewModel;
   searchValue = '';
   constructor(public dialog: MatDialog) {}
@@ -32,12 +33,8 @@ export class RecipeIngredientsComponent implements OnInit {
       this.ingredients = [];
     }
     this.ingredients.push({
-      item: this.activeSelectItem,
-      weight: {
-        label: 'g',
-        dataFactor: 1,
-        dataValueRelative: 1,
-      },
+      ingredient: this.activeSelectItem,
+      weightGrams: 1,
     });
     this.activeSelectItem = undefined;
     this.searchValue = '';
@@ -49,20 +46,20 @@ export class RecipeIngredientsComponent implements OnInit {
     this.activeSelectItem = undefined;
   }
 
-  deleteItem(value: ItemData<IngredientItemViewModel>): void {
+  deleteItem(value: IngredientValueViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteRecipeIngredientsComponent, {
       width: '250px',
       data: {
-        header: `Remove ${value.item}`,
-        message: `Do you want remove ${value.item.name}: ${value.weight} ${value.weight.label}`,
+        header: `Remove ${value.ingredient}`,
+        message: `Do you want remove ${value.ingredient.name}: ${value.weightGrams}`,
         delete: false,
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result && result.delete) {
         self.ingredients = self.ingredients.filter(
-          (obj) => obj.item !== value.item
+          (obj) => obj.ingredient !== value.ingredient
         );
         self.valueChanged.emit(self.ingredients);
       }

@@ -64,7 +64,7 @@
                     <input
                       matInput
                       type="number"
-                      [(ngModel)]="item.fat"
+                      [(ngModel)]="item.fatTotal"
                     /> </mat-form-field
                   ><span> g</span>
                 </div>
@@ -74,7 +74,7 @@
                     <input
                       matInput
                       type="number"
-                      [(ngModel)]="item.carbs"
+                      [(ngModel)]="item.carbsTotal"
                     /> </mat-form-field
                   ><span> g</span>
                 </div>
@@ -120,14 +120,14 @@
           <div class="card">
             <mat-card
               >
-              <mat-slide-toggle [(ngModel)]="item.isPieceAllowed">is Piece Allowed</mat-slide-toggle>
-              <div *ngIf="item.isPieceAllowed">
+              <mat-slide-toggle [(ngModel)]="item.isQuantityAllowed">is Piece Allowed</mat-slide-toggle>
+              <div *ngIf="item.isQuantityAllowed">
                 <mat-form-field class="item-quantity">
                   <mat-label>piece</mat-label>
                   <input
                     matInput
                     type="number"
-                    [(ngModel)]="item.pieceAvgWeight"
+                    [(ngModel)]="item.quantityAvgWeights"
                   /> </mat-form-field
                 ><span> grams/piece</span>
               </div>
@@ -143,7 +143,7 @@
                     <input
                       matInput
                       type="number"
-                      [(ngModel)]="item.averageDensity"
+                      [(ngModel)]="item.volumeAverageDensity"
                     /> </mat-form-field
                   ><span> g/1000 cm^3</span>
                 </div>

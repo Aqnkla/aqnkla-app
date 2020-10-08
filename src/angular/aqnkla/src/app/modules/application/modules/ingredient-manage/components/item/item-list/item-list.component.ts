@@ -3,9 +3,8 @@ import { CategoryClientService } from './../../../services/category-manage-clien
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
-import { IngredientItemModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-item.model';
-import { IngredientCategoryModel } from 'src/app/modules/application/common-modules/food/models/ingredient/ingredient-category.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
+import { IngredientCategoryViewModel, IngredientItemViewModel } from 'src/app/models/api/aqnkla-food';
 
 export class DeleteItemDialogComponent extends DialogDeleteComponent<
   ItemListComponent
@@ -20,7 +19,7 @@ export class DeleteItemDialogComponent extends DialogDeleteComponent<
   ],
 })
 export class ItemListComponent implements OnInit {
-  list: IngredientItemModel[] = [];
+  list: IngredientItemViewModel[] = [];
   displayedColumns: string[] = [
     'category',
     'name',
@@ -29,7 +28,7 @@ export class ItemListComponent implements OnInit {
     'button-detail',
     'button-delete',
   ];
-  categories: IngredientCategoryModel[] = [];
+  categories: IngredientCategoryViewModel[] = [];
   constructor(
     private itemClientService: ItemClientService,
     private categoryClientService: CategoryClientService,
@@ -41,7 +40,7 @@ export class ItemListComponent implements OnInit {
     this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
   }
 
-  deleteItem(value: IngredientItemModel): void {
+  deleteItem(value: IngredientItemViewModel): void {
     const self = this;
     const dialogRef = this.dialog.open(DeleteItemDialogComponent, {
       width: '250px',
