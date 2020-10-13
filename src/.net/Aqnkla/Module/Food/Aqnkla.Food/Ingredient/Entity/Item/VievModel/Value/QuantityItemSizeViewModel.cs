@@ -1,7 +1,7 @@
 ﻿using Aqnkla.Domain.Attributes;
 using Aqnkla.Food.Common.Unit.Quantity;
 
-namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
+namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel.Value
 {
     [ExportViewModel]
     public class QuantityItemSizeViewModel

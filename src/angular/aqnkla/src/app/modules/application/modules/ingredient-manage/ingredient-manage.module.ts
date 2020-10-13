@@ -13,12 +13,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
-import { ItemVitaminComponent } from './components/item/values/item-vitamin/item-vitamin.component';
-import { ItemMineralComponent } from './components/item/values/item-mineral/item-mineral.component';
+import { VitaminComponent } from './components/item/values/vitamin/vitamin.component';
+import { MineralComponent } from './components/item/values/mineral/mineral.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { IngredientManageRoutesModule } from './ingredient-manage.routing';
-import { ItemAllergenComponent } from './components/item/values/item-allergen/item-allergen.component';
+import { AllergenComponent } from './components/item/values/allergen/allergen.component';
+import { AminoAcidComponent } from './components/item/values/amino-acid/amino-acid.component';
+import { CarbohydrateComponent } from './components/item/values/carbohydrate/carbohydrate.component';
+import { CholesterolComponent } from './components/item/values/cholesterol/cholesterol.component';
+import { FatComponent } from './components/item/values/fat/fat.component';
+import { QuantityItemSizeComponent } from './components/item/values/quantity-item-size/quantity-item-size.component';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -27,9 +32,14 @@ import { ItemAllergenComponent } from './components/item/values/item-allergen/it
     CategoryDetailComponent,
     ItemDetailComponent,
     ItemListComponent,
-    ItemVitaminComponent,
-    ItemMineralComponent,
-    ItemAllergenComponent,
+    VitaminComponent,
+    MineralComponent,
+    AllergenComponent,
+    AminoAcidComponent,
+    CarbohydrateComponent,
+    CholesterolComponent,
+    FatComponent,
+    QuantityItemSizeComponent,
   ],
   imports: [
     IngredientManageRoutesModule,

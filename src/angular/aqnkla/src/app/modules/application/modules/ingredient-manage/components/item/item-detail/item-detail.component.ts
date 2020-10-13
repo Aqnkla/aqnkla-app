@@ -61,18 +61,20 @@ export class ItemDetailComponent implements OnInit {
             fatTotal: 0,
             protein: 0,
             fiber: 0,
-            minerals: [],
-            vitamins: [],
-            allergens: [],
+            values: {
+              minerals: [],
+              vitamins: [],
+              allergens: [],
+              aminoAcids: [],
+              carbohydrates: [],
+              cholesterol: [],
+              fats: [],
+              quantityAvgWeights: null
+            },
             volumeAverageDensity: null,
             isQuantityAllowed: false,
             isVolumeAllowed: false,
-            quantityAvgWeights: null,
             isVolumeDefault: false,
-            aminoAcids: [],
-            carbohydrates: [],
-            cholesterol: [],
-            fats: [],
           };
           break;
         case ViewType.edit:

@@ -7,18 +7,18 @@ import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/
 import { AllergenImportance, AllergenType, AllergenViewModel } from 'src/app/models/api/aqnkla-food';
 
 export class DeleteAllerganDialogComponent extends DialogDeleteComponent<
-  ItemAllergenComponent
+  AllergenComponent
 > {}
 
 @Component({
-  selector: 'aqn-item-allergan',
-  templateUrl: './item-allergen.component.html',
+  selector: 'aqn-allergan',
+  templateUrl: './allergen.component.html',
   styleUrls: [
-    './item-allergen.component.scss',
+    './allergen.component.scss',
     './../../../../styles/ingredient.style.scss',
   ],
 })
-export class ItemAllergenComponent implements OnInit {
+export class AllergenComponent implements OnInit {
   @Input() allergens: AllergenViewModel[];
   @Output() valueChanged = new EventEmitter<AllergenViewModel[]>();
   availableAllergens: AllergenType[];

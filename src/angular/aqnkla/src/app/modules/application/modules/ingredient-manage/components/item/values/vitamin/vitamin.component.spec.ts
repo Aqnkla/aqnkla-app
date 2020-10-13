@@ -4,22 +4,22 @@ import {
   waitForAsync,
 } from '@angular/core/testing';
 
-import { ItemVitaminComponent } from './item-vitamin.component';
+import { VitaminComponent } from './vitamin.component';
 
-describe('ItemVitaminComponent', () => {
-  let component: ItemVitaminComponent;
-  let fixture: ComponentFixture<ItemVitaminComponent>;
+describe('VitaminComponent', () => {
+  let component: VitaminComponent;
+  let fixture: ComponentFixture<VitaminComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [ItemVitaminComponent],
+        declarations: [VitaminComponent],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemVitaminComponent);
+    fixture = TestBed.createComponent(VitaminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

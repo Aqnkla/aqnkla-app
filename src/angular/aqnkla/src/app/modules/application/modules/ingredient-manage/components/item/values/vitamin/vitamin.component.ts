@@ -1,31 +1,30 @@
-import { MineralType } from './../../../../../../../../models/api/aqnkla-food';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ObjectHelper } from 'src/app/modules/application/helpers/common/object.helper';
 import { MatDialog } from '@angular/material/dialog';
 import { DataHelper } from 'src/app/modules/application/helpers/data.helper';
 import { DialogDeleteData } from 'src/app/models/dialog.model';
 import { DialogDeleteComponent } from 'src/app/components/generic/dialog-delete/dialog-delete.component';
-import { MineralViewModel } from 'src/app/models/api/aqnkla-food';
+import { VitaminType, VitaminViewModel } from 'src/app/models/api/aqnkla-food';
 
-export class DeleteMineralDialogComponent extends DialogDeleteComponent<
-  ItemMineralComponent
+export class DeleteVitaminDialogComponent extends DialogDeleteComponent<
+  VitaminComponent
 > {}
 
 @Component({
-  selector: 'aqn-item-mineral',
-  templateUrl: './item-mineral.component.html',
+  selector: 'aqn-vitamin',
+  templateUrl: './vitamin.component.html',
   styleUrls: [
-    './item-mineral.component.scss',
+    './vitamin.component.scss',
     './../../../../styles/ingredient.style.scss',
   ],
 })
-export class ItemMineralComponent implements OnInit {
-  @Input() minerals: MineralViewModel[];
-  @Output() valueChanged = new EventEmitter<MineralViewModel[]>();
+export class VitaminComponent implements OnInit {
+  @Input() vitamins: VitaminViewModel[];
+  @Output() valueChanged = new EventEmitter<VitaminViewModel[]>();
   units = DataHelper.getWeightUnitsGram(0);
-  availableMinerals: MineralType[];
+  availableVitamins: VitaminType[];
 
-  activeSelectItem: MineralType;
+  activeSelectItem: VitaminType;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
@@ -33,14 +32,14 @@ export class ItemMineralComponent implements OnInit {
   }
 
   private updateAvailableMinerals(): void {
-    this.availableMinerals = [];
-    const minerals = ObjectHelper.getEnumValues<MineralType>(MineralType);
-    for (const mineral of minerals) {
+    this.availableVitamins = [];
+    const vitamins = ObjectHelper.getEnumValues<VitaminType>(VitaminType);
+    for (const vitamin of vitamins) {
       if (
-        this.minerals === undefined ||
-        this.minerals.filter((b) => b.mineral === mineral).length === 0
+        this.vitamins === undefined ||
+        this.vitamins.filter((b) => b.vitamin === vitamin).length === 0
       ) {
-        this.availableMinerals.push(mineral);
+        this.availableVitamins.push(vitamin);
       }
     }
   }
@@ -49,34 +48,34 @@ export class ItemMineralComponent implements OnInit {
     if (this.activeSelectItem === undefined) {
       return;
     }
-    if (this.minerals === undefined) {
-      this.minerals = [];
+    if (this.vitamins === undefined) {
+      this.vitamins = [];
     }
-    this.minerals.push({
-      mineral: this.activeSelectItem,
-      mineralLabel: '',
+    this.vitamins.push({
+      vitamin: this.activeSelectItem,
+      vitaminLabel: '',
       weightGrams: 1,
     });
     this.activeSelectItem = undefined;
     this.updateAvailableMinerals();
-    this.valueChanged.emit(this.minerals);
+    this.valueChanged.emit(this.vitamins);
   }
 
-  deleteItem(value: MineralViewModel): void {
+  deleteItem(value: VitaminViewModel): void {
     const self = this;
-    const dialogRef = this.dialog.open(DeleteMineralDialogComponent, {
+    const dialogRef = this.dialog.open(DeleteVitaminDialogComponent, {
       width: '250px',
       data: {
-        header: `Remove ${value.mineral}`,
-        message: `Do you want remove ${value.mineral}: ${value.weightGrams}`,
+        header: `Remove ${value.vitamin}`,
+        message: `Do you want remove ${value.vitamin}: ${value.weightGrams}`,
         delete: false,
       },
     });
     dialogRef.afterClosed().subscribe((result: DialogDeleteData) => {
       if (result && result.delete) {
-        self.minerals = self.minerals.filter((obj) => obj.mineral !== value.mineral);
+        self.vitamins = self.vitamins.filter((obj) => obj.vitamin !== value.vitamin);
         self.updateAvailableMinerals();
-        self.valueChanged.emit(self.minerals);
+        self.valueChanged.emit(self.vitamins);
       }
     });
   }

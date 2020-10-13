@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { ItemAllergenComponent } from './item-allergen.component';
 
-describe('ItemAllerganComponent', () => {
-  let component: ItemAllergenComponent;
-  let fixture: ComponentFixture<ItemAllergenComponent>;
+import { MineralComponent } from './mineral.component';
+
+describe('MineralComponent', () => {
+  let component: MineralComponent;
+  let fixture: ComponentFixture<MineralComponent>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [ItemAllergenComponent],
+        declarations: [MineralComponent],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemAllergenComponent);
+    fixture = TestBed.createComponent(MineralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

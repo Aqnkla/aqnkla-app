@@ -105,15 +105,8 @@ export interface IngredientItemViewModel {
   fatTotal: number;
   carbsTotal: number;
   fiber: number;
-  cholesterol: CholesterolViewModel[];
-  carbohydrates: CarbohydrateViewModel[];
-  aminoAcids: AminoAcidViewModel[];
-  fats: FatViewModel[];
-  minerals: MineralViewModel[];
-  vitamins: VitaminViewModel[];
-  allergens: AllergenViewModel[];
+  values: ValuesViewModel;
   isQuantityAllowed: boolean;
-  quantityAvgWeights: QuantityItemSizeViewModel[];
   isVolumeAllowed: boolean;
   volumeAverageDensity: number;
   isVolumeDefault: boolean;
@@ -164,6 +157,17 @@ export interface StepItemViewModel {
 export interface StepSummaryViewModel {
   steps: StepItemViewModel[];
   groups: StepGroupViewModel[];
+}
+
+export interface ValuesViewModel {
+  cholesterol: CholesterolViewModel[];
+  carbohydrates: CarbohydrateViewModel[];
+  aminoAcids: AminoAcidViewModel[];
+  fats: FatViewModel[];
+  minerals: MineralViewModel[];
+  vitamins: VitaminViewModel[];
+  allergens: AllergenViewModel[];
+  quantityAvgWeights: QuantityItemSizeViewModel[];
 }
 
 export interface VitaminViewModel {

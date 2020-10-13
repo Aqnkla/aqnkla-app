@@ -1,8 +1,5 @@
 ﻿using Aqnkla.Domain.Attributes;
-using Aqnkla.Domain.Base.Entity;
-using Aqnkla.Domain.Email.Model;
-using Aqnkla.Domain.Language.Model;
-using Aqnkla.Domain.User.Extension;
+using Aqnkla.Food.Ingredient.Entity.Item.VievModel.Value;
 using System.Collections.Generic;
 
 namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
@@ -27,22 +24,9 @@ namespace Aqnkla.Food.Ingredient.Entity.Item.VievModel
 
         public int Fiber { get; set; }
 
-        public List<CholesterolViewModel> Cholesterol { get; set; }
-
-        public List<CarbohydrateViewModel> Carbohydrates { get; set; }
-
-        public List<AminoAcidViewModel> AminoAcids { get; set; }
-
-        public List<FatViewModel> Fats { get; set; }
-
-        public List<MineralViewModel> Minerals { get; set; }
-
-        public List<VitaminViewModel> Vitamins { get; set; }
-
-        public List<AllergenViewModel> Allergens { get; set; }
+        public ValuesViewModel Values { get; set; }
 
         public bool IsQuantityAllowed { get; set; }
-        public List<QuantityItemSizeViewModel> QuantityAvgWeights { get; set; }
 
         public bool IsVolumeAllowed { get; set; }
 
