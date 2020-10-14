@@ -24,6 +24,7 @@ import { CarbohydrateComponent } from './components/item/values/carbohydrate/car
 import { CholesterolComponent } from './components/item/values/cholesterol/cholesterol.component';
 import { FatComponent } from './components/item/values/fat/fat.component';
 import { QuantityItemSizeComponent } from './components/item/values/quantity-item-size/quantity-item-size.component';
+import { ItemDetailValuesComponent } from './components/item/item-detail-values/item-detail-values.component';
 @NgModule({
   declarations: [
     IngredientsRootComponent,
@@ -40,6 +41,7 @@ import { QuantityItemSizeComponent } from './components/item/values/quantity-ite
     CholesterolComponent,
     FatComponent,
     QuantityItemSizeComponent,
+    ItemDetailValuesComponent
   ],
   imports: [
     IngredientManageRoutesModule,

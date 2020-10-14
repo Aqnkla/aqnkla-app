@@ -1,0 +1,65 @@
+<div class="card">
+  <mat-card>
+    <mat-card-title>Minerals</mat-card-title>
+    <aqn-mineral
+      [items]="values.minerals"
+      [allItems]="all?.minerals"
+      (valueChanged)="values.minerals = $event; emit()"
+    ></aqn-mineral>
+  </mat-card>
+</div>
+
+<div class="card">
+  <mat-card>
+    <mat-card-title>Vitamins</mat-card-title>
+    <aqn-vitamin
+      [items]="values.vitamins"
+      [allItems]="all?.vitamins"
+      (valueChanged)="values.vitamins = $event; emit()"
+    ></aqn-vitamin
+  ></mat-card>
+</div>
+
+<div class="card">
+  <mat-card>
+    <mat-card-title>Amnio Acids</mat-card-title>
+    <aqn-vitamin
+      [items]="values.aminoAcids"
+      [allItems]="all?.aminoAcids"
+      (valueChanged)="values.aminoAcids = $event; emit()"
+    ></aqn-vitamin
+  ></mat-card>
+</div>
+
+<div class="card">
+  <mat-card>
+    <mat-card-title>Carbohydrate</mat-card-title>
+    <aqn-vitamin
+      [items]="values.carbohydrates"
+      [allItems]="all?.carbohydrates"
+      (valueChanged)="values.carbohydrates = $event; emit()"
+    ></aqn-vitamin
+  ></mat-card>
+</div>
+
+<div class="card">
+  <mat-card>
+    <mat-card-title>Cholesterol</mat-card-title>
+    <aqn-vitamin
+      [items]="values.cholesterol"
+      [allItems]="all?.cholesterol"
+      (valueChanged)="values.cholesterol = $event; emit()"
+    ></aqn-vitamin
+  ></mat-card>
+</div>
+
+<div class="card">
+  <mat-card>
+    <mat-card-title>Fat</mat-card-title>
+    <aqn-vitamin
+      [items]="values.fats"
+      [allItems]="all?.fats"
+      (valueChanged)="values.fats = $event; emit()"
+    ></aqn-vitamin
+  ></mat-card>
+</div>

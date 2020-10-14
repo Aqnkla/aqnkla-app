@@ -1,12 +1,12 @@
-<div>
-  <div *ngIf="availableCholesterols.length > 0">
+<div *ngIf="allItems">
+  <div *ngIf="allItems.length > 0">
       <mat-form-field>
         <mat-select [(ngModel)]="activeSelectItem">
           <mat-option
-            *ngFor="let cholesterol of availableCholesterols"
-            [value]="cholesterol"
+            *ngFor="let item of allItems"
+            [value]="item"
           >
-            {{ cholesterol }}
+          {{ getLabel( item) }}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -14,24 +14,24 @@
   </div>
   <div>
     <table>
-      <tr *ngFor="let itemValue of cholesterols">
+      <tr *ngFor="let itemValue of items">
         <td>
-          <div>{{ itemValue.cholesterolLabel }}</div>
+          <div>{{getLabel( itemValue)  }}</div>
           <div class="item-quantity-mg">
             {{
-              getQuantitySummary(itemValue.weightGrams)
+              getQuantitySummary(weightGrams)
             }}
           </div>
         </td>
         <td>
           <mat-form-field class="item-quantity">
             <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="itemValue.weightGrams" />
+            <input matInput type="number" [(ngModel)]="weightGrams" />
           </mat-form-field>
         </td>
         <td class="item-select">
           <mat-form-field>
-            <mat-select [(ngModel)]="itemValue.weightGrams">
+            <mat-select [(ngModel)]="unitRatio">
               <mat-option *ngFor="let unit of units" [value]="unit.value">
                 {{ unit.name }}
               </mat-option>

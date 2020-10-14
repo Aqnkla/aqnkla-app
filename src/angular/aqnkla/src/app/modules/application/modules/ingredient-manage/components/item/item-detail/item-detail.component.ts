@@ -1,3 +1,4 @@
+import { ValuesViewModel } from './../../../../../../../models/api/aqnkla-food';
 import { Component, OnInit } from '@angular/core';
 import { ViewType } from 'src/app/models/common.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -26,7 +27,7 @@ export class ItemDetailComponent implements OnInit {
   categories: IngredientCategoryViewModel[] = [];
   vitamins: VitaminViewModel[];
   minerals: MineralViewModel[];
-
+  valuesModel: ValuesViewModel;
   constructor(
     private itemClientService: ItemClientService,
     private categoryClientService: CategoryClientService,
@@ -45,6 +46,10 @@ export class ItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryClientService.getAll().subscribe((b) => (this.categories = b));
+    this.itemClientService.allDataValues().subscribe((b) => {
+      this.valuesModel = b;
+      console.log('value', b);
+    });
   }
 
   private uploadDetails(): void {
@@ -69,7 +74,7 @@ export class ItemDetailComponent implements OnInit {
               carbohydrates: [],
               cholesterol: [],
               fats: [],
-              quantityAvgWeights: null
+              quantityAvgWeights: [],
             },
             volumeAverageDensity: null,
             isQuantityAllowed: false,

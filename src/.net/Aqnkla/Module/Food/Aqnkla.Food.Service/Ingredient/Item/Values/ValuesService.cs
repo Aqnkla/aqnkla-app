@@ -36,14 +36,14 @@ namespace Aqnkla.Food.Service.Ingredient.Item.Values
             {
                 var model = new AllergenViewModel();
 
-                if (values.Length < length)
+                if (i < values.Length)
                 {
                     AllergenType value = (AllergenType)values.GetValue(i);
                     model.Allergen = value;
                     model.AllergenLabel = ingredientILanguageService.GetLabel(value, language);
                 }
 
-                if (valuesImportance.Length < length)
+                if (i < valuesImportance.Length)
                 {
                     AllergenImportance value = (AllergenImportance)valuesImportance.GetValue(i);
                     model.Importance = value;

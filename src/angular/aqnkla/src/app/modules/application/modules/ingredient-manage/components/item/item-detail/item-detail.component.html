@@ -92,25 +92,11 @@
             </mat-card>
           </div>
           <div class="nutrition">
-            <div class="card">
-              <mat-card>
-                <mat-card-title>Minerals</mat-card-title>
-                <aqn-item-mineral
-                  [minerals]="item.minerals"
-                  (valueChanged)="item.minerals = $event"
-                ></aqn-item-mineral>
-              </mat-card>
-            </div>
-
-            <div class="card">
-              <mat-card>
-                <mat-card-title>Vitamins</mat-card-title>
-                <aqn-item-vitamin
-                  [vitamins]="item.vitamins"
-                  (valueChanged)="item.vitamins = $event"
-                ></aqn-item-vitamin
-              ></mat-card>
-            </div>
+            <aqn-item-detail-values
+              [all]="valuesModel"
+              [values]="item.values"
+              (valuesChanged)="item.values = $event"
+            ></aqn-item-detail-values>
           </div>
         </mat-card>
       </div>
@@ -118,46 +104,49 @@
         <mat-card>
           <mat-card-title>Detail</mat-card-title>
           <div class="card">
-            <mat-card
+            <mat-card>
+              <mat-slide-toggle [(ngModel)]="item.isQuantityAllowed"
+                >is Piece Allowed</mat-slide-toggle
               >
-              <mat-slide-toggle [(ngModel)]="item.isQuantityAllowed">is Piece Allowed</mat-slide-toggle>
               <div *ngIf="item.isQuantityAllowed">
-                <mat-form-field class="item-quantity">
-                  <mat-label>piece</mat-label>
-                  <input
-                    matInput
-                    type="number"
-                    [(ngModel)]="item.quantityAvgWeights"
-                  /> </mat-form-field
-                ><span> grams/piece</span>
+                <mat-card>
+                  <mat-card-title>Quantity Average Weights</mat-card-title>
+                  <aqn-quantity-item-size
+                    [items]="item.values.quantityAvgWeights"
+                    [allItems]="valuesModel?.quantityAvgWeights"
+                    (valueChanged)="item.values.quantityAvgWeights = $event"
+                  ></aqn-quantity-item-size>
+                </mat-card>
               </div>
             </mat-card>
           </div>
           <div class="card">
-            <mat-card
+            <mat-card>
+              <mat-slide-toggle [(ngModel)]="item.isVolumeAllowed"
+                >is Volume Allowed</mat-slide-toggle
               >
-              <mat-slide-toggle [(ngModel)]="item.isVolumeAllowed">is Volume Allowed</mat-slide-toggle>
-                <div *ngIf="item.isVolumeAllowed">
-                  <mat-form-field class="item-quantity">
-                    <mat-label>average density</mat-label>
-                    <input
-                      matInput
-                      type="number"
-                      [(ngModel)]="item.volumeAverageDensity"
-                    /> </mat-form-field
-                  ><span> g/1000 cm^3</span>
-                </div>
-           </mat-card>
+              <div *ngIf="item.isVolumeAllowed">
+                <mat-form-field class="item-quantity">
+                  <mat-label>average density</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    [(ngModel)]="item.volumeAverageDensity"
+                  /> </mat-form-field
+                ><span> g/1000 cm^3</span>
+              </div>
+            </mat-card>
           </div>
         </mat-card>
       </div>
       <div class="card">
         <mat-card>
           <mat-card-title>Allergens</mat-card-title>
-          <aqn-item-allergan
-            [allergens]="item.allergens"
-            (valueChanged)="item.allergens = $event"
-          ></aqn-item-allergan>
+          <aqn-allergan
+            [items]="item.values.allergens"
+            [allItems]="valuesModel?.allergens"
+            (valueChanged)="item.values.allergens = $event"
+          ></aqn-allergan>
         </mat-card>
       </div>
       <div>

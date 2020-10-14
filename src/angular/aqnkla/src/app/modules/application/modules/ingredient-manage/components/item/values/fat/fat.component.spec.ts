@@ -8,9 +8,8 @@ describe('FatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FatComponent ]
-    })
-    .compileComponents();
+      declarations: [FatComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
