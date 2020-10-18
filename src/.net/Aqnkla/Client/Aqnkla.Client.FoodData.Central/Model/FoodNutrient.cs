@@ -4,7 +4,6 @@ using System.Text;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [FoodFilePath("food_nutrient.csv")]
     class FoodNutrientDDDDDDDDDDDDDD
     {
         //"id","fdc_id","nutrient_id","amount","data_points","derivation_id","min","max","median","footnote","min_year_acquired"

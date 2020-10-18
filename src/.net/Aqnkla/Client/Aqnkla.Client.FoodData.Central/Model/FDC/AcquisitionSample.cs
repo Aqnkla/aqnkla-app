@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Aqnkla.Client.FoodData.Central.Attributes;
+using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
+    [SourceFileName("")]
+    [Description("Acquisitions may be blended with other acquisitions to create a sample food, and an acquisition can be used to created more than one sample food.This file stores which acquisitions and sample foods are related to each other.")]
     public class AcquisitionSample
     {
-//        "fdc_id_of_sample_food","fdc_id_of_acquisition_food"
-//"749288","749289"
-//"749294","749289"
-//"749294","749295"
-//"749294","749296"
-//"749294","749297"
-//"749294","749298"
-//"749294","749299"
-//"790745","790746"
-//"790749","790746"
+        [FieldHeader("fdc_id_of_sample_food")]
+        [DisplayName("Fdc Id Of Sample Food")]
+        [Description(" ID of the sample food that uses the acquisitioned food")]
+        public int FdcIdOfSampleFood { get; set; }
+
+        [FieldHeader("fdc_id_of_acquisition_food")]
+        [DisplayName("Fdc Id Of Acquisition Food")]
+        [Description("ID of the acquisitioned food used in the sample food")]
+        public int FdcIdOfAcquisitionFood { get; set; }
     }
 }
