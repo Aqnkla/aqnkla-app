@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Aqnkla.Client.FoodData.Central.Model.FDC
+{
+    public class FoodAttribute
+    {
+//        "id","name","description"
+//"998","Update Log","Changes that were made to this food"
+//"999","Attribute","Generic attributes"
+//"1000","Common Name","Common names associated with a food."
+//"1001","Additional Description","Additional descriptions for the food."
+//"1002","Adjustments","Adjustments made to foods, including moisture changes" 
+    }
+}

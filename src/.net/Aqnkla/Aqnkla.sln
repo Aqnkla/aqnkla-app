@@ -43,12 +43,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Food.Service", "Modu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{2DA0A1B0-1A0A-4DFE-B991-F40C22F324E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Tool.ViewModelGenerator", "Tool\Aqnkla.Tool.ViewModelGenerator\Aqnkla.Tool.ViewModelGenerator.csproj", "{064A008F-E8C9-4D32-817A-A2953A2E3131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aqnkla.Tool.ViewModelGenerator", "Tool\Aqnkla.Tool.ViewModelGenerator\Aqnkla.Tool.ViewModelGenerator.csproj", "{064A008F-E8C9-4D32-817A-A2953A2E3131}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2C15DF93-A56A-4B54-A4E6-CAA17BA9CEC5}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqnkla.Client.FoodData.Central", "Client\Aqnkla.Client.FoodData.Central\Aqnkla.Client.FoodData.Central.csproj", "{C85C644A-FBF6-4D8D-A8D2-4095B59B4057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,10 @@ Global
 		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{064A008F-E8C9-4D32-817A-A2953A2E3131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85C644A-FBF6-4D8D-A8D2-4095B59B4057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85C644A-FBF6-4D8D-A8D2-4095B59B4057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85C644A-FBF6-4D8D-A8D2-4095B59B4057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85C644A-FBF6-4D8D-A8D2-4095B59B4057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +125,7 @@ Global
 		{62308B64-9FFF-4E92-BAE3-2FBCB2E8A661} = {333D43A7-78B8-4A9B-9367-EB672FC6BF62}
 		{A76D3EFA-E627-4CEC-843E-16B21702A454} = {333D43A7-78B8-4A9B-9367-EB672FC6BF62}
 		{064A008F-E8C9-4D32-817A-A2953A2E3131} = {2DA0A1B0-1A0A-4DFE-B991-F40C22F324E8}
+		{C85C644A-FBF6-4D8D-A8D2-4095B59B4057} = {F9B2FC70-9D50-4780-8DB6-1519728DC603}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E6A461B-9AEB-4E9B-9F6C-4E0D9EB3F40F}
