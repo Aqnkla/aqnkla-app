@@ -9,34 +9,31 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     [Description("")]
     public class SurveyFnddsFood
     {
-        public int fdc_id { get; set; }
-        public string food_code { get; set; }
-        public string wweia_category_code { get; set; }
-        public DateTime start_date { get; set; }
-        public DateTime end_date { get; set; }
 
+        [FieldHeader("fdc_id")]
+        [DisplayName("")]
+        [Description("")]
+        public int FdcId { get; set; }
 
+        [FieldHeader("food_code")]
+        [DisplayName("")]
+        [Description("")]
+        public string Food_Code { get; set; }
 
+        [FieldHeader("wweia_category_code")]
+        [DisplayName("")]
+        [Description("")]
+        public string WweiaCategoryCode { get; set; }
 
-        //781082,11000000,9602,2015-01-01,2016-12-31
-        //781083,11100000,1004,2015-01-01,2016-12-31
-        //781084,11111000,1002,2015-01-01,2016-12-31
-        //781085,11111100,1002,2015-01-01,2016-12-31
-        //781086,11111150,1002,2015-01-01,2016-12-31
-        //781087,11111160,1006,2015-01-01,2016-12-31
-        //781088,11111170,1008,2015-01-01,2016-12-31
-        //781089,11112110,1004,2015-01-01,2016-12-31
-        //781090,11112120,1006,2015-01-01,2016-12-31
-        //781091,11112130,1004,2015-01-01,2016-12-31
-        //781092,11112210,1006,2015-01-01,2016-12-31
-        //781093,11113000,1008,2015-01-01,2016-12-31
-        //781094,11114300,1006,2015-01-01,2016-12-31
-        //781095,11114320,1008,2015-01-01,2016-12-31
-        //781096,11114330,1004,2015-01-01,2016-12-31
-        //781097,11114350,1002,2015-01-01,2016-12-31
-        //781098,11115000,1008,2015-01-01,2016-12-31
-        //781099,11115100,1006,2015-01-01,2016-12-31
-        //781100,11115200,1004,2015-01-01,2016-12-31
-        //781101,11115300,1002,2015-01-01,2016-12-31
+        [FieldHeader("start_date")]
+        [DisplayName("")]
+        [Description("")]
+        public DateTime StartDate { get; set; }
+
+        [FieldHeader("end_date")]
+        [DisplayName("")]
+        [Description("")]
+        public DateTime EndDate { get; set; }
+
     }
 }

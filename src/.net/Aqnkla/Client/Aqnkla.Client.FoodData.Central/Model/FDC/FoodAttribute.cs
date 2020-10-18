@@ -8,17 +8,20 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     [Description("")]
     public class FoodAttribute
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
 
+        [FieldHeader("id")]
+        [DisplayName("")]
+        [Description("")]
+        public int Id { get; set; }
 
+        [FieldHeader("name")]
+        [DisplayName("")]
+        [Description("")]
+        public string Name { get; set; }
 
-
-        //998,Update Log,Changes that were made to this food
-        //999,Attribute,Generic attributes
-        //1000,Common Name,Common names associated with a food.
-        //1001,Additional Description,Additional descriptions for the food.
-        //1002,Adjustments,Adjustments made to foods, including moisture changes
+        [FieldHeader("description")]
+        [DisplayName("")]
+        [Description("")]
+        public string Description { get; set; }
     }
 }

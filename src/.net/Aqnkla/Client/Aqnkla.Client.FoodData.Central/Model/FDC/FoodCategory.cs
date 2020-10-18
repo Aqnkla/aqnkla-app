@@ -8,16 +8,20 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     [Description("")]
     public class FoodCategory
     {
-        public int id { get; set; }
-        public string code { get; set; }
-        public string description { get; set; }
 
+        [FieldHeader("id")]
+        [DisplayName("")]
+        [Description("")]
+        public int Id { get; set; }
 
+        [FieldHeader("code")]
+        [DisplayName("")]
+        [Description("")]
+        public string Code { get; set; }
 
-        //1,0100,Dairy and Egg Products
-        //2,0200,Spices and Herbs
-        //3,0300,Baby Foods
-        //4,0400,Fats and Oils
-        //5,0500,Poultry Products
+        [FieldHeader("description")]
+        [DisplayName("")]
+        [Description("")]
+        public string Description { get; set; }
     }
 }

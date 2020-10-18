@@ -8,17 +8,20 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     [Description("")]
     public class FoodNutrientSource
     {
-        public int id { get; set; }
-        public int code { get; set; }
-        public string description { get; set; }
 
+        [FieldHeader("id")]
+        [DisplayName("")]
+        [Description("")]
+        public int Id { get; set; }
 
+        [FieldHeader("code")]
+        [DisplayName("")]
+        [Description("")]
+        public int Code { get; set; }
 
-
-        //1,1,Analytical or derived from analytical
-        //2,4,Calculated or imputed
-        //3,5,Value manufacturer based label claim for added nutrients
-        //4,6,Aggregated data involving combinations of source codes 1, 6, 12 and/or 13
-        //5,7,Assumed zero
+        [FieldHeader("description")]
+        [DisplayName("")]
+        [Description("")]
+        public string Description { get; set; }
     }
 }

@@ -8,32 +8,60 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     [Description("")]
     public class FoodNutrient
     {
-        public int id { get; set; }
-        public int fdc_id { get; set; }
-        public int nutrient_id { get; set; }
-        public int amount { get; set; }
-        public int data_points { get; set; }
-        public int derivation_id { get; set; }
-        public int min { get; set; }
-        public int max { get; set; }
-        public int median { get; set; }
-        public string footnote { get; set; }
-        public int min_year_acquired { get; set; }
 
+        [FieldHeader("id")]
+        [DisplayName("")]
+        [Description("")]
+        public int Id { get; set; }
 
+        [FieldHeader("fdc_id")]
+        [DisplayName("")]
+        [Description("")]
+        public int FdcId { get; set; }
 
+        [FieldHeader("nutrient_id")]
+        [DisplayName("")]
+        [Description("")]
+        public int NutrientId { get; set; }
 
-        //3639112,344604,1089,0,,75,,,,,
-        //3639113,344604,1110,0,,75,,,,,
-        //3639114,344604,1253,0,,75,,,,,
-        //3639115,344604,1258,0,,75,,,,,
-        //6320396,344604,1003,0.81,,71,,,,,
-        //6320397,344604,1004,0.41,,71,,,,,
-        //6320398,344604,1005,4.07,,71,,,,,
-        //6320399,344604,1008,24,,71,,,,,
-        //6320400,344604,2000,2.44,,71,,,,,
-        //6320401,344604,1079,0.8,,71,,,,,
-        //6320402,344604,1082,0,,71,,,,,
-        //6320403,344604,1084,0,,71,,,,,
+        [FieldHeader("amount")]
+        [DisplayName("")]
+        [Description("")]
+        public int Amount { get; set; }
+
+        [FieldHeader("data_points")]
+        [DisplayName("")]
+        [Description("")]
+        public int DataPoints { get; set; }
+
+        [FieldHeader("derivation_id")]
+        [DisplayName("")]
+        [Description("")]
+        public int DerivationId { get; set; }
+
+        [FieldHeader("min")]
+        [DisplayName("")]
+        [Description("")]
+        public int Min { get; set; }
+
+        [FieldHeader("max")]
+        [DisplayName("")]
+        [Description("")]
+        public int Max { get; set; }
+
+        [FieldHeader("median")]
+        [DisplayName("")]
+        [Description("")]
+        public int Median { get; set; }
+
+        [FieldHeader("footnote")]
+        [DisplayName("")]
+        [Description("")]
+        public string Footnote { get; set; }
+
+        [FieldHeader("min_year_acquired")]
+        [DisplayName("")]
+        [Description("")]
+        public int MinYearAcquired { get; set; }
     }
 }

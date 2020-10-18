@@ -10,14 +10,33 @@ namespace Aqnkla.Client.FoodData.Central.Model.FDC
     public class AgriculturalAcquisition
     {
 
-        public int fdc_id { get; set; }
+        [FieldHeader("fdc_id")]
+        [DisplayName("")]
+        [Description("")]
+        public int FdcId { get; set; }
 
-        public DateTime acquisition_date { get; set; }
-        public string market_class { get; set; }
 
-        public string treatment { get; set; }
+        [FieldHeader("acquisition_date")]
+        [DisplayName("")]
+        [Description("")]
+        public DateTime AcquisitionDate { get; set; }
 
-        public string state { get; set; }
+        [FieldHeader("market_class")]
+        [DisplayName("")]
+        [Description("")]
+        public string MarketClass { get; set; }
+
+
+        [FieldHeader("treatment")]
+        [DisplayName("")]
+        [Description("")]
+        public string Treatment { get; set; }
+
+
+        [FieldHeader("state")]
+        [DisplayName("")]
+        [Description("")]
+        public string State { get; set; }
 
 
     }
