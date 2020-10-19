@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [SourceFileName("")]
+    [SourceFileName("food_attribute_type.csv")]
     [Description("")]
     public class FoodAtributeType
     {

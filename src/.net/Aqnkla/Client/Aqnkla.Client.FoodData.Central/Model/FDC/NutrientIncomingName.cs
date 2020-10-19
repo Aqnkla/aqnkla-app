@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [SourceFileName("")]
+    [SourceFileName("nutrient_incoming_name.csv")]
     [Description("")]
     public class NutrientIncomingName
     {

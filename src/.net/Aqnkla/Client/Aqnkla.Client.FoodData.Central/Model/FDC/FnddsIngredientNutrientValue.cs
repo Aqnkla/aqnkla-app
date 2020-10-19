@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [SourceFileName("")]
+    [SourceFileName("fndds_ingredient_nutrient_value.csv")]
     [Description("")]
     public class FnddsIngredientNutrientValue
     {

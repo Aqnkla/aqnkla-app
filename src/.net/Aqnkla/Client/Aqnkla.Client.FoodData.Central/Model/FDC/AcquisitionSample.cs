@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [SourceFileName("")]
+    [SourceFileName("acquisition_sample.csv")]
     [Description("Acquisitions may be blended with other acquisitions to create a sample food, and an acquisition can be used to created more than one sample food.This file stores which acquisitions and sample foods are related to each other.")]
     public class AcquisitionSample
     {

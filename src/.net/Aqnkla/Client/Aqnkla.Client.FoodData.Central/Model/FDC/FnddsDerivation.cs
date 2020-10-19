@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Aqnkla.Client.FoodData.Central.Model.FDC
 {
-    [SourceFileName("")]
+    [SourceFileName("fndds_derivation.csv")]
     [Description("")]
     public class FnddsDerivation
     {
